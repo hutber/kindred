@@ -1,0 +1,38 @@
+{
+  "name": "wekindred.com",
+  "version": "0.0.1",
+  "description": "A test app for react",
+  "main": "./src/index.js",
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "test": "BABEL_ENV=test nyc mocha --reporter tap 'test/**/*.spec.js'",
+    "lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
+    "lint-styles": "stylelint './src/**/*.css'",
+    "lint": "npm run lint-scripts && npm run lint-styles",
+    "postversion": "git push && git push --tags && npm publish",
+    "preversion": "npm run lint && npm run test && npm run build",
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://root@88.208.249.95/var/www/kindred.com"
+  },
+  "author": "Jamie Hutber <jamie@hutber.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "eslint": "^3.17.1",
+    "rimraf": "^2.6.1",
+    "stylelint": "^7.9.0",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
