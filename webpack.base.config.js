@@ -10,23 +10,28 @@ module.exports = {
   entry: {
     index: './src/index'
   },
+  output: {
+    filename: '[name].js',
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/'
+  },
   module: {
     loaders: [
       {
+        test: /dashjs\/dist\/.*/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'
-        },
-        test: /dashjs\/dist\/.*/
+        }
       },
       {
+        test: /\.js$/,
         exclude: /node_modules\/.*/,
-        loader: 'babel-loader',
-        test: /\.js$/
+        loader: 'babel-loader'
       },
       {
-        loader: 'url?limit=25000',
-        test: /\.(jpg|png)$/
+        test: /\.(jpg|png)$/,
+        loader: 'url?limit=25000'
       },
       {
         test: /\.svg$/,
@@ -39,7 +44,7 @@ module.exports = {
           'css-loader?importLoaders&' + qs.stringify({
             modules: true,
             importLoaders: 1,
-            localIdentName: '[path][name]-[local]'
+            localIdentName: environment.get('cssIdent')
           }),
           'postcss-loader?parser=postcss-scss',
           {
@@ -59,9 +64,5 @@ module.exports = {
         ],
       }
     ]
-  },
-  output: {
-    filename: '[name].js',
-    path: path.join(__dirname, 'dist')
   }
 };

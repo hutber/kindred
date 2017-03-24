@@ -6,7 +6,8 @@
   "scripts": {
     "prebuild": "rimraf ./dist",
     "test": "BABEL_ENV=test nyc mocha --reporter tap 'test/**/*.spec.js'",
-    "start": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js",
+    "start": "BABEL_ENV=development/client webpack-dashboard -- webpack-dev-server --config ./webpack.config.js",
+    "simple": "webpack-dashboard webpack-dev-server --config ./webpack.config.js",
     "lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
     "lint-styles": "stylelint './src/**/*.css'",
     "lint": "npm run lint-scripts && npm run lint-styles",
