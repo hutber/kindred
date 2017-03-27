@@ -1,19 +1,27 @@
 /* eslint-disable filenames/match-regex, import/no-commonjs, import/unambiguous */
+
 const path = require('path');
 const {environment} = require('webpack-config');
-const qs = require('querystring');
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
-const stripInlineComments = require('postcss-strip-inline-comments');
 
 module.exports = {
-  entry: {
-    index: './src/index'
-  },
+  entry: [
+    'react-hot-loader/patch',
+    // activate HMR for React
+  
+    'webpack-dev-server/client?http://localhost:8080',
+    // bundle the client for webpack-dev-server
+    // and connect to the provided endpoint
+  
+    'webpack/hot/only-dev-server',
+    // bundle the client for hot reloading
+    // only- means to only hot reload for successful updates
+    
+    './src/index'
+  ],
   output: {
-    filename: '[name].js',
+    filename: 'main.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/dist/'
   },
   module: {
     loaders: [
@@ -27,7 +35,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules\/.*/,
-        loader: 'babel-loader'
+        use: ['babel-loader']
       },
       {
         test: /\.(jpg|png)$/,
@@ -41,26 +49,15 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders&' + qs.stringify({
-            modules: true,
-            importLoaders: 1,
-            localIdentName: environment.get('cssIdent')
-          }),
-          'postcss-loader?parser=postcss-scss',
           {
-            loader: 'postcss-loader',
+            loader: 'css-loader',
             options: {
-              options: { /* PostCSS Options */ },
-              plugins: () => [
-                stripInlineComments
-                , precss
-                , autoprefixer
-                , require('postcss-simple-vars')
-                , require('postcss-nested')
-                , autoprefixer({browsers: ['last 2 versions']})
-              ]
+              modules: true,
+              importLoaders: 1,
+              localIdentName: environment.get('cssIdent')
             }
-          }
+          },
+          'postcss-loader'
         ],
       }
     ]
