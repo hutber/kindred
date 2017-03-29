@@ -1,9 +1,0 @@
-$bg: #FFF;
-.app {
-  font-size: 40px;
-  text-size-adjust: none;
-  font-family: helvetica, arial, sans-serif;
-  line-height: 100%;
-  padding: 6px 25px 30px;
-  background: $bg;
-}
