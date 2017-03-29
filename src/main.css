@@ -1,0 +1,54 @@
+// Immutable items
+//@import "fixed/phonegapReset";
+//@import "fixed/Mixins";
+
+//Fonts
+//@import "./font/fontello.css";
+//@import './font/latofonts.css';
+//@import "./font/latostyle.css";
+
+//// Imports
+@import "./components/shared/vars.css";
+//@import "components/Content.css";
+//@import "components/form/_form.css";
+//@import "components/Mobiscroll.css";
+//@import "components/calender/_MobiscrollWeKindred.css";
+//
+//// Elements
+//@import "components/elements/_Headers.css";
+//@import "components/elements/_Href.css";
+
+// Core
+//@import "core/Logo";
+
+//Body/Html
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to bottom, $bgTop 0%, $bgBottom 100%);
+  color: #FFF;
+  text-align: center;
+  font-family: LatoLight;
+  font-size:18px;
+  padding: 0;
+  margin: 0;
+}
+
+#app, #app, .app-shell {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: block;
+}
+
+header {
+  position: absolute;
+}
+
+.contentArea {
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  overflow: hidden;
+}

@@ -57,9 +57,15 @@ module.exports = {
               localIdentName: environment.get('cssIdent')
             }
           },
-          'postcss-loader'
+          'postcss-loader?parser=postcss-scss'
         ],
-      }
+      },
+      // Font Definitions
+      { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml&name=font/[name].[ext]' },
+      { test: /\.woff$/, loader: 'url?limit=65000&mimetype=application/font-woff&name=font/[name].[ext]' },
+      { test: /\.woff2$/, loader: 'url?limit=65000&mimetype=application/font-woff2&name=font/[name].[ext]' },
+      { test: /\.[ot]tf$/, loader: 'url?limit=65000&mimetype=application/octet-stream&name=font/[name].[ext]' },
+      { test: /\.eot$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject&name=font/[name].[ext]' }
     ]
   }
 };

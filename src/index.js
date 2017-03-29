@@ -8,6 +8,7 @@ import nprogress from 'nprogress';
 const history = createHistory(); //Use a history moudle
 import configureStore from './store/configureStore';
 import Routes from './routes';
+import './main.css';
 
 //Remove on screen tap delay
 injectTapEventPlugin();
