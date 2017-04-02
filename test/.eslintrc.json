@@ -1,0 +1,12 @@
+{
+  "extends": "eslint-config-mailonline/mocha",
+  "rules": {
+    "filenames/match-regex": "off",
+    "promise/prefer-await-to-callbacks": "off",
+    "max-nested-callbacks": "off",
+    "promise/always-return": "off",
+    "no-unused-expressions": "off",
+    "id-match": "off",
+    "import/max-dependencies": "off"
+  }
+}
