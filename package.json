@@ -55,8 +55,8 @@
     "commitizen": "^2.9.6",
     "css-loader": "^0.27.3",
     "css-modules-require-hook": "^4.0.6",
-    "cz-conventional-changelog": "^2.0.0",
     "file-loader": "^0.10.1",
+    "hutber-conventional-changelog": "^1.0.0",
     "immutable": "^3.8.1",
     "jsdom": "^9.12.0",
     "mocha": "^3.2.0",
@@ -81,7 +81,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/hutber-conventional-changelog"
     }
   },
   "nyc": {
