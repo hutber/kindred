@@ -14,7 +14,7 @@ class Menu extends React.Component {
 		}
 	}
 
-	render = function (){
+	render (){
 		return (
 			<div className={style.menu}>
 				<div>

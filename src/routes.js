@@ -1,5 +1,5 @@
 //Core App things
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router';
 import Splash from './components/Splash';
 

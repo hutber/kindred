@@ -3,7 +3,7 @@ import $, * as jQuery from 'jquery';
 import knob from 'jquery-knob';
 
 //styles
-import style from '../../../../css/components/knob/index.css';
+import style from '../../../../css/components/knob/logo.css';
 
 class Knob extends React.Component {
 	constructor (props){
@@ -14,14 +14,14 @@ class Knob extends React.Component {
 		}
 	}
 	
-	updateDesire = (event) => {
+	updateDesire (event) {
 		this.setState({'desire': Math.round(event)})
 	}
 
-	release = (e) => {
+	release (e) {
 		console.info(e);
 	}
-	
+
 	componentDidMount() {
 		const { knob } = this.refs;
 

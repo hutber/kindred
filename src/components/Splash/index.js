@@ -1,7 +1,6 @@
 import React from 'react';
-//import NavLink from '../shared/nav/NavLink';
 import { NavLink } from 'react-router-dom'
-import Logo from '../shared/index/Logo';
+import Logo from '../shared/logo/index';
 import * as styles from './style.css';
 
 class Splash extends React.Component {
