@@ -14,5 +14,26 @@
   "plugins": [
     "react-hot-loader/babel"
     // Enables React code to work with HMR.
-  ]
+  ],
+  "env": {
+    "development/client": {
+      "plugins": [
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true
+        }]
+      ]
+    },
+    "test": {
+      "presets": ["es2015"],
+      "plugins": [
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true
+        }]
+      ]
+    }
+  }
 }
