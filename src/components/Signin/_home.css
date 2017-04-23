@@ -1,0 +1,30 @@
+.home {
+  margin: 4vh 6vw;
+  height: 72vh;
+
+  a {
+    color: #FFF;
+  }
+
+  h2 {
+    margin: 6vh 0;
+  }
+
+  .extraDetails {
+    position: fixed;
+    bottom: 4vh;
+    display: block;
+    width: 88vw;
+    & > a {
+      border-bottom: 1px solid #FFF;
+      float: left;
+    }
+    .extraDetailsRight {
+      float: right;
+      display: block;
+    }
+  }
+}
+.calenderContainer {
+  height: 0;
+}
