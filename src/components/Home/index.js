@@ -1,18 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import {Redirect} from 'react-router'
 import Logo from '../shared/logo/index';
 import * as authStates from '../shared/auth/requireLogin';
-import * as styles from './style.css';
 
 class Home extends React.Component {
-  componentWillMount() { // or componentDidMount
-    authStates.requireLogin();
+  constructor(props){
+    super(props);
   }
+
+  // componentWillMount() {
+  //   authStates.requireLogin();
+  // }
 
   render(){
     return (
-      <div className={styles.indexAppContent}>
-        <h2>as</h2>
+      <div>
+        <h2>Home</h2>
       </div>
     );
   }
