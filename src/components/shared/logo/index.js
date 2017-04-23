@@ -3,12 +3,12 @@ import React from 'react';
 import logo from './_Logo.css';
 import * as font from '../font/fontello.css';
 
-const Logo = React.createClass ({
+class Logo extends React.Component {
     render() {
         return (
             <div className={logo.logo +' '+font['icon-logo']}></div>
         );
     }
-});
+};
 
 export default Logo;
