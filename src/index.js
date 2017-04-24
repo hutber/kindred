@@ -2,10 +2,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory' //history api
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import nprogress from 'nprogress';
-const history = createHistory(); //Use a history moudle
+import createBrowserHistory from 'history/createBrowserHistory'
+const history = createBrowserHistory(); //Use a history moudle
 import configureStore from './store/configureStore';
 import Routes from './routes';
 import './main.css';

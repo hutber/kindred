@@ -6,15 +6,14 @@ import * as authStates from '../shared/auth/requireLogin';
 class Home extends React.Component {
   constructor(props){
     super(props);
-  }
 
-  // componentWillMount() {
-  //   authStates.requireLogin();
-  // }
+    this.requireLogin = authStates.requireLogin;
+  }
 
   render(){
     return (
       <div>
+        <this.requireLogin />
         <h2>Home</h2>
       </div>
     );
