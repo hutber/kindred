@@ -8,7 +8,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 const history = createBrowserHistory(); //Use a history moudle
 import configureStore from './store/configureStore';
 import Routes from './routes';
-import './main.css';
+import './components/shared/main.css';
 
 //Remove on screen tap delay
 injectTapEventPlugin();

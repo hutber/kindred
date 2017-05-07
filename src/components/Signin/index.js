@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom'
 import Logo from '../shared/logo';
 import loggedOut from './_home.css';
 
@@ -37,8 +38,8 @@ class SignIn extends React.Component {
           <button>Sign In</button>
         </form>
         <div className={loggedOut.extraDetails}>
-          <Link to="/signup">Don't have an account yet?</Link>
-          <Link to="/skip" className={loggedOut.extraDetailsRight}>Skip</Link>
+          <NavLink to="/signup">Don't have an account yet?</NavLink>
+          <NavLink to="/skip" className={loggedOut.extraDetailsRight}>Skip</NavLink>
         </div>
       </div>
     );

@@ -1,21 +1,19 @@
 // Immutable items
-//@import "fixed/phonegapReset";
+@import "./styles/_phonegapReset.css";
 //@import "fixed/Mixins";
 
 //Fonts
-//@import "./font/fontello.css";
-//@import './font/latofonts.css';
-//@import "./font/latostyle.css";
+@import './font/latofonts.css';
 
 //// Imports
-@import "./components/shared/vars.css";
+@import "vars.css";
 //@import "components/Content.css";
 //@import "components/form/_form.css";
 //@import "components/Mobiscroll.css";
 //@import "components/calender/_MobiscrollWeKindred.css";
 //
 //// Elements
-@import "components/shared/elements/_button.css";
+@import "elements/_button.css";
 //@import "components/elements/_Href.css";
 
 // Core
@@ -29,7 +27,7 @@ html, body {
   background: linear-gradient(to bottom, $bgTop 0%, $bgBottom 100%);
   color: #FFF;
   text-align: center;
-  font-family: LatoLight;
+  font-family: LatoBold;
   font-size:18px;
   padding: 0;
   margin: 0;
