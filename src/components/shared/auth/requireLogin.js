@@ -1,33 +1,32 @@
 //- Created by hutber on 15/07/16.  */
 import React from 'react';
 import {Redirect} from 'react-router'
+import Logo from '../../shared/logo/index';
+import * as authStates from '../../shared/auth/requireLogin';
 
-class requireLogin extends React.Component {
-  constructor(){
-    super();
-    this.LocalRedirect = null;
-  }
-
-  componentWillMount (){
-    console.info(this.LocalRedirect);
-    if (!Boolean(localStorage.LOGGED_IN)) {
-      this.LocalRedirect = <Redirect to="/signin"/>
+class RequireLogin extends React.Component {
+  render(){
+    if (localStorage.LOGGED_IN) {
+      return (
+        <div></div>
+      )
+    }else{
+      return (
+        <Redirect push to="/signin"/>
+      );
     }
   }
-
+}
+class BlockForLoggedInUsers extends React.Component {
   render(){
-
-    return (
-      <div>
-        <this.LocalRedirect />
-      </div>
-    )
+    if (!localStorage.LOGGED_IN) {
+      return (
+        <div>
+          <h2>Redirect</h2>
+        </div>
+      );
+    }
   }
 }
 
-const blockForLoggedInUsers = (nextState, replace) => {
-  if (localStorage.LOGGED_IN)
-    <Redirect to="/home"/>
-};
-
-export {requireLogin, blockForLoggedInUsers}
+export { RequireLogin, BlockForLoggedInUsers }
