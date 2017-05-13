@@ -1,7 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router'
 import Logo from '../shared/logo/index';
-import {RequireLogin} from '../shared/auth/requireLogin'
+import {RequireLogin} from '../shared/auth/userRedirects'
 
 class Home extends React.Component {
   render(){

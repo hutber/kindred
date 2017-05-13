@@ -1,7 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom'
+import * as authAction from '../../actions/auth';
 import Logo from '../shared/logo';
+import store from '../../configureStore';
+import {BlockForLoggedInUsers} from '../shared/auth/userRedirects'
 import loggedOut from './_home.css';
 
 class SignIn extends React.Component {
@@ -25,11 +27,13 @@ class SignIn extends React.Component {
 
   logIn = ( e ) => {
     e.preventDefault ();
+    store.dispatch(authAction.submitLogin(this.state));
   };
 
   render(){
     return (
       <div className={loggedOut.home}>
+        <BlockForLoggedInUsers />
         <Logo />
         <h2>Please sign in to your account</h2>
         <form role="form" onSubmit={this.logIn}>
@@ -46,4 +50,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default withRouter(SignIn);
+export default SignIn;

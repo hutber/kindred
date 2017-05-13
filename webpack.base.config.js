@@ -16,7 +16,7 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
     
-    './src/index'
+    './src/index.js'
   ],
   output: {
     filename: 'main.js',
@@ -50,14 +50,15 @@ module.exports = {
         use: [
           'style-loader',
           {
-            loader: 'css-loader',
-            options: {
+            loader: 'css-loader?sourceMap',
+            query: {
               modules: true,
-              importLoaders: 1,
+              sourceMap: true,
+              importLoaders: 2,
               localIdentName: environment.get('cssIdent')
             }
           },
-          'postcss-loader?parser=postcss-scss'
+          'postcss-loader?sourceMap&parser=postcss-scss'
         ],
       },
       // Font Definitions

@@ -2,7 +2,6 @@
 import React from 'react';
 import {Redirect} from 'react-router'
 import Logo from '../../shared/logo/index';
-import * as authStates from '../../shared/auth/requireLogin';
 
 class RequireLogin extends React.Component {
   render(){
@@ -21,9 +20,11 @@ class BlockForLoggedInUsers extends React.Component {
   render(){
     if (!localStorage.LOGGED_IN) {
       return (
-        <div>
-          <h2>Redirect</h2>
-        </div>
+        <div></div>
+      )
+    }else{
+      return (
+        <Redirect push to="/home"/>
       );
     }
   }

@@ -1,12 +1,13 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
+import { AppContainer } from 'react-hot-loader';
 import { ConnectedRouter } from 'react-router-redux'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import nprogress from 'nprogress';
 import createBrowserHistory from 'history/createBrowserHistory'
 const history = createBrowserHistory(); //Use a history moudle
-import configureStore from './store/configureStore';
+import store from './configureStore';
 import Routes from './routes';
 import './components/shared/main.css';
 
@@ -20,13 +21,29 @@ nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });
 // Now you can dispatch navigation actions from anywhere!
 // store.dispatch(push('/foo'))
 
-const store = configureStore(history);
+// const store = configureStore(history);
 
-render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Routes/>
-    </ConnectedRouter>
-  </Provider>,
+ReactDOM.render(
+  <AppContainer>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Routes/>
+      </ConnectedRouter>
+    </Provider>
+  </AppContainer>,
   document.getElementById('app')
 );
+
+// const rootEl = document.getElementById('app');
+// const render = Component =>
+//   ReactDOM.render(
+    {/*<Provider store={store}>*/}
+      {/*<ConnectedRouter history={history}>*/}
+        {/*<Routes/>*/}
+      // </ConnectedRouter>
+    // </Provider>,
+    // rootEl
+  // );
+//
+// render(App);
+// if (module.hot) module.hot.accept('./App', () => render(App));

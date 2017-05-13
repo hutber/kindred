@@ -7,17 +7,7 @@
 
 //// Imports
 @import "vars.css";
-//@import "components/Content.css";
-//@import "components/form/_form.css";
-//@import "components/Mobiscroll.css";
-//@import "components/calender/_MobiscrollWeKindred.css";
-//
-//// Elements
-@import "elements/_button.css";
-//@import "components/elements/_Href.css";
-
-// Core
-//@import "core/Logo";
+@import "./form/index.css";
 
 //Body/Html
 html, body {
@@ -49,4 +39,16 @@ header {
   height: 80vh;
   margin: 0 auto;
   overflow: hidden;
+}
+
+#app-content {
+  position: relative;
+  margin: 2vh 2vw;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: LatoLight;
 }

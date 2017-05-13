@@ -25,6 +25,7 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new DashboardPlugin()
   ]
 });
