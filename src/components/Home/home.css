@@ -1,13 +1,14 @@
 .home {
-  margin: 4vh 6vw;
-  height: 72vh;
+  margin: 30px 20px;
+  height: calc(100vh - 220px);
+  overflow: hidden;
 
-  a {
-    color: #FFF;
+  h1 {
+    //margin: 6vh 0;
   }
 
-  h2 {
-    margin: 6vh 0;
+  p {
+
   }
 
   .extraDetails {

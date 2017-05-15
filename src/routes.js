@@ -12,7 +12,7 @@ export default class Routes extends Component {
       <div>
         <Route exact path="/" component={Splash}/>
         <Route path="/home" component={Home}  />
-        <Route path="/signin" component={SignIn} onEnter={this.blockForLoggedInUsers} />
+        <Route path="/signin" component={SignIn} />
       </div>
     )
   }

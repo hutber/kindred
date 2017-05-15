@@ -1,11 +1,11 @@
 // Immutable items
-@import "./styles/_phonegapReset.css";
+@import "_phonegapReset.css";
 //@import "fixed/Mixins";
 
 //Fonts
 @import './font/latofonts.css';
 
-//// Imports
+// Imports
 @import "vars.css";
 @import "./form/index.css";
 
@@ -17,8 +17,8 @@ html, body {
   background: linear-gradient(to bottom, $bgTop 0%, $bgBottom 100%);
   color: #FFF;
   text-align: center;
-  font-family: LatoBold;
-  font-size:18px;
+  font-family: $textThin;
+  font-size: 18px;
   padding: 0;
   margin: 0;
 }
@@ -50,5 +50,10 @@ header {
 a {
   text-decoration: none;
   font-size: 18px;
-  font-family: LatoLight;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: normal;
+  font-family: $textLight;
 }

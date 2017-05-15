@@ -5,3 +5,11 @@ $bgTop:                       #073ED9;
 $headerBgColour:              #0CACFE;
 $bgBottom:                    #02E9FB;
 $dataBg:                      #EFEFF4;
+
+//Fonts
+$textBold: LatoBold;
+$textMedium: LatoMedium;
+$text: Lato;
+$textLight: LatoLight;
+$textThin: LatoThin;
+$textHair: LatoHairline;

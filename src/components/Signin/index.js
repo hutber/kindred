@@ -1,10 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-import * as authAction from '../../actions/auth';
-import Logo from '../shared/logo';
 import store from '../../configureStore';
 import {BlockForLoggedInUsers} from '../shared/auth/userRedirects'
-import loggedOut from './_home.css';
+import * as authAction from '../../actions/auth';
+
+import Menu from '../shared/menu';
+import Logo from '../shared/logo';
+
+
+import loggedOut from '../Home/home.css';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -45,6 +49,7 @@ class SignIn extends React.Component {
           <NavLink to="/signup">Don't have an account yet?</NavLink>
           <NavLink to="/skip" className={loggedOut.extraDetailsRight}>Skip</NavLink>
         </div>
+        <Menu />
       </div>
     );
   }

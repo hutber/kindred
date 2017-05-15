@@ -1,0 +1,19 @@
+@import "../vars.css";
+.menu {
+  background: #FFF;
+  height: 80px;
+  color: $bgTop;
+  position: fixed;
+  bottom: 0;
+  i {
+    //margin-bottom: 5px;
+    display: block;
+  }
+}
+.link {
+  font-family: Lato;
+  margin-top: 2vh;
+  float: left;
+  width: 25vw;
+  color: #1D4BCF;
+}

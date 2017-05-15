@@ -1,0 +1,76 @@
+@import "../../shared/vars.css";
+.header, .headerDark {
+  width: 100vw;
+  height: 80px;
+  background: #FFF;
+  color: $bgTop;
+  font-family: $text;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.headerDark {
+  background: $headerBgColour;
+  color: #FFF;
+  a, i, .leftHeader,.rightHeader {
+    color: #FFF;
+  }
+}
+
+.leftHeader {
+  
+}
+
+.middleHeader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.leftHeader,.rightHeader {
+  position: absolute;
+  left: 3vw;
+  top: 50%;
+  transform: translate(0%,-50%);
+}
+
+.rightHeader {
+  left: auto;
+  right: 3vw;
+}
+
+//Icon Styles
+.plusIcon {
+  font-size: 1.7rem;
+  border: 2px solid $bgTop;
+  border-radius: 40px;
+  padding: 0;
+  color: $bgTop;
+  &:before {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.leftArrow {
+  font-size: 1.7rem;
+  padding: 0;
+  color: $bgTop;
+  &:before {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.cancel {
+  font-family: Lato;
+  color: $bgTop;
+  font-size: .9rem;
+}
+
+.save {
+  font-family: Lato;
+  color: $bgTop;
+  font-size: 1.1rem;
+}

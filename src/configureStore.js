@@ -3,7 +3,7 @@ import { createLogger } from 'redux-logger'
 import { routerMiddleware } from 'react-router-redux'
 import createBrowserHistory from 'history/createBrowserHistory'
 const history = createBrowserHistory(); //Use a history moudle
-import reducers from './reducers/index';
+import reducers from './reducers';
 
 const configureStore = function (history, preloadedState = {}) {
   // Build the middleware for intercepting and dispatching navigation actions
@@ -20,7 +20,7 @@ const configureStore = function (history, preloadedState = {}) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
-      const nextReducer = require('./reducers/index').default;
+      const nextReducer = require('./reducers').default;
       
       store.replaceReducer(nextReducer);
     });
