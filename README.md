@@ -21,3 +21,6 @@ Init commitizen configuration
 When making changes, add files then
 
 `git cz`
+
+## Phonegap Plugins Used
+phonegap plugin add cordova-plugin-crosswalk-webview

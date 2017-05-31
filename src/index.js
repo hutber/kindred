@@ -5,11 +5,13 @@ import { AppContainer } from 'react-hot-loader';
 import { ConnectedRouter } from 'react-router-redux'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import nprogress from 'nprogress';
-import createBrowserHistory from 'history/createBrowserHistory'
-const history = createBrowserHistory(); //Use a history moudle
 import store from './configureStore';
 import Routes from './routes';
 import './components/shared/main.css';
+import createHashHistory from 'history/createHashHistory'
+const history = createHashHistory({
+  hashType: 'slash'
+}); //Use a history moudle
 
 //Remove on screen tap delay
 injectTapEventPlugin();
@@ -22,6 +24,7 @@ nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });
 // store.dispatch(push('/foo'))
 
 // const store = configureStore(history);
+
 
 ReactDOM.render(
   <AppContainer>

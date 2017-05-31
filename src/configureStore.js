@@ -1,8 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createLogger } from 'redux-logger'
 import { routerMiddleware } from 'react-router-redux'
-import createBrowserHistory from 'history/createBrowserHistory'
-const history = createBrowserHistory(); //Use a history moudle
 import reducers from './reducers';
 
 const configureStore = function (history, preloadedState = {}) {
