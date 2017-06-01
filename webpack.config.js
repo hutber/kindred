@@ -36,7 +36,7 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/'
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -47,5 +47,6 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new DashboardPlugin()
-  ]
+  ],
+  cache: true
 });

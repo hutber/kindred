@@ -11,7 +11,7 @@ import './components/shared/main.css';
 import createHashHistory from 'history/createHashHistory'
 const history = createHashHistory({
   hashType: 'slash'
-}); //Use a history moudle
+});
 
 //Remove on screen tap delay
 injectTapEventPlugin();
@@ -19,12 +19,8 @@ injectTapEventPlugin();
 //Add progress bar
 nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });
 
-
 // Now you can dispatch navigation actions from anywhere!
 // store.dispatch(push('/foo'))
-
-// const store = configureStore(history);
-
 
 ReactDOM.render(
   <AppContainer>
@@ -36,17 +32,3 @@ ReactDOM.render(
   </AppContainer>,
   document.getElementById('app')
 );
-
-// const rootEl = document.getElementById('app');
-// const render = Component =>
-//   ReactDOM.render(
-    {/*<Provider store={store}>*/}
-      {/*<ConnectedRouter history={history}>*/}
-        {/*<Routes/>*/}
-      // </ConnectedRouter>
-    // </Provider>,
-    // rootEl
-  // );
-//
-// render(App);
-// if (module.hot) module.hot.accept('./App', () => render(App));

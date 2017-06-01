@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import store from '../../configureStore';
 import {BlockForLoggedInUsers} from '../shared/auth/userRedirects'
@@ -8,7 +9,8 @@ import Menu from '../shared/menu';
 import Logo from '../shared/logo';
 
 
-import loggedOut from '../Home/home.css';
+import userStyles from '../shared/userPages/userPages.css';
+import styles from '../Home/home.css';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -32,27 +34,32 @@ class SignIn extends React.Component {
   logIn = ( e ) => {
     e.preventDefault ();
     store.dispatch(authAction.submitLogin(this.state));
+    console.info(store.getState());
   };
 
   render(){
     return (
-      <div className={loggedOut.home}>
+      <div className={userStyles.home}>
         <BlockForLoggedInUsers />
-        <Logo />
-        <h2>Please sign in to your account</h2>
         <form role="form" onSubmit={this.logIn}>
+          <Logo />
+          <h1>Welcome to <br /> Kindred</h1>
+          <p>Please sign in to your account</p>
           <input type="text" name="email" defaultValue={this.state.email} onChange={this.changed} placeholder="Enter email address"/>
           <input type="password" name="pw" defaultValue={this.state.pw} onChange={this.changed} placeholder="Password"/>
           <button>Sign In</button>
         </form>
-        <div className={loggedOut.extraDetails}>
+        <div className={userStyles.extraDetails}>
           <NavLink to="/signup">Don't have an account yet?</NavLink>
-          <NavLink to="/skip" className={loggedOut.extraDetailsRight}>Skip</NavLink>
+          <NavLink to="/skip" className={userStyles.extraDetailsRight}>Skip</NavLink>
         </div>
-        <Menu />
       </div>
     );
   }
 }
 
-export default SignIn;
+function mapStateToProps(state) {
+  return { user: state.user };
+}
+
+export default connect(mapStateToProps)(SignIn);

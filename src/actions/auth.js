@@ -39,7 +39,7 @@ export function CheckLogin () {
 
 export function submitLogin (creds) {
 	if(creds.email !== "" && creds.pw !== ""){
-		localStorage.setItem('LOGGED_IN', true);
+		// localStorage.setItem('LOGGED_IN', true);
 		return receiveLogin();
 	}else{
 		return loginError();

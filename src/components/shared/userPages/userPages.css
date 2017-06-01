@@ -1,0 +1,27 @@
+@import "../vars.css";
+.home {
+  padding: 30px 35px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  p {
+    font-family: $textLight;
+  }
+}
+
+.extraDetails {
+  position: absolute;
+  bottom: 35px;
+  width: calc(100% - 70px);
+  a {
+      color: #fff;
+      font-family: $text;
+      text-decoration: underline;
+      float: left;
+    }
+}
+
+a.extraDetailsRight {
+  float: right;
+}
