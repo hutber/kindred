@@ -1,7 +1,7 @@
 @import "../vars.css";
 .menu {
   background: #FFF;
-  height: 80px;
+  height: 70px;
   color: $bgTop;
   position: fixed;
   bottom: 0;

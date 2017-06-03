@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router'
 import Logo from '../shared/logo/index';
 import {RequireLogin} from '../shared/auth/userRedirects'
-import mobiscroll from '../shared/mobiscroll/mobiscroll.custom-3.1.0.min';
+import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 import store from '../../configureStore';
 
 //Header

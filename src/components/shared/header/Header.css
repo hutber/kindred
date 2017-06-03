@@ -1,7 +1,7 @@
 @import "../../shared/vars.css";
 .header, .headerDark {
   width: 100vw;
-  height: 80px;
+  height: 70px;
   background: #FFF;
   color: $bgTop;
   font-family: $text;

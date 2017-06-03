@@ -5,6 +5,7 @@ export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGGED_IN = 'LOGGED_IN'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 export const UN_AUTHED = 'UN_AUTHED'
+export const LOGOUT = 'LOGOUT'
 
 export function requestLogin() {
 	return {
@@ -37,9 +38,16 @@ export function CheckLogin () {
 	}
 }
 
+export function doLogout () {
+  localStorage.setItem('LOGGED_IN', 0);
+	return {
+		type: LOGOUT
+	}
+}
+
 export function submitLogin (creds) {
 	if(creds.email !== "" && creds.pw !== ""){
-		// localStorage.setItem('LOGGED_IN', true);
+		localStorage.setItem('LOGGED_IN', 1);
 		return receiveLogin();
 	}else{
 		return loginError();

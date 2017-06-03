@@ -1,11 +1,12 @@
 //- Created by hutber on 15/07/16.  */
 import React from 'react';
 import {Redirect} from 'react-router'
-import Logo from '../../shared/logo/index';
+import store from '../../../configureStore';
 
 class RequireLogin extends React.Component {
   render(){
-    if (localStorage.LOGGED_IN) {
+    const loggedIn = store.getState().user.loggedIn || JSON.parse(localStorage.LOGGED_IN);
+    if (loggedIn) {
       return (
         <div></div>
       )
@@ -18,13 +19,14 @@ class RequireLogin extends React.Component {
 }
 class BlockForLoggedInUsers extends React.Component {
   render(){
-    if (!localStorage.LOGGED_IN) {
+    const loggedIn = store.getState().user.loggedIn || JSON.parse(localStorage.LOGGED_IN);
+    if (loggedIn) {
       return (
-        <div></div>
+        <Redirect push to="/home"/>
       )
     }else{
       return (
-        <Redirect push to="/home"/>
+        <div></div>
       );
     }
   }

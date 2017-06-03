@@ -26,7 +26,6 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
     contentBase: [
       'demo/'
     ],
-    hot: true,
     historyApiFallback: true,
     host: '0.0.0.0',
     publicPath: '/dist/'
