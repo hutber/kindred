@@ -2,9 +2,9 @@
 // process and we need actions for each of them
 export const SET_DATE = 'SET_DATE';
 
-export function changeCurrentSexDate(date) {
+export function changeCurrentSexInfo(date) {
 	return {
 		type: SET_DATE,
-		date: date
+		date
 	}
 }

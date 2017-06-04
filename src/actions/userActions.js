@@ -3,7 +3,7 @@
 export const LOGIN_CHECK = 'LOGIN_CHECK'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGGED_IN = 'LOGGED_IN'
-export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+export const LOGGED_IN_FAILED = 'LOGGED_IN_FAILED'
 export const UN_AUTHED = 'UN_AUTHED'
 export const LOGOUT = 'LOGOUT'
 
@@ -25,7 +25,7 @@ function receiveLogin(user) {
 
 function loginError(message) {
 	return {
-		type: LOGIN_FAILURE,
+		type: LOGGED_IN_FAILED,
 		isFetching: false,
 		isAuthenticated: false,
 		message

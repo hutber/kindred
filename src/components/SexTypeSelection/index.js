@@ -1,33 +1,60 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
-import { RequireLogin } from '../shared/auth/userRedirects'
-import * as currentSexData from '../../actions/currentSexData'
 import {connect} from 'react-redux';
+import { NavLink } from 'react-router-dom'
+import { RequireLogin } from '../shared/auth/userRedirects'
+import * as currentSexData from '../../actions/currentSexInfo'
+import Moment from 'moment';
 
 //Header
 import Header from '../shared/header/Header';
-import HeaderRight from './right';
+import RightCancel from '../shared/header/RightCancel';
 import HeaderLeft from './left';
 import Menu from '../shared/menu';
 
 //Styles
-import HomeStyle from './style.css';
+import style from './style.css';
+import * as font from '../../components/shared/font/fontello.css';
 
 class Home extends React.Component {
   constructor (props){
     super(props);
+    console.info(this.props);
   }
 
   render(){
     return (
       <div>
         <RequireLogin />
-        <Header left={<HeaderLeft />} right={<HeaderRight />} />
-        <div className={HomeStyle.home}>
-          <div className="pageInfo">
-            <h1>My calender</h1>
-            <p>Select a date to view <br/> input your information</p>
+        <Header left={<HeaderLeft />} right={<RightCancel link="home" />} />
+        <div>
+          <div className={style.dateContainer}>
+            <div className={style.date}>
+              {Moment(this.props.currentSexInfo.date).format('MMMM Do YYYY')}
+              <i className={font['icon-down-open-big']}></i>
+            </div>
           </div>
+          <NavLink to="/desire" className={style.selectionItem}>
+            <div>
+              <i className={font['icon-fire']}></i>
+              <span>Desire</span>
+              <i className={font['icon-right-open-big'] + ' ' + style['icon-right-open-big']}></i>
+            </div>
+          </NavLink>
+          <NavLink to="/masturbation" className={style.selectionItem + ' ' + style.masturbation}>
+            <div>
+              <i className={font['icon-hand-paper-o']}></i>
+              <span>Masturbation</span>
+              <i className={font['icon-right-open-big'] + ' ' + style['icon-right-open-big']}></i>
+            </div>
+          </NavLink>
+          <NavLink to="/sex" className={style.selectionItem + ' ' + style.sex}>
+            <div>
+              <i className={font['icon-heart-empty']}></i>
+              <span>Sex</span>
+              <i className={font['icon-right-open-big'] + ' ' + style['icon-right-open-big']}></i>
+            </div>
+          </NavLink>
         </div>
         <Menu />
       </div>
@@ -35,8 +62,12 @@ class Home extends React.Component {
   }
 }
 
-function matchDispatchToProps(dispatch){
-  return {DispatchChangeCurrentSexDate : bindActionCreators(currentSexData.changeCurrentSexDate, dispatch)}
+function mapStateToProps(state){
+  return { currentSexInfo: state.currentSexInfo };
 }
 
-export default connect(null,matchDispatchToProps)(Home);
+function matchDispatchToProps(dispatch){
+  return {DispatchChangeCurrentSexInfo : bindActionCreators(currentSexData.changeCurrentSexInfo, dispatch)}
+}
+
+export default connect(mapStateToProps,matchDispatchToProps)(Home);

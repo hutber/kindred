@@ -5,7 +5,7 @@ const initialState = {
 	sexData: ''
 };
 
-function currentSex (state = initialState, action) {
+function currentSexInfo (state = initialState, action) {
 	switch (action.type) {
 		case 'SET_DATE':
 			return {
@@ -16,4 +16,4 @@ function currentSex (state = initialState, action) {
 	return state
 }
  
-export default currentSex;
+export default currentSexInfo;

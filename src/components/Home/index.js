@@ -2,12 +2,12 @@ import React from 'react';
 import { bindActionCreators } from 'redux'
 import { RequireLogin } from '../shared/auth/userRedirects'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
-import * as currentSexData from '../../actions/currentSexData'
+import * as currentSexInfo from '../../actions/currentSexInfo'
 import {connect} from 'react-redux';
 
 //Header
 import Header from '../shared/header/Header';
-import HeaderRight from './right';
+import RightPlus from '../shared/header/RightPlus';
 import Menu from '../shared/menu';
 
 //Styles
@@ -38,7 +38,7 @@ class Home extends React.Component {
 
   selectData = (event, inst) => {
     if(event.control) {
-      this.props.DispatchChangeCurrentSexDate(event.date);
+      this.props.DispatchChangeCurrentSexInfo(event.date);
       window.location.hash = 'sextypeselection';
     }
   };
@@ -57,7 +57,7 @@ class Home extends React.Component {
     return (
       <div>
         <RequireLogin />
-        <Header right={<HeaderRight />} />
+        <Header right={<RightPlus link="sextypeselection" />} />
         <div className={HomeStyle.home}>
           <div className="pageInfo">
             <h1>My calender</h1>
@@ -74,7 +74,7 @@ class Home extends React.Component {
 }
 
 function matchDispatchToProps(dispatch){
-  return {DispatchChangeCurrentSexDate : bindActionCreators(currentSexData.changeCurrentSexDate, dispatch)}
+  return {DispatchChangeCurrentSexInfo : bindActionCreators(currentSexInfo.changeCurrentSexInfo, dispatch)}
 }
 
 export default connect(null,matchDispatchToProps)(Home);

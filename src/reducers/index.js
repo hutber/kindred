@@ -8,17 +8,17 @@ import { reducer as formReducer } from 'redux-form'
 
 //### Not Logged in
   //### Login
-  import user from './user';
+  import user from './userActions';
 
 //Logged In
-import currentSex from './currentSex';
+import currentSexInfo from './currentSexInfo';
 
 
 const reducers = combineReducers({
   router: routerReducer,
   form: formReducer,
   user,
-  currentSex,
+  currentSexInfo,
 });
 
 export default reducers;
