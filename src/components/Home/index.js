@@ -1,9 +1,9 @@
 import React from 'react';
-import {Redirect} from 'react-router'
-import Logo from '../shared/logo/index';
-import {RequireLogin} from '../shared/auth/userRedirects'
+import { bindActionCreators } from 'redux'
+import { RequireLogin } from '../shared/auth/userRedirects'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
-import store from '../../configureStore';
+import * as currentSexData from '../../actions/currentSexData'
+import {connect} from 'react-redux';
 
 //Header
 import Header from '../shared/header/Header';
@@ -20,8 +20,6 @@ class Home extends React.Component {
     this.state = {
       settings : {
         display: 'inline',
-        // layout: 'liquid',
-        // weekDays: 'min',
         yearChange: false,
         marked: [
           new Date(2012,5,4),
@@ -30,10 +28,9 @@ class Home extends React.Component {
           '5/1',
           '08/24',
           '12/25'
-        ],
-        // height: 35,
-        max: new Date(),
-        showOuterDays: false
+        ]
+        , max: new Date()
+        // , showOuterDays: false
       }
     };
     this.selectData = this.selectData.bind(this);
@@ -41,19 +38,15 @@ class Home extends React.Component {
 
   selectData = (event, inst) => {
     if(event.control) {
-      // store.dispatch (currentSex.changeCurrentSexDate (event.date));
-      // this.props.router.push('/selection');
+      this.props.DispatchChangeCurrentSexDate(event.date);
+      window.location.hash = 'sextypeselection';
     }
   };
 
   onPosition = (ev) => {
-    // const pageInfo = document.querySelector('.pageInfo');
-    // const pageInfoHeight = pageInfo.offsetHeight;
-    // const contentHeight = pageInfo.parentElement.offsetHeight;
-
     let $ = mobiscroll.$,
       monthCont = $('.mbsc-cal-anim-c', ev.target),
-      calHeight = document.body.offsetHeight - 350;
+      calHeight = document.body.offsetHeight - 375;
     monthCont.height('');
     monthCont.height(calHeight);
   };
@@ -80,4 +73,8 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+function matchDispatchToProps(dispatch){
+  return {DispatchChangeCurrentSexDate : bindActionCreators(currentSexData.changeCurrentSexDate, dispatch)}
+}
+
+export default connect(null,matchDispatchToProps)(Home);

@@ -11,8 +11,8 @@ class Right extends React.Component {
 	render (){
 		return (
 			<div>
-				<Link to="/selection">
-					<i className={header.plusIcon + ' ' + font['icon-plus']}></i>
+				<Link to="/sextypeselection" className={header.plusIcon}>
+					<i className={font['icon-plus']}></i>
 				</Link>
 			</div>
 		)

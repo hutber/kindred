@@ -14,7 +14,11 @@ const history = createHashHistory({
 });
 
 //Remove on screen tap delay
-injectTapEventPlugin();
+injectTapEventPlugin({
+  shouldRejectClick: function (lastTouchEventTimestamp, clickEventTimestamp) {
+    return true;
+  }
+});
 
 //Add progress bar
 nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });

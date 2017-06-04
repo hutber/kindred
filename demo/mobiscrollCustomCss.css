@@ -13,6 +13,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 
 .mbsc-mobiscroll .mbsc-fr-w, .mbsc-mobiscroll .mbsc-fr-btn, .mbsc-mobiscroll .mbsc-sc-itm, .mbsc-mobiscroll .mbsc-range-btn, .mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-i, .mbsc-mobiscroll .mbsc-cal-btn-txt, .mbsc-mobiscroll .mbsc-cal th {
   color: #FFF;
+  border-radius: 20px;
 }
 
 .mbsc-mobiscroll  .mbsc-cal-day {
@@ -67,4 +68,13 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 
 .mbsc-cal-day-inv.mbsc-cal-day .mbsc-cal-day-fg {
   opacity: .8
+}
+
+.mbsc-cal-sc-m-cell {
+  background-color: #2253eb;
+  color: #FFF;
+}
+.mbsc-cal .mbsc-cal-sc-row .mbsc-fr-btn-d {
+  background-color: #00b3ec;
+  opacity: 1;
 }

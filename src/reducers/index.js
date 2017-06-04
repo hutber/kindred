@@ -11,14 +11,14 @@ import { reducer as formReducer } from 'redux-form'
   import user from './user';
 
 //Logged In
-import selection from './selection';
+import currentSex from './currentSex';
 
 
 const reducers = combineReducers({
   router: routerReducer,
   form: formReducer,
   user,
-  selection,
+  currentSex,
 });
 
 export default reducers;

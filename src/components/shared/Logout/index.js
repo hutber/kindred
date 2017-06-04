@@ -13,7 +13,7 @@ class Logout extends React.Component {
   }
 
   componentWillMount(){
-    this.props.actions.doLogout();
+    this.props.doLogout();
   }
 
   render(){
@@ -23,17 +23,16 @@ class Logout extends React.Component {
         <BlockForLoggedInUsers />
         <h1>You have been logged out</h1>
         <p>Please track with us again</p>
-        <p>x</p>
         <NavLink to="/signin">Sign In</NavLink>
+        <p>x</p>
       </div>
     );
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(authCreators, dispatch) }
+  return { doLogout: bindActionCreators(authCreators.doLogout, dispatch) }
 }
-
 
 export default connect(null, mapDispatchToProps)(Logout);
 

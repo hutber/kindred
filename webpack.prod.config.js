@@ -11,7 +11,7 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
   entry: [
     './src/index.js'
   ],
-  devtool: 'source-map',
+  devtool: 'eval',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

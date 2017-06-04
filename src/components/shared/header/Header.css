@@ -42,14 +42,21 @@
 
 //Icon Styles
 .plusIcon {
-  font-size: 1.7rem;
-  border: 2px solid $bgTop;
-  border-radius: 40px;
-  padding: 0;
-  color: $bgTop;
-  &:before {
+  height: 40px;
+  width: 40px;
+  display: block;
+  i {
+    height: 40px;
+    width: 40px;
+    font-size: 1.7rem;
+    border: 2px solid $bgTop;
+    border-radius: 40px;
     padding: 0;
-    margin: 0;
+    color: $bgTop;
+    &:before {
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 
