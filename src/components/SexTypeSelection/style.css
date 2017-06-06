@@ -1,9 +1,11 @@
 .dateContainer {
-  width: 80vw;
+  width: 100vw;
   margin: 0 auto;
   padding: 2vh 0;
   height: 11vh;
   position: relative;
+  background: #0434C0;
+  color: #8996D9;
 }
 .date {
   width: 80vw;
@@ -20,7 +22,7 @@
     position: absolute;
     right: 5vw;
     color: #FFF;
-    top: 50%;
+    top: 57%;
     transform: translate(0, -50%);
   }
 }

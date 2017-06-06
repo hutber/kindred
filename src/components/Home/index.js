@@ -16,18 +16,13 @@ import HomeStyle from './home.css';
 class Home extends React.Component {
   constructor (props){
     super(props);
-
+    const now = new Date();
     this.state = {
       settings : {
         display: 'inline',
         yearChange: false,
         marked: [
-          new Date(2012,5,4),
-          new Date(2012,5,13),
-          'w0',
-          '5/1',
-          '08/24',
-          '12/25'
+          new Date(2017, 5, 4)
         ]
         , max: new Date()
         // , showOuterDays: false
@@ -52,8 +47,6 @@ class Home extends React.Component {
   };
 
   render(){
-    var now = new Date(),
-      max = new Date(now.getFullYear() + 100, now.getMonth(), now.getDate());
     return (
       <div>
         <RequireLogin />

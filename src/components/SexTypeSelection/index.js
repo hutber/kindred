@@ -1,6 +1,6 @@
 import React from 'react';
-import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux'
 import { NavLink } from 'react-router-dom'
 import { RequireLogin } from '../shared/auth/userRedirects'
 import * as currentSexData from '../../actions/currentSexInfo'
@@ -19,7 +19,6 @@ import * as font from '../../components/shared/font/fontello.css';
 class Home extends React.Component {
   constructor (props){
     super(props);
-    console.info(this.props);
   }
 
   render(){

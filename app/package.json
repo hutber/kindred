@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/phonegap/phonegap-app-hello-world/issues"
   },
-  "homepage": "https://github.com/phonegap/phonegap-app-hello-world"
+  "homepage": "https://github.com/phonegap/phonegap-app-hello-world",
+  "devDependencies": {
+    "jQuery": "^1.7.4",
+    "jquery-knob": "^1.2.11"
+  }
 }

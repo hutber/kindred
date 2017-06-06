@@ -1,0 +1,12 @@
+.Knob {
+  div {
+    margin: 0 auto;
+  }
+}
+
+.konbHeader {
+  display: block;
+  color: #FFF;
+  font-family: LatoSemibold;
+  margin: 10px 0 15px;
+}

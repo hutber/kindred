@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 //Header
 import Header from '../shared/header/Header';
-import HeaderRight from './right';
+import HeaderRightDone from '../shared/header/RightDone';
 import Menu from '../shared/menu';
 
 class Home extends React.Component {
@@ -15,7 +15,7 @@ class Home extends React.Component {
   render(){
     return (
       <div>
-        <Header right={<HeaderRight />} />
+        <Header right={<HeaderRightDone link="as" />} />
         <RequireLogin />
         <NavLink to="/logout">Logout</NavLink>
         <Menu />

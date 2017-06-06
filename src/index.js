@@ -20,6 +20,11 @@ injectTapEventPlugin({
   }
 });
 
+window.onerror = function(msg, url, linenumber) {
+  alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+  return true;
+}
+
 //Add progress bar
 nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });
 

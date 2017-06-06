@@ -35,9 +35,8 @@ header {
 }
 
 .contentArea {
-  width: 80vw;
-  height: 80vh;
-  margin: 0 auto;
+  margin: 30px 20px;
+  height: calc(100vh - 220px);
   overflow: hidden;
 }
 
@@ -45,6 +44,17 @@ header {
   position: relative;
   margin: 2vh 2vw;
   display: block;
+}
+
+.verticalAlignParent {
+  position: relative;
+}
+
+.verticalAlign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 a {
@@ -56,4 +66,8 @@ h1, h2 {
   margin: 0;
   font-weight: normal;
   font-family: $textLight;
+}
+
+p {
+  margin: 10px 0;
 }

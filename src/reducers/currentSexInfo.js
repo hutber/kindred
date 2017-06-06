@@ -1,8 +1,7 @@
 import { List, Map } from 'immutable';
 
 const initialState = {
-	date: new Date(),
-	sexData: ''
+	date: new Date()
 };
 
 function currentSexInfo (state = initialState, action) {

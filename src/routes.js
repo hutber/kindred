@@ -15,6 +15,7 @@ import Logout from './components/shared/Logout';
 
 //Sex Selection Pages
 import SexTypeSelection from './components/SexTypeSelection';
+import Desire from './components/Desire';
 
 export default class Routes extends Component {
   render() {
@@ -29,6 +30,7 @@ export default class Routes extends Component {
         <Route path="/settings" component={Settings} />
 
         <Route path="/sextypeselection" component={SexTypeSelection} />
+        <Route path="/desire" component={Desire} />
       </div>
     )
   }
