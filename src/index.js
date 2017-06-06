@@ -20,24 +20,19 @@ injectTapEventPlugin({
   }
 });
 
-window.onerror = function(msg, url, linenumber) {
-  alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-  return true;
-}
-
 //Add progress bar
 nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });
 
 // Now you can dispatch navigation actions from anywhere!
 // store.dispatch(push('/foo'))
 
-ReactDOM.render(
-  <AppContainer>
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <Routes/>
-      </ConnectedRouter>
-    </Provider>
-  </AppContainer>,
-  document.getElementById('app')
-);
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Routes/>
+        </ConnectedRouter>
+      </Provider>
+    </AppContainer>,
+    document.getElementById('app')
+  );
