@@ -9,9 +9,7 @@ import store from './configureStore';
 import Routes from './routes';
 import './components/shared/main.css';
 import createHashHistory from 'history/createHashHistory'
-const history = createHashHistory({
-  hashType: 'slash'
-});
+const history = createHashHistory();
 
 //Remove on screen tap delay
 injectTapEventPlugin({

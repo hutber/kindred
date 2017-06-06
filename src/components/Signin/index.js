@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { NavLink } from 'react-router-dom'
-import {BlockForLoggedInUsers} from '../shared/auth/userRedirects'
+import BlockForLoggedInUsers from '../shared/auth/BlockForLoggedInUsers'
 import Logo from '../shared/logo';
 import userStyles from '../shared/userPages/userPages.css';
 import ShowResults from './showResults';

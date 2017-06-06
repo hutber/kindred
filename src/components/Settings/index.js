@@ -1,5 +1,5 @@
 import React from 'react';
-import {RequireLogin} from '../shared/auth/userRedirects'
+import RequireLogin from '../shared/auth/RequireLogin'
 import { NavLink } from 'react-router-dom'
 
 //Header

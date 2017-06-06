@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { NavLink } from 'react-router-dom'
-import { RequireLogin } from '../shared/auth/userRedirects'
+import RequireLogin from '../shared/auth/RequireLogin'
 import * as currentSexData from '../../actions/currentSexInfo'
 import Moment from 'moment';
 

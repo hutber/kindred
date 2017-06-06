@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Logo from '../../shared/logo';
 import { NavLink } from 'react-router-dom'
 import userStyles from '../../shared/userPages/userPages.css';
-import {BlockForLoggedInUsers} from '../../shared/auth/userRedirects'
+import BlockForLoggedInUsers from '../../shared/auth/BlockForLoggedInUsers'
 import * as authCreators from '../../../actions/userActions'
 
 class Logout extends React.Component {

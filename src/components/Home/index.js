@@ -1,6 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
-import { RequireLogin } from '../shared/auth/userRedirects'
+import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 import * as currentSexInfo from '../../actions/currentSexInfo'
 import {connect} from 'react-redux';
@@ -16,6 +16,7 @@ import HomeStyle from './home.css';
 class Home extends React.Component {
   constructor (props){
     super(props);
+    console.info(props);
     const now = new Date();
     this.state = {
       settings : {
