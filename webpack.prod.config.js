@@ -21,7 +21,7 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
   ],
   output: {
     filename: 'main.js',
-    path: path.join(__dirname, 'app/www/js'),
+    path: path.join(__dirname, 'app/www'),
     publicPath: '/app/www'
   },
 });

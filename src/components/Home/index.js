@@ -1,9 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 import * as currentSexInfo from '../../actions/currentSexInfo'
-import {connect} from 'react-redux';
 
 //Header
 import Header from '../shared/header/Header';
@@ -26,7 +26,7 @@ class Home extends React.Component {
           new Date(2017, 5, 4)
         ]
         , max: new Date()
-        // , showOuterDays: false
+        , showOuterDays: false
       }
     };
     this.selectData = this.selectData.bind(this);

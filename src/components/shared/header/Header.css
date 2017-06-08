@@ -1,7 +1,7 @@
 @import "../../shared/vars.css";
 .header, .headerDark {
   width: 100vw;
-  height: 70px;
+  height: $headerHeight;
   background: #FFF;
   color: $bgTop;
   font-family: $text;
@@ -70,7 +70,7 @@
   }
 }
 
-.cancel {
+. {
   font-family: Lato;
   color: $bgTop;
   font-size: .9rem;

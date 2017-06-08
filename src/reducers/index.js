@@ -5,6 +5,7 @@ import { reducer as formReducer } from 'redux-form'
 
 
 /* Reducers */
+import data from './dataReducer';
 
 //### Not Logged in
   //### Login
@@ -16,11 +17,12 @@ import desire from './desire';
 
 
 const reducers = combineReducers({
-  router: routerReducer,
-  form: formReducer,
-  user,
-  currentSexInfo,
-  desire
+  router: routerReducer
+  , form: formReducer
+  , user
+  , currentSexInfo
+  , desire
+  , data
 });
 
 export default reducers;

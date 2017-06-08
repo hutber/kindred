@@ -47,7 +47,11 @@ header {
 }
 
 .verticalAlignParent {
-  position: relative;
+  position: fixed;
+  height: calc(100vh - $menuHeight - $menuHeight);
+  width: 100vw;
+  top: $menuHeight;
+  left: 0;
 }
 
 .verticalAlign {

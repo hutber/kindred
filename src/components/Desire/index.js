@@ -1,6 +1,8 @@
 //Core
 import React from 'react';
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux'
+import * as dataAction from '../../actions/dataAction';
 
 //Selection Items
 import Moment from 'moment';
@@ -13,10 +15,17 @@ import LeftBack from '../shared/header/LeftBack';
 import RightSave from '../shared/header/RightSave';
 
 import mainStyles from '../shared/main.css';
+import styles from './style.css';
 
 class Desire extends React.Component {
   constructor (props){
     super(props);
+
+    this.saveButton = this.saveButton.bind(this);
+  }
+
+  saveButton (){
+    this.props.pushToDesire(this.props.desire)
   }
 
   render (){
@@ -38,11 +47,11 @@ class Desire extends React.Component {
     };
     return (
       <div>
-        <Header left={<LeftBack link="sextypeselection"/>} right={<RightSave link="a" />} />
-        <div className={mainStyles.contentArea + ' '+ mainStyles.verticalAlignParent}>
-          <div className={mainStyles.verticalAlign}>
+        <Header left={<LeftBack link="sextypeselection"/>} right={<RightSave save={this.saveButton} />} />
+        <div className={mainStyles.verticalAlignParent}>
+          <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
-            <p>{Moment(this.props.currentSexInfo.date).format('MMMM Do YYYY')}</p>
+            <p>{Moment(this.props.desire.date).format('MMMM Do YYYY')}</p>
             <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
             <Knob config={config} />
           </div>
@@ -54,7 +63,16 @@ class Desire extends React.Component {
 }
 
 function mapStateToProps(state){
-  return { currentSexInfo: state.currentSexInfo };
+  return {
+    currentSexInfo: state.currentSexInfo,
+    desire: state.desire
+  };
 }
 
-export default connect(mapStateToProps)(Desire);
+function matchDispatchToProps(dispatch){
+  return {
+    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Desire);
