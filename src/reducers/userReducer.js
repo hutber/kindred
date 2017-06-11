@@ -11,7 +11,7 @@ import {
 const initialState = {
 	email: 'jamie@hutber.com',
 	pw: 'test',
-	loggedIn: JSON.parse(localStorage.LOGGED_IN) || 0,
+	loggedIn: localStorage.length ? JSON.parse(localStorage.LOGGED_IN) : 0,
 	shouldRedirect: 0,
 	errorMessage: null
 };
