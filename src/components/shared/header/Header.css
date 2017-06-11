@@ -35,7 +35,7 @@
   cursor: pointer;
   height: $headerHeight;
   width: 80px;
-  & > div {
+  & > * {
     position: absolute;
     top: 50%;
     transform: translate(0%,-50%);
@@ -47,7 +47,7 @@
   padding-left: 0;
   right: 3vw;
   text-align: right;
-  & > div {
+  & > * {
     right: 0;
   }
 }

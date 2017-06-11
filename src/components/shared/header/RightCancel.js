@@ -12,9 +12,7 @@ class RightCancel extends React.Component {
 
 	render (){
 		return (
-			<div className={header.cancel}>
-				<NavLink to={this.props.link}>Cancel</NavLink>
-			</div>
+			<NavLink to={this.props.link} className={header.cancel}>Cancel</NavLink>
 		)
 	}
 }

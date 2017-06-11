@@ -100,7 +100,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-cal-day-inv.mbsc-cal-day .mbsc-cal-day-fg {
-  opacity: .8
+  //opacity: .8
 }
 
 .mbsc-cal-sc-m-cell {

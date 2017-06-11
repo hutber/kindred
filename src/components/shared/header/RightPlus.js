@@ -14,11 +14,9 @@ class RightPlus extends React.Component {
 
 	render (){
 		return (
-			<div className={header.plusIcon}>
-				<NavLink to={this.props.link}>
+				<NavLink to={this.props.link} className={header.plusIcon}>
 					<i className={font['icon-plus']}></i>
 				</NavLink>
-			</div>
 		)
 	}
 }
