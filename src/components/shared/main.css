@@ -35,9 +35,14 @@ header {
 }
 
 .contentArea {
-  margin: 30px 20px;
-  height: calc(100vh - 220px);
-  overflow: hidden;
+  margin: $contentAreaMarginTop $contentAreaMarginLeft;
+  height: calc(100vh - $menuHeight - $menuHeight - $contentAreaMarginTop*2);
+  overflow-y: scroll;
+}
+
+.contentAreaFullWidth {
+  height: calc(100vh - $menuHeight - $menuHeight);
+  overflow-y: scroll;
 }
 
 #app-content {
@@ -60,6 +65,21 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.flexWithChildren {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  &.flexWithChildrenLTR {
+    flex-direction: row;
+  }
+}
+
+
 
 a {
   text-decoration: none;

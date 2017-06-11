@@ -6,6 +6,7 @@ import { reducer as formReducer } from 'redux-form'
 
 /* Reducers */
 import data from './dataReducer';
+import loading from './loadingReducer';
 
 //### Not Logged in
   //### Login

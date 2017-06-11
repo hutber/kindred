@@ -13,6 +13,7 @@ import Menu from '../shared/menu';
 
 //Styles
 import HomeStyle from './home.css';
+import mainStyles from '../shared/main.css';
 
 class Home extends React.Component {
   constructor (props){
@@ -26,7 +27,7 @@ class Home extends React.Component {
           return new Date(date);
         })
         , max: new Date()
-        , showOuterDays: false
+        // , showOuterDays: false
       }
     };
     this.selectData = this.selectData.bind(this);
@@ -52,7 +53,7 @@ class Home extends React.Component {
       <div>
         <RequireLogin />
         <Header right={<RightPlus link="sextypeselection" />} />
-        <div className={HomeStyle.home}>
+        <div className={`${HomeStyle.home} ${mainStyles.contentArea}`}>
           <div className="pageInfo">
             <h1>My calender</h1>
             <p>Select a date to view <br/> input your information</p>

@@ -13,6 +13,8 @@ import HeaderLeft from './left';
 import Menu from '../shared/menu';
 
 //Styles
+
+import mainStyles from '../shared/main.css';
 import style from './style.css';
 import * as font from '../../components/shared/font/fontello.css';
 
@@ -26,7 +28,7 @@ class Home extends React.Component {
       <div>
         <RequireLogin />
         <Header left={<HeaderLeft />} right={<RightCancel link="home" />} />
-        <div>
+        <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren}`}>
           <div className={style.dateContainer}>
             <div className={style.date}>
               {Moment(this.props.currentSexInfo.date).format('MMMM Do YYYY')}
