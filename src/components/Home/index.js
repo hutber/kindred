@@ -35,7 +35,6 @@ class Home extends React.Component {
   }
 
   selectData = (event, inst) => {
-    console.info(event);
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
       this.props.history.push('sextypeselection');

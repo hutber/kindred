@@ -8,8 +8,8 @@ import nprogress from 'nprogress';
 import store from './configureStore';
 import Routes from './routes';
 import './components/shared/main.css';
-import createBrowserHistory from 'history/createBrowserHistory'
-const history = createBrowserHistory();
+import createHashHistory from 'history/createHashHistory'
+const history = createHashHistory();
 
 //Remove on screen tap delay
 injectTapEventPlugin({
@@ -21,16 +21,13 @@ injectTapEventPlugin({
 //Add progress bar
 nprogress.configure({ minimum: 0.15, showSpinner: false, speed: 500 });
 
-// Now you can dispatch navigation actions from anywhere!
-// store.dispatch(push('/foo'))
-
-  ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <Routes/>
-        </ConnectedRouter>
-      </Provider>
-    </AppContainer>,
-    document.getElementById('app')
-  );
+ReactDOM.render(
+  <AppContainer>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Routes/>
+      </ConnectedRouter>
+    </Provider>
+  </AppContainer>,
+  document.getElementById('app')
+);

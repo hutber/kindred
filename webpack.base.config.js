@@ -35,6 +35,7 @@ module.exports = {
             query: {
               modules: true,
               sourceMap: true,
+              url: false,
               importLoaders: 2,
               localIdentName: environment.get('cssIdent')
             }
