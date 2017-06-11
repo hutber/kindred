@@ -8,8 +8,8 @@ import nprogress from 'nprogress';
 import store from './configureStore';
 import Routes from './routes';
 import './components/shared/main.css';
-import createHashHistory from 'history/createHashHistory'
-const history = createHashHistory();
+import createBrowserHistory from 'history/createBrowserHistory'
+const history = createBrowserHistory();
 
 //Remove on screen tap delay
 injectTapEventPlugin({

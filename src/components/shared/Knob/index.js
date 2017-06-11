@@ -11,7 +11,6 @@ import style from './index.css';
 class Knob extends React.Component {
 	constructor (props){
 		super(props);
-		console.info(this.props.KnobWheel);
 	}
 	
 	updateDesire = (event) => {

@@ -1,0 +1,10 @@
+@import "../shared/vars.css";
+.summaryItems {
+  & > * {
+    height: 90px;
+    overflow: hidden;
+  }
+}
+.dateArea {
+
+}

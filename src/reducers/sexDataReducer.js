@@ -14,10 +14,14 @@ const initialState = {
 	'dates': {}
 };
 
+const format = function (date){
+	return Moment(date).format('MM-D-YYYY-h-mm');
+}
+
 function sexData (state = initialState, action) {
 	switch (action.type) {
 		case SET_DESIRE_DATA:
-      var key = Moment(action.data.date).format('MM-D-YYYY');
+      var key = format(action.data.date);
       var newDesire = {...state.KnobWheelReducer};
       newDesire[key] = action.data;
 			return {
@@ -35,7 +39,7 @@ function sexData (state = initialState, action) {
 				sex: action.data
 			}
 		case ADD_DATES:
-      var key = Moment(action.date).format('MM-D-YYYY');
+      var key = format(action.date);
       const newDates = {...state.dates};
       newDates[key] = isNaN(newDates[key]) ? 1 : newDates[key]+1 ;
 			return {

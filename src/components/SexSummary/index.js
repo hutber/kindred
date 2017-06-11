@@ -12,22 +12,15 @@ import Knob from '../shared/Knob';
 
 //Header
 import Header from '../shared/header/Header';
-import LeftBack from '../shared/header/LeftBack';
-import RightSave from '../shared/header/RightSave';
+import RightPlus from '../shared/header/RightPlus';
 
 import mainStyles from '../shared/main.css';
 import styles from './style.css';
 
-class Desire extends React.Component {
+class SexSummary extends React.Component {
   constructor (props){
     super(props);
-    this.saveButton = this.saveButton.bind(this);
-  }
-
-  saveButton (){
-    this.props.pushToDesire(this.props.KnobWheel);
-    this.props.pushToDates(this.props.KnobWheel.date);
-    this.props.history.push('sexsummary');
+    console.info(this.props.sexData);
   }
 
   render (){
@@ -49,15 +42,16 @@ class Desire extends React.Component {
     };
     return (
       <div>
-        <Header left={<LeftBack link="sextypeselection"/>} right={<RightSave save={this.saveButton} />} />
+        <Header right={<RightPlus link="home" />} />
         <RequireLogin />
-        <div className={mainStyles.verticalAlignParent}>
-          <div className={styles.content + ' ' + mainStyles.verticalAlign}>
-            <h1>Desire</h1>
-            <p>{Moment(this.props.KnobWheel.date).format('MMMM Do YYYY')}</p>
-            <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
-            <Knob config={config} />
-          </div>
+          <div className={`${mainStyles.contentAreaFullWidth} ${styles.summaryItems}`}>
+            <div>
+              <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
+              <p>Swipe right to delete an entry</p>
+            </div>
+            <div>
+              <Knob config={config} />
+            </div>
         </div>
         <Menu />
       </div>
@@ -68,7 +62,8 @@ class Desire extends React.Component {
 function mapStateToProps(state){
   return {
     currentSexInfo: state.currentSexInfo,
-    KnobWheel: state.KnobWheel
+    KnobWheel: state.KnobWheel,
+    sexData: state.sexData
   };
 }
 
@@ -79,4 +74,4 @@ function matchDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Desire);
+export default connect(mapStateToProps, matchDispatchToProps)(SexSummary);

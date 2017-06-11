@@ -17,6 +17,9 @@ import Logout from './components/shared/Logout';
 import SexTypeSelection from './components/SexTypeSelection';
 import Desire from './components/Desire';
 
+//Save Summary
+import SexSummary from './components/SexSummary';
+
 export default class Routes extends Component {
   render() {
     return (
@@ -31,6 +34,8 @@ export default class Routes extends Component {
 
         <Route path="/sextypeselection" component={SexTypeSelection} />
         <Route path="/desire" component={Desire} />
+
+        <Route path="/sexsummary" component={SexSummary} />
       </div>
     )
   }

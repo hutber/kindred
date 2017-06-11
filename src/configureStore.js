@@ -13,7 +13,7 @@ const configureStore = function (history, preloadedState = {}) {
     preloadedState,
     compose(
       applyMiddleware(createLogger(), middlewareHistory),
-      // autoRehydrate()
+      autoRehydrate()
     )
   );
   
@@ -25,7 +25,7 @@ const configureStore = function (history, preloadedState = {}) {
       store.replaceReducer(nextReducer);
     });
   }
-  // persistStore(store);
+  persistStore(store);
   return store;
 };
 export default configureStore(history);

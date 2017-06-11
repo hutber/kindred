@@ -4,6 +4,9 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 .mbsc-mobiscroll .mbsc-fr-w {
   background: transparent;
 }
+.mbsc-fr-w, .mbsc-cal-tabs {
+  padding: 0 !important;
+}
 .mbsc-cal table {
 //height: auto;
 }
@@ -32,6 +35,21 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   color: #98939d;
 }
 
+.mbsc-mobiscroll .mbsc-cal-c {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mbsc-cal-pnl-i {
+  margin: 0;
+  padding: 0;
+}
+
+.mbsc-cal-tabbed .mbsc-cal-pnl-i {
+  display: block;
+  margin-top: 5px;
+}
+
 .mbsc-mobiscroll .mbsc-cal-hl-now .mbsc-cal-today, .mbsc-mobiscroll .mbsc-cal .mbsc-cal-sc-sel .mbsc-cal-sc-cell-i, .mbsc-mobiscroll .mbsc-cal .mbsc-cal-day-sel .mbsc-cal-day-i {
   background-color: transparent;
 }
@@ -58,7 +76,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
     line-height: 2.6125em;
 }
 
-.mbsc-mobiscroll .mbsc-cal-hl-now .mbsc-cal-today .mbsc-cal-day-fg, .mbsc-cal-day.mbsc-cal-day-v.mbsc-fr-btn-e.mbsc-fr-btn-nhl.mbsc-cal-day-sel .mbsc-cal-day-fg {
+.mbsc-mobiscroll .mbsc-cal-hl-now .mbsc-cal-today .mbsc-cal-day-fg, .mbsc-cal-day.mbsc-cal-day-v.mbsc-fr-btn-e.mbsc-fr-btn-nhl.mbsc-cal-day-sel .mbsc-cal-day-fg, .mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-sel {
   border-radius: 40px;
   background-color: #2253eb;
 }
@@ -66,6 +84,19 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 .mbsc-mobiscroll .mbsc-cal-hl-now .mbsc-cal-day-marked .mbsc-cal-day-fg {
   border-radius: 40px;
   background-color: #02E9FB;
+}
+
+.mbsc-mobiscroll .mbsc-cal-tab {
+  border: none;
+}
+
+.mbsc-cal-tab {
+  width: 50%;
+}
+
+.mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-sel {
+  border-radius: 30px;
+  border-color: #2253eb;
 }
 
 .mbsc-cal-day-inv.mbsc-cal-day .mbsc-cal-day-fg {

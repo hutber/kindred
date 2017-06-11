@@ -22,7 +22,8 @@ class Home extends React.Component {
     this.state = {
       settings : {
         display: 'inline'
-        , yearChange: false
+        , controls: ['calendar', 'time']
+        // , yearChange: false
         , marked: Object.keys(this.props.dates).map((date) => {
           return new Date(date);
         })
@@ -34,16 +35,21 @@ class Home extends React.Component {
   }
 
   selectData = (event, inst) => {
+    console.info(event);
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
-      window.location.hash = 'sextypeselection';
+      this.props.history.push('sextypeselection');
     }
   };
 
   onPosition = (ev) => {
     let $ = mobiscroll.$,
       monthCont = $('.mbsc-cal-anim-c', ev.target),
-      calHeight = document.body.offsetHeight - 375;
+      calCont = $('.mbsc-fr-c', ev.target),
+      calHeight = document.body.offsetHeight - 405,
+      calAllHeight = document.body.offsetHeight - 325;
+    calCont.height('');
+    calCont.height(calAllHeight);
     monthCont.height('');
     monthCont.height(calHeight);
   };
