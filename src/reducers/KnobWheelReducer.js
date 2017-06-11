@@ -1,14 +1,14 @@
 import {
 	SET_DESIRE
 	, SET_DATE
-} from '../actions/desireAction';
+} from '../actions/KnobWheelAction';
 
 const initialState = {
 	desire: 3,
 	date: new Date()
 };
 
-function desire (state = initialState, action) {
+function desireCompReducer (state = initialState, action) {
 	switch (action.type) {
 		case SET_DESIRE:
 			return {
@@ -24,4 +24,4 @@ function desire (state = initialState, action) {
 	return state
 }
  
-export default desire;
+export default desireCompReducer;

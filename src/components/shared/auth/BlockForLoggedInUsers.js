@@ -8,8 +8,8 @@ class BlockForLoggedInUsers extends React.Component {
     super(props);
   }
   render(){
-    const storage = localStorage.LOGGED_IN || {};
-    const loggedIn = this.props.user.loggedIn || JSON.parse(JSON.stringify(storage));
+    const storage = localStorage.LOGGED_IN || 0;
+    const loggedIn = Boolean(this.props.user.loggedIn || JSON.parse(JSON.stringify(storage)));
     if (loggedIn) {
       return (
         <Redirect push to="/home"/>

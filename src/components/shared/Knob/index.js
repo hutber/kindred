@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as desireActions from '../../../actions/desireAction'
+import * as desireActions from '../../../actions/KnobWheelAction'
 import $, * as jQuery from 'jquery';
 import knob from 'jquery-knob';
 
@@ -11,6 +11,7 @@ import style from './index.css';
 class Knob extends React.Component {
 	constructor (props){
 		super(props);
+		console.info(this.props.KnobWheelReducer);
 	}
 	
 	updateDesire = (event) => {
@@ -39,7 +40,7 @@ class Knob extends React.Component {
 	render() {
 		return (
 			<div>
-				<span className={style.konbHeader}>{this.props.desire.desire}/10</span>
+				<span className={style.konbHeader}>{this.props.KnobWheelReducer.desire}/10</span>
 				<div className={style.Knob}>
 					<input ref="knob" />
 				</div>
@@ -51,7 +52,7 @@ class Knob extends React.Component {
 function mapStateToProps(state){
   return {
   	currentSexInfo: state.currentSexInfo,
-		desire: state.desire
+    KnobWheelReducer: state.KnobWheelReducer
   };
 }
 

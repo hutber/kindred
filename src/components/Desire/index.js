@@ -2,6 +2,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
+import RequireLogin from '../shared/auth/RequireLogin'
 import * as dataAction from '../../actions/dataAction';
 
 //Selection Items
@@ -20,12 +21,12 @@ import styles from './style.css';
 class Desire extends React.Component {
   constructor (props){
     super(props);
-
     this.saveButton = this.saveButton.bind(this);
   }
 
   saveButton (){
-    this.props.pushToDesire(this.props.desire)
+    this.props.pushToDesire(this.props.KnobWheelReducer);
+    this.props.pushToDates(this.props.KnobWheelReducer.date);
   }
 
   render (){
@@ -48,10 +49,11 @@ class Desire extends React.Component {
     return (
       <div>
         <Header left={<LeftBack link="sextypeselection"/>} right={<RightSave save={this.saveButton} />} />
+        <RequireLogin />
         <div className={mainStyles.verticalAlignParent}>
           <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
-            <p>{Moment(this.props.desire.date).format('MMMM Do YYYY')}</p>
+            <p>{Moment(this.props.KnobWheelReducer.date).format('MMMM Do YYYY')}</p>
             <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
             <Knob config={config} />
           </div>
@@ -65,13 +67,14 @@ class Desire extends React.Component {
 function mapStateToProps(state){
   return {
     currentSexInfo: state.currentSexInfo,
-    desire: state.desire
+    KnobWheelReducer: state.KnobWheelReducer
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch)
+    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch),
+    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch)
   }
 }
 

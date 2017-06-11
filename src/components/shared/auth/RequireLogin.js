@@ -10,8 +10,10 @@ class RequireLogin extends React.Component {
   }
 
   render(){
-    const storage = localStorage.LOGGED_IN || {};
-    const loggedIn = this.props.user.loggedIn || JSON.parse(JSON.stringify(storage));
+    const storage = localStorage.LOGGED_IN || 0;
+    console.info(this.props.user.loggedIn, JSON.parse(JSON.stringify(storage)).LOGGED_IN);
+    const loggedIn = Boolean(this.props.user.loggedIn || JSON.parse(JSON.stringify(storage)));
+    console.info(loggedIn);
     if (loggedIn) {
       return (
         <div></div>

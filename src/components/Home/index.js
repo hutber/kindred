@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 import * as currentSexInfo from '../../actions/currentSexInfo'
+import * as sexData from  '../../reducers/dataReducer'
 
 //Header
 import Header from '../shared/header/Header';
@@ -16,15 +17,14 @@ import HomeStyle from './home.css';
 class Home extends React.Component {
   constructor (props){
     super(props);
-    console.info(props);
     const now = new Date();
     this.state = {
       settings : {
-        display: 'inline',
-        yearChange: false,
-        marked: [
-          new Date(2017, 5, 4)
-        ]
+        display: 'inline'
+        , yearChange: false
+        , marked: Object.keys(this.props.dates).map((date) => {
+          return new Date(date);
+        })
         , max: new Date()
         , showOuterDays: false
       }
@@ -67,8 +67,14 @@ class Home extends React.Component {
   }
 }
 
+function matchStateToProps(state){
+  return {
+    dates: state.data.dates
+  }
+}
+
 function matchDispatchToProps(dispatch){
   return {DispatchChangeCurrentSexInfo : bindActionCreators(currentSexInfo.changeCurrentSexInfo, dispatch)}
 }
 
-export default connect(null,matchDispatchToProps)(Home);
+export default connect(matchStateToProps,matchDispatchToProps)(Home);

@@ -9,11 +9,11 @@ import data from './dataReducer';
 
 //### Not Logged in
   //### Login
-  import user from './userActions';
+  import user from './userReducer';
 
 //Logged In
 import currentSexInfo from './currentSexInfo';
-import desire from './desire';
+import KnobWheelReducer from './KnobWheelReducer';
 
 
 const reducers = combineReducers({
@@ -21,7 +21,7 @@ const reducers = combineReducers({
   , form: formReducer
   , user
   , currentSexInfo
-  , desire
+  , KnobWheelReducer
   , data
 });
 

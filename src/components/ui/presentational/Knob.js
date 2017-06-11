@@ -42,7 +42,7 @@ class Knob extends React.Component {
 	render() {
 		return (
 			<div>
-				<span className={style.konbHeader}>{this.state.desire}/10</span>
+				<span className={style.konbHeader}>{this.state.desireCompReducer}/10</span>
 				<div className={style.Knob}>
 					<input ref="knob" />
 				</div>
