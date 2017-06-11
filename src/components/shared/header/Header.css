@@ -33,6 +33,7 @@
   left: 3vw;
   top: 50%;
   transform: translate(0%,-50%);
+  cursor: pointer;
 }
 
 .rightHeader {
@@ -70,7 +71,7 @@
   }
 }
 
-. {
+.cancel {
   font-family: Lato;
   color: $bgTop;
   font-size: .9rem;

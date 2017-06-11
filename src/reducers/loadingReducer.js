@@ -5,7 +5,7 @@ import {
   SET_SEX_DATA,
   ADD_DATES,
   REMOVE_DATES
-} from '../actions/dataAction';
+} from '../actions/sexDataAction';
 
 const initialState = {
   'desire': {},

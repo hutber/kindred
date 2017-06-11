@@ -11,7 +11,7 @@ import style from './index.css';
 class Knob extends React.Component {
 	constructor (props){
 		super(props);
-		console.info(this.props.KnobWheelReducer);
+		console.info(this.props.KnobWheel);
 	}
 	
 	updateDesire = (event) => {
@@ -28,7 +28,7 @@ class Knob extends React.Component {
 
 		$(knob).knob(this.props.config);
 		$(knob)
-			.val('3/10')
+			.val(`${this.props.KnobWheel.desire}/10`)
 			.trigger('change');
 	}
 	
@@ -40,7 +40,7 @@ class Knob extends React.Component {
 	render() {
 		return (
 			<div>
-				<span className={style.konbHeader}>{this.props.KnobWheelReducer.desire}/10</span>
+				<span className={style.konbHeader}>{this.props.KnobWheel.desire}/10</span>
 				<div className={style.Knob}>
 					<input ref="knob" />
 				</div>
@@ -52,7 +52,7 @@ class Knob extends React.Component {
 function mapStateToProps(state){
   return {
   	currentSexInfo: state.currentSexInfo,
-    KnobWheelReducer: state.KnobWheelReducer
+    KnobWheel: state.KnobWheel
   };
 }
 

@@ -10,7 +10,9 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 .mbsc-mobiscroll .mbsc-cal th {
   //height: 30px;
 }
-
+.mbsc-mobiscroll.mbsc-no-touch .mbsc-fr-btn-e:not(.mbsc-fr-btn-d):hover, .mbsc-mobiscroll .mbsc-fr-btn-a {
+  background: transparent;
+}
 .mbsc-mobiscroll .mbsc-fr-w, .mbsc-mobiscroll .mbsc-fr-btn, .mbsc-mobiscroll .mbsc-sc-itm, .mbsc-mobiscroll .mbsc-range-btn, .mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-i, .mbsc-mobiscroll .mbsc-cal-btn-txt, .mbsc-mobiscroll .mbsc-cal th {
   color: #FFF;
   border-radius: 20px;

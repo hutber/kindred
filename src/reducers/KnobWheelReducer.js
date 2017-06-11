@@ -8,7 +8,7 @@ const initialState = {
 	date: new Date()
 };
 
-function desireCompReducer (state = initialState, action) {
+function KnobWheel (state = initialState, action) {
 	switch (action.type) {
 		case SET_DESIRE:
 			return {
@@ -24,4 +24,4 @@ function desireCompReducer (state = initialState, action) {
 	return state
 }
  
-export default desireCompReducer;
+export default KnobWheel;

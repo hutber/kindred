@@ -5,7 +5,7 @@ import { reducer as formReducer } from 'redux-form'
 
 
 /* Reducers */
-import data from './dataReducer';
+import sexData from './sexDataReducer';
 import loading from './loadingReducer';
 
 //### Not Logged in
@@ -14,7 +14,7 @@ import loading from './loadingReducer';
 
 //Logged In
 import currentSexInfo from './currentSexInfo';
-import KnobWheelReducer from './KnobWheelReducer';
+import KnobWheel from './KnobWheelReducer';
 
 
 const reducers = combineReducers({
@@ -22,8 +22,8 @@ const reducers = combineReducers({
   , form: formReducer
   , user
   , currentSexInfo
-  , KnobWheelReducer
-  , data
+  , KnobWheel
+  , sexData
 });
 
 export default reducers;

@@ -5,7 +5,7 @@ import {
   SET_SEX_DATA,
   ADD_DATES,
   REMOVE_DATES
-} from '../actions/dataAction';
+} from '../actions/sexDataAction';
 
 const initialState = {
   'desire': {},
@@ -14,7 +14,7 @@ const initialState = {
 	'dates': {}
 };
 
-function desire (state = initialState, action) {
+function sexData (state = initialState, action) {
 	switch (action.type) {
 		case SET_DESIRE_DATA:
       var key = Moment(action.data.date).format('MM-D-YYYY');
@@ -51,5 +51,5 @@ function desire (state = initialState, action) {
 	return state
 }
  
-export default desire;
+export default sexData;
 

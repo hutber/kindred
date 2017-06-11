@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 import * as currentSexInfo from '../../actions/currentSexInfo'
-import * as sexData from  '../../reducers/dataReducer'
+import * as sexData from  '../../reducers/sexDataReducer'
 
 //Header
 import Header from '../shared/header/Header';
@@ -70,7 +70,7 @@ class Home extends React.Component {
 
 function matchStateToProps(state){
   return {
-    dates: state.data.dates
+    dates: state.sexData.dates
   }
 }
 
