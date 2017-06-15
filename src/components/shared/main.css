@@ -37,12 +37,12 @@ header {
 .contentArea {
   margin: $contentAreaMarginTop $contentAreaMarginLeft;
   height: calc(100vh - $menuHeight - $menuHeight - $contentAreaMarginTop*2);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .contentAreaFullWidth {
   height: calc(100vh - $menuHeight - $menuHeight);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #app-content {

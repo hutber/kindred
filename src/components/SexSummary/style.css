@@ -1,10 +1,18 @@
 @import "../shared/vars.css";
 .summaryItems {
   & > * {
-    height: 90px;
+    height: 110px;
     overflow: hidden;
+  }
+  p {
+    font-family: $textLight;
   }
 }
 .dateArea {
+  padding-top: 20px;
+  background: $bgTop;
+}
+
+.iconArea {
 
 }

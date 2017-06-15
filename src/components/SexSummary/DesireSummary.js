@@ -6,21 +6,14 @@ import RequireLogin from '../shared/auth/RequireLogin'
 import * as dataAction from '../../actions/sexDataAction';
 
 //Selection Items
-import Moment from 'moment';
-import Menu from '../shared/menu';
 import Knob from '../shared/Knob';
-
-//Header
-import Header from '../shared/header/Header';
-import RightPlus from '../shared/header/RightPlus';
 
 import mainStyles from '../shared/main.css';
 import styles from './style.css';
 
-class SexSummary extends React.Component {
+class DesireSummary extends React.Component {
   constructor (props){
     super(props);
-    console.info(this.props.sexData);
   }
 
   render (){
@@ -42,18 +35,11 @@ class SexSummary extends React.Component {
     };
     return (
       <div>
-        <Header right={<RightPlus link="home" />} />
-        <RequireLogin />
-          <div className={`${mainStyles.contentAreaFullWidth} ${styles.summaryItems}`}>
-            <div>
-              <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
-              <p>Swipe right to delete an entry</p>
-            </div>
-            <div>
-              <Knob config={config} />
-            </div>
+        <div className={`${mainStyles.contentAreaFullWidth} ${styles.summaryItems}`}>
         </div>
-        <Menu />
+        <div>
+          <Knob config={config} />
+        </div>
       </div>
     )
   }
@@ -74,4 +60,4 @@ function matchDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(SexSummary);
+export default connect(mapStateToProps, matchDispatchToProps)(DesireSummary);

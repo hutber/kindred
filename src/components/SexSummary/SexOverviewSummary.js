@@ -10,24 +10,22 @@ import Moment from 'moment';
 import Menu from '../shared/menu';
 import Knob from '../shared/Knob';
 
+//Sex Summary
+import DesireSummary from './DesireSummary'
+import MasturbationSummary from './MasturbationSummary'
+import SexSummary from './SexSummary'
+
 //Header
 import Header from '../shared/header/Header';
-import LeftBack from '../shared/header/LeftBack';
-import RightSave from '../shared/header/RightSave';
+import HeaderLeft from '../shared/header/LeftBack';
+import RightPlus from '../shared/header/RightPlus';
 
 import mainStyles from '../shared/main.css';
 import styles from './style.css';
 
-class Desire extends React.Component {
+class SexOverviewSummary extends React.Component {
   constructor (props){
     super(props);
-    this.saveButton = this.saveButton.bind(this);
-  }
-
-  saveButton (){
-    this.props.pushToDesire(this.props.KnobWheel);
-    this.props.pushToDates(this.props.KnobWheel.date);
-    this.props.history.push('sexsummary');
   }
 
   render (){
@@ -49,13 +47,17 @@ class Desire extends React.Component {
     };
     return (
       <div>
-        <Header left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
+        <Header left={<HeaderLeft link={this.props.history.goBack} />} right={<RightPlus link="home" />} />
         <RequireLogin />
-        <div className={mainStyles.verticalAlignParent}>
-          <div className={styles.content + ' ' + mainStyles.verticalAlign}>
-            <h1>Desire</h1>
-            <p>{Moment(this.props.KnobWheel.date).format('MMMM Do YYYY')}</p>
-            <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
+        <div className={`${mainStyles.contentAreaFullWidth} ${styles.summaryItems}`}>
+          <div className={styles.dateArea}>
+            <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
+            <p>Swipe right to delete an entry</p>
+          </div>
+          <DesireSummary />
+          <MasturbationSummary />
+          <SexSummary />
+          <div>
             <Knob config={config} />
           </div>
         </div>
@@ -68,7 +70,8 @@ class Desire extends React.Component {
 function mapStateToProps(state){
   return {
     currentSexInfo: state.currentSexInfo,
-    KnobWheel: state.KnobWheel
+    KnobWheel: state.KnobWheel,
+    sexData: state.sexData
   };
 }
 
@@ -79,4 +82,4 @@ function matchDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Desire);
+export default connect(mapStateToProps, matchDispatchToProps)(SexOverviewSummary);
