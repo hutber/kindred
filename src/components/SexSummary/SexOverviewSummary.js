@@ -47,19 +47,18 @@ class SexOverviewSummary extends React.Component {
     };
     return (
       <div>
-        <Header left={<HeaderLeft link={this.props.history.goBack} />} right={<RightPlus link="home" />} />
+        <Header left={<HeaderLeft link={this.props.history.goBack}/>} right={<RightPlus link="home"/>}/>
         <RequireLogin />
-        <div className={`${mainStyles.contentAreaFullWidth} ${styles.summaryItems}`}>
-          <div className={styles.dateArea}>
-            <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
-            <p>Swipe right to delete an entry</p>
+        <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
+          <div className={`${styles.dateArea}`}>
+            <div>
+              <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
+              <p>Swipe right to delete an entry</p>
+            </div>
           </div>
-          <DesireSummary />
+          <DesireSummary knob="8"/>
           <MasturbationSummary />
           <SexSummary />
-          <div>
-            <Knob config={config} />
-          </div>
         </div>
         <Menu />
       </div>

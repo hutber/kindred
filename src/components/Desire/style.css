@@ -1,7 +1,13 @@
+@import "../shared/vars.css";
 .content {
   width: calc(100% - 40px);
-
   input {
     display: none;
   }
+}
+
+.vertAlign {
+  width: calc(100%);
+  height: calc(100vh - $menuHeight - $menuHeight);
+  margin: 0 auto;
 }

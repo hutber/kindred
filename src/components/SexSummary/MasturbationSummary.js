@@ -15,11 +15,14 @@ class MasturbationSummary extends React.Component {
 
   render (){
     return (
-      <div>
-        <div className={styles.iconArea}>
-          <i className={font['icon-left-small']}></i>
+      <div className={`${styles.item} ${styles.masturbationContainer}`}>
+        <div className={styles.contentArea}>
+          <div className={styles.iconArea}>
+            <i className={font['icon-hand-paper-o']}></i>
+          </div>
+          <div className={styles.itemContentArea}>
+          </div>
         </div>
-        <p>Swipe right to delete an entry</p>
       </div>
     )
   }
