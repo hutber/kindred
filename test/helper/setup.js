@@ -1,5 +1,6 @@
 import path from 'path';
-import hook from 'css-modules-require-hook';
+import csshook from 'css-modules-require-hook/preset' // import hook before routes
+import routes from '/shared/views/routes'
 import requireHacker from 'require-hacker';
 import sass from 'node-sass';
 import {jsdom} from 'jsdom';
