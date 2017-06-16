@@ -49,9 +49,9 @@ class Desire extends React.Component {
     };
     return (
       <div>
-        <Header left={<LeftBack link="sextypeselection"/>} right={<RightSave save={this.saveButton} />} />
+        <Header left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
-        <div className={mainStyles.verticalAlignParent}>
+        <div className={`${mainStyles.verticalAlignParent} ${styles.vertAlign}`}>
           <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
             <p>{Moment(this.props.KnobWheel.date).format('MMMM Do YYYY')}</p>

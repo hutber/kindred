@@ -1,10 +1,84 @@
 @import "../shared/vars.css";
-.summaryItems {
-  & > * {
-    height: 90px;
-    overflow: hidden;
+.item {
+  height: 130px;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+  &.knobContainer {
+    background: $desire;
+  }
+  &.masturbationContainer {
+    background: $masturbation;
+  }
+  &.sexContainer {
+    background: $sex;
+  }
+  p {
+    font-family: $textLight;
+    padding-bottom: 0;
   }
 }
-.dateArea {
 
+.dateArea {
+  padding-top: 20px;
+  background: $bgTop;
+  display: block;
+  overflow: hidden;
+  height: 40px !important;
+  h2 {
+    width: 100%;
+    display: block;
+  }
+}
+
+.itemContainers {
+  & > div {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    & > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.contentArea {
+  width: 250px;
+  height: 110px;
+  margin: 0 auto;
+  span {
+    display: none;
+  }
+  i:before {
+    margin-left: 0;
+  }
+}
+
+.iconArea {
+  display: block;
+  width: 80px;
+  float: left;
+  font-size: 100px;
+  line-height: 120px;
+}
+
+.itemContentArea {
+  display: block;
+  float: right;
+  width: 170px;
+  position: relative;
+}
+
+.knobText {
+  position: absolute;
+  font-family: $textMedium;
+  font-size: 14px;
+  div {
+    display: inline;
+    font-size: 25px;
+  }
 }

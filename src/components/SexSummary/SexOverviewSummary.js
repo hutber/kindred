@@ -10,17 +10,22 @@ import Moment from 'moment';
 import Menu from '../shared/menu';
 import Knob from '../shared/Knob';
 
+//Sex Summary
+import DesireSummary from './DesireSummary'
+import MasturbationSummary from './MasturbationSummary'
+import SexSummary from './SexSummary'
+
 //Header
 import Header from '../shared/header/Header';
+import HeaderLeft from '../shared/header/LeftBack';
 import RightPlus from '../shared/header/RightPlus';
 
 import mainStyles from '../shared/main.css';
 import styles from './style.css';
 
-class SexSummary extends React.Component {
+class SexOverviewSummary extends React.Component {
   constructor (props){
     super(props);
-    console.info(this.props.sexData);
   }
 
   render (){
@@ -42,16 +47,18 @@ class SexSummary extends React.Component {
     };
     return (
       <div>
-        <Header right={<RightPlus link="home" />} />
+        <Header left={<HeaderLeft link={this.props.history.goBack}/>} right={<RightPlus link="home"/>}/>
         <RequireLogin />
-          <div className={`${mainStyles.contentAreaFullWidth} ${styles.summaryItems}`}>
+        <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
+          <div className={`${styles.dateArea}`}>
             <div>
               <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
               <p>Swipe right to delete an entry</p>
             </div>
-            <div>
-              <Knob config={config} />
-            </div>
+          </div>
+          <DesireSummary knob="8"/>
+          <MasturbationSummary />
+          <SexSummary />
         </div>
         <Menu />
       </div>
@@ -74,4 +81,4 @@ function matchDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(SexSummary);
+export default connect(mapStateToProps, matchDispatchToProps)(SexOverviewSummary);

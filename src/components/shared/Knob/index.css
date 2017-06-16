@@ -2,6 +2,9 @@
   div {
     margin: 0 auto;
   }
+  input {
+    display: none;
+  }
 }
 
 .konbHeader {

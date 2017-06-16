@@ -18,7 +18,7 @@ import SexTypeSelection from './components/SexTypeSelection';
 import Desire from './components/Desire';
 
 //Save Summary
-import SexSummary from './components/SexSummary';
+import SexSummary from './components/SexSummary/SexOverviewSummary';
 
 export default class Routes extends Component {
   render() {
