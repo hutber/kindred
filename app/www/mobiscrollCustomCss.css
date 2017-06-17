@@ -8,7 +8,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   padding: 0 !important;
 }
 .mbsc-cal table {
-  //height: auto;
+//height: auto;
 }
 .mbsc-mobiscroll .mbsc-cal th {
   //height: 30px;
@@ -31,8 +31,8 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-cal-day-diff .mbsc-cal-day-i {
-  opacity: 1;
-  color: #98939d;
+  //opacity: 1;
+  color: #93b4b5;
 }
 
 .mbsc-mobiscroll .mbsc-cal-c {
@@ -73,7 +73,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   display: block;
   transform: translate3d(-50%, -50%, 0);
   -webkit-transform: translate3d(-50%, -50%,0);
-  line-height: 2.6125em;
+    line-height: 2.6125em;
 }
 
 .mbsc-mobiscroll .mbsc-cal-hl-now .mbsc-cal-today .mbsc-cal-day-fg, .mbsc-cal-day.mbsc-cal-day-v.mbsc-fr-btn-e.mbsc-fr-btn-nhl.mbsc-cal-day-sel .mbsc-cal-day-fg, .mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-sel {

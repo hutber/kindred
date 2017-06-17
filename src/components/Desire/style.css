@@ -4,6 +4,9 @@
   input {
     display: none;
   }
+  p {
+    font-family: $textLight;
+  }
 }
 
 .vertAlign {

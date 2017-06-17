@@ -31,8 +31,8 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-cal-day-diff .mbsc-cal-day-i {
-  opacity: 1;
-  color: #98939d;
+  //opacity: 1;
+  color: #93b4b5;
 }
 
 .mbsc-mobiscroll .mbsc-cal-c {
