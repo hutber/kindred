@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createLogger } from 'redux-logger'
 import { routerMiddleware } from 'react-router-redux'
-import {persistStore, autoRehydrate} from 'redux-persist'
+import { autoRehydrate } from 'redux-persist'
 import reducers from './reducers';
 
 const configureStore = function (history, preloadedState = {}) {
@@ -25,7 +25,6 @@ const configureStore = function (history, preloadedState = {}) {
       store.replaceReducer(nextReducer);
     });
   }
-  persistStore(store);
   return store;
 };
 export default configureStore(history);

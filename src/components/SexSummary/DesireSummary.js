@@ -24,6 +24,7 @@ class DesireSummary extends React.Component {
       'thickness': .25,
       'width':'100%',
       'height':'110',
+      'readOnly': true,
       'stopper': false,
       'inline': false,
       'lineCap':'round',

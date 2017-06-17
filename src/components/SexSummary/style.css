@@ -26,6 +26,9 @@
   display: block;
   overflow: hidden;
   height: 40px !important;
+  > div {
+    width: 100% !important;
+  }
   h2 {
     width: 100%;
     display: block;
@@ -63,7 +66,6 @@
   width: 80px;
   float: left;
   font-size: 100px;
-  line-height: 120px;
 }
 
 .itemContentArea {

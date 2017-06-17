@@ -8,6 +8,7 @@
 // Imports
 @import "vars.css";
 @import "./form/index.css";
+@import "./scaleText.css";
 
 //Body/Html
 html, body, body > div, body > div > div {

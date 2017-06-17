@@ -1,0 +1,13 @@
+/* at the point when the media query is applied */
+/* 5.625vw = 10vh */
+
+@define-mixin scale $name, $color: blue {
+  .$(name) {
+    font-size: 12vh;
+  }
+  @media (min-aspect-ratio: 16/9) {
+    .$(name) {
+      font-size: 23vw ;
+    }
+  }
+}

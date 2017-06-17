@@ -8,7 +8,6 @@ import * as dataAction from '../../actions/sexDataAction';
 //Selection Items
 import Moment from 'moment';
 import Menu from '../shared/menu';
-import Knob from '../shared/Knob';
 
 //Sex Summary
 import DesireSummary from './DesireSummary'
@@ -29,22 +28,7 @@ class SexOverviewSummary extends React.Component {
   }
 
   render (){
-    let config = {
-      'min':0,
-      'max':10,
-      'thickness': .25,
-      'width':'90%',
-      'height':'250',
-      'text':'jamie',
-      'stopper': false,
-      'inline': false,
-      'lineCap':'round',
-      'bgColor':'#2253EB',
-      'fgColor':'#06FFF0',
-      'displayInput': true,
-      'fontWeight': 'bold',
-      'displayPrevious': true
-    };
+    const desire = this.props.sexData.desire[Moment(this.props.KnobWheel.date).format('MM-D-YYYY_h-mm')];
     return (
       <div>
         <Header left={<HeaderLeft link={this.props.history.goBack}/>} right={<RightPlus link="home"/>}/>
@@ -56,7 +40,7 @@ class SexOverviewSummary extends React.Component {
               <p>Swipe right to delete an entry</p>
             </div>
           </div>
-          <DesireSummary knob="8"/>
+          <DesireSummary knob={desire.desire}/>
           <MasturbationSummary />
           <SexSummary />
         </div>
