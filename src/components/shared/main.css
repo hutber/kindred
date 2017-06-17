@@ -41,6 +41,12 @@ header {
   overflow-y: auto;
 }
 
+.contentAreaBG {
+  height: calc(100vh - $menuHeight - $menuHeight);
+  overflow-y: auto;
+  background: $textBg;
+}
+
 .contentAreaFullWidth {
   height: calc(100vh - $menuHeight - $menuHeight);
   overflow-y: auto;
@@ -52,6 +58,61 @@ header {
   display: block;
 }
 
+//Data entry pages
+.dataItem {
+  color: #000;
+  background: #FFF;
+  border: 1px solid #DDD;
+  border-left: none;
+  border-right: none;
+  padding: 15px 10px;
+
+  label {
+    float: left;
+    display: block;
+    font-family: $textMedium;
+  }
+  &:before, &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+.info {
+  float: right;
+}
+
+.icon {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.dataBreak {
+  height: 20px;
+  color: #000;
+  font-family: $textMedium;
+  text-align: left;
+  padding-left: 10px;
+}
+
+//Elements
+a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: normal;
+  font-family: $textLight;
+}
+
+p {
+  margin: 10px 0;
+}
+
+//Align
 .verticalAlignParent {
   position: fixed;
   top: $menuHeight;
@@ -91,21 +152,4 @@ header {
   &.flexWithChildrenLTR {
     flex-direction: row;
   }
-}
-
-
-
-a {
-  text-decoration: none;
-  font-size: 18px;
-}
-
-h1, h2 {
-  margin: 0;
-  font-weight: normal;
-  font-family: $textLight;
-}
-
-p {
-  margin: 10px 0;
 }
