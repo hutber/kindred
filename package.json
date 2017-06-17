@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --optimize-minimize --config ./webpack.prod.config.js",
     "testReport": "BABEL_ENV=test nyc mocha --reporter --watch tap 'test/**/*.spec.js'",
-    "test": "BABEL_ENV=test nyc --require babel-register mocha --watch tap 'test/**/*.spec.js'",
+    "test": "BABEL_ENV=test nyc --require babel-register mocha  --require ignore-styles --watch tap 'test/**/*.spec.js'",
     "wtest": "nyc mocha --reporter tap 'test/**/*.spec.js'",
     "start": "BABEL_ENV=development/client webpack-dev-server --config ./webpack.config.js",
     "dash": "BABEL_ENV=development/client webpack-dashboard -- webpack-dev-server --config ./webpack.config.js",
@@ -66,6 +66,7 @@
     "css-modules-require-hook": "^4.0.6",
     "file-loader": "^0.10.1",
     "hutber-conventional-changelog": "^1.0.0",
+    "ignore-styles": "^5.0.1",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
     "jquery": "^3.2.1",
