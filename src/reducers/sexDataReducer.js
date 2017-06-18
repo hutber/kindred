@@ -20,6 +20,10 @@ const formatSexData = function (date){
 
 function sexData (state = initialState, action) {
 	switch (action.type) {
+
+		/*
+		 * DESIRE
+		 */
 		case SET_DESIRE_DATA:
       var key = formatSexData(action.data.date);
       var newDesire = {...state.desire};
@@ -28,16 +32,29 @@ function sexData (state = initialState, action) {
 				...state,
 				desire: newDesire
 			}
+
+		/*
+		 * MASTURBATION
+		 */
 		case SET_MASTURBATION_DATA:
 			return {
 				...state,
 				masturbation: action.data
 			}
+
+		/*
+		 * SEX DATA
+		 */
 		case SET_SEX_DATA:
 			return {
 				...state,
 				sex: action.data
 			}
+
+
+		/*
+		* DATES
+		*/
 		case ADD_DATES:
       var key = Moment(action.date).format('MM-D-YYYY');
       const newDates = {...state.dates};
@@ -46,6 +63,7 @@ function sexData (state = initialState, action) {
 				...state,
 				dates: newDates
 			}
+
 		case REMOVE_DATES:
 			return {
 				...state,

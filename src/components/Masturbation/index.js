@@ -30,6 +30,7 @@ class Masturbation extends React.Component {
     super(props);
     this.saveButton = this.saveButton.bind(this);
     this.changeDate = this.changeDate.bind(this);
+    this.openDate = this.openDate.bind(this);
   }
 
   saveButton (){
@@ -38,8 +39,12 @@ class Masturbation extends React.Component {
     this.props.history.push('sexsummary');
   }
 
-  changeDate (){
+  openDate (){
     this.refs.time.instance.show();
+  }
+
+  changeDate (event){
+    this.props.DispatchChangeCurrentSexInfo(new Date(event.valueText));
   }
 
   render (){
@@ -47,18 +52,20 @@ class Masturbation extends React.Component {
       <div>
         <Header style="headerDark" middle="Masturbation" left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
+        <mobiscroll.Datetime
+          onSet={this.changeDate}
+          max={new Date()}
+          ref="time"
+          lang="en"
+          display="bottom"
+          defaultValue={new Date(this.props.currentSexInfo.date)}
+          headerText={false}
+        />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.changeDate}>
-            <RightArrow label="Date" rightText={Moment(this.props.KnobWheel.date).format('D MMMM YYYY')}/>
+          <div onClick={this.openDate}>
+            <RightArrow label="Date" rightText={Moment(this.props.currentSexInfo.date).format('D MMMM YYYY')}/>
           </div>
-          <mobiscroll.Datetime
-            ref="time"
-            lang="en"
-            display="bottom"
-            defaultValue={new Date(this.props.KnobWheel.date)}
-            headerText={false}
-          />
           <DataBreak />
         </div>
         <Menu />
@@ -69,14 +76,12 @@ class Masturbation extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo,
-    KnobWheel: state.KnobWheel
+    currentSexInfo: state.currentSexInfo
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch),
     pushToDates : bindActionCreators(dataAction.pushToDates, dispatch),
     DispatchChangeCurrentSexInfo : bindActionCreators(currentSexInfo.changeCurrentSexInfo, dispatch)
   }

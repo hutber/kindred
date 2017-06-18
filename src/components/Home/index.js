@@ -23,12 +23,10 @@ class Home extends React.Component {
       settings : {
         display: 'inline'
         , controls: ['calendar', 'time']
-        // , yearChange: false
         , marked: Object.keys(this.props.dates).map((date) => {
           return new Date(date);
         })
         , max: new Date()
-        // , showOuterDays: false
       }
     };
     this.selectData = this.selectData.bind(this);

@@ -67,7 +67,6 @@ class Desire extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo,
     KnobWheel: state.KnobWheel
   };
 }
