@@ -12,7 +12,7 @@
 .headerDark {
   background: $headerBgColour;
   color: #FFF;
-  a, i, .leftHeader,.rightHeader {
+  a, i, p, .leftHeader,.rightHeader {
     color: #FFF;
   }
 }

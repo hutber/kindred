@@ -4,9 +4,11 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import * as dataAction from '../../actions/sexDataAction';
+import Moment from 'moment';
+import * as currentSexInfo from '../../actions/currentSexInfo'
+import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 
 //Selection Items
-import Moment from 'moment';
 import Menu from '../shared/menu';
 
 //Header
@@ -21,11 +23,13 @@ import * as font from '../shared/font/fontello.css';
 
 //textform elements
 import DataBreak from '../shared/textForm/DataBreak'
+import RightArrow from '../shared/textForm/RightArrow'
 
 class Masturbation extends React.Component {
   constructor (props){
     super(props);
     this.saveButton = this.saveButton.bind(this);
+    this.changeDate = this.changeDate.bind(this);
   }
 
   saveButton (){
@@ -34,22 +38,28 @@ class Masturbation extends React.Component {
     this.props.history.push('sexsummary');
   }
 
+  changeDate (){
+    this.refs.time.instance.show();
+  }
+
   render (){
     return (
       <div>
-        <Header left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
+        <Header style="headerDark" middle="Masturbation" left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div className={mainStyles.dataItem}>
-            <label htmlFor="date">Date</label>
-            <div className={mainStyles.info} id="date">
-              {Moment(this.props.KnobWheel.date).format('d MMMM YYYY')}
-              <div className={mainStyles.icon}>
-                <i className={font['icon-right-small']}></i>
-              </div>
-            </div>
+          <div onClick={this.changeDate}>
+            <RightArrow label="Date" rightText={Moment(this.props.KnobWheel.date).format('D MMMM YYYY')}/>
           </div>
+          <mobiscroll.Datetime
+            ref="time"
+            lang="en"
+            display="bottom"
+            defaultValue={new Date(this.props.KnobWheel.date)}
+            headerText={false}
+          />
+          <DataBreak />
         </div>
         <Menu />
       </div>
@@ -67,7 +77,8 @@ function mapStateToProps(state){
 function matchDispatchToProps(dispatch){
   return {
     pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch),
-    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch)
+    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch),
+    DispatchChangeCurrentSexInfo : bindActionCreators(currentSexInfo.changeCurrentSexInfo, dispatch)
   }
 }
 

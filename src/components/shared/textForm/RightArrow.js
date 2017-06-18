@@ -1,0 +1,47 @@
+import React from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux'
+import * as dataAction from '../../../actions/sexDataAction';
+import Moment from 'moment';
+
+//Styles
+import mainStyles from '../main.css';
+import * as font from '../font/fontello.css';
+
+class RightArrow extends React.Component {
+	constructor(props){
+		super(props)
+    this.state = {
+      click: props.click || null
+    };
+	}
+	render (){
+		return (
+			<div onClick={this.state.click} className={mainStyles.dataItem}>
+				<label htmlFor={this.props.label}>{this.props.label}</label>
+				<div className={mainStyles.info} id={this.props.label}>
+          {this.props.rightText}
+					<div className={mainStyles.icon}>
+						<i className={font['icon-right-small']}></i>
+					</div>
+				</div>
+			</div>
+		)
+	}
+}
+
+function mapStateToProps(state){
+  return {
+    currentSexInfo: state.currentSexInfo,
+    KnobWheel: state.KnobWheel
+  };
+}
+
+function matchDispatchToProps(dispatch){
+  return {
+    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch),
+    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(RightArrow);

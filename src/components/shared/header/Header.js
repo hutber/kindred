@@ -6,7 +6,7 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mainClass: props.mainClass || 'header',
+            style: props.style || 'header',
             left: props.left || null,
             middle: props.middle || 'Kindred',
             right: props.right || null
@@ -15,7 +15,7 @@ class Header extends React.Component {
     
     render() {
         return (
-            <header className={header[this.state.mainClass]}>
+            <header className={header[this.state.style]}>
                 <div className={header.leftHeader}>{this.state.left}</div>
                 <div className={header.middleHeader}>{this.state.middle}</div>
                 <div className={header.rightHeader}>{this.state.right}</div>
