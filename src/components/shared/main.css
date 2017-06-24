@@ -62,10 +62,14 @@ header {
 .dataItem {
   color: #000;
   background: #FFF;
-  border: 1px solid #DDD;
+  border-top: 1px solid #DDD;
   border-left: none;
   border-right: none;
   padding: 15px 10px;
+
+  &.bottom {
+    border-bottom: 1px solid #DDD;
+  }
 
   label {
     float: left;

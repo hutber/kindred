@@ -24,6 +24,7 @@ import * as font from '../shared/font/fontello.css';
 //textform elements
 import DataBreak from '../shared/textForm/DataBreak'
 import RightArrow from '../shared/textForm/RightArrow'
+import Switch from '../shared/textForm/Switch'
 
 class Masturbation extends React.Component {
   constructor (props){
@@ -63,10 +64,16 @@ class Masturbation extends React.Component {
         />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.openDate}>
+          <div onClick={this.openDate} className={`${mainStyles.bottom} ${mainStyles.dataItem}`}>
             <RightArrow label="Date" rightText={Moment(this.props.currentSexInfo.date).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
+          <Switch label="Toys?" val={false}/>
+          <Switch label="Porn?" val={false}/>
+          <DataBreak text="ORGASM"/>
+          {/*<div onClick={this.openDate} className={`${mainStyles.bottom} ${mainStyles.dataItem}`}>*/}
+            <mobiscroll.Slider value="3" min={1} max={5} step={1} />
+          {/*</div>*/}
         </div>
         <Menu />
       </div>

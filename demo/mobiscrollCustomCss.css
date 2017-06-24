@@ -30,6 +30,57 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   margin-bottom: 10px;
 }
 
+/*
+* Switch
+ */
+
+.mbsc-switch.mbsc-mobiscroll .mbsc-switch-track {
+  background: #1ba0e3;
+}
+
+.mbsc-switch.mbsc-mobiscroll .mbsc-switch-track {
+  width: 3.575em;
+  height: 1.975em;
+  top: 3px;
+}
+
+.mbsc-switch.mbsc-mobiscroll .mbsc-switch-handle {
+  background: #FFF;
+  box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.19);
+}
+
+.mbsc-switch.mbsc-ltr .mbsc-progress-track .mbsc-slider-handle-cont {
+  left: 85% !important;
+}
+
+.mbsc-switch.mbsc-ltr .mbsc-progress-track .mbsc-slider-handle-cont.mbsc-slider-start {
+  left: 15% !important;
+}
+
+/*
+*  Slider
+ */
+
+.mbsc-mobiscroll .mbsc-slider-handle {
+  background: #1ba0e3;
+}
+
+.mbsc-mobiscroll .mbsc-progress-bar {
+  background: #02E9FB;
+}
+
+.mbsc-mobiscroll .mbsc-progress-track {
+  height: .225em;
+}
+
+.mbsc-progress-bar {
+  border-radius: 1em;
+}
+
+/*
+*  Calender
+ */
+
 .mbsc-cal-day-diff .mbsc-cal-day-i {
   //opacity: 1;
   color: #93b4b5;
