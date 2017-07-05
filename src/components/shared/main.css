@@ -59,6 +59,10 @@ header {
 }
 
 //Data entry pages
+.slider {
+  background: #FFF;
+}
+
 .dataItem {
   color: #000;
   background: #FFF;

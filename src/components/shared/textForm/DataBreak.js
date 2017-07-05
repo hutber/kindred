@@ -11,7 +11,7 @@ class DataBreak extends React.Component {
 		return (
 			<div className={mainStyles.dataBreak}>
 				<div>&nbsp;</div>
-				{this.props.text}
+				<div>{this.props.text}</div>
 			</div>
 		)
 	}
