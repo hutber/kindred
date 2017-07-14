@@ -77,6 +77,14 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   border-radius: 1em;
 }
 
+.mbsc-progress-step-label {
+  top: -35px;
+  color: #0CACFE;
+  font-size: .8em;
+  font-weight: bold;
+}
+
+
 /*
 *  Calender
  */

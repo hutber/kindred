@@ -72,7 +72,10 @@ class Masturbation extends React.Component {
           <Switch label="Porn?" val={false}/>
           <DataBreak text="ORGASM"/>
           <div className={mainStyles.slider}>
-            <mobiscroll.Slider value="3" min={1} max={5} step={1} />
+            <div className={mainStyles.dataBreak + ' ' + mainStyles.long}>
+              <div>Quality</div>
+            </div>
+            <mobiscroll.Slider value="3" min={1} max={5} step={1} data-step-labels="[1, 2, 3, 4, 5]"/>
           </div>
         </div>
         <Menu />

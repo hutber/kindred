@@ -61,6 +61,7 @@ header {
 //Data entry pages
 .slider {
   background: #FFF;
+  padding-top: 25px;
 }
 
 .dataItem {
@@ -102,6 +103,12 @@ header {
   font-family: $textMedium;
   text-align: left;
   padding-left: 10px;
+}
+
+.long {
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 5px;
 }
 
 //Elements
