@@ -49,7 +49,7 @@ class DesireSummary extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo,
+    sexDates: state.sexDates,
     KnobWheel: state.KnobWheel,
     sexData: state.sexData
   };

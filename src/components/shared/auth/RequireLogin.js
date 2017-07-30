@@ -2,7 +2,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router'
-import store from '../../../configureStore';
 
 class RequireLogin extends React.Component {
   constructor(props){

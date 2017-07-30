@@ -5,7 +5,7 @@ import * as dataAction from '../../../actions/sexDataAction';
 import mobiscroll from '../../shared/mobiscroll/mobiscroll.custom';
 
 //Styles
-import mainStyles from '../main.css';
+import formStyles from '../form/formItems.css';
 
 class Switch extends React.Component {
 	constructor(props){
@@ -13,9 +13,9 @@ class Switch extends React.Component {
 	}
 	render (){
 		return (
-			<div className={mainStyles.dataItem}>
+			<div className={formStyles.dataItem}>
 				<label htmlFor={this.props.label}>{this.props.label}</label>
-				<div className={mainStyles.info}>
+				<div className={formStyles.info}>
 					<mobiscroll.Switch value={this.props.val} />
 				</div>
 			</div>
@@ -25,7 +25,7 @@ class Switch extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo,
+    sexDates: state.sexDates,
     KnobWheel: state.KnobWheel
   };
 }

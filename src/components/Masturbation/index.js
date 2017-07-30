@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
-import * as dataAction from '../../actions/sexDataAction';
+import * as datesAction from '../../actions/datesSexAction';
 import Moment from 'moment';
 import * as currentSexInfo from '../../actions/currentSexInfo'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
@@ -18,7 +18,7 @@ import RightSave from '../shared/header/RightSave';
 
 //styles
 import mainStyles from '../shared/main.css';
-import styles from './style.css';
+import form from '../shared/form/formItems.css';
 import * as font from '../shared/font/fontello.css';
 
 //textform elements
@@ -45,10 +45,11 @@ class Masturbation extends React.Component {
   }
 
   changeDate (event){
-    this.props.DispatchChangeCurrentSexInfo(new Date(event.valueText));
+    this.props.DispatchChangeDate(new Date(event.valueText));
   }
 
   render (){
+    console.info(this.props.sexDates.currentDate);
     return (
       <div>
         <Header style="headerDark" middle="Masturbation" left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
@@ -59,23 +60,26 @@ class Masturbation extends React.Component {
           ref="time"
           lang="en"
           display="bottom"
-          defaultValue={new Date(this.props.currentSexInfo.date)}
+          defaultValue={new Date(this.props.sexDates.currentDate)}
           headerText={false}
         />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.openDate} className={`${mainStyles.bottom} ${mainStyles.dataItem}`}>
-            <RightArrow label="Date" rightText={Moment(this.props.currentSexInfo.date).format('D MMMM YYYY')}/>
+          <div onClick={this.openDate} className={`${form.bottom} ${form.dataItem}`}>
+            <RightArrow label="Date" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
           <Switch label="Toys?" val={false}/>
           <Switch label="Porn?" val={false}/>
           <DataBreak text="ORGASM"/>
-          <div className={mainStyles.slider}>
-            <div className={mainStyles.dataBreak + ' ' + mainStyles.long}>
+          <div className={form.slider}>
+            <div className={form.inLineTitle}>
               <div>Quality</div>
             </div>
             <mobiscroll.Slider value="3" min={1} max={5} step={1} data-step-labels="[1, 2, 3, 4, 5]"/>
+          </div>
+          <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${form.dataItem}`}>
+            <RightArrow label="Quantity" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
           </div>
         </div>
         <Menu />
@@ -86,14 +90,14 @@ class Masturbation extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo
+    sexDates: state.sexDates
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch),
-    DispatchChangeCurrentSexInfo : bindActionCreators(currentSexInfo.changeCurrentSexInfo, dispatch)
+    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
+    DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch)
   }
 }
 

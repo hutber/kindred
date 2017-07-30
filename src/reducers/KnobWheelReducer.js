@@ -5,10 +5,11 @@ import {
 
 const initialState = {
 	desire: 3,
-	date: new Date()
+  currentDate: new Date()
 };
 
 function KnobWheel (state = initialState, action) {
+  console.info(action);
 	switch (action.type) {
 		case SET_DESIRE:
 			return {
@@ -18,7 +19,7 @@ function KnobWheel (state = initialState, action) {
 		case SET_DATE:
 			return {
 				...state,
-				date: action.date
+        currentDate: action.currentDate
 			}
 	}
 	return state

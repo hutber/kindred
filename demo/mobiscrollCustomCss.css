@@ -70,7 +70,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-mobiscroll .mbsc-progress-track {
-  height: .225em;
+  height: .325em;
 }
 
 .mbsc-progress-bar {
@@ -78,10 +78,24 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-progress-step-label {
-  top: -35px;
+  top: -40px;
   color: #0CACFE;
-  font-size: .8em;
+  font-size: .9em;
   font-weight: bold;
+}
+
+.mbsc-mobiscroll.mbsc-progress {
+  padding: 10px;
+}
+
+.mbsc-mobiscroll .mbsc-slider-handle {
+  height: 1.1em;
+  width: 1.1em;
+}
+
+.mbsc-mobiscroll  .mbsc-switch-track .mbsc-switch-handle {
+  height: 1.5em;
+  width: 1.5em;
 }
 
 

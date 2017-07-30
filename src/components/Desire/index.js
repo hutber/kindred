@@ -3,7 +3,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
-import * as dataAction from '../../actions/sexDataAction';
+import * as desireAction from '../../actions/desireAction';
+import * as datesAction from '../../actions/datesSexAction';
 
 //Selection Items
 import Moment from 'moment';
@@ -25,8 +26,8 @@ class Desire extends React.Component {
   }
 
   saveButton (){
+    this.props.pushToDates(this.props.KnobWheel.currentDate);
     this.props.pushToDesire(this.props.KnobWheel);
-    this.props.pushToDates(this.props.KnobWheel.date);
     this.props.history.push('sexsummary');
   }
 
@@ -47,6 +48,7 @@ class Desire extends React.Component {
       'fontWeight': 'bold',
       'displayPrevious': true
     };
+    console.info(this.props.KnobWheel);
     return (
       <div>
         <Header left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
@@ -54,7 +56,7 @@ class Desire extends React.Component {
         <div className={`${mainStyles.verticalAlignParent} ${styles.vertAlign}`}>
           <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
-            <p>{Moment(this.props.KnobWheel.date).format('MMMM Do YYYY')}</p>
+            <p>{Moment(this.props.KnobWheel.currentDate).format('MMMM Do YYYY')}</p>
             <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
             <Knob config={config} />
           </div>
@@ -73,8 +75,8 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
-    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch),
-    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch)
+    pushToDesire : bindActionCreators(desireAction.pushToDesire, dispatch),
+    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch)
   }
 }
 

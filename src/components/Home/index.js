@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
-import * as currentSexInfo from '../../actions/currentSexInfo'
-import * as sexData from  '../../reducers/sexDataReducer'
+import * as datesSexAction from '../../actions/datesSexAction'
 
 //Header
 import Header from '../shared/header/Header';
@@ -18,7 +17,6 @@ import mainStyles from '../shared/main.css';
 class Home extends React.Component {
   constructor (props){
     super(props);
-    const now = new Date();
     this.state = {
       settings : {
         display: 'inline'
@@ -74,12 +72,12 @@ class Home extends React.Component {
 
 function matchStateToProps(state){
   return {
-    dates: state.sexData.dates
+    dates: state.sexDates.dates
   }
 }
 
 function matchDispatchToProps(dispatch){
-  return {DispatchChangeCurrentSexInfo : bindActionCreators(currentSexInfo.changeCurrentSexInfo, dispatch)}
+  return {DispatchChangeCurrentSexInfo : bindActionCreators(datesSexAction.changeCurrentSexDate, dispatch)}
 }
 
 export default connect(matchStateToProps,matchDispatchToProps)(Home);

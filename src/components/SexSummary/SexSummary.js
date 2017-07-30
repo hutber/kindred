@@ -2,7 +2,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import * as dataAction from '../../actions/sexDataAction';
+import * as desireAction from '../../actions/desireAction';
+import * as datesAction from '../../actions/datesSexAction';
 
 //Selection Items
 import * as font from '../shared/font/fontello.css';
@@ -30,8 +31,8 @@ class SexSummary extends React.Component {
 
 function matchDispatchToProps(dispatch) {
   return {
-    pushToDesire: bindActionCreators(dataAction.pushToDesire, dispatch),
-    pushToDates: bindActionCreators(dataAction.pushToDates, dispatch)
+    pushToDesire : bindActionCreators(desireAction.pushToDesire, dispatch),
+    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch)
   }
 }
 

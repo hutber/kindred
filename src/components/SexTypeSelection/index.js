@@ -31,7 +31,7 @@ class Home extends React.Component {
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren}`}>
           <div className={style.dateContainer}>
             <div className={style.date}>
-              {Moment(this.props.currentSexInfo.date).format('MMMM Do YYYY')}
+              {Moment(this.props.sexDates.currentDate).format('MMMM Do YYYY')}
               <i className={font['icon-down-open-big']}></i>
             </div>
           </div>
@@ -64,11 +64,7 @@ class Home extends React.Component {
 }
 
 function mapStateToProps(state){
-  return { currentSexInfo: state.currentSexInfo };
+  return { sexDates: state.sexDates };
 }
 
-function matchDispatchToProps(dispatch){
-  return {DispatchChangeCurrentSexInfo : bindActionCreators(currentSexData.changeCurrentSexInfo, dispatch)}
-}
-
-export default connect(mapStateToProps,matchDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
