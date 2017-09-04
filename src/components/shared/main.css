@@ -58,48 +58,6 @@ header {
   display: block;
 }
 
-//Data entry pages
-.dataItem {
-  color: #000;
-  background: #FFF;
-  border-top: 1px solid #DDD;
-  border-left: none;
-  border-right: none;
-  padding: 15px 10px;
-
-  &.bottom {
-    border-bottom: 1px solid #DDD;
-  }
-
-  label {
-    float: left;
-    display: block;
-    font-family: $textMedium;
-  }
-  &:before, &:after {
-    content: '';
-    clear: both;
-    display: table;
-  }
-}
-
-.info {
-  float: right;
-}
-
-.icon {
-  display: inline-block;
-  padding-left: 5px;
-}
-
-.dataBreak {
-  height: 20px;
-  color: #000;
-  font-family: $textMedium;
-  text-align: left;
-  padding-left: 10px;
-}
-
 //Elements
 a {
   text-decoration: none;

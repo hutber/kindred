@@ -3,7 +3,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
-import * as dataAction from '../../actions/sexDataAction';
+import * as desireAction from '../../actions/desireAction';
+import * as datesAction from '../../actions/datesSexAction';
+import { formatSexData } from '../../functions/dates';
 
 //Selection Items
 import Moment from 'moment';
@@ -28,7 +30,7 @@ class SexOverviewSummary extends React.Component {
   }
 
   render (){
-    const desire = this.props.sexData.desire[Moment(this.props.KnobWheel.date).format('MM-D-YYYY_h-mm')];
+    const desire = this.props.desireData[formatSexData(this.props.sexDates.currentDate)];
     return (
       <div>
         <Header left={<HeaderLeft link={this.props.history.goBack}/>} right={<RightPlus link="home"/>}/>
@@ -36,7 +38,7 @@ class SexOverviewSummary extends React.Component {
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
           <div className={`${styles.dateArea}`}>
             <div>
-              <h2>{Moment(this.props.KnobWheel.date).format('Do MMMM')}</h2>
+              <h2>{Moment(this.props.KnobWheel.currentDate).format('Do MMMM')}</h2>
               <p>Swipe right to delete an entry</p>
             </div>
           </div>
@@ -52,16 +54,16 @@ class SexOverviewSummary extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo,
+    sexDates: state.sexDates,
     KnobWheel: state.KnobWheel,
-    sexData: state.sexData
+    desireData: state.desire
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    pushToDesire : bindActionCreators(dataAction.pushToDesire, dispatch),
-    pushToDates : bindActionCreators(dataAction.pushToDates, dispatch)
+    pushToDesire : bindActionCreators(desireAction.pushToDesire, dispatch),
+    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch)
   }
 }
 

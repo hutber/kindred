@@ -1,3 +1,4 @@
+@import "../vars.css";
 button {
   width: 100%;
   color: $bgTop;

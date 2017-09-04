@@ -1,36 +1,41 @@
-import Moment from 'moment';
+import { formatSexData } from '../functions/dates';
 import {
+  SET_DATE,
   ADD_DATES,
   REMOVE_DATES
 } from '../actions/datesSexAction';
 
 const initialState = {
-  'desire': {},
-	'masturbation': {},
-	'sex': {},
-	'dates': {}
+	currentDate: new Date(),
+	dates: {}
 };
+
 
 function sexDates (state = initialState, action) {
 	switch (action.type) {
 
-		/*
-		* DATES
-		*/
 		case ADD_DATES:
-      var key = Moment(action.date).format('MM-D-YYYY');
+      var key = formatSexData(action.currentDate);
+      console.info('key', key);
       const newDates = {...state.dates};
       newDates[key] = isNaN(newDates[key]) ? 1 : newDates[key]+1 ;
 			return {
 				...state,
 				dates: newDates
-			}
+			};
 
+		case SET_DATE:
+      return {
+        ...state,
+        currentDate:action.currentDate
+      };
+
+      //TODO Write date removal
 		case REMOVE_DATES:
 			return {
 				...state,
-				sex: action.data
-			}
+        dates: action.data
+			};
 	}
 	return state
 }

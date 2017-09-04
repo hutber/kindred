@@ -4,10 +4,13 @@ import { routerReducer } from 'react-router-redux'
 import { reducer as formReducer } from 'redux-form'
 
 
-/* Reducers */
-import sexData from './sexDataReducer';
-import loading from './loadingReducer';
-import hydrate from './hydrate';
+//# Reducers
+  import hydrate from './hydrate';
+    //# Sex
+      import sexDates from './datesSexReducer';
+      //#Desire
+      import desireReducer from './desireReducer';
+
 
 //### Not Logged in
   //### Login
@@ -23,9 +26,9 @@ const reducers = combineReducers({
   , hydrate
   , form: formReducer
   , user
-  , currentSexInfo
   , KnobWheel
-  , sexData
+  , desire: desireReducer
+  , sexDates
 });
 
 export default reducers;

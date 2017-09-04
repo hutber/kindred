@@ -5,7 +5,7 @@ import * as dataAction from '../../../actions/sexDataAction';
 import Moment from 'moment';
 
 //Styles
-import mainStyles from '../main.css';
+import formStyles from '../form/formItems.css';
 import * as font from '../font/fontello.css';
 
 class RightArrow extends React.Component {
@@ -16,9 +16,9 @@ class RightArrow extends React.Component {
 		return (
 			<div>
 				<label htmlFor={this.props.label}>{this.props.label}</label>
-				<div className={mainStyles.info} id={this.props.label}>
+				<div className={formStyles.info} id={this.props.label}>
           {this.props.rightText}
-					<div className={mainStyles.icon}>
+					<div className={formStyles.icon}>
 						<i className={font['icon-right-small']}></i>
 					</div>
 				</div>
@@ -29,7 +29,7 @@ class RightArrow extends React.Component {
 
 function mapStateToProps(state){
   return {
-    currentSexInfo: state.currentSexInfo,
+    sexDates: state.sexDates,
     KnobWheel: state.KnobWheel
   };
 }

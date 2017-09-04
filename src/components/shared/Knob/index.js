@@ -18,7 +18,7 @@ class Knob extends React.Component {
 	}
 
 	componentDidMount() {
-    this.props.DispatchDesireDate(this.props.currentSexInfo.date);
+    // this.props.DispatchDesireDate(this.props.sexDates.currentDate);
 
 		const { knob } = this.refs;
 
@@ -50,7 +50,7 @@ class Knob extends React.Component {
 
 function mapStateToProps(state){
   return {
-  	currentSexInfo: state.currentSexInfo,
+  	sexDates: state.sexDates,
     KnobWheel: state.KnobWheel
   };
 }

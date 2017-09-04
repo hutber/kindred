@@ -7,11 +7,10 @@ import {
   LOGGED_IN_FAILED,
   LOGOUT
 } from '../actions/userActions';
-
 const initialState = {
 	email: 'jamie@hutber.com',
 	pw: 'test',
-	loggedIn: localStorage.length ? JSON.parse(localStorage.LOGGED_IN) : 0,
+	loggedIn: localStorage.length > 0 && typeof localStorage.LOGGIN_IN !== "undefined" ? JSON.parse(localStorage.LOGGED_IN) : 0,
 	shouldRedirect: 0,
 	errorMessage: null
 };
