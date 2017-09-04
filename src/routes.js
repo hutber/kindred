@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import {Route} from 'react-router';
 
 //Core Pages
-import Splash from './components/Splash';
+import Splash from './components/Splash/Splash';
 
 //Root Pages
 import Home from './components/Home';

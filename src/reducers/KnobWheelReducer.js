@@ -9,7 +9,6 @@ const initialState = {
 };
 
 function KnobWheel (state = initialState, action) {
-  console.info(action);
 	switch (action.type) {
 		case SET_DESIRE:
 			return {

@@ -2,10 +2,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
+import Moment from 'moment';
 import RequireLogin from '../shared/auth/RequireLogin'
 import * as datesAction from '../../actions/datesSexAction';
-import Moment from 'moment';
-import * as currentSexInfo from '../../actions/currentSexInfo'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
 
 //Selection Items
@@ -25,6 +24,7 @@ import * as font from '../shared/font/fontello.css';
 import DataBreak from '../shared/textForm/DataBreak'
 import RightArrow from '../shared/textForm/RightArrow'
 import Switch from '../shared/textForm/Switch'
+import RightArrowWithNumberInput from '../shared/textForm/RightArrowWithNumberInput'
 
 class Masturbation extends React.Component {
   constructor (props){
@@ -49,7 +49,6 @@ class Masturbation extends React.Component {
   }
 
   render (){
-    console.info(this.props.sexDates.currentDate);
     return (
       <div>
         <Header style="headerDark" middle="Masturbation" left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
@@ -79,7 +78,7 @@ class Masturbation extends React.Component {
             <mobiscroll.Slider value="3" min={1} max={5} step={1} data-step-labels="[1, 2, 3, 4, 5]"/>
           </div>
           <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${form.dataItem}`}>
-            <RightArrow label="Quantity" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
+            <RightArrowWithNumberInput label="Quantity" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
           </div>
         </div>
         <Menu />

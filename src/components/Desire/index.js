@@ -48,7 +48,6 @@ class Desire extends React.Component {
       'fontWeight': 'bold',
       'displayPrevious': true
     };
-    console.info(this.props.KnobWheel);
     return (
       <div>
         <Header left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />

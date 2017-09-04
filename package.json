@@ -6,8 +6,9 @@
   "scripts": {
     "build": "webpack --optimize-minimize --config ./webpack.prod.config.js",
     "testReport": "BABEL_ENV=test nyc mocha --reporter --watch tap 'test/**/*.spec.js'",
-    "test": "BABEL_ENV=test nyc --require babel-register mocha  --require ignore-styles --watch tap 'test/**/*.spec.js'",
+    "test": "BABEL_DISABLE_CACHE=1 BABEL_ENV=test nyc --require babel-register mocha  --require ignore-styles --watch tap 'test/**/*.spec.js'",
     "wtest": "nyc mocha --reporter tap 'test/**/*.spec.js'",
+    "jest": "jest --watch",
     "start": "BABEL_ENV=development/client webpack-dev-server --config ./webpack.config.js",
     "dash": "BABEL_ENV=development/client webpack-dashboard -- webpack-dev-server --config ./webpack.config.js",
     "plain": "webpack-dev-server --config ./webpack.config.js",
@@ -51,7 +52,9 @@
     "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
+    "babel-jest": "^21.0.0",
     "babel-loader": "^6.4.0",
+    "babel-plugin-react-css-modules": "^3.3.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.2.2",
     "babel-preset-es2015": "^6.24.0",
@@ -66,12 +69,12 @@
     "css-modules-require-hook": "^4.0.6",
     "file-loader": "^0.10.1",
     "hutber-conventional-changelog": "^1.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "ignore-styles": "^5.0.1",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
     "jquery": "^3.2.1",
     "jquery-knob": "^1.2.11",
-    "postcss-mixins": "6.0.0",
     "jsdom": "^9.12.0",
     "mocha": "^3.2.0",
     "moment": "^2.18.1",
@@ -82,6 +85,7 @@
     "postcss-fontpath": "^0.3.0",
     "postcss-load-config": "^1.2.0",
     "postcss-loader": "^1.3.3",
+    "postcss-mixins": "6.0.0",
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^3.0.0",
     "postcss-strip-inline-comments": "^0.1.5",
@@ -91,6 +95,7 @@
     "redux-form": "^6.7.0",
     "redux-logger": "^3.0.0",
     "redux-persist": "^4.8.0",
+    "regenerator-runtime": "^0.11.0",
     "require-hacker": "^3.0.0",
     "resolve-url-loader": "^2.0.2",
     "style-loader": "^0.16.0",
@@ -105,15 +110,25 @@
       "path": "./node_modules/hutber-conventional-changelog"
     }
   },
-  "nyc": {
-    "all": true,
-    "include": [
-      "src/**/*.js"
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
     ],
-    "cache": true,
-    "require": [
-      "./test/helper/registerBabel.js",
-      "./test/helper/setup.js"
-    ]
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "coveragePathIgnorePatterns":[
+      "/node_modules/",
+      "<rootDir>/app/"
+    ],
+    "moduleNameMapper": {
+      "moduleNameMapper": {
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+        "\\.(css|less)$": "identity-obj-proxy"
+      }
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   }
 }
