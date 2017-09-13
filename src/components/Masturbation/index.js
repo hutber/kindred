@@ -4,8 +4,11 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import Moment from 'moment';
 import RequireLogin from '../shared/auth/RequireLogin'
-import * as datesAction from '../../actions/datesSexAction';
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
+
+//Actions
+import * as datesAction from '../../actions/datesSexAction';
+import * as masturbationAction from '../../actions/sexPages/currentMasturbationAction';
 
 //Selection Items
 import Menu from '../shared/menu';
@@ -30,6 +33,15 @@ class Masturbation extends React.Component {
   constructor (props){
     super(props);
     this.saveButton = this.saveButton.bind(this);
+
+    //Quantity
+    this.openQuantity = this.openQuantity.bind(this);
+    this.setQuantity = this.setQuantity.bind(this);
+
+    //Quality
+    this.setQuality = this.setQuality.bind(this);
+
+    //Dates
     this.changeDate = this.changeDate.bind(this);
     this.openDate = this.openDate.bind(this);
   }
@@ -38,6 +50,19 @@ class Masturbation extends React.Component {
     this.props.pushToDesire(this.props.KnobWheel);
     this.props.pushToDates(this.props.KnobWheel.date);
     this.props.history.push('sexsummary');
+  }
+
+  //Quantity
+  openQuantity (){
+    this.refs.orgasmQuantity.instance.show();
+  }
+  setQuantity (event){
+    this.props.DispatchOrgasmQuantity(Number.parseFloat(event.valueText));
+  }
+
+  //Quality
+  setQuality (event){
+    this.props.DispatchOrgasmQuality(event);
   }
 
   openDate (){
@@ -75,10 +100,26 @@ class Masturbation extends React.Component {
             <div className={form.inLineTitle}>
               <div>Quality</div>
             </div>
-            <mobiscroll.Slider value="3" min={1} max={5} step={1} data-step-labels="[1, 2, 3, 4, 5]"/>
+            <mobiscroll.Slider
+              value={this.props.masturbation.quality}
+              onChange={this.setQuality}
+              min={1}
+              max={5}
+              step={1}
+              data-step-labels="[1, 2, 3, 4, 5]"
+            />
           </div>
           <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${form.dataItem}`}>
-            <RightArrowWithNumberInput label="Quantity" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
+            <RightArrow label="Quantity" rightText={this.props.masturbation.quantity}/>
+            <mobiscroll.Number
+              onSet={this.setQuantity}
+              value={this.props.masturbation.quantity}
+              ref="orgasmQuantity"
+              scale={0}
+              step={1}
+              min={0}
+              max={10}
+            />
           </div>
         </div>
         <Menu />
@@ -89,14 +130,17 @@ class Masturbation extends React.Component {
 
 function mapStateToProps(state){
   return {
-    sexDates: state.sexDates
+    sexDates: state.sexDates,
+    masturbation: state.currentMasturbation
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
-    DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch)
+    DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
+    DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
+    DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch)
   }
 }
 

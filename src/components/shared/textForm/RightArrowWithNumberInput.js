@@ -14,35 +14,24 @@ class RightArrowWithNumberInput extends React.Component {
 		super(props)
 
     this.state = {
-			adults: 1,
-			children: 0,
-			infants: 0,
-			allowOverweight: false,
-			weight: 30,
-			stepperCons: 30,
-			numpadCons: 30
+			masturbation: 0,
 		};
-    this.childrenChange = function(value) {
-      this.setState({children: value});
-    }
-    this.show = function() {
-      this.refs.numpad.instance.show();
-    }
-    this.onSet = function(event, inst) {
-      this.setState ({
-        stepperCons: event.valueText
-      });
-    }
+
+		this.changeStepper = this.changeStepper.bind(this);
 	}
+
+  changeStepper = function(value) {
+		console.info(value);
+    this.state.masturbation = value;
+  };
+
 	render (){
+		console.info(this.state.masturbation);
 		return (
 			<div>
 				<label htmlFor={this.props.label}>{this.props.label}</label>
 				<div className={formStyles.info} id={this.props.label}>
-					<mobiscroll.Stepper theme="ios" type="number" data-role="stepper" max={15} data-val="left" value={this.state.children} onChange={this.childrenChange}>
-						<label>Children</label>
-						<span className="mbsc-desc">2-14 years</span>
-					</mobiscroll.Stepper>
+					<mobiscroll.Number type="number" data-role="stepper" min={0} max={15} data-val="left" value={this.state.masturbation} onChange={this.changeStepper} />
 				</div>
 			</div>
 		)

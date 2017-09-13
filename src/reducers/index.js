@@ -10,6 +10,8 @@ import { reducer as formReducer } from 'redux-form'
       import sexDates from './datesSexReducer';
       //#Desire
       import desireReducer from './desireReducer';
+      //#Masturbation
+      import currentMasturbation from './sexPages/currentMasturbation'
 
 
 //### Not Logged in
@@ -29,6 +31,7 @@ const reducers = combineReducers({
   , KnobWheel
   , desire: desireReducer
   , sexDates
+  , currentMasturbation
 });
 
 export default reducers;
