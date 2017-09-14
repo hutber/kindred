@@ -96,7 +96,7 @@ class Masturbation extends React.Component {
           <Switch label="Toys?" val={false}/>
           <Switch label="Porn?" val={false}/>
           <DataBreak text="ORGASM"/>
-          <div className={form.slider}>
+          <div className={form.preTitle}>
             <div className={form.inLineTitle}>
               <div>Quality</div>
             </div>
@@ -120,6 +120,12 @@ class Masturbation extends React.Component {
               min={0}
               max={10}
             />
+          </div>
+          <DataBreak />
+          <div className={form.preTitle}>
+            <div className={form.inLineTitle}>
+              <div>Tags</div>
+            </div>
           </div>
         </div>
         <Menu />
