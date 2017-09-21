@@ -45,6 +45,7 @@ header {
   height: calc(100vh - $menuHeight - $menuHeight);
   overflow-y: auto;
   background: $textBg;
+  color: $bordeDarkGrey;
 }
 
 .contentAreaFullWidth {

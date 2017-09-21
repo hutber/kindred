@@ -12,6 +12,7 @@ import * as masturbationAction from '../../actions/sexPages/currentMasturbationA
 
 //Selection Items
 import Menu from '../shared/menu';
+import Tags from '../tags';
 
 //Header
 import Header from '../shared/header/Header';
@@ -20,7 +21,8 @@ import RightSave from '../shared/header/RightSave';
 
 //styles
 import mainStyles from '../shared/main.css';
-import form from '../shared/form/formItems.css';
+import styles from './style.css';
+import formStyles from '../shared/form/formItems.css';
 import * as font from '../shared/font/fontello.css';
 
 //textform elements
@@ -44,6 +46,10 @@ class Masturbation extends React.Component {
     //Dates
     this.changeDate = this.changeDate.bind(this);
     this.openDate = this.openDate.bind(this);
+
+    this.state = {
+      tagsSearch: ''
+    };
   }
 
   saveButton (){
@@ -73,6 +79,10 @@ class Masturbation extends React.Component {
     this.props.DispatchChangeDate(new Date(event.valueText));
   }
 
+  searchTags (event){
+    this.setState({tagsSearch: event.target.value});
+  }
+
   render (){
     return (
       <div>
@@ -89,15 +99,15 @@ class Masturbation extends React.Component {
         />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.openDate} className={`${form.bottom} ${form.dataItem}`}>
+          <div onClick={this.openDate} className={`${formStyles.bottom} ${formStyles.dataItem}`}>
             <RightArrow label="Date" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
           <Switch label="Toys?" val={false}/>
           <Switch label="Porn?" val={false}/>
           <DataBreak text="ORGASM"/>
-          <div className={form.preTitle}>
-            <div className={form.inLineTitle}>
+          <div className={formStyles.preTitle}>
+            <div className={formStyles.inLineTitle}>
               <div>Quality</div>
             </div>
             <mobiscroll.Slider
@@ -109,7 +119,7 @@ class Masturbation extends React.Component {
               data-step-labels="[1, 2, 3, 4, 5]"
             />
           </div>
-          <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${form.dataItem}`}>
+          <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${formStyles.dataItem}`}>
             <RightArrow label="Quantity" rightText={this.props.masturbation.quantity}/>
             <mobiscroll.Number
               onSet={this.setQuantity}
@@ -118,15 +128,11 @@ class Masturbation extends React.Component {
               scale={0}
               step={1}
               min={0}
-              max={10}
+              max={11}
             />
           </div>
           <DataBreak />
-          <div className={form.preTitle}>
-            <div className={form.inLineTitle}>
-              <div>Tags</div>
-            </div>
-          </div>
+          <Tags />
         </div>
         <Menu />
       </div>
