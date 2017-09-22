@@ -16,7 +16,7 @@ import Logout from './components/shared/Logout';
 //Sex Selection Pages
 import SexTypeSelection from './components/SexTypeSelection';
 import Desire from './components/Desire';
-import Masturbation from './components/Masturbation';
+import Masturbation from './containers/Masturbation';
 
 //Save Summary
 import SexSummary from './components/SexSummary/SexOverviewSummary';

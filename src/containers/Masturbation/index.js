@@ -3,33 +3,33 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import Moment from 'moment';
-import RequireLogin from '../shared/auth/RequireLogin'
-import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
+import RequireLogin from '../../components/shared/auth/RequireLogin'
+import mobiscroll from '../../components/shared/mobiscroll/mobiscroll.custom';
 
 //Actions
 import * as datesAction from '../../actions/datesSexAction';
 import * as masturbationAction from '../../actions/sexPages/currentMasturbationAction';
 
 //Selection Items
-import Menu from '../shared/menu';
-import Tags from '../tags';
+import Menu from '../../components/shared/menu/index';
+import Tags from '../../components/tags/index';
 
 //Header
-import Header from '../shared/header/Header';
-import LeftBack from '../shared/header/LeftBack';
-import RightSave from '../shared/header/RightSave';
+import Header from '../../components/shared/header/Header';
+import LeftBack from '../../components/shared/header/LeftBack';
+import RightSave from '../../components/shared/header/RightSave';
 
 //styles
-import mainStyles from '../shared/main.css';
+import mainStyles from '../../components/shared/main.css';
 import styles from './style.css';
-import formStyles from '../shared/form/formItems.css';
-import * as font from '../shared/font/fontello.css';
+import formStyles from '../../components/shared/form/formItems.css';
+import * as font from '../../components/shared/font/fontello.css';
 
 //textform elements
-import DataBreak from '../shared/textForm/DataBreak'
-import RightArrow from '../shared/textForm/RightArrow'
-import Switch from '../shared/textForm/Switch'
-import RightArrowWithNumberInput from '../shared/textForm/RightArrowWithNumberInput'
+import DataBreak from '../../components/shared/textForm/DataBreak'
+import RightArrow from '../../components/shared/textForm/RightArrow'
+import Switch from '../../components/shared/textForm/Switch'
+import RightArrowWithNumberInput from '../../components/shared/textForm/RightArrowWithNumberInput'
 
 class Masturbation extends React.Component {
   constructor (props){
@@ -46,10 +46,6 @@ class Masturbation extends React.Component {
     //Dates
     this.changeDate = this.changeDate.bind(this);
     this.openDate = this.openDate.bind(this);
-
-    this.state = {
-      tagsSearch: ''
-    };
   }
 
   saveButton (){
@@ -77,10 +73,6 @@ class Masturbation extends React.Component {
 
   changeDate (event){
     this.props.DispatchChangeDate(new Date(event.valueText));
-  }
-
-  searchTags (event){
-    this.setState({tagsSearch: event.target.value});
   }
 
   render (){

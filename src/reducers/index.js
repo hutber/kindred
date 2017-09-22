@@ -11,7 +11,9 @@ import { reducer as formReducer } from 'redux-form'
       //#Desire
       import desireReducer from './desireReducer';
       //#Masturbation
-      import currentMasturbation from './sexPages/currentMasturbation'
+      import currentMasturbation from './sexPages/currentMasturbation';
+	      //#Masturbation Tags
+	      import masturbationTags from './tags/tagsReducer'
 
 
 //### Not Logged in
@@ -32,6 +34,7 @@ const reducers = combineReducers({
   , desire: desireReducer
   , sexDates
   , currentMasturbation
+	, masturbationTags
 });
 
 export default reducers;
