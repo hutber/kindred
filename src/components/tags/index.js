@@ -32,8 +32,10 @@ class Tags extends React.Component {
   }
 
   render (){
+    let child = this.props.children;
     return (
       <div className={formStyles.itemContainer}>
+        {child}
         <div className={formStyles.tagsTitle}>Tags</div>
         <div className={styles.searchContainer}>
           <i className={font['icon-search']}></i>

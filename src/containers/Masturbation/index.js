@@ -48,6 +48,14 @@ class Masturbation extends React.Component {
     this.openDate = this.openDate.bind(this);
   }
 
+  componentWillMount(){
+    console.info(this.refs.masturbationTag);
+  }
+
+  componentDidMount(){
+    console.info(this.refs.masturbationTag);
+  }
+
   saveButton (){
     this.props.pushToDesire(this.props.KnobWheel);
     this.props.pushToDates(this.props.KnobWheel.date);
@@ -109,7 +117,7 @@ class Masturbation extends React.Component {
               data-step-labels="[1, 2, 3, 4, 5]"
             />
           </div>
-          <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${formStyles.dataItem}`}>
+          <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${formStyles.dataItem}`}  ref="masturbationTag">
             <RightArrow label="Quantity" rightText={this.props.masturbation.quantity}/>
             <mobiscroll.Number
               onSet={this.setQuantity}
@@ -122,7 +130,9 @@ class Masturbation extends React.Component {
             />
           </div>
           <DataBreak />
-          <Tags />
+          <Tags>
+            <h1>Hutber</h1>
+          </Tags>
         </div>
         <Menu />
       </div>

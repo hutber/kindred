@@ -7,9 +7,7 @@ import { masturbationTagsObject } from './tags';
 function masturbationTags (state = masturbationTagsObject, action) {
   switch (action.type) {
     case SET_TAG_SELECTION:
-    const newTags = {};
-    newTags[action.tagName] = action.tagVal;
-      return {...state, ...newTags};
+      return {...state, [action.tagName]: action.tagVal};
   }
   return state
 }
