@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 
 //Actions
-import * as datesAction from '../../actions/datesSexAction';
-import * as masturbationAction from '../../actions/sexPages/currentMasturbationAction';
+import * as tagsAction from '../../actions/tagsAction';
 
 //styles
 import styles from './style.css';
@@ -16,9 +15,16 @@ class Tags extends React.Component {
   constructor (props){
     super(props);
 
+    this.searchTags = this.searchTags.bind(this);
+    this.selectTag = this.selectTag.bind(this);
+
     this.state = {
       tagsSearch: ''
     };
+  }
+
+  selectTag (event){
+    this.props.setTagSelection(event.target.textContent, !this.props.masturbationTags[event.target.textContent]);
   }
 
   searchTags (event){
@@ -27,21 +33,25 @@ class Tags extends React.Component {
 
   render (){
     return (
-      <div>
-        <div className={formStyles.preTitle}>
-          <div className={formStyles.inLineTitle}>
-            <div>Tags</div>
-          </div>
-          <div className={styles.searchContainer}>
-            <i className={font['icon-search']}></i>
-            <input
-              type="text"
-              value={this.state.tagsSearch}
-              className={styles.tagInput}
-              onChange={this.searchTags}
-              placeholder="Search"
-            />
-          </div>
+      <div className={formStyles.itemContainer}>
+        <div className={formStyles.tagsTitle}>Tags</div>
+        <div className={styles.searchContainer}>
+          <i className={font['icon-search']}></i>
+          <input
+            type="text"
+            value={this.state.tagsSearch}
+            className={styles.tagInput}
+            onChange={this.searchTags}
+            placeholder="Search"
+          />
+        </div>
+        <div className={styles.tags}>
+          {
+            Object.keys(this.props.masturbationTags).map((tag, key) => {
+              const val = this.props.masturbationTags[tag];
+              return <div className={val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onClick={this.selectTag}>{tag}</div>
+            })
+          }
         </div>
       </div>
     )
@@ -50,17 +60,13 @@ class Tags extends React.Component {
 
 function mapStateToProps(state){
   return {
-    sexDates: state.sexDates,
-    masturbation: state.currentMasturbation
+    masturbationTags: state.masturbationTags
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
-    DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
-    DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
-    DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch)
+    setTagSelection : bindActionCreators(tagsAction.setTagSelection, dispatch),
   }
 }
 

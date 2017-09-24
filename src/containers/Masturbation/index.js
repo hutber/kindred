@@ -98,10 +98,8 @@ class Masturbation extends React.Component {
           <Switch label="Toys?" val={false}/>
           <Switch label="Porn?" val={false}/>
           <DataBreak text="ORGASM"/>
-          <div className={formStyles.preTitle}>
-            <div className={formStyles.inLineTitle}>
-              <div>Quality</div>
-            </div>
+          <div className={formStyles.itemContainer}>
+            <div className={formStyles.sliderTitle}>Quality</div>
             <mobiscroll.Slider
               value={this.props.masturbation.quality}
               onChange={this.setQuality}

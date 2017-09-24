@@ -1,6 +1,5 @@
 @import "../vars.css";
-//Data entry pages
-.preTitle {
+.itemContainer {
   background: #FFF;
   padding-top: 20px;
 }
@@ -14,7 +13,7 @@
   padding-left: 5px;
 }
 
-.dataBreak, .inLineTitle {
+.dataBreak, .inLineTitle, .sliderTitle, .tagsTitle {
   height: 20px;
   color: #000;
   font-family: $textMedium;
@@ -23,7 +22,15 @@
 }
 
 .inLineTitle {
-  margin-bottom: 30px;
+  margin: 0 0 15px;
+}
+
+.sliderTitle {
+  margin: 0 0 35px;
+}
+
+.tagsTitle {
+  margin: 0;
 }
 
 .long {
