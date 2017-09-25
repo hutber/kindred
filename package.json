@@ -5,10 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --optimize-minimize --config ./webpack.prod.config.js",
-    "testReport": "BABEL_ENV=test nyc mocha --reporter --watch tap 'test/**/*.spec.js'",
-    "test": "BABEL_DISABLE_CACHE=1 BABEL_ENV=test nyc --require babel-register mocha  --require ignore-styles --watch tap 'test/**/*.spec.js'",
-    "wtest": "nyc mocha --reporter tap 'test/**/*.spec.js'",
-    "jest": "jest --watch",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "start": "BABEL_ENV=development/client webpack-dev-server --config ./webpack.config.js",
     "dash": "BABEL_ENV=development/client webpack-dashboard -- webpack-dev-server --config ./webpack.config.js",
     "plain": "webpack-dev-server --config ./webpack.config.js",
@@ -108,6 +106,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/hutber-conventional-changelog"
+    }
+  },
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
     }
   },
   "jest": {

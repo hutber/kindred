@@ -1,23 +1,11 @@
+/* eslint-disable object-property-newline */
 import React from 'react';
-import Link from '../Link.react';
-import renderer from 'react-test-renderer';
+import { shallow, mount, render } from 'enzyme';
 
-test('Link changes the class when hovered', () => {
-  const component = renderer.create(
-    <Link page="http://www.facebook.com">Facebook</Link>
-  );
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+import Splash from './Splash';
 
-  // manually trigger the callback
-  tree.props.onMouseEnter();
-  // re-rendering
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-
-  // manually trigger the callback
-  tree.props.onMouseLeave();
-  // re-rendering
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+describe('Splash Page', function() {
+	it('should render without throwing an error', function() {
+		expect(shallow(<Splash />).contains(<div className="foo">Bar</div>)).toBe(true);
+	});
 });
