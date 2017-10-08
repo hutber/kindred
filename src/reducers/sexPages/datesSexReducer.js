@@ -1,9 +1,9 @@
-import { formatSexData } from '../functions/dates';
+import { formatSexData } from '../../functions/dates';
 import {
   SET_DATE,
   ADD_DATES,
   REMOVE_DATES
-} from '../actions/datesSexAction';
+} from '../../actions/datesSexAction';
 
 const initialState = {
 	currentDate: new Date(),
@@ -41,4 +41,3 @@ function sexDates (state = initialState, action) {
 }
  
 export default sexDates;
-

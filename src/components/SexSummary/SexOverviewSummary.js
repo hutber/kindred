@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
-import * as desireAction from '../../actions/desireAction';
+import * as desireAction from '../../actions/sexPages/desire/desireAction';
 import * as datesAction from '../../actions/datesSexAction';
 import { formatSexData } from '../../functions/dates';
 
@@ -27,18 +27,24 @@ import styles from './style.css';
 class SexOverviewSummary extends React.Component {
   constructor (props){
     super(props);
+
+    this.goHome = this.goHome.bind(this);
+  }
+
+  goHome (){
+    this.props.history.push('home');
   }
 
   render (){
     const desire = this.props.desireData[formatSexData(this.props.sexDates.currentDate)];
     return (
       <div>
-        <Header left={<HeaderLeft link={this.props.history.goBack}/>} right={<RightPlus link="home"/>}/>
+        <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="home"/>}/>
         <RequireLogin />
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
           <div className={`${styles.dateArea}`}>
             <div>
-              <h2>{Moment(this.props.KnobWheel.currentDate).format('Do MMMM')}</h2>
+              <h2>{Moment(this.props.knobWheel.currentDate).format('Do MMMM')}</h2>
               <p>Swipe right to delete an entry</p>
             </div>
           </div>
@@ -55,8 +61,8 @@ class SexOverviewSummary extends React.Component {
 function mapStateToProps(state){
   return {
     sexDates: state.sexDates,
-    KnobWheel: state.KnobWheel,
-    desireData: state.desire
+    knobWheel: state.desire.knobWheel,
+    desireData: state.desire.data
   };
 }
 

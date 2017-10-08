@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 
 //Actions
-import * as tagsAction from '../../actions/tagsAction';
+import * as tagsAction from '../../actions/sexPages/masturbation/tagsAction';
 
 //styles
 import styles from './style.css';
@@ -62,7 +62,7 @@ class Tags extends React.Component {
 
 function mapStateToProps(state){
   return {
-    masturbationTags: state.masturbationTags
+    masturbationTags: state.masturbation.tags
   };
 }
 

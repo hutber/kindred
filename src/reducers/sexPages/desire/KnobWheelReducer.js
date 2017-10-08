@@ -1,14 +1,14 @@
 import {
 	SET_DESIRE
 	, SET_DATE
-} from '../actions/KnobWheelAction';
+} from '../../../actions/sexPages/desire/KnobWheelAction';
 
 const initialState = {
 	desire: 3,
   currentDate: new Date()
 };
 
-function KnobWheel (state = initialState, action) {
+function knobWheel (state = initialState, action) {
 	switch (action.type) {
 		case SET_DESIRE:
 			return {
@@ -24,4 +24,4 @@ function KnobWheel (state = initialState, action) {
 	return state
 }
  
-export default KnobWheel;
+export default knobWheel;

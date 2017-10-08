@@ -39,6 +39,7 @@ header {
   margin: $contentAreaMarginTop $contentAreaMarginLeft;
   height: calc(100vh - $menuHeight - $menuHeight - $contentAreaMarginTop*2);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .contentAreaBG {

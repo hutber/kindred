@@ -1,7 +1,7 @@
-import { formatSexData } from '../functions/dates';
+import { formatSexData } from '../../../functions/dates';
 import {
   SET_DESIRE_DATA,
-} from '../actions/desireAction';
+} from '../../../actions/sexPages/desire/desireAction';
 
 const initialState = {};
 

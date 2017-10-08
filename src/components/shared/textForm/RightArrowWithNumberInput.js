@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as dataAction from '../../../actions/sexDataAction';
+import * as dataAction from '../../../actions/sexPages/sexDataAction';
 import mobiscroll from '../../shared/mobiscroll/mobiscroll.custom';
 import Moment from 'moment';
 
@@ -41,7 +41,7 @@ class RightArrowWithNumberInput extends React.Component {
 function mapStateToProps(state){
   return {
     sexDates: state.sexDates,
-    KnobWheel: state.KnobWheel
+    desireKnobWheel: state.knobWheel
   };
 }
 

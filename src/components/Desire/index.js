@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
-import * as desireAction from '../../actions/desireAction';
+import * as desireAction from '../../actions/sexPages/desire/desireAction';
 import * as datesAction from '../../actions/datesSexAction';
 
 //Selection Items
@@ -26,8 +26,8 @@ class Desire extends React.Component {
   }
 
   saveButton (){
-    this.props.pushToDates(this.props.KnobWheel.currentDate);
-    this.props.pushToDesire(this.props.KnobWheel);
+    this.props.pushToDates(this.props.knobWheel.currentDate);
+    this.props.pushToDesire(this.props.knobWheel);
     this.props.history.push('sexsummary');
   }
 
@@ -55,7 +55,7 @@ class Desire extends React.Component {
         <div className={`${mainStyles.verticalAlignParent} ${styles.vertAlign}`}>
           <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
-            <p>{Moment(this.props.KnobWheel.currentDate).format('MMMM Do YYYY')}</p>
+            <p>{Moment(this.props.knobWheel.currentDate).format('MMMM Do YYYY')}</p>
             <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
             <Knob config={config} />
           </div>
@@ -68,7 +68,7 @@ class Desire extends React.Component {
 
 function mapStateToProps(state){
   return {
-    KnobWheel: state.KnobWheel
+    knobWheel: state.desire.knobWheel
   };
 }
 

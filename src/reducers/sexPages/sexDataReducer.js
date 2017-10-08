@@ -2,7 +2,7 @@ import Moment from 'moment';
 import {
   ADD_DATES,
   REMOVE_DATES
-} from '../actions/datesSexAction';
+} from '../../actions/datesSexAction';
 
 const initialState = {
   'desire': {},

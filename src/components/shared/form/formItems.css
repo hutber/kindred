@@ -46,6 +46,7 @@
   border-left: none;
   border-right: none;
   padding: 15px 10px;
+  text-transform: capitalize;
 
   &.bottom {
     border-bottom: 1px solid #DDD;

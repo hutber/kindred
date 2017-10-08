@@ -8,7 +8,7 @@ import mobiscroll from '../../components/shared/mobiscroll/mobiscroll.custom';
 
 //Actions
 import * as datesAction from '../../actions/datesSexAction';
-import * as masturbationAction from '../../actions/sexPages/currentMasturbationAction';
+import * as masturbationAction from '../../actions/sexPages/masturbation/currentMasturbationAction';
 
 //Selection Items
 import Menu from '../../components/shared/menu/index';
@@ -25,10 +25,12 @@ import styles from './style.css';
 import formStyles from '../../components/shared/form/formItems.css';
 import * as font from '../../components/shared/font/fontello.css';
 
+//Switch Elements
+import Switch from './Switch';
+
 //textform elements
 import DataBreak from '../../components/shared/textForm/DataBreak'
 import RightArrow from '../../components/shared/textForm/RightArrow'
-import Switch from '../../components/shared/textForm/Switch'
 import RightArrowWithNumberInput from '../../components/shared/textForm/RightArrowWithNumberInput'
 
 class Masturbation extends React.Component {
@@ -48,17 +50,9 @@ class Masturbation extends React.Component {
     this.openDate = this.openDate.bind(this);
   }
 
-  componentWillMount(){
-    console.info(this.refs.masturbationTag);
-  }
-
-  componentDidMount(){
-    console.info(this.refs.masturbationTag);
-  }
-
   saveButton (){
-    this.props.pushToDesire(this.props.KnobWheel);
-    this.props.pushToDates(this.props.KnobWheel.date);
+    this.props.pushToDesire(this.props.knobWheel);
+    this.props.pushToDates(this.props.knobWheel.date);
     this.props.history.push('sexsummary');
   }
 
@@ -103,8 +97,8 @@ class Masturbation extends React.Component {
             <RightArrow label="Date" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
-          <Switch label="Toys?" val={false}/>
-          <Switch label="Porn?" val={false}/>
+          <Switch type="toys" />
+          <Switch type="porn" />
           <DataBreak text="ORGASM"/>
           <div className={formStyles.itemContainer}>
             <div className={formStyles.sliderTitle}>Quality</div>
@@ -117,7 +111,7 @@ class Masturbation extends React.Component {
               data-step-labels="[1, 2, 3, 4, 5]"
             />
           </div>
-          <div onClick={this.openQuantity} className={`${mainStyles.bottom} ${formStyles.dataItem}`}  ref="masturbationTag">
+          <div onClick={this.openQuantity} className={`${formStyles.bottom} ${formStyles.dataItem}`}  ref="masturbationTag">
             <RightArrow label="Quantity" rightText={this.props.masturbation.quantity}/>
             <mobiscroll.Number
               onSet={this.setQuantity}
@@ -126,13 +120,11 @@ class Masturbation extends React.Component {
               scale={0}
               step={1}
               min={0}
-              max={11}
+              max={99}
             />
           </div>
           <DataBreak />
-          <Tags>
-            <h1>Hutber</h1>
-          </Tags>
+          <Tags />
         </div>
         <Menu />
       </div>
@@ -143,7 +135,7 @@ class Masturbation extends React.Component {
 function mapStateToProps(state){
   return {
     sexDates: state.sexDates,
-    masturbation: state.currentMasturbation
+    masturbation: state.masturbation.current
   };
 }
 

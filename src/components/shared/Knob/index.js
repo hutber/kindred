@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as desireActions from '../../../actions/KnobWheelAction'
+import * as desireActions from '../../../actions/sexPages/desire/KnobWheelAction'
 import $, * as jQuery from 'jquery';
 import knob from 'jquery-knob';
 
@@ -18,8 +18,6 @@ class Knob extends React.Component {
 	}
 
 	componentDidMount() {
-    // this.props.DispatchDesireDate(this.props.sexDates.currentDate);
-
 		const { knob } = this.refs;
 
 		this.props.config.change = this.updateDesire;
@@ -27,7 +25,7 @@ class Knob extends React.Component {
 
 		$(knob).knob(this.props.config);
 		$(knob)
-			.val(`${this.props.KnobWheel.desire}/10`)
+			.val(`${this.props.knobWheel.desire}/10`)
 			.trigger('change');
 	}
 	
@@ -39,7 +37,7 @@ class Knob extends React.Component {
 	render() {
 		return (
 			<div>
-				<span className={style.konbHeader}>{this.props.KnobWheel.desire}/10</span>
+				<span className={style.KnobHeader}>{this.props.knobWheel.desire}/10</span>
 				<div className={style.Knob}>
 					<input ref="knob" />
 				</div>
@@ -51,7 +49,7 @@ class Knob extends React.Component {
 function mapStateToProps(state){
   return {
   	sexDates: state.sexDates,
-    KnobWheel: state.KnobWheel
+    knobWheel: state.desire.knobWheel
   };
 }
 

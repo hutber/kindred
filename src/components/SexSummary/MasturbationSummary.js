@@ -2,7 +2,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as dataAction from '../../actions/sexDataAction';
+import * as dataAction from '../../actions/sexPages/sexDataAction';
 
 //Selection Items
 import * as font from '../shared/font/fontello.css';

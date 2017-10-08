@@ -1,6 +1,6 @@
 import {
   SET_TAG_SELECTION,
-} from '../../actions/tagsAction';
+} from '../../../../actions/sexPages/masturbation/tagsAction';
 
 import { masturbationTagsObject } from './tags';
 

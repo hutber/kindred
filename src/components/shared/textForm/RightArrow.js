@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as dataAction from '../../../actions/sexDataAction';
+import * as dataAction from '../../../actions/sexPages/sexDataAction';
 import Moment from 'moment';
 
 //Styles
@@ -30,7 +30,7 @@ class RightArrow extends React.Component {
 function mapStateToProps(state){
   return {
     sexDates: state.sexDates,
-    KnobWheel: state.KnobWheel
+    desireKnobWheel: state.knobWheel
   };
 }
 
