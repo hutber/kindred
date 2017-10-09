@@ -16,14 +16,12 @@ import Tags from '../../components/tags/index';
 
 //Header
 import Header from '../../components/shared/header/Header';
-import LeftBack from '../../components/shared/header/LeftBack';
+import LeftBackClear from '../../components/shared/header/LeftBackClear';
 import RightSave from '../../components/shared/header/RightSave';
 
 //styles
 import mainStyles from '../../components/shared/main.css';
-import styles from './style.css';
 import formStyles from '../../components/shared/form/formItems.css';
-import * as font from '../../components/shared/font/fontello.css';
 
 //Switch Elements
 import Switch from './Switch';
@@ -31,7 +29,6 @@ import Switch from './Switch';
 //textform elements
 import DataBreak from '../../components/shared/textForm/DataBreak'
 import RightArrow from '../../components/shared/textForm/RightArrow'
-import RightArrowWithNumberInput from '../../components/shared/textForm/RightArrowWithNumberInput'
 
 class Masturbation extends React.Component {
   constructor (props){
@@ -80,7 +77,7 @@ class Masturbation extends React.Component {
   render (){
     return (
       <div>
-        <Header style="headerDark" middle="Masturbation" left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
+        <Header style="headerDark" middle="Masturbation" left={<LeftBackClear history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
         <mobiscroll.Datetime
           onSet={this.changeDate}
@@ -97,8 +94,8 @@ class Masturbation extends React.Component {
             <RightArrow label="Date" rightText={Moment(this.props.sexDates.currentDate).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
-          <Switch type="toys" />
-          <Switch type="porn" />
+          <Switch type="Toys" />
+          <Switch type="Porn" />
           <DataBreak text="ORGASM"/>
           <div className={formStyles.itemContainer}>
             <div className={formStyles.sliderTitle}>Quality</div>

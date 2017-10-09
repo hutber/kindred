@@ -12,7 +12,6 @@ class Switch extends React.Component {
 		super(props)
 
 		this.flickSwitch = this.flickSwitch.bind(this);
-		console.info(this.props.masturbation, this.props.type);
 	}
 
   flickSwitch (event){

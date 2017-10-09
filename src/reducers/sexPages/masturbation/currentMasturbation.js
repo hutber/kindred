@@ -1,4 +1,5 @@
 import {
+  RESET,
   SET_ORGASM_QUANTITY,
   SET_ORGASM_QUALITY,
   SET_TOY_BOOLEAN,
@@ -14,6 +15,9 @@ const initialState = {
 
 function currentMasturbation (state = initialState, action) {
 	switch (action.type) {
+
+		case RESET:
+			return initialState;
 
 		case SET_ORGASM_QUANTITY:
 			return {...state, quantity: action.quantity };
