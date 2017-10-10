@@ -34,6 +34,10 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 * Switch
  */
 
+.mbsc-switch input:checked+.mbsc-switch-track {
+  background: #02E9FB;
+}
+
 .mbsc-switch.mbsc-mobiscroll .mbsc-switch-track {
   background: #1ba0e3;
 }

@@ -8,7 +8,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   padding: 0 !important;
 }
 .mbsc-cal table {
-//height: auto;
+  //height: auto;
 }
 .mbsc-mobiscroll .mbsc-cal th {
   //height: 30px;
@@ -33,6 +33,10 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 /*
 * Switch
  */
+
+.mbsc-switch input:checked+.mbsc-switch-track {
+  background: #02E9FB;
+}
 
 .mbsc-switch.mbsc-mobiscroll .mbsc-switch-track {
   background: #1ba0e3;
@@ -70,12 +74,34 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-mobiscroll .mbsc-progress-track {
-  height: .225em;
+  height: .325em;
 }
 
 .mbsc-progress-bar {
   border-radius: 1em;
 }
+
+.mbsc-progress-step-label {
+  top: -40px;
+  color: #0CACFE;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+.mbsc-mobiscroll.mbsc-progress {
+  padding: 10px;
+}
+
+.mbsc-mobiscroll .mbsc-slider-handle {
+  height: 1.1em;
+  width: 1.1em;
+}
+
+.mbsc-mobiscroll  .mbsc-switch-track .mbsc-switch-handle {
+  height: 1.5em;
+  width: 1.5em;
+}
+
 
 /*
 *  Calender
@@ -124,7 +150,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   display: block;
   transform: translate3d(-50%, -50%, 0);
   -webkit-transform: translate3d(-50%, -50%,0);
-    line-height: 2.6125em;
+  line-height: 2.6125em;
 }
 
 .mbsc-mobiscroll .mbsc-cal-hl-now .mbsc-cal-today .mbsc-cal-day-fg, .mbsc-cal-day.mbsc-cal-day-v.mbsc-fr-btn-e.mbsc-fr-btn-nhl.mbsc-cal-day-sel .mbsc-cal-day-fg, .mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-sel {

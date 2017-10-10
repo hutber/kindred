@@ -29,6 +29,7 @@ class Left extends React.Component {
 	}
 
   resetData (event){
+  	console.info(event);
   	this.props.reset();
     this.props.history.push('sextypeselection');
   }
