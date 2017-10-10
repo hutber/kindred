@@ -11,7 +11,7 @@
   width: 80vw;
   border-radius: 20px;
   border: #FFF 2px solid;
-  padding: 1vh 0;
+  padding: 1.3vh 0 1.4vh 0;
   color: #8996D9;
   font-family: LatoSemibold;
   position: absolute;
@@ -22,7 +22,7 @@
     position: absolute;
     right: 5vw;
     color: #FFF;
-    top: 57%;
+    top: 50%;
     transform: translate(0, -50%);
   }
 }
