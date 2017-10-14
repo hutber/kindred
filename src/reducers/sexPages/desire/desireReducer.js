@@ -7,7 +7,7 @@ const initialState = {};
 
 function desireReducer (state = initialState, action) {
 	switch (action.type) {
-		case SET_DESIRE_DATA:
+    case SET_DESIRE_DATA:
       const key = formatSexData(action.data.currentDate);
       const newDesire = {...state.desire};
       newDesire[key] = action.data;

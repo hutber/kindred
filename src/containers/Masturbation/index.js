@@ -53,16 +53,19 @@ class Masturbation extends React.Component {
     this.props.history.push('sexsummary');
   }
 
+
   //Quantity
   openQuantity (){
     this.refs.orgasmQuantity.instance.show();
   }
   setQuantity (event){
+    this.props.setChanged(true);
     this.props.DispatchOrgasmQuantity(Number.parseFloat(event.valueText));
   }
 
   //Quality
   setQuality (event){
+    this.props.setChanged(true);
     this.props.DispatchOrgasmQuality(event);
   }
 
@@ -71,13 +74,14 @@ class Masturbation extends React.Component {
   }
 
   changeDate (event){
+    // this.props.setChanged(true);
     this.props.DispatchChangeDate(new Date(event.valueText));
   }
 
   render (){
     return (
       <div>
-        <Header style="headerDark" middle="Masturbation" left={<LeftBackClear history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
+        <Header style="headerDark" middle="Masturbation" left={<LeftBackClear type="masturbation" history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
         <mobiscroll.Datetime
           onSet={this.changeDate}
@@ -141,7 +145,8 @@ function matchDispatchToProps(dispatch){
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
     DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
-    DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch)
+    DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch),
+    setChanged: bindActionCreators(masturbationAction.setChanged, dispatch)
   }
 }
 

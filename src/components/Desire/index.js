@@ -3,6 +3,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
+
+//Actions
+import * as desireCurrentAction from '../../actions/sexPages/desire/desireCurrentAction';
 import * as desireAction from '../../actions/sexPages/desire/desireAction';
 import * as datesAction from '../../actions/datesSexAction';
 
@@ -13,7 +16,7 @@ import Knob from '../shared/Knob';
 
 //Header
 import Header from '../shared/header/Header';
-import LeftBack from '../shared/header/LeftBack';
+import LeftBackClear from '../../components/shared/header/LeftBackClear';
 import RightSave from '../shared/header/RightSave';
 
 import mainStyles from '../shared/main.css';
@@ -26,8 +29,8 @@ class Desire extends React.Component {
   }
 
   saveButton (){
-    this.props.pushToDates(this.props.knobWheel.currentDate);
-    this.props.pushToDesire(this.props.knobWheel);
+    this.props.pushToDates(this.props.current.currentDate);
+    this.props.pushToDesire(this.props.current);
     this.props.history.push('sexsummary');
   }
 
@@ -50,12 +53,12 @@ class Desire extends React.Component {
     };
     return (
       <div>
-        <Header left={<LeftBack link={this.props.history.goBack} />} right={<RightSave save={this.saveButton} />} />
+        <Header left={<LeftBackClear type="desire" history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
         <div className={`${mainStyles.verticalAlignParent} ${styles.vertAlign}`}>
           <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
-            <p>{Moment(this.props.knobWheel.currentDate).format('MMMM Do YYYY')}</p>
+            <p>{Moment(this.props.current.currentDate).format('MMMM Do YYYY')}</p>
             <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
             <Knob config={config} />
           </div>
@@ -68,14 +71,15 @@ class Desire extends React.Component {
 
 function mapStateToProps(state){
   return {
-    knobWheel: state.desire.knobWheel
+    current: state.desire.current
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
+    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
     pushToDesire : bindActionCreators(desireAction.pushToDesire, dispatch),
-    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch)
+    setChanged: bindActionCreators(desireCurrentAction.setChanged, dispatch)
   }
 }
 

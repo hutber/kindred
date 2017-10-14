@@ -4,11 +4,11 @@ import { routerReducer } from 'react-router-redux'
 import { reducer as formReducer } from 'redux-form'
 
 import desireReducer from './desireReducer';
-import knobWheel from './KnobWheelReducer';
+import current from './desireCurrentlReducer';
 
 const desire = combineReducers({
     data: desireReducer,
-    knobWheel
+    current
 });
 
 export default desire;

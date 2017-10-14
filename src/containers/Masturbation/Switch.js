@@ -15,6 +15,7 @@ class Switch extends React.Component {
 	}
 
   flickSwitch (event){
+		this.props.setChanged(true);
 		this.props['set'+this.props.type](event.returnValue);
 	}
 
@@ -23,7 +24,7 @@ class Switch extends React.Component {
 			<div className={formStyles.dataItem}>
 				<label htmlFor={this.props.label}>{this.props.type}?</label>
 				<div className={formStyles.info}>
-					<mobiscroll.Switch onChange={this.flickSwitch} value={this.props.masturbation[this.props.type]} />
+					<mobiscroll.Switch onChange={this.flickSwitch} value={this.props.masturbation[this.props.type.toLowerCase()]} />
 				</div>
 			</div>
 		)
@@ -40,6 +41,7 @@ function matchDispatchToProps(dispatch){
   return {
     setToys : bindActionCreators(dataAction.setToys, dispatch),
     setPorn : bindActionCreators(dataAction.setPorn, dispatch),
+    setChanged: bindActionCreators(dataAction.setChanged, dispatch)
   }
 }
 

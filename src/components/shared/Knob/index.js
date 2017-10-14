@@ -1,9 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as desireActions from '../../../actions/sexPages/desire/KnobWheelAction'
 import $, * as jQuery from 'jquery';
 import knob from 'jquery-knob';
+
+//Actions
+import * as desireActions from '../../../actions/sexPages/desire/desireAction'
+import * as desireCurrentAction from '../../../actions/sexPages/desire/desireCurrentAction'
 
 //styles
 import style from './index.css';
@@ -14,6 +17,7 @@ class Knob extends React.Component {
 	}
 	
 	updateDesire = (event) => {
+    this.props.setChanged(true);
 		this.props.DispatchDesireLevel(Math.round(event))
 	}
 
@@ -25,7 +29,7 @@ class Knob extends React.Component {
 
 		$(knob).knob(this.props.config);
 		$(knob)
-			.val(`${this.props.knobWheel.desire}/10`)
+			.val(`${this.props.current.desire}/10`)
 			.trigger('change');
 	}
 	
@@ -37,7 +41,7 @@ class Knob extends React.Component {
 	render() {
 		return (
 			<div>
-				<span className={style.KnobHeader}>{this.props.knobWheel.desire}/10</span>
+				<span className={style.KnobHeader}>{this.props.current.desire}/10</span>
 				<div className={style.Knob}>
 					<input ref="knob" />
 				</div>
@@ -49,7 +53,7 @@ class Knob extends React.Component {
 function mapStateToProps(state){
   return {
   	sexDates: state.sexDates,
-    knobWheel: state.desire.knobWheel
+    current: state.desire.current
   };
 }
 
@@ -57,6 +61,7 @@ function matchDispatchToProps(dispatch){
   return {
   	DispatchDesireLevel : bindActionCreators(desireActions.changeDesireLevel, dispatch)
   	, DispatchDesireDate : bindActionCreators(desireActions.changeDesireDate, dispatch)
+    , setChanged: bindActionCreators(desireCurrentAction.setChanged, dispatch)
   }
 }
 

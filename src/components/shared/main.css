@@ -15,13 +15,16 @@ html, body, body > div, body > div > div {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: linear-gradient(to bottom, $bgTop 0%, $bgBottom 100%);
   color: #FFF;
   text-align: center;
   font-family: $textThin;
   font-size: 18px;
   padding: 0;
   margin: 0;
+}
+
+html, body {
+  background: linear-gradient(to bottom, $bgTop 0%, $bgBottom 100%);
 }
 
 #app, #app, .app-shell {

@@ -2,6 +2,7 @@ export const SET_ORGASM_QUANTITY = 'SET_ORGASM_QUANTITY';
 export const SET_ORGASM_QUALITY = 'SET_ORGASM_QUALITY';
 export const SET_TOY_BOOLEAN = 'SET_TOY_BOOLEAN';
 export const SET_PORN_BOOLEAN = 'SET_PORN_BOOLEAN';
+export const SET_CHANGED = 'SET_CHANGED';
 export const RESET = 'RESET';
 
 export function reset() {
@@ -19,6 +20,12 @@ export function setPorn(value) {
   return {
     type: SET_PORN_BOOLEAN,
     value: value
+  }
+}
+export function setChanged(value) {
+  return {
+    type: SET_CHANGED,
+    changed: value
   }
 }
 export function setOrgasmQuantity(amount) {

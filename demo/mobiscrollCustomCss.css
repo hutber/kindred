@@ -1,7 +1,7 @@
 input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   display: none;
 }
-.mbsc-mobiscroll .mbsc-fr-w {
+.mbsc-mobiscroll .mbsc-fr-popup.mbsc-cal-tabbed .mbsc-fr-w {
   background: transparent;
 }
 .mbsc-fr-w, .mbsc-cal-tabs {
@@ -85,7 +85,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   top: -40px;
   color: #0CACFE;
   font-size: .9em;
-  font-weight: bold;
+  font-family: Lato;
 }
 
 .mbsc-mobiscroll.mbsc-progress {
@@ -102,6 +102,197 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   width: 1.5em;
 }
 
+/*
+* Popup
+ */
+
+
+.mbsc-mobiscroll [role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
+  background: #f7f7f7;
+  color: #000;
+}
+
+.mbsc-ios.mbsc-fr-center .mbsc-fr-w {
+  padding-top: 0;
+  padding-bottom: 3.75em;
+}
+
+.mbsc-ios.mbsc-fr-bubble .mbsc-fr-w, .mbsc-ios.mbsc-fr-center .mbsc-fr-w {
+  border-radius: 8px;
+}
+.mbsc-kindred.mbsc-fr-nobtn .mbsc-fr-w, .mbsc-ios.mbsc-fr-center .mbsc-fr-w {
+  min-width: 16.666667em;
+}
+.mbsc-ios .mbsc-fr-w {
+  position: relative;
+  padding-top: 3.666667em;
+  background: #f7f7f7;
+  color: #000;
+  font-size: 12px;
+  font-family: -apple-system,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.mbsc-fr .mbsc-fr-w {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.mbsc-fr-w {
+  min-width: 200px;
+  overflow: hidden;
+  text-align: center;
+  font-family: arial,verdana,sans-serif;
+}
+.mbsc-fr-w, .mbsc-fr-overlay {
+  -webkit-transform: translateZ(0);
+}
+
+.mbsc-fr-popup, .mbsc-fr-btn-cont {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mbsc-fr-popup {
+  max-width: 65%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  text-shadow: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+
+  .h3, h3 {
+    font-size: 24px;
+  }
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+  p {
+    margin: 0 0 10px;
+  }
+}
+
+
+.mbsc-fr-hdn {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.mbsc-wdg .mbsc-ltr .mbsc-wdg-c {
+  text-align: left;
+}
+
+
+.md-dialog {
+  text-align: center;
+}
+.md-dialog {
+  text-align: center;
+}
+.md-dialog {
+  min-width: 250px;
+}
+.md-dialog-cont .md-dialog {
+  width: 260px;
+  margin: 0 auto;
+}
+
+
+.mbsc-fr-btn-cont {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.mbsc-ios .mbsc-fr-btn-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+.mbsc-kindred.mbsc-fr-center .mbsc-fr-btn-cont {
+  display: table;
+  top: auto;
+  bottom: 0;
+  border: 0;
+  table-layout: fixed;
+}
+.mbsc-fr-btn-w {
+  vertical-align: top;
+  display: table-cell;
+  position: relative;
+  z-index: 5;
+}
+
+.mbsc-ios .mbsc-fr-btn-w {
+  display: block;
+  float: right;
+}
+
+.mbsc-kindred.mbsc-fr-center .mbsc-fr-btn-w {
+  display: table-cell;
+  float: none;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+
+.mbsc-kindred.mbsc-fr-center .mbsc-fr-btn-w:first-child {
+  border-left: 0;
+}
+
+.mbsc-fr-btn {
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+.mbsc-kindred .mbsc-fr-btn-cont {
+  padding: 0;
+}
+
+
+.mbsc-fr-btn-e {
+  cursor: pointer;
+}
+.mbsc-kindred .mbsc-fr-btn {
+  height: 2.75em;
+  line-height: 2.75em;
+  padding: 0 .625em;
+  display: inline-block;
+  color: #007aff;
+  font-size: 1em;
+}
+.mbsc-ios .mbsc-fr-btn-s .mbsc-fr-btn {
+  font-weight: bold;
+}
+.mbsc-ios.mbsc-fr-center .mbsc-fr-btn {
+  display: block;
+  font-weight: normal;
+}
+
+.mbsc-ios.mbsc-fr-center .mbsc-ltr .mbsc-fr-btn-w:first-child .mbsc-fr-btn, .mbsc-ios.mbsc-fr-center .mbsc-rtl .mbsc-fr-btn-w:last-child .mbsc-fr-btn {
+  border-radius: 0 0 0 .5em;
+}
 
 /*
 *  Calender

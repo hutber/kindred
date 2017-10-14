@@ -3,6 +3,7 @@ import {
   SET_ORGASM_QUANTITY,
   SET_ORGASM_QUALITY,
   SET_TOY_BOOLEAN,
+  SET_CHANGED,
   SET_PORN_BOOLEAN,
 } from '../../../actions/sexPages/masturbation/currentMasturbationAction';
 
@@ -11,6 +12,7 @@ const initialState = {
   quantity: 0,
 	toys: false,
 	porn: false,
+  changed: false,
 };
 
 function currentMasturbation (state = initialState, action) {
@@ -18,6 +20,9 @@ function currentMasturbation (state = initialState, action) {
 
 		case RESET:
 			return initialState;
+
+		case SET_CHANGED:
+			return {...state, changed: action.changed };
 
 		case SET_ORGASM_QUANTITY:
 			return {...state, quantity: action.quantity };

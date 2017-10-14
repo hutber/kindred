@@ -23,7 +23,9 @@ class Home extends React.Component {
         , controls: ['calendar', 'time']
         , yearChange: false
         , marked: Object.keys(this.props.dates).map((date) => {
-          return new Date(date);
+          const newDate = date.split('_');
+          newDate[1] = newDate[1].split('-').join(':');
+          return new Date(newDate.join(' '));
         })
         , max: new Date()
       }

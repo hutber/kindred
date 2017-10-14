@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import mobiscroll from '../../../components/shared/mobiscroll/mobiscroll.custom';
 
 import * as masturbationAction from '../../../actions/sexPages/masturbation/currentMasturbationAction';
+import * as desireCurrentAction from '../../../actions/sexPages/desire/desireCurrentAction';
 
 //Styles
 import * as font from '../font/fontello.css';
@@ -25,12 +26,16 @@ class Left extends React.Component {
 	}
 
   showPopup (){
-  	this.refs.widgetCenter.instance.show();
+		if(this.props[this.props.type].changed) {
+      this.refs.widgetCenter.instance.show();
+    }else{
+      this.props.history.push('sextypeselection');
+		}
 	}
 
   resetData (event){
-  	if(event.button === "set") {
-      this.props.reset();
+  	if(event.button === "set" && this.props[this.props.type].changed) {
+      this.props['reset'+this.props.type]();
       this.props.history.push('sextypeselection');
     }
   }
@@ -43,7 +48,7 @@ class Left extends React.Component {
 				</div>
 				<mobiscroll.Widget
 					ref="widgetCenter"
-					theme="ios"
+					theme="kindred"
 					lang="en"
 					style={{display:'none'}}
 					buttons={[{
@@ -67,10 +72,18 @@ class Left extends React.Component {
 	}
 }
 
+function mapStateToProps(state){
+	return {
+		masturbation: state.masturbation.current,
+		desire: state.desire.current,
+	}
+}
+
 function matchDispatchToProps(dispatch){
   return {
-    reset : bindActionCreators(masturbationAction.reset, dispatch),
+    resetmasturbation : bindActionCreators(masturbationAction.reset, dispatch),
+    resetdesire : bindActionCreators(desireCurrentAction.reset, dispatch),
   }
 }
 
-export default connect(null, matchDispatchToProps)(Left);
+export default connect(mapStateToProps, matchDispatchToProps)(Left);

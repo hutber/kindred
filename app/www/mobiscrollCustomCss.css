@@ -85,7 +85,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   top: -40px;
   color: #0CACFE;
   font-size: .9em;
-  font-weight: bold;
+  font-family: Lato;
 }
 
 .mbsc-mobiscroll.mbsc-progress {
