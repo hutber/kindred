@@ -38,8 +38,8 @@ class DesireSummary extends React.Component {
             <i className={font['icon-fire']}></i>
           </div>
           <div className={styles.itemContentArea}>
-            <div className={`${styles.knobText} ${main.verticalAlign}`}><div>{this.props.knob}</div>/10</div>
-            <Knob config={config}/>
+            <div className={`${styles.knobText} ${main.verticalAlign}`}><div>{this.props.knob.desire}</div>/10</div>
+            <Knob config={config} value={this.props.knob.desire} />
           </div>
         </div>
       </div>

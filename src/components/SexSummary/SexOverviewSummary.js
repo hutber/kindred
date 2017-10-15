@@ -44,7 +44,7 @@ class SexOverviewSummary extends React.Component {
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
           <div className={`${styles.dateArea}`}>
             <div>
-              <h2>{Moment(this.props.current.currentDate).format('Do MMMM')}</h2>
+              <h2>{Moment(this.props.sexDates.currentDate).format('Do MMMM')}</h2>
               <p>Swipe right to delete an entry</p>
             </div>
           </div>
@@ -61,7 +61,6 @@ class SexOverviewSummary extends React.Component {
 function mapStateToProps(state){
   return {
     sexDates: state.sexDates,
-    current: state.desire.current,
     desire: state.desire
   };
 }

@@ -31,6 +31,7 @@ class Desire extends React.Component {
   saveButton (){
     this.props.pushToDates(this.props.current.currentDate);
     this.props.pushToDesire(this.props.current);
+    this.props.resetdesire();
     this.props.history.push('sexsummary');
   }
 
@@ -79,6 +80,7 @@ function matchDispatchToProps(dispatch){
   return {
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
     pushToDesire : bindActionCreators(desireAction.pushToDesire, dispatch),
+    resetdesire: bindActionCreators(desireCurrentAction.reset, dispatch),
     setChanged: bindActionCreators(desireCurrentAction.setChanged, dispatch)
   }
 }
