@@ -16,6 +16,8 @@ const configureStore = function (history, preloadedState = {}) {
       autoRehydrate()
     )
   );
+
+  window.store = store;
   
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
