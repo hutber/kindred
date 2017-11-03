@@ -41,10 +41,15 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-tap-event-plugin": "^2.0.1",
     "react-test-renderer": "^15.5.4",
+    "enzyme-to-json": "^1.5.1",
     "redux": "^3.6.0",
     "rimraf": "^2.6.1",
     "stylelint": "^7.9.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "babel-plugin-dynamic-import-node": "^1.0.2",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-react-require": "^1.0.1",
+    "babel-plugin-transform-react-stateless-component-name": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
@@ -71,6 +76,7 @@
     "ignore-styles": "^5.0.1",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
+    "jest-cli": "^21.2.1",
     "jquery": "^3.2.1",
     "jquery-knob": "^1.2.11",
     "jsdom": "^9.12.0",
@@ -89,7 +95,7 @@
     "postcss-strip-inline-comments": "^0.1.5",
     "precss": "^1.4.0",
     "querystring": "^0.2.0",
-    "react-hot-loader": "^3.0.0-beta.7",
+    "react-hot-loader": "^3.1.1",
     "redux-form": "^6.7.0",
     "redux-logger": "^3.0.0",
     "redux-persist": "^4.8.0",
@@ -101,7 +107,7 @@
     "url-loader": "^0.5.8",
     "webpack-config": "^7.0.0",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.9.4"
   },
   "config": {
     "commitizen": {
@@ -110,7 +116,9 @@
   },
   "env": {
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
     }
   },
   "jest": {
@@ -120,7 +128,7 @@
     "moduleDirectories": [
       "node_modules"
     ],
-    "coveragePathIgnorePatterns":[
+    "coveragePathIgnorePatterns": [
       "/node_modules/",
       "<rootDir>/app/"
     ],
@@ -131,7 +139,11 @@
       }
     },
     "transform": {
-      "^.+\\.js$": "babel-jest"
-    }
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "^(?!.*\\.(js|json)$)": "<rootDir>/src/test/file-transformer.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/pacts"
+    ]
   }
 }
