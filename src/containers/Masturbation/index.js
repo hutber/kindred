@@ -9,6 +9,7 @@ import mobiscroll from '../../components/shared/mobiscroll/mobiscroll.custom';
 //Actions
 import * as datesAction from '../../actions/datesSexAction';
 import * as masturbationAction from '../../actions/sexPages/masturbation/currentMasturbationAction';
+import * as dataMasturbationAction from '../../actions/sexPages/masturbation/dataMasturbationAction';
 
 //Selection Items
 import Menu from '../../components/shared/menu/index';
@@ -49,12 +50,12 @@ class Masturbation extends React.Component {
     //Changed
     this.setChanged = this.setChanged.bind(this);
 
-    this.resetmasturbation = this.resetmasturbation.bind(this);
+    this.resetMasturbation = this.resetMasturbation.bind(this);
   }
 
   saveButton (){
-    this.props.pushToDesire(this.props.knobWheel);
-    this.props.pushToDates(this.props.knobWheel.date);
+    this.props.pushToMasturbation(this.props.masturbation);
+    this.props.pushToDates(this.props.sexDates.currentDate);
     this.props.history.push('sexsummary');
   }
 
@@ -89,8 +90,8 @@ class Masturbation extends React.Component {
     this.props.DispatchChangeDate(new Date(event.valueText));
   }
 
-  resetmasturbation (){
-    this.props.resetmasturbation();
+  resetMasturbation (){
+    this.props.resetMasturbation();
   }
 
   render (){
@@ -157,8 +158,9 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
-    resetmasturbation: bindActionCreators(masturbationAction.reset, dispatch),
+    resetMasturbation: bindActionCreators(masturbationAction.reset, dispatch),
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
+	  pushToMasturbation : bindActionCreators(dataMasturbationAction.pushToMasturbation, dispatch),
     DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
     DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch),

@@ -1,6 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { createLogger } from 'redux-logger'
 import { routerMiddleware } from 'react-router-redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { autoRehydrate } from 'redux-persist'
 import reducers from './reducers';
 
@@ -11,7 +12,7 @@ const configureStore = function (history, preloadedState = {}) {
   const store = createStore(
     reducers,
     preloadedState,
-    compose(
+	  composeWithDevTools(
       applyMiddleware(createLogger(), middlewareHistory),
       autoRehydrate()
     )
