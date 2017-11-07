@@ -11,6 +11,7 @@ function desireReducer (state = initialState, action) {
       const key = formatSexData(action.data.currentDate);
       const newDesire = {...state.desire};
       newDesire[key] = action.data;
+      delete newDesire[key].changed;
 
       const newState = Object.assign({}, state, newDesire);
 			return newState;

@@ -16,7 +16,6 @@ function sexDates (state = initialState, action) {
 
 		case ADD_DATES:
       var key = formatSexData(action.currentDate);
-      console.info('key', key);
       const newDates = {...state.dates};
       newDates[key] = isNaN(newDates[key]) ? 1 : newDates[key]+1 ;
 			return {

@@ -36,7 +36,7 @@ class SexOverviewSummary extends React.Component {
   }
 
   render (){
-    const desire = this.props.desireData[formatSexData(this.props.sexDates.currentDate)];
+    const desire = this.props.desire.data[formatSexData(this.props.sexDates.currentDate)];
     return (
       <div>
         <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="home"/>}/>
@@ -44,11 +44,11 @@ class SexOverviewSummary extends React.Component {
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
           <div className={`${styles.dateArea}`}>
             <div>
-              <h2>{Moment(this.props.knobWheel.currentDate).format('Do MMMM')}</h2>
+              <h2>{Moment(this.props.sexDates.currentDate).format('Do MMMM')}</h2>
               <p>Swipe right to delete an entry</p>
             </div>
           </div>
-          <DesireSummary knob={desire.desire}/>
+          <DesireSummary knob={desire}/>
           <MasturbationSummary />
           <SexSummary />
         </div>
@@ -61,8 +61,7 @@ class SexOverviewSummary extends React.Component {
 function mapStateToProps(state){
   return {
     sexDates: state.sexDates,
-    knobWheel: state.desire.knobWheel,
-    desireData: state.desire.data
+    desire: state.desire
   };
 }
 
