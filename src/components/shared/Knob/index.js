@@ -14,11 +14,17 @@ import style from './index.css';
 class Knob extends React.Component {
 	constructor (props){
 		super(props);
+
+		this.state = {
+			currentDesire: this.props.value ? this.props.value : this.props.current.desire
+		}
 	}
 	
 	updateDesire = (event) => {
     this.props.setChanged(true);
-		this.props.DispatchDesireLevel(Math.round(event))
+    const desire = Math.round(event);
+    this.state.currentDesire = desire;
+		this.props.DispatchDesireLevel(desire);
 	}
 
 	componentDidMount() {
@@ -29,7 +35,7 @@ class Knob extends React.Component {
 
 		$(knob).knob(this.props.config);
 		$(knob)
-			.val(`${this.props.current.desire}/10`)
+			.val(`${this.state.currentDesire}/10`)
 			.trigger('change');
 	}
 	
@@ -41,7 +47,7 @@ class Knob extends React.Component {
 	render() {
 		return (
 			<div>
-				<span className={style.KnobHeader}>{this.props.current.desire}/10</span>
+				<span className={style.KnobHeader}>{this.state.currentDesire}/10</span>
 				<div className={style.Knob}>
 					<input ref="knob" />
 				</div>

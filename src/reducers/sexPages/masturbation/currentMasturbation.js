@@ -10,31 +10,31 @@ import {
 const initialState = {
   quality: 3,
   quantity: 0,
-	toys: false,
-	porn: false,
+  toys: false,
+  porn: false,
   changed: false,
 };
 
 function currentMasturbation (state = initialState, action) {
-	switch (action.type) {
+  switch (action.type) {
 
-		case RESET:
-			return initialState;
+    case RESET:
+      return initialState;
 
-		case SET_CHANGED:
-			return {...state, changed: action.changed };
+    case SET_CHANGED:
+      return {...state, changed: action.changed};
 
-		case SET_ORGASM_QUANTITY:
-			return {...state, quantity: action.quantity };
-		case SET_ORGASM_QUALITY:
-			return {...state, quality: action.quality };
+    case SET_ORGASM_QUANTITY:
+      return {...state, quantity: action.quantity};
+    case SET_ORGASM_QUALITY:
+      return {...state, quality: action.quality};
 
     case SET_TOY_BOOLEAN:
-      return {...state, toys: action.value };
+      return {...state, toys: action.value};
     case SET_PORN_BOOLEAN:
-      return {...state, toys: action.value };
-	}
-	return state
+      return {...state, porn: action.value};
+  }
+  return state
 }
- 
+
 export default currentMasturbation;

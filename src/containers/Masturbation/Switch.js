@@ -15,8 +15,10 @@ class Switch extends React.Component {
 	}
 
   flickSwitch (event){
-		this.props.setChanged(true);
-		this.props['set'+this.props.type](event.returnValue);
+    if(!this.props.masturbation.changed) {
+      this.props.setChanged(true);
+    }
+		this.props['set'+this.props.type](event.target.checked);
 	}
 
 	render (){

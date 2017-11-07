@@ -45,6 +45,11 @@ class Masturbation extends React.Component {
     //Dates
     this.changeDate = this.changeDate.bind(this);
     this.openDate = this.openDate.bind(this);
+
+    //Changed
+    this.setChanged = this.setChanged.bind(this);
+
+    this.resetmasturbation = this.resetmasturbation.bind(this);
   }
 
   saveButton (){
@@ -59,14 +64,20 @@ class Masturbation extends React.Component {
     this.refs.orgasmQuantity.instance.show();
   }
   setQuantity (event){
-    this.props.setChanged(true);
+    this.setChanged();
     this.props.DispatchOrgasmQuantity(Number.parseFloat(event.valueText));
   }
 
   //Quality
   setQuality (event){
-    this.props.setChanged(true);
+    this.setChanged();
     this.props.DispatchOrgasmQuality(event);
+  }
+
+  setChanged (){
+    if(!this.props.masturbation.changed){
+      this.props.setChanged(true);
+    }
   }
 
   openDate (){
@@ -74,8 +85,12 @@ class Masturbation extends React.Component {
   }
 
   changeDate (event){
-    // this.props.setChanged(true);
+    this.setChanged();
     this.props.DispatchChangeDate(new Date(event.valueText));
+  }
+
+  resetmasturbation (){
+    this.props.resetmasturbation();
   }
 
   render (){
@@ -142,6 +157,7 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
+    resetmasturbation: bindActionCreators(masturbationAction.reset, dispatch),
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
     DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
