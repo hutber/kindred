@@ -1,4 +1,4 @@
-import { formatSexData } from '../../functions/dates';
+import { formatSexDate } from '../../functions/dates';
 import {
   SET_DATE,
   ADD_DATES,
@@ -15,7 +15,7 @@ function sexDates (state = initialState, action) {
 	switch (action.type) {
 
 		case ADD_DATES:
-      var key = formatSexData(action.currentDate);
+      var key = formatSexDate(action.currentDate);
       const newDates = {...state.dates};
       newDates[key] = isNaN(newDates[key]) ? 1 : newDates[key]+1 ;
 			return {

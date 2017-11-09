@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import * as desireAction from '../../actions/sexPages/desire/desireAction';
 import * as datesAction from '../../actions/datesSexAction';
-import { formatSexData } from '../../functions/dates';
+import { formatSexDate } from '../../functions/dates';
 
 //Selection Items
 import Moment from 'moment';
@@ -36,7 +36,7 @@ class SexOverviewSummary extends React.Component {
   }
 
   render (){
-    const desire = this.props.desire.data[formatSexData(this.props.sexDates.currentDate)];
+    const desire = this.props.desire.data[formatSexDate(this.props.sexDates.currentDate)];
     return (
       <div>
         <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="home"/>}/>

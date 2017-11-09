@@ -1,4 +1,4 @@
-import { formatSexData } from '../../../functions/dates';
+import { formatSexDate } from '../../../functions/dates';
 import {
   SET_DESIRE_DATA,
 } from '../../../actions/sexPages/desire/desireAction';
@@ -8,7 +8,7 @@ const initialState = {};
 function desireReducer (state = initialState, action) {
 	switch (action.type) {
     case SET_DESIRE_DATA:
-      const key = formatSexData(action.data.currentDate);
+      const key = formatSexDate(action.data.currentDate);
       const newDesire = {...state.desire};
       newDesire[key] = action.data;
 
