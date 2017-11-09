@@ -35,8 +35,16 @@ class SexOverviewSummary extends React.Component {
     this.props.history.push('home');
   }
 
+  displayDesire (){
+	  const desire = this.props.desire.data.length > 0 ? this.props.desire.data[formatSexDate(this.props.sexDates.currentDate)] : null;
+	  if(desire !== null) {
+		  return <DesireSummary knob={desire}/>
+	  } else {
+		  return <DesireSummary knob={null}/>
+	  }
+  }
+
   render (){
-    const desire = this.props.desire.data[formatSexDate(this.props.sexDates.currentDate)];
     return (
       <div>
         <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="home"/>}/>
@@ -48,7 +56,7 @@ class SexOverviewSummary extends React.Component {
               <p>Swipe right to delete an entry</p>
             </div>
           </div>
-          <DesireSummary knob={desire}/>
+	        <displayDesire />
           <MasturbationSummary />
           <SexSummary />
         </div>
