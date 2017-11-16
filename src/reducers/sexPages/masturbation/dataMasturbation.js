@@ -7,11 +7,9 @@ const initialState = {};
 
 function dataMasturbationReducer (state = initialState, action) {
 	switch (action.type) {
-		case SET_DESIRE_DATA:
-      const key = formatSexDate(action.data.currentDate);
-      const newDesire = {...state.desire};
 		case PUSH_TO_MASTURBATION:
-      const key = formatSexData(action.data.currentDate);
+			console.info(action.data);
+      const key = formatSexDate(action.data.currentDate);
       const newDesire = {...state.masturbation};
       newDesire[key] = action.data;
 
