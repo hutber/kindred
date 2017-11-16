@@ -158,13 +158,12 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
-    resetMasturbation: bindActionCreators(masturbationAction.reset, dispatch),
-    pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
-	  pushToMasturbation : bindActionCreators(dataMasturbationAction.pushToMasturbation, dispatch),
+    pushToDates : bindActionCreators(datesAction.pushToDates, changeCurrentSexDate, dispatch),
     DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
+    pushToMasturbation : bindActionCreators(dataMasturbationAction.pushToMasturbation, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
     DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch),
-    setChanged: bindActionCreators(masturbationAction.setChanged, dispatch)
+    setChanged: bindActionCreators(masturbationAction.setChanged, dispatch),
   }
 }
 
