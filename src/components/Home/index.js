@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
+import { SexDateOnly, TrimDateThenSexDateOnly } from '../../functions/dates';
 import * as datesSexAction from '../../actions/datesSexAction'
 
 //Header
@@ -33,14 +34,22 @@ class Home extends React.Component {
     this.selectData = this.selectData.bind(this);
   }
 
-  selectData = (event, inst) => {
+  selectData (event, inst) {
+    const selectedDate = Object.keys(this.props.dates).filter((index, date) => {
+        return TrimDateThenSexDateOnly(index) === SexDateOnly(event.date)
+    });
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
-      this.props.history.push('sextypeselection');
+      if(selectedDate.length === 0){
+          this.props.history.push('sextypeselection');
+      }else{
+          this.props.history.push('sexsummary');
+      }
+
     }
   };
 
-  onPosition = (ev) => {
+  onPosition (ev) {
     let $ = mobiscroll.$,
       monthCont = $('.mbsc-cal-anim-c', ev.target),
       calCont = $('.mbsc-fr-c', ev.target),

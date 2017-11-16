@@ -1,4 +1,5 @@
 import Moment from 'moment';
+import { SexDateOnly } from '../../functions/dates';
 import {
   ADD_DATES,
   REMOVE_DATES
@@ -18,7 +19,7 @@ function sexDates (state = initialState, action) {
 		* DATES
 		*/
 		case ADD_DATES:
-      var key = Moment(action.date).format('MM-D-YYYY');
+      var key = SexDateOnly(action.date);
       const newDates = {...state.dates};
       newDates[key] = isNaN(newDates[key]) ? 1 : newDates[key]+1 ;
 			return {

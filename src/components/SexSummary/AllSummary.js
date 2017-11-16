@@ -47,7 +47,7 @@ class SexOverviewSummary extends React.Component {
   render (){
     return (
       <div>
-        <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="home"/>}/>
+        <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="sextypeselection"/>}/>
         <RequireLogin />
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren} ${styles.itemContainers}`}>
           <div className={`${styles.dateArea}`}>

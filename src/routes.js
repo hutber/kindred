@@ -19,7 +19,7 @@ import Desire from './components/Desire';
 import Masturbation from './containers/Masturbation';
 
 //Save Summary
-import SexSummary from './components/SexSummary/SexOverviewSummary';
+import SexSummary from './components/SexSummary/AllSummary';
 
 export default class Routes extends Component {
   render() {
