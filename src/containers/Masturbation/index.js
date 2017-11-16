@@ -56,6 +56,7 @@ class Masturbation extends React.Component {
   saveButton (){
     this.props.pushToMasturbation(this.props.masturbation);
     this.props.pushToDates(this.props.sexDates.currentDate);
+    this.resetMasturbation();
     this.props.history.push('sexsummary');
   }
 
