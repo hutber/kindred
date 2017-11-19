@@ -29,33 +29,64 @@ class SexOverviewSummary extends React.Component {
   constructor (props){
     super(props);
 
-    this.goHome = this.goHome.bind(this);
+    this.state = {
+    	totalEntries: 0
+    }
+	  this.goHome = this.goHome.bind(this);
 	  this.displayCurrentDesires = this.displayCurrentDesires.call(this);
+	  this.displayCurrentMasturbation = this.displayCurrentMasturbation.call(this);
+	  this.displayCurrentSex = this.displayCurrentSex.call(this);
   }
 
   goHome (){
     this.props.history.push('home');
   }
 
+
+
 	displayCurrentDesires (){
-		const todaysData = TrimDateReturnTodaysDate(this.props.dates, this.props.currentDate);
-		if(todaysData.length > 0) {
+		const todaysData = TrimDateReturnTodaysDate(this.props.desire.data, this.props.currentDate);
+		if(todaysData) {
+			this.state.totalEntries = this.state.totalEntries + 1;
 			return todaysData.map(dates => <DesireSummary key={dates} knob={this.props.desire.data[dates].desire}/>);
 		}else{
+			return <DesireSummary knob={null}/>;
+		}
+	}
+
+	displayCurrentMasturbation (){
+		const todaysData = TrimDateReturnTodaysDate(this.props.masturbation.data, this.props.currentDate);
+		if(todaysData) {
+			this.state.totalEntries = this.state.totalEntries + 1;
+			return '';
+		}else{
+			return <MasturbationSummary />;
+		}
+	}
+
+	displayCurrentSex (){
+		// const todaysData = TrimDateReturnTodaysDate(this.props.sex.data, this.props.currentDate);
+		// if(todaysData.length > 0) {
+		// 	this.state.totalEntries = this.state.totalEntries + 1;
+		// 	return '';
+		// }else{
 			return <div>
 				<NavLink to="desire">
 					Click here to add Desire data for this date
 				</NavLink>
 			</div>;
-		}
+		// }
 	}
 
   render (){
+
+		const summaryStyles = this.state.totalEntries >= 2 ? '' : mainStyles.flexWithChildren;
+
     return (
       <div>
         <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="sextypeselection"/>}/>
         <RequireLogin />
-        <div className={`${mainStyles.contentAreaFullWidth} ${styles.itemContainers}`}>
+        <div className={`${mainStyles.contentAreaFullWidth} ${summaryStyles} ${styles.itemContainers}`}>
           <div className={`${styles.dateArea}`}>
             <div>
               <h2>{Moment(this.props.currentDate).format('Do MMMM')}</h2>
@@ -63,8 +94,8 @@ class SexOverviewSummary extends React.Component {
             </div>
           </div>
 	        {this.displayCurrentDesires}
-          <MasturbationSummary />
-          <SexSummary />
+	        {this.displayCurrentMasturbation}
+	        {this.displayCurrentSex}
         </div>
         <Menu />
       </div>
@@ -76,7 +107,8 @@ function mapStateToProps(state){
   return {
     dates: state.dates.dates,
 	  currentDate: state.dates.currentDate,
-    desire: state.desire
+    desire: state.desire,
+	  masturbation: state.masturbation,
   };
 }
 

@@ -13,7 +13,9 @@ export const TrimDateThenSexDateOnly = function (date){
 }
 
 export const TrimDateReturnTodaysDate = function (dates, currentDate){
-	return Object.keys(dates).filter((index) => {
+	const ObsDate = Object.keys(dates);
+	if(ObsDate.length === 0) return null;
+	return ObsDate.filter((index) => {
 		return TrimDateThenSexDateOnly(index) === SexDateOnly(currentDate)
 	})
 }
