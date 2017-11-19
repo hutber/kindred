@@ -17,41 +17,37 @@ class DesireSummary extends React.Component {
     super(props);
   }
 
+
   render (){
-    let config = {
-      'min':0,
-      'max':10,
-      'thickness': .25,
-      'width':'100%',
-      'height':'110',
-      'readOnly': true,
-      'stopper': false,
-      'inline': false,
-      'lineCap':'round',
-      'bgColor':'#2253EB',
-      'fgColor':'#06FFF0'
-    };
+	  let config = {
+		  'min':0,
+		  'max':10,
+		  'thickness': .25,
+		  'width':'100%',
+		  'height':'110',
+		  'readOnly': true,
+		  'stopper': false,
+		  'inline': false,
+		  'lineCap':'round',
+		  'bgColor':'#2253EB',
+		  'fgColor':'#06FFF0'
+	  };
     return (
       <div className={`${styles.item} ${styles.knobContainer}`}>
         <div className={styles.contentArea}>
           <div className={styles.iconArea}>
             <i className={font['icon-fire']}></i>
           </div>
-          <div className={styles.itemContentArea}>
-            <div className={`${styles.knobText} ${main.verticalAlign}`}><div>{this.props.knob.desire}</div>/10</div>
-            <Knob config={config} value={this.props.knob.desire} />
-          </div>
+	        <div className={styles.itemContentArea}>
+		        <div className={`${styles.knobText} ${main.verticalAlign}`}>
+			        <div>{this.props.knob}</div>/10
+		        </div>
+		        <Knob config={config} value={this.props.knob}/>
+	        </div>
         </div>
       </div>
     )
   }
-}
-
-function mapStateToProps(state){
-  return {
-    sexDates: state.sexDates,
-    sexData: state.sexData
-  };
 }
 
 function matchDispatchToProps(dispatch){
@@ -61,4 +57,4 @@ function matchDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(DesireSummary);
+export default connect(null, matchDispatchToProps)(DesireSummary);

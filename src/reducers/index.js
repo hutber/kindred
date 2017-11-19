@@ -22,7 +22,7 @@ const reducers = combineReducers({
   , user
   , desire
   , masturbation
-  , sexDates
+  , dates: sexDates
 });
 
 export default reducers;

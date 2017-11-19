@@ -29,7 +29,7 @@ class RightArrow extends React.Component {
 
 function mapStateToProps(state){
   return {
-    sexDates: state.sexDates,
+    dates: state.dates,
     desireKnobWheel: state.knobWheel
   };
 }

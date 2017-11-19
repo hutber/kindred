@@ -7,7 +7,6 @@ import {
 
 const initialState = {
   desire: 3,
-  currentDate: new Date(),
   changed: false,
 };
 

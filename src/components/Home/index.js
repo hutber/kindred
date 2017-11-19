@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 import RequireLogin from '../shared/auth/RequireLogin'
 import mobiscroll from '../shared/mobiscroll/mobiscroll.custom';
-import { SexDateOnly, TrimDateThenSexDateOnly } from '../../functions/dates';
+import { SexDateOnly, TrimDateThenSexDateOnly, TrimDateReturnTodaysDate } from '../../functions/dates';
 import * as datesSexAction from '../../actions/datesSexAction'
 
 //Header
@@ -35,9 +35,7 @@ class Home extends React.Component {
   }
 
   selectData (event, inst) {
-    const selectedDate = Object.keys(this.props.dates).filter((index, date) => {
-        return TrimDateThenSexDateOnly(index) === SexDateOnly(event.date)
-    });
+    const selectedDate = TrimDateReturnTodaysDate(this.props.dates, event.date);
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
       if(selectedDate.length === 0){
@@ -83,7 +81,7 @@ class Home extends React.Component {
 
 function matchStateToProps(state){
   return {
-    dates: state.sexDates.dates
+    dates: state.dates.dates
   }
 }
 

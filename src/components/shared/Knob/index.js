@@ -58,7 +58,7 @@ class Knob extends React.Component {
 
 function mapStateToProps(state){
   return {
-  	sexDates: state.sexDates,
+  	dates: state.dates,
     current: state.desire.current
   };
 }

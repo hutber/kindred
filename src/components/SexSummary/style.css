@@ -21,11 +21,10 @@
 }
 
 .dateArea {
-  padding-top: 20px;
   background: $bgTop;
   display: block;
   overflow: hidden;
-  height: 40px !important;
+  height: 100px !important;
   > div {
     width: 100% !important;
   }
@@ -33,13 +32,16 @@
     width: 100%;
     display: block;
   }
+  p {
+    margin: 5px 0 0;
+  }
 }
 
 .itemContainers {
   & > div {
     position: relative;
     width: 100%;
-    height: 110px;
+    height: 130px;
     & > div {
       position: absolute;
       top: 50%;

@@ -59,7 +59,7 @@ class Desire extends React.Component {
         <div className={`${mainStyles.verticalAlignParent} ${styles.vertAlign}`}>
           <div className={styles.content + ' ' + mainStyles.verticalAlign}>
             <h1>Desire</h1>
-            <p>{Moment(this.props.current.currentDate).format('MMMM Do YYYY')}</p>
+            <p>{Moment(this.props.currentDate).format('MMMM Do YYYY')}</p>
             <p>Drag the green bar around the <br /> wheel to set your desire rating</p>
             <Knob config={config} />
           </div>
@@ -72,7 +72,8 @@ class Desire extends React.Component {
 
 function mapStateToProps(state){
   return {
-    current: state.desire.current
+    current: state.desire.current,
+	  currentDate: state.dates.currentDate
   };
 }
 

@@ -120,3 +120,8 @@ p {
     flex-direction: row;
   }
 }
+
+.flexCenterAlign {
+  display: flex;
+  align-items: center;
+}

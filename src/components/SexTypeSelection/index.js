@@ -30,7 +30,7 @@ class Home extends React.Component {
         <div className={`${mainStyles.contentAreaFullWidth} ${mainStyles.flexWithChildren}`}>
           <div className={style.dateContainer}>
             <div className={style.date}>
-              {Moment(this.props.sexDates.currentDate).format('MMMM Do YYYY')}
+              {Moment(this.props.dates.currentDate).format('MMMM Do YYYY')}
               <i className={font['icon-down-open-big']}></i>
             </div>
           </div>
@@ -63,7 +63,7 @@ class Home extends React.Component {
 }
 
 function mapStateToProps(state){
-  return { sexDates: state.sexDates };
+  return { dates: state.dates };
 }
 
 export default connect(mapStateToProps)(Home);
