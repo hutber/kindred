@@ -54,8 +54,11 @@ class Masturbation extends React.Component {
   }
 
   saveButton (){
-    this.props.pushToMasturbation(this.props.masturbation);
-    this.props.pushToDates(this.props.dates.currentDate);
+    this.props.pushToMasturbation({
+	    data: this.props.masturbation,
+	    currentDate: this.props.currentDate
+    });
+    this.props.pushToDates(this.props.currentDate);
     this.resetMasturbation();
     this.props.history.push('sexsummary');
   }
@@ -106,13 +109,13 @@ class Masturbation extends React.Component {
           ref="time"
           lang="en"
           display="bottom"
-          defaultValue={new Date(this.props.dates.currentDate)}
+          defaultValue={new Date(this.props.currentDate)}
           headerText={false}
         />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
           <div onClick={this.openDate} className={`${formStyles.bottom} ${formStyles.dataItem}`}>
-            <RightArrow label="Date" rightText={Moment(this.props.dates.currentDate).format('D MMMM YYYY')}/>
+            <RightArrow label="Date" rightText={Moment(this.props.currentDate).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
           <Switch type="Toys" />
@@ -153,6 +156,7 @@ class Masturbation extends React.Component {
 function mapStateToProps(state){
   return {
     dates: state.dates,
+	  currentDate: state.dates.currentDate,
     masturbation: state.masturbation.current
   };
 }

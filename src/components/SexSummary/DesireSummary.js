@@ -20,7 +20,6 @@ class DesireSummary extends React.Component {
   }
 
 	IsEmpty() {
-  	console.info(this.props);
 		if (this.props.knob) {
 			let config = {
 				'min':0,
@@ -51,7 +50,6 @@ class DesireSummary extends React.Component {
 	}
 
   render (){
-
     return (
       <div className={`${styles.item} ${styles.knobContainer}`}>
         <div className={styles.contentArea}>

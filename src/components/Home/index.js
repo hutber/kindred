@@ -38,7 +38,7 @@ class Home extends React.Component {
     const selectedDate = TrimDateReturnTodaysDate(this.props.dates, event.date);
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
-      if(selectedDate.length === 0){
+      if(selectedDate === null){
           this.props.history.push('sextypeselection');
       }else{
           this.props.history.push('sexsummary');

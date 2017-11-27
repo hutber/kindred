@@ -29,8 +29,11 @@ class Desire extends React.Component {
   }
 
   saveButton (){
-    this.props.pushToDates(this.props.current.currentDate);
-    this.props.pushToDesire(this.props.current);
+    this.props.pushToDates(this.props.currentDate);
+    this.props.pushToDesire({
+	    desire: this.props.current.desire,
+	    currentDate: this.props.currentDate
+    });
     this.props.resetdesire();
     this.props.history.push('sexsummary');
   }

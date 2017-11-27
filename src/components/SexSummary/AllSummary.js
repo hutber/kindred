@@ -42,8 +42,6 @@ class SexOverviewSummary extends React.Component {
     this.props.history.push('home');
   }
 
-
-
 	displayCurrentDesires (){
 		const todaysData = TrimDateReturnTodaysDate(this.props.desire.data, this.props.currentDate);
 		if(todaysData) {
@@ -58,7 +56,7 @@ class SexOverviewSummary extends React.Component {
 		const todaysData = TrimDateReturnTodaysDate(this.props.masturbation.data, this.props.currentDate);
 		if(todaysData) {
 			this.state.totalEntries = this.state.totalEntries + 1;
-			return '';
+			return todaysData.map(dates => <MasturbationSummary key={dates} data={this.props.masturbation.data[dates]}/>);
 		}else{
 			return <MasturbationSummary />;
 		}
@@ -79,9 +77,7 @@ class SexOverviewSummary extends React.Component {
 	}
 
   render (){
-
 		const summaryStyles = this.state.totalEntries >= 2 ? '' : mainStyles.flexWithChildren;
-
     return (
       <div>
         <Header left={<HeaderLeft link={this.goHome}/>} right={<RightPlus link="sextypeselection"/>}/>
