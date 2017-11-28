@@ -54,7 +54,7 @@ class SexOverviewSummary extends React.Component {
 
 	displayCurrentMasturbation (){
 		const todaysData = TrimDateReturnTodaysDate(this.props.masturbation.data, this.props.currentDate);
-		if(todaysData) {
+		if(todaysData.length !== 0) {
 			this.state.totalEntries = this.state.totalEntries + 1;
 			return todaysData.map(dates => <MasturbationSummary key={dates} data={this.props.masturbation.data[dates]}/>);
 		}else{

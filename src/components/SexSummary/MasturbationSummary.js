@@ -1,6 +1,7 @@
 //Core
 import React from 'react';
 import {connect} from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import * as dataAction from '../../actions/sexPages/sexDataAction';
 
@@ -16,6 +17,7 @@ class MasturbationSummary extends React.Component {
   }
 
 	IsEmpty() {
+      console.info(this.props.data);
 		if (this.props.data) {
 			return <div className={styles.itemContentArea}>
 				<div className={``}>
