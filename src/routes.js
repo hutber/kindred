@@ -17,6 +17,7 @@ import Logout from './components/shared/Logout';
 import SexTypeSelection from './components/SexTypeSelection';
 import Desire from './components/Desire';
 import Masturbation from './containers/Masturbation';
+import Sex from './containers/Sex';
 
 //Save Summary
 import SexSummary from './components/SexSummary/AllSummary';
@@ -36,6 +37,7 @@ export default class Routes extends Component {
         <Route path="/sextypeselection" component={SexTypeSelection} />
         <Route path="/desire" component={Desire} />
         <Route path="/Masturbation" component={Masturbation} />
+        <Route path="/Sex" component={Sex} />
 
         <Route path="/sexsummary" component={SexSummary} />
       </div>

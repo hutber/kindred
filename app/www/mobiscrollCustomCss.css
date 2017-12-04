@@ -109,7 +109,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 
 .mbsc-mobiscroll [role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
   background: #f7f7f7;
-  color: #000;
+  color: #000 !important;
 }
 
 .mbsc-ios.mbsc-fr-center .mbsc-fr-w {

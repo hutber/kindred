@@ -1,15 +1,16 @@
 import { formatSexDate } from '../../../functions/dates';
 import {
-  SET_DESIRE_DATA,
-} from '../../../actions/sexPages/desire/desireAction';
+	PUSH_TO_SEX,
+} from '../../../actions/sexPages/sex/dataSexAction';
 
 const initialState = {};
 
-function desireReducer (state = initialState, action) {
+function dataSexReducer (state = initialState, action) {
 	switch (action.type) {
-		case SET_DESIRE_DATA:
+		case PUSH_TO_SEX:
+			console.info(action.data);
       const key = formatSexDate(action.data.currentDate);
-      const newDesire = {...state.desire};
+      const newDesire = {...state.masturbation};
       newDesire[key] = action.data;
 
       const newState = Object.assign({}, state, newDesire);
@@ -18,4 +19,4 @@ function desireReducer (state = initialState, action) {
 	return state
 }
  
-export default desireReducer;
+export default dataSexReducer;
