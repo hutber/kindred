@@ -8,7 +8,7 @@ import mobiscroll from '../../components/shared/mobiscroll/mobiscroll.custom';
 
 //Actions
 import * as datesAction from '../../actions/datesSexAction';
-import * as masturbationAction from '../../actions/sexPages/masturbation/currentMasturbationAction';
+import * as currentSexAction from '../../actions/sexPages/sex/currentSexAction';
 import * as dataMasturbationAction from '../../actions/sexPages/masturbation/dataMasturbationAction';
 
 //Selection Items
@@ -35,6 +35,10 @@ class Masturbation extends React.Component {
   constructor (props){
     super(props);
     this.saveButton = this.saveButton.bind(this);
+
+    //Occurrences
+    this.openOccurrences = this.openOccurrences.bind(this);
+    this.setOccurrences = this.setOccurrences.bind(this);
 
     //Quantity
     this.openQuantity = this.openQuantity.bind(this);
@@ -66,7 +70,7 @@ class Masturbation extends React.Component {
 
   //Quantity
   openQuantity (){
-    this.refs.orgasmQuantity.instance.show();
+    this.refs.occurrencesSex.instance.show();
   }
   setQuantity (event){
     this.setChanged();
@@ -80,7 +84,7 @@ class Masturbation extends React.Component {
   }
 
   setChanged (){
-    if(!this.props.masturbation.changed){
+    if(!this.props.sex.changed){
       this.props.setChanged(true);
     }
   }
@@ -91,7 +95,16 @@ class Masturbation extends React.Component {
 
   changeDate (event){
     this.setChanged();
-    this.props.DispatchChangeDate(new Date(event.valueText));
+    this.props.DispatchChangeDate(event);
+  }
+
+	openOccurrences (event){
+		this.refs.occurrencesSex.instance.show();
+  }
+
+	setOccurrences (event){
+    this.setChanged();
+    this.props.DispatchChangeOccurrences(event.valueText);
   }
 
   resetMasturbation (){
@@ -104,27 +117,27 @@ class Masturbation extends React.Component {
       <div>
         <Header style="headerDark" middle="Sex" left={<LeftBackClear type="masturbation" history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
-        <mobiscroll.Datetime
-          onSet={this.changeDate}
-          max={new Date()}
-          ref="time"
-          lang="en"
-          display="bottom"
-          defaultValue={new Date(this.props.currentDate)}
-          headerText={false}
-        />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
           <div onClick={this.openDate} className={`${formStyles.bottom} ${formStyles.dataItem}`}>
             <RightArrow label="Total Participants" rightText={this.props.sex.participants}/>
+	          <mobiscroll.Number
+		          onSet={this.setQuantity}
+		          value={this.props.sex.participants}
+		          ref="occurrencesOrgasm"
+		          scale={0}
+		          step={1}
+		          min={0}
+		          max={99}
+	          />
           </div>
           <DataBreak />
-	        <div onClick={this.openQuantity} className={`${formStyles.dataItem}`}  ref="Occurances">
+	        <div onClick={this.openOccurrences} className={`${formStyles.dataItem}`}  ref="Occurrences">
 		        <RightArrow label="Occurrences on this date" rightText={this.props.sex.occurrences}/>
 		        <mobiscroll.Number
-			        onSet={this.setQuantity}
+			        onSet={this.setOccurrences}
 			        value={this.props.sex.occurrences}
-			        ref="occurrencesOrasm"
+			        ref="occurrencesSex"
 			        scale={0}
 			        step={1}
 			        min={0}
@@ -143,7 +156,32 @@ class Masturbation extends React.Component {
               data-step-labels="[1, 2, 3, 4, 5]"
             />
           </div>
-          <DataBreak />
+          <DataBreak text="ORGASM"/>
+	        <div onClick={this.openQuantity} className={`${formStyles.dataItem}`}  ref="Occurances">
+		        <RightArrow label="Quality" rightText={this.props.sex.occurrences}/>
+		        <mobiscroll.Number
+			        onSet={this.setQuantity}
+			        value={this.props.sex.occurrences}
+			        ref="occurrencesOrasm"
+			        scale={0}
+			        step={1}
+			        min={0}
+			        max={99}
+		        />
+	        </div>
+	        <div onClick={this.openQuantity} className={`${formStyles.dataItem} ${formStyles.bottom}`}  ref="Occurances">
+		        <RightArrow label="Quantity" rightText={this.props.sex.occurrences}/>
+		        <mobiscroll.Number
+			        onSet={this.setQuantity}
+			        value={this.props.sex.occurrences}
+			        ref="occurrencesOrasm"
+			        scale={0}
+			        step={1}
+			        min={0}
+			        max={99}
+		        />
+	        </div>
+	        <DataBreak />
           <Tags />
         </div>
         <Menu />
@@ -162,13 +200,13 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
-    resetMasturbation: bindActionCreators(masturbationAction.reset, dispatch),
+    resetMasturbation: bindActionCreators(currentSexAction.reset, dispatch),
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
-    DispatchChangeDate : bindActionCreators(datesAction.changeCurrentSexDate, dispatch),
+	  DispatchChangeOccurrences : bindActionCreators(currentSexAction.DispatchChangeOccurrences, dispatch),
     pushToMasturbation : bindActionCreators(dataMasturbationAction.pushToMasturbation, dispatch),
-    DispatchOrgasmQuantity: bindActionCreators(masturbationAction.setOrgasmQuantity, dispatch),
-    DispatchOrgasmQuality: bindActionCreators(masturbationAction.setOrgasmQuality, dispatch),
-    setChanged: bindActionCreators(masturbationAction.setChanged, dispatch)
+    DispatchOrgasmQuantity: bindActionCreators(currentSexAction.setOrgasmQuantity, dispatch),
+    DispatchOrgasmQuality: bindActionCreators(currentSexAction.setOrgasmQuality, dispatch),
+    setChanged: bindActionCreators(currentSexAction.setChanged, dispatch)
   }
 }
 

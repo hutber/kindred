@@ -1,7 +1,7 @@
 export const SET_ORGASM_QUANTITY = 'SET_ORGASM_QUANTITY';
 export const SET_ORGASM_QUALITY = 'SET_ORGASM_QUALITY';
 export const SET_TOY_BOOLEAN = 'SET_TOY_BOOLEAN';
-export const SET_PORN_BOOLEAN = 'SET_PORN_BOOLEAN';
+export const SET_OCCURRENCES = 'SET_OCCURRENCES';
 export const SET_CHANGED = 'SET_CHANGED';
 export const RESET = 'RESET';
 
@@ -16,9 +16,9 @@ export function setToys(value) {
     value: value
   }
 }
-export function setPorn(value) {
+export function DispatchChangeOccurrences(value) {
   return {
-    type: SET_PORN_BOOLEAN,
+    type: SET_OCCURRENCES,
     value: value
   }
 }

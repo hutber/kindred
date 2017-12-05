@@ -4,8 +4,8 @@ import {
   SET_ORGASM_QUALITY,
   SET_TOY_BOOLEAN,
   SET_CHANGED,
-  SET_PORN_BOOLEAN,
-} from '../../../actions/sexPages/masturbation/currentMasturbationAction';
+	SET_OCCURRENCES,
+} from '../../../actions/sexPages/sex/currentSexAction';
 
 const initialState = {
   participants: 3,
@@ -33,8 +33,8 @@ function currentMasturbation (state = initialState, action) {
 
     case SET_TOY_BOOLEAN:
       return {...state, toys: action.value};
-    case SET_PORN_BOOLEAN:
-      return {...state, porn: action.value};
+    case SET_OCCURRENCES:
+      return {...state, occurrences: action.value};
   }
   return state
 }
