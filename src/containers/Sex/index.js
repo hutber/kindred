@@ -13,7 +13,7 @@ import * as dataMasturbationAction from '../../actions/sexPages/masturbation/dat
 
 //Selection Items
 import Menu from '../../components/shared/menu/index';
-import Tags from '../../components/tags/index';
+import Positions from '../../components/positions/index';
 
 //Header
 import Header from '../../components/shared/header/Header';
@@ -47,6 +47,9 @@ class Masturbation extends React.Component {
     //Quality
     this.setQuality = this.setQuality.bind(this);
 
+    //Enjoyment
+    this.setEnjoyment = this.setEnjoyment.bind(this);
+
     //Dates
     this.changeDate = this.changeDate.bind(this);
     this.openDate = this.openDate.bind(this);
@@ -70,17 +73,23 @@ class Masturbation extends React.Component {
 
   //Quantity
   openQuantity (){
-    this.refs.occurrencesSex.instance.show();
+    this.refs.sexOrgasmQuantity.instance.show();
   }
   setQuantity (event){
     this.setChanged();
     this.props.DispatchOrgasmQuantity(Number.parseFloat(event.valueText));
   }
 
-  //Quality
-  setQuality (event){
+	//Quality
+	setQuality (event){
+		this.setChanged();
+		this.props.DispatchOrgasmQuality(event);
+	}
+
+	//Enjoyment
+	setEnjoyment (event){
     this.setChanged();
-    this.props.DispatchOrgasmQuality(event);
+    this.props.DispatchSetEnjoyment(event);
   }
 
   setChanged (){
@@ -119,17 +128,8 @@ class Masturbation extends React.Component {
         <RequireLogin />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.openDate} className={`${formStyles.bottom} ${formStyles.dataItem}`}>
+          <div className={`${formStyles.bottom} ${formStyles.dataItem}`}>
             <RightArrow label="Total Participants" rightText={this.props.sex.participants}/>
-	          <mobiscroll.Number
-		          onSet={this.setQuantity}
-		          value={this.props.sex.participants}
-		          ref="occurrencesOrgasm"
-		          scale={0}
-		          step={1}
-		          min={0}
-		          max={99}
-	          />
           </div>
           <DataBreak />
 	        <div onClick={this.openOccurrences} className={`${formStyles.dataItem}`}  ref="Occurrences">
@@ -144,12 +144,12 @@ class Masturbation extends React.Component {
 			        max={99}
 		        />
 	        </div>
-          <Switch type="Protection" bottom="true" />
+          <Switch type="Protection" dataType="sex" bottom="true" />
           <div className={formStyles.itemContainer}>
             <div className={formStyles.sliderTitle}>Enjoyment (overall)</div>
             <mobiscroll.Slider
               value={this.props.sex.enjoyment}
-              onChange={this.setQuality}
+              onChange={this.setEnjoyment}
               min={1}
               max={5}
               step={1}
@@ -157,24 +157,23 @@ class Masturbation extends React.Component {
             />
           </div>
           <DataBreak text="ORGASM"/>
-	        <div onClick={this.openQuantity} className={`${formStyles.dataItem}`}  ref="Occurances">
-		        <RightArrow label="Quality" rightText={this.props.sex.occurrences}/>
-		        <mobiscroll.Number
-			        onSet={this.setQuantity}
-			        value={this.props.sex.occurrences}
-			        ref="occurrencesOrasm"
-			        scale={0}
+	        <div className={formStyles.itemContainer}>
+		        <div className={formStyles.sliderTitle}>Quality</div>
+		        <mobiscroll.Slider
+			        value={this.props.sex.quality}
+			        onChange={this.setQuality}
+			        min={1}
+			        max={5}
 			        step={1}
-			        min={0}
-			        max={99}
+			        data-step-labels="[1, 2, 3, 4, 5]"
 		        />
 	        </div>
-	        <div onClick={this.openQuantity} className={`${formStyles.dataItem} ${formStyles.bottom}`}  ref="Occurances">
-		        <RightArrow label="Quantity" rightText={this.props.sex.occurrences}/>
+	        <div onClick={this.openQuantity} className={`${formStyles.bottom} ${formStyles.dataItem}`}  ref="sexQuantity">
+		        <RightArrow label="Quantity" rightText={this.props.sex.quantity}/>
 		        <mobiscroll.Number
 			        onSet={this.setQuantity}
-			        value={this.props.sex.occurrences}
-			        ref="occurrencesOrasm"
+			        value={this.props.sex.quantity}
+			        ref="sexOrgasmQuantity"
 			        scale={0}
 			        step={1}
 			        min={0}
@@ -182,7 +181,7 @@ class Masturbation extends React.Component {
 		        />
 	        </div>
 	        <DataBreak />
-          <Tags />
+          <Positions />
         </div>
         <Menu />
       </div>
@@ -205,7 +204,8 @@ function matchDispatchToProps(dispatch){
 	  DispatchChangeOccurrences : bindActionCreators(currentSexAction.DispatchChangeOccurrences, dispatch),
     pushToMasturbation : bindActionCreators(dataMasturbationAction.pushToMasturbation, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(currentSexAction.setOrgasmQuantity, dispatch),
-    DispatchOrgasmQuality: bindActionCreators(currentSexAction.setOrgasmQuality, dispatch),
+	  DispatchOrgasmQuality: bindActionCreators(currentSexAction.setOrgasmQuality, dispatch),
+    DispatchSetEnjoyment: bindActionCreators(currentSexAction.setEnjoyment, dispatch),
     setChanged: bindActionCreators(currentSexAction.setChanged, dispatch)
   }
 }

@@ -1,7 +1,8 @@
 export const SET_ORGASM_QUANTITY = 'SET_ORGASM_QUANTITY';
 export const SET_ORGASM_QUALITY = 'SET_ORGASM_QUALITY';
-export const SET_TOY_BOOLEAN = 'SET_TOY_BOOLEAN';
 export const SET_OCCURRENCES = 'SET_OCCURRENCES';
+export const SET_PROTECTION = 'SET_PROTECTION';
+export const SET_ENJOYMENT = 'SET_ENJOYMENT';
 export const SET_CHANGED = 'SET_CHANGED';
 export const RESET = 'RESET';
 
@@ -10,9 +11,9 @@ export function reset() {
     type: RESET
   }
 }
-export function setToys(value) {
+export function setProtection(value) {
   return {
-    type: SET_TOY_BOOLEAN,
+    type: SET_PROTECTION,
     value: value
   }
 }
@@ -34,10 +35,16 @@ export function setOrgasmQuantity(amount) {
     quantity: amount
   }
 }
-
 export function setOrgasmQuality(amount) {
   return {
     type: SET_ORGASM_QUALITY,
-    quality: amount
+	  quality: amount
+  }
+}
+
+export function setEnjoyment(amount) {
+  return {
+    type: SET_ENJOYMENT,
+    enjoyment: amount
   }
 }

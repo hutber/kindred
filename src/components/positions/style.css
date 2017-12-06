@@ -1,0 +1,61 @@
+@import "../shared/vars.css";
+
+.content {
+  width: calc(100% - 40px);
+  input {
+    display: none;
+  }
+  p {
+    font-family: $text;
+  }
+}
+
+.vertAlign {
+  width: calc(100%);
+  height: calc(100vh - $menuHeight - $menuHeight);
+  margin: 0 auto;
+}
+
+.searchContainer {
+  padding: 10px;
+  position: relative;
+
+  i {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.tag {
+  font-family: $textLight;
+  padding: 8px 10px 5px;
+  border: $borderGray 1px solid;
+  color: #000;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 5px 7px;
+}
+
+.selected {
+  color: #FFF;
+  background: $desire;
+}
+
+.tagInput {
+  border-bottom: 1px solid $borderGray;
+  border-radius: 0;
+  text-align: left;
+  padding: 5px 5px 5px 25px;
+  margin-bottom: 0px;
+  color: $copyGray;
+  &::-webkit-input-placeholder {
+    color: $copyGray;
+  }
+}
