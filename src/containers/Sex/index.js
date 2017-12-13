@@ -107,7 +107,7 @@ class Masturbation extends React.Component {
     this.props.DispatchChangeDate(event);
   }
 
-	openOccurrences (event){
+	openOccurrences (){
 		this.refs.occurrencesSex.instance.show();
   }
 

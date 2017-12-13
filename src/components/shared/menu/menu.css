@@ -12,8 +12,23 @@
 }
 .link {
   font-family: Lato;
-  margin-top: 2vh;
+  margin-top: 1.6vh;
   float: left;
   width: 25vw;
   color: #1D4BCF;
+}
+
+.iconContainer {
+  margin: 0 auto;
+}
+
+.data-icon {
+  width: 31px;
+  height: 31px;
+}
+
+.menuItem g path, .menuItem path {
+  height: 100%;
+  width: 100%;
+  fill: #1D4BCF;
 }

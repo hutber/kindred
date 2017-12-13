@@ -6,6 +6,10 @@ import { NavLink } from 'react-router-dom'
 import style from './menu.css';
 import mainStyles from '../main.css';
 import * as font from '../../../components/shared/font/fontello.css';
+import Data from '-!svg-react-loader!./data.svg';
+import CalendarIcon from '-!svg-react-loader!./calendar.svg';
+import MoreIcon from '-!svg-react-loader!./more.svg';
+import SettingsIcon from '-!svg-react-loader!./Settings.svg';
 
 class Menu extends React.Component {
 	constructor (props){
@@ -20,19 +24,27 @@ class Menu extends React.Component {
 			<div className={style.menu}>
 				<div className={`${mainStyles.flexWithChildren} ${mainStyles.flexWithChildrenLTR}`}>
 					<NavLink to="/home" className={style.link}>
-						<i className={font['icon-calendar']}></i>
+						<div className={`${style.iconContainer} ${style['data-icon']}`}>
+							<CalendarIcon className={`${style.menuItem}`}/>
+						</div>
 						<span>Calendar</span>
 					</NavLink>
 					<NavLink to="/data" className={style.link}>
-						<i className={font['icon-chart-bar']}></i>
+						<div className={`${style.iconContainer} ${style['data-icon']}`}>
+							<Data className={`${style.menuItem}`}/>
+						</div>
 						<span>Data</span>
 					</NavLink>
 					<NavLink to="/settings" className={style.link}>
-						<i className={font['icon-cog']}></i>
+						<div className={`${style.iconContainer} ${style['data-icon']}`}>
+							<SettingsIcon className={`${style.menuItem}`}/>
+						</div>
 						<span>Settings</span>
 					</NavLink>
 					<NavLink to="/more" className={style.link}>
-						<i className={font['icon-dot-3']}></i>
+						<div className={`${style.iconContainer} ${style['data-icon']}`}>
+							<MoreIcon className={`${style.menuItem}`}/>
+						</div>
 						<span>More</span>
 					</NavLink>
 				</div>
