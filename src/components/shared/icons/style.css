@@ -1,0 +1,13 @@
+.iconContainer {
+    margin: 0 auto;
+}
+
+.data-icon {
+    height: 70px;
+}
+
+.menuItem g path, .menuItem path {
+    height: 100%;
+    width: 100%;
+    fill: #1D4BCF;
+}

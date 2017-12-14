@@ -11,8 +11,12 @@ import RightCancel from '../shared/header/RightCancel';
 import HeaderLeft from './left';
 import Menu from '../shared/menu';
 
-//Styles
+//Icons
+import Fire from '../shared/icons/Fire';
+import Hand from '../shared/icons/hand';
+import Heart from '../shared/icons/heart';
 
+//Styles
 import mainStyles from '../shared/main.css';
 import style from './style.css';
 import * as font from '../../components/shared/font/fontello.css';
@@ -36,21 +40,21 @@ class Home extends React.Component {
           </div>
           <NavLink to="/desire" className={style.selectionItem}>
             <div>
-              <i className={font['icon-fire']}></i>
+              <Fire height="70px" />
               <span>Desire</span>
               <i className={font['icon-right-open-big'] + ' ' + style['icon-right-open-big']}></i>
             </div>
           </NavLink>
           <NavLink to="/masturbation" className={style.selectionItem + ' ' + style.masturbation}>
             <div>
-              <i className={font['icon-hand-paper-o']}></i>
+                <Hand height="80px" />
               <span>Masturbation</span>
               <i className={font['icon-right-open-big'] + ' ' + style['icon-right-open-big']}></i>
             </div>
           </NavLink>
           <NavLink to="/sex" className={style.selectionItem + ' ' + style.sex}>
             <div>
-              <i className={font['icon-heart-empty']}></i>
+                <Heart height="80px" />
               <span>Sex</span>
               <i className={font['icon-right-open-big'] + ' ' + style['icon-right-open-big']}></i>
             </div>
