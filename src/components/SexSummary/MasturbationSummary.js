@@ -12,12 +12,10 @@ import styles from './style.css';
 class MasturbationSummary extends React.Component {
   constructor (props){
     super(props);
-    console.info('props', props.data);
 	  this.IsEmpty = this.IsEmpty.bind(this);
   }
 
 	IsEmpty() {
-      console.info(this.props.data);
 		if (this.props.data) {
 			return <div className={styles.itemContentArea}>
 				<div className={``}>

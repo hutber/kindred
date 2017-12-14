@@ -34,8 +34,9 @@ class Home extends React.Component {
     this.selectData = this.selectData.bind(this);
   }
 
-  selectData (event, inst) {
+  selectData (event) {
     const selectedDate = TrimDateReturnTodaysDate(this.props.dates, event.date);
+    console.info(selectedDate);
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
       if(selectedDate === null){

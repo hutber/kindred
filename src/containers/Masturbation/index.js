@@ -118,8 +118,8 @@ class Masturbation extends React.Component {
             <RightArrow label="Date" rightText={Moment(this.props.currentDate).format('D MMMM YYYY')}/>
           </div>
           <DataBreak />
-          <Switch type="Toys" />
-          <Switch type="Porn" />
+          <Switch dataType="masturbation" type="Toys" />
+          <Switch dataType="masturbation" type="Porn" />
           <DataBreak text="ORGASM"/>
           <div className={formStyles.itemContainer}>
             <div className={formStyles.sliderTitle}>Quality</div>

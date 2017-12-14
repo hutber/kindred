@@ -10,6 +10,7 @@ import { reducer as formReducer } from 'redux-form'
       import sexDates from './sexPages/datesSexReducer';
       import desire from './sexPages/desire';
       import masturbation from './sexPages/masturbation';
+      import sex from './sexPages/sex';
 
 //### Not Logged in
   //### Login
@@ -22,6 +23,7 @@ const reducers = combineReducers({
   , user
   , desire
   , masturbation
+  , sex
   , dates: sexDates
 });
 

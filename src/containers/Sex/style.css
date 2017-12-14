@@ -1,0 +1,39 @@
+@import "../../components/shared/vars.css";
+.content {
+  width: calc(100% - 40px);
+  input {
+    display: none;
+  }
+  p {
+    font-family: $textLight;
+  }
+}
+
+.vertAlign {
+  width: calc(100%);
+  height: calc(100vh - $menuHeight - $menuHeight);
+  margin: 0 auto;
+}
+
+.searchContainer {
+  padding: 10px;
+  position: relative;
+
+  i {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+  }
+}
+
+
+
+.tagInput {
+  border-bottom: 1px solid $borderGray;
+  border-radius: 0;
+  text-align: left;
+  padding-left: 25px;
+  &::-webkit-input-placeholder {
+    color: $copyGray;
+  }
+}

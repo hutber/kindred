@@ -31,6 +31,19 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 /*
+* Scroller
+ */
+
+.mbsc-mobiscroll .mbsc-fr-scroll[role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
+  background: transparent;
+}
+
+
+.mbsc-kindred .mbsc-mobiscroll .mbsc-fr-scroll[role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
+  background: #f7f7f7;
+}
+
+/*
 * Switch
  */
 
@@ -109,7 +122,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 
 .mbsc-mobiscroll [role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
   background: #f7f7f7;
-  color: #000;
+  color: #000 !important;
 }
 
 .mbsc-ios.mbsc-fr-center .mbsc-fr-w {

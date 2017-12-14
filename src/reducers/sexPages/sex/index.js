@@ -1,12 +1,14 @@
 /* eslint-disable import/max-dependencies */
 import {combineReducers} from 'redux';
 
-import currentMasturbation from './currentMasturbation';
-import tags from './tags/tagsReducer';
+import current from './currentSex';
+import dataSexReducer from './dataSex';
+import positions from './positions/positionsReducer';
 
-const masturbation = combineReducers({
-    tags,
-    current: currentMasturbation
+const sex = combineReducers({
+		positions,
+    current: current,
+    data: dataSexReducer
 });
 
-export default masturbation;
+export default sex;
