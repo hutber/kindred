@@ -6,8 +6,19 @@
     height: 70px;
 }
 
+.fire {
+    fill:('#..');
+    fill-opacity: 0.01;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
 .menuItem g path, .menuItem path {
     height: 100%;
     width: 100%;
-    fill: #1D4BCF;
+}
+.sexTypeSelection g path, .sexTypeSelection path {
+    color: #FFF;
 }

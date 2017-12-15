@@ -8,7 +8,7 @@ class Hand extends React.Component {
     render() {
         return (
             <div className={`${style.iconContainer} ${style['data-icon']}`} >
-                <Icon height={this.props.height ? this.props.height : '100px'} className={style.menuItem} />
+                <Icon height={this.props.height ? this.props.height : '100px'} className={`${style.menuItem} ${style.sexTypeSelection}`} />
             </div>
         );
     }
