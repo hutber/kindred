@@ -16,21 +16,11 @@
   margin: 0 auto;
 }
 
-.searchContainer {
-  padding: 10px;
-  position: relative;
-
-  i {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-  }
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  justify-content: center;
 }
 
 .tag {
@@ -38,14 +28,22 @@
   padding: 8px 10px 5px;
   border: $borderGray 1px solid;
   color: #000;
-  border-radius: 7px;
+  border-radius: 150px;
   display: inline-block;
-  margin: 5px 7px;
+  margin: 5px 15px;
+  height: 100px;
+  width: 100px;
+}
+
+
+.tag g path, .tag path {
+  height: 120%;
+  width: 120%;
 }
 
 .selected {
   color: #FFF;
-  background: $desire;
+  background: #F8F8F8;
 }
 
 .tagInput {
@@ -59,3 +57,4 @@
     color: $copyGray;
   }
 }
+

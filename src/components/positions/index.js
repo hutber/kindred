@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 
 //Actions
-import * as tagsAction from '../../actions/sexPages/masturbation/tagsAction';
+import * as svg from './svgs';
 
 //styles
 import styles from './style.css';
@@ -36,22 +36,14 @@ class Tags extends React.Component {
     return (
       <div className={formStyles.itemContainer}>
         {child}
-        <div className={formStyles.tagsTitle}>Tags</div>
-        <div className={styles.searchContainer}>
-          <i className={font['icon-search']}></i>
-          <input
-            type="text"
-            value={this.state.tagsSearch}
-            className={styles.tagInput}
-            onChange={this.searchTags}
-            placeholder="Search"
-          />
-        </div>
+        <div className={formStyles.tagsTitle}>Sex Positions</div>
         <div className={styles.tags}>
           {
-            Object.keys(this.props.masturbationTags).map((tag, key) => {
-              const val = this.props.masturbationTags[tag];
-              return <div className={val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onClick={this.selectTag}>{tag}</div>
+            Object.keys(svg).map((tag, key) => {
+              const Val = svg[tag];
+              return <div className={Val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onClick={this.selectTag}>
+	              <Val />
+              </div>
             })
           }
         </div>
@@ -68,7 +60,7 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
-    setTagSelection : bindActionCreators(tagsAction.setTagSelection, dispatch),
+    // setTagSelection : bindActionCreators(tagsAction.setTagSelection, dispatch),
   }
 }
 
