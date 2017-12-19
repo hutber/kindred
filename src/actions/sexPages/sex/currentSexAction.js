@@ -5,11 +5,19 @@ export const SET_PROTECTION = 'SET_PROTECTION';
 export const SET_ENJOYMENT = 'SET_ENJOYMENT';
 export const SET_CHANGED = 'SET_CHANGED';
 export const RESET = 'RESET';
+export const SET_POSITION_SELECTION = 'SET_POSITION_SELECTION';
 
 export function reset() {
   return {
     type: RESET
   }
+}
+export function setPositionSelection(tagName, tagVal) {
+	return {
+		type: SET_POSITION_SELECTION,
+		tagName,
+		tagVal
+	}
 }
 export function setProtection(value) {
   return {

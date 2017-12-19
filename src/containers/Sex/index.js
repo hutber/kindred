@@ -121,7 +121,6 @@ class Masturbation extends React.Component {
   }
 
   render (){
-  	console.info(this.props.sex);
     return (
       <div>
         <Header style="headerDark" middle="Sex" left={<LeftBackClear type="masturbation" history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />

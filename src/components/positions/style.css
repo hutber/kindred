@@ -25,14 +25,13 @@
 
 .tag {
   font-family: $textLight;
-  padding: 8px 10px 5px;
-  border: $borderGray 1px solid;
   color: #000;
   border-radius: 150px;
   display: inline-block;
   margin: 5px 15px;
   height: 100px;
   width: 100px;
+  border: #F8F8F8 2px solid;
 }
 
 
@@ -41,9 +40,14 @@
   width: 120%;
 }
 
+.positionText {
+  display: block;
+  margin: 5px auto 15px;
+  width: 100px;
+}
+
 .selected {
-  color: #FFF;
-  background: #F8F8F8;
+  border-color: $desire;
 }
 
 .tagInput {

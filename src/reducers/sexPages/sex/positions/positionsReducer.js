@@ -1,15 +1,12 @@
 import {
-  SET_TAG_SELECTION,
-} from '../../../../actions/sexPages/masturbation/tagsAction';
+	SET_POSITION_SELECTION,
+} from '../../../../actions/sexPages/sex/positionAction';
 
-import { masturbationTagsObject } from './positions';
+import { positionsObject } from './positions';
 
-function positionsReducer (state = masturbationTagsObject, action) {
+export default function (state = positionsObject, action) {
   switch (action.type) {
-    case SET_TAG_SELECTION:
-      return {...state, [action.tagName]: action.tagVal};
   }
   return state
 }
 
-export default positionsReducer;

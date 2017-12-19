@@ -6,7 +6,10 @@ import {
   SET_CHANGED,
 	SET_ENJOYMENT,
 	SET_OCCURRENCES,
+	SET_POSITION_SELECTION,
 } from '../../../actions/sexPages/sex/currentSexAction';
+
+import { positionsObject } from './positions/positions';
 
 const initialState = {
   participants: 3,
@@ -16,9 +19,10 @@ const initialState = {
 	quantity: 3,
 	quality: 2,
   changed: false,
+	positions: positionsObject
 };
 
-function currentMasturbation (state = initialState, action) {
+function currentSex (state = initialState, action) {
   switch (action.type) {
 
     case RESET:
@@ -40,8 +44,17 @@ function currentMasturbation (state = initialState, action) {
 
     case SET_OCCURRENCES:
       return {...state, occurrences: action.value};
+
+	  case SET_POSITION_SELECTION:
+		  return {
+		  	...state,
+			  positions: {
+				  ...state.positions,
+				  [action.tagName]: action.tagVal
+			  }
+		  };
   }
   return state
 }
 
-export default currentMasturbation;
+export default currentSex;

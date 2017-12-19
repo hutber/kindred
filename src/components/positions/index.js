@@ -3,13 +3,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
 
-//Actions
+//Positions
+import { positionsText } from '../../reducers/sexPages/sex/positions/positions';
+
+//SVGs
 import * as svg from './svgs';
+
+//Actions
+import { setPositionSelection }from '../../actions/sexPages/sex/currentSexAction';
 
 //styles
 import styles from './style.css';
 import formStyles from '../shared/form/formItems.css';
-import * as font from '../shared/font/fontello.css';
 
 class Tags extends React.Component {
   constructor (props){
@@ -17,17 +22,21 @@ class Tags extends React.Component {
 
     this.searchTags = this.searchTags.bind(this);
     this.selectTag = this.selectTag.bind(this);
-
-    this.state = {
-      tagsSearch: ''
-    };
   }
 
   selectTag (event){
-    this.props.setTagSelection(event.target.textContent, !this.props.masturbationTags[event.target.textContent]);
+  	let el = event.target;
+  	while(!el.querySelector('span')){
+  		el = el.parentNode;
+	  }
+	  const positionSelectedText = el.querySelector('span').textContent;
+	  const position = Object.keys(positionsText).filter(positionName => positionsText[positionName]===positionSelectedText)[0];
+
+	  this.props.setPositionSelection(position, !this.props.currentPositions[position]);
   }
 
   searchTags (event){
+  	console.info(arguments);
     this.setState({tagsSearch: event.target.value});
   }
 
@@ -41,8 +50,11 @@ class Tags extends React.Component {
           {
             Object.keys(svg).map((tag, key) => {
               const Val = svg[tag];
-              return <div className={Val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onClick={this.selectTag}>
-	              <Val />
+              return <div key={key} onClick={this.selectTag} className="positionClick">
+	              <div className={this.props.currentPositions[tag] ? `${styles.tag} ${styles.selected}` : styles.tag}>
+		              <Val />
+	              </div>
+	              <span className={styles.positionText}>{positionsText[tag]}</span>
               </div>
             })
           }
@@ -54,13 +66,13 @@ class Tags extends React.Component {
 
 function mapStateToProps(state){
   return {
-    masturbationTags: state.masturbation.tags
+    currentPositions: state.sex.current.positions
   };
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    // setTagSelection : bindActionCreators(tagsAction.setTagSelection, dispatch),
+	  setPositionSelection : bindActionCreators(setPositionSelection, dispatch),
   }
 }
 
