@@ -9,7 +9,7 @@ import mobiscroll from '../../components/shared/mobiscroll/mobiscroll.custom';
 //Actions
 import * as datesAction from '../../actions/datesSexAction';
 import * as currentSexAction from '../../actions/sexPages/sex/currentSexAction';
-import * as dataMasturbationAction from '../../actions/sexPages/masturbation/dataMasturbationAction';
+import { pushToSex } from '../../actions/sexPages/sex/dataSexAction';
 
 //Selection Items
 import Menu from '../../components/shared/menu/index';
@@ -31,7 +31,7 @@ import Switch from './Switch';
 import DataBreak from '../../components/shared/textForm/DataBreak'
 import RightArrow from '../../components/shared/textForm/RightArrow'
 
-class Masturbation extends React.Component {
+class Sex extends React.Component {
   constructor (props){
     super(props);
     this.saveButton = this.saveButton.bind(this);
@@ -57,16 +57,16 @@ class Masturbation extends React.Component {
     //Changed
     this.setChanged = this.setChanged.bind(this);
 
-    this.resetMasturbation = this.resetMasturbation.bind(this);
+    this.resetSex = this.resetSex.bind(this);
   }
 
   saveButton (){
-    this.props.pushToMasturbation({
-	    data: this.props.masturbation,
+    this.props.pushToSex({
+	    data: this.props.sex,
 	    currentDate: this.props.currentDate
     });
     this.props.pushToDates(this.props.currentDate);
-    this.resetMasturbation();
+    this.resetSex();
     this.props.history.push('sexsummary');
   }
 
@@ -116,14 +116,14 @@ class Masturbation extends React.Component {
     this.props.DispatchChangeOccurrences(event.valueText);
   }
 
-  resetMasturbation (){
-    this.props.resetMasturbation();
+	resetSex (){
+    this.props.resetSex();
   }
 
   render (){
     return (
       <div>
-        <Header style="headerDark" middle="Sex" left={<LeftBackClear type="masturbation" history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
+        <Header style="headerDark" middle="Sex" left={<LeftBackClear type="sex" history={this.props.history}/>} right={<RightSave save={this.saveButton} />} />
         <RequireLogin />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
@@ -198,10 +198,10 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return {
-    resetMasturbation: bindActionCreators(currentSexAction.reset, dispatch),
+    resetSex: bindActionCreators(currentSexAction.reset, dispatch),
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
 	  DispatchChangeOccurrences : bindActionCreators(currentSexAction.DispatchChangeOccurrences, dispatch),
-    pushToMasturbation : bindActionCreators(dataMasturbationAction.pushToMasturbation, dispatch),
+    pushToSex : bindActionCreators(pushToSex, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(currentSexAction.setOrgasmQuantity, dispatch),
 	  DispatchOrgasmQuality: bindActionCreators(currentSexAction.setOrgasmQuality, dispatch),
     DispatchSetEnjoyment: bindActionCreators(currentSexAction.setEnjoyment, dispatch),
@@ -209,4 +209,4 @@ function matchDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Masturbation);
+export default connect(mapStateToProps, matchDispatchToProps)(Sex);

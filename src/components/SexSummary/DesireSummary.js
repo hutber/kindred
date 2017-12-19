@@ -8,6 +8,9 @@ import * as dataAction from '../../actions/sexPages/sexDataAction';
 //Selection Items
 import Knob from '../shared/Knob';
 
+//Icons
+import Fire from '../../components/shared/icons/Fire';
+
 //Styles
 import * as font from '../shared/font/fontello.css';
 import main from '../shared/main.css';
@@ -54,7 +57,7 @@ class DesireSummary extends React.Component {
       <div className={`${styles.item} ${styles.knobContainer}`}>
         <div className={styles.contentArea}>
           <div className={styles.iconArea}>
-            <i className={font['icon-fire']}></i>
+	          <Fire height="70px" />
           </div>
           <this.IsEmpty />
         </div>

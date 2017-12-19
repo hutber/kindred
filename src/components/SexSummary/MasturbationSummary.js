@@ -5,6 +5,9 @@ import { NavLink } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import * as dataAction from '../../actions/sexPages/sexDataAction';
 
+//Icons
+import Hand from '../../components/shared/icons/hand';
+
 //Selection Items
 import * as font from '../shared/font/fontello.css';
 import styles from './style.css';
@@ -38,7 +41,7 @@ class MasturbationSummary extends React.Component {
       <div className={`${styles.item} ${styles.masturbationContainer}`}>
         <div className={styles.contentArea}>
           <div className={styles.iconArea}>
-            <i className={font['icon-hand-paper-o']}></i>
+	          <Hand height="80px" />
           </div>
           <div className={styles.itemContentArea}>
 	          <this.IsEmpty />
