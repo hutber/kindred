@@ -48,7 +48,7 @@ class SexOverviewSummary extends React.Component {
 			this.state.totalEntries = this.state.totalEntries + 1;
 			return todaysData.map(dates => <DesireSummary key={dates} knob={this.props.desire.data[dates].desire}/>);
 		}else{
-			return <DesireSummary knob={null}/>;
+			return <DesireSureallmmary knob={null}/>;
 		}
 	}
 

@@ -14,11 +14,13 @@ import Menu from '../shared/menu';
 //Styles
 import HomeStyle from './home.css';
 import mainStyles from '../shared/main.css';
+import * as font from '../shared/font/fontello.css';
 
 class Home extends React.Component {
   constructor (props){
     super(props);
     this.state = {
+    	loading: true,
       settings : {
         display: 'inline'
         , controls: ['calendar', 'time']
@@ -32,11 +34,11 @@ class Home extends React.Component {
       }
     };
     this.selectData = this.selectData.bind(this);
+    this.onShow = this.onShow.bind(this);
   }
 
   selectData (event) {
     const selectedDate = TrimDateReturnTodaysDate(this.props.dates, event.date);
-    console.info(selectedDate);
     if(event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
       if(selectedDate === null){
@@ -47,6 +49,10 @@ class Home extends React.Component {
 
     }
   };
+
+  onShow (){
+	  document.querySelector('.loadingHome').remove();
+  }
 
   onPosition (ev) {
     let $ = mobiscroll.$,
@@ -65,13 +71,14 @@ class Home extends React.Component {
       <div>
         <RequireLogin />
         <Header right={<RightPlus link="sextypeselection" />} />
+	      <div className={`${HomeStyle.loading} loadingHome`}>Loading</div>
         <div className={`${HomeStyle.home} ${mainStyles.contentArea}`}>
           <div className="pageInfo">
             <h1>My calender</h1>
             <p>Select a date to view <br/> input your information</p>
           </div>
           <div className={"cal " + HomeStyle.calenderContainer}>
-            <mobiscroll.Calendar onPosition={this.onPosition} onSetDate={this.selectData} options={this.state.settings} {...this.props} />
+            <mobiscroll.Calendar onShow={this.onShow} onPosition={this.onPosition} onSetDate={this.selectData} options={this.state.settings} {...this.props} />
           </div>
         </div>
         <Menu />
