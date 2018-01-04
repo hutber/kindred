@@ -19,6 +19,14 @@
   }
 }
 
+.loading {
+  position: absolute;
+  z-index: 15;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
 .calenderContainer {
   height: 0;
 }
