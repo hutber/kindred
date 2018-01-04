@@ -64,17 +64,14 @@ class SexOverviewSummary extends React.Component {
 	}
 
 	displayCurrentSex (){
-		// const todaysData = TrimDateReturnTodaysDate(this.props.sex.data, this.props.currentDate);
-		// if(todaysData.length > 0) {
-		// 	this.state.totalEntries = this.state.totalEntries + 1;
-		// 	return '';
-		// }else{
-			return <div>
-				<NavLink to="desire">
-					Click here to add Desire data for this date
-				</NavLink>
-			</div>;
-		// }
+		const todaysData = TrimDateReturnTodaysDate(this.props.sex.data, this.props.currentDate);
+		console.info(todaysData);
+		if(todaysData) {
+			this.state.totalEntries = this.state.totalEntries + 1;
+			return todaysData.map(dates => <SexSummary key={dates} data={this.props.sex.data[dates]}/>);
+		}else{
+			return <SexSummary />;
+		}
 	}
 
   render (){
@@ -106,6 +103,7 @@ function mapStateToProps(state){
 	  currentDate: state.dates.currentDate,
     desire: state.desire,
 	  masturbation: state.masturbation,
+	  sex: state.sex,
   };
 }
 

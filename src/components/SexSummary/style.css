@@ -18,6 +18,10 @@
     font-family: $textLight;
     padding-bottom: 0;
   }
+  a {
+    font-family: $textLight;
+    color: #FFF;
+  }
 }
 
 .dateArea {
@@ -66,14 +70,18 @@
 .iconArea {
   display: block;
   width: 80px;
+  height: 100%;
   float: left;
   font-size: 100px;
 }
 
 .itemContentArea {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   float: right;
   width: 170px;
+  height: 100%;
   position: relative;
 }
 

@@ -1,6 +1,7 @@
 export const SET_ORGASM_QUANTITY = 'SET_ORGASM_QUANTITY';
 export const SET_ORGASM_QUALITY = 'SET_ORGASM_QUALITY';
 export const SET_OCCURRENCES = 'SET_OCCURRENCES';
+export const SET_PARTICIPANTS = 'SET_PARTICIPANTS';
 export const SET_PROTECTION = 'SET_PROTECTION';
 export const SET_ENJOYMENT = 'SET_ENJOYMENT';
 export const SET_CHANGED = 'SET_CHANGED';
@@ -28,6 +29,12 @@ export function setProtection(value) {
 export function DispatchChangeOccurrences(value) {
   return {
     type: SET_OCCURRENCES,
+    value: value
+  }
+}
+export function setParticipants(value) {
+  return {
+    type: SET_PARTICIPANTS,
     value: value
   }
 }

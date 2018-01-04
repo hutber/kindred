@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import mobiscroll from '../../../components/shared/mobiscroll/mobiscroll.custom';
 
-import * as masturbationAction from '../../../actions/sexPages/masturbation/currentMasturbationAction';
 import * as desireCurrentAction from '../../../actions/sexPages/desire/desireCurrentAction';
+import * as masturbationAction from '../../../actions/sexPages/masturbation/currentMasturbationAction';
+import * as sexCurrentAction from '../../../actions/sexPages/sex/currentSexAction';
 
 //Styles
 import * as font from '../font/fontello.css';
@@ -77,6 +78,7 @@ function mapStateToProps (state) {
   return {
     masturbation: state.masturbation.current,
     desire: state.desire.current,
+    sex: state.sex.current,
   }
 }
 
@@ -84,6 +86,7 @@ function matchDispatchToProps (dispatch) {
   return {
     resetmasturbation: bindActionCreators(masturbationAction.reset, dispatch),
     resetdesire: bindActionCreators(desireCurrentAction.reset, dispatch),
+    resetsex: bindActionCreators(sexCurrentAction.reset, dispatch),
   }
 }
 

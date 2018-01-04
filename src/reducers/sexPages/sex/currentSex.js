@@ -6,13 +6,14 @@ import {
   SET_CHANGED,
 	SET_ENJOYMENT,
 	SET_OCCURRENCES,
+	SET_PARTICIPANTS,
 	SET_POSITION_SELECTION,
 } from '../../../actions/sexPages/sex/currentSexAction';
 
 import { positionsObject } from './positions/positions';
 
 const initialState = {
-  participants: 3,
+  participants: 1,
 	occurrences: 2,
   protection: false,
   enjoyment: 4,
@@ -44,6 +45,9 @@ function currentSex (state = initialState, action) {
 
     case SET_OCCURRENCES:
       return {...state, occurrences: action.value};
+
+    case SET_PARTICIPANTS:
+      return {...state, participants: action.value};
 
 	  case SET_POSITION_SELECTION:
 		  return {

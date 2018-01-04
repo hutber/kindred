@@ -12,7 +12,6 @@ import Knob from '../shared/Knob';
 import Fire from '../../components/shared/icons/Fire';
 
 //Styles
-import * as font from '../shared/font/fontello.css';
 import main from '../shared/main.css';
 import styles from './style.css';
 
@@ -52,18 +51,20 @@ class DesireSummary extends React.Component {
 		}
 	}
 
-  render (){
-    return (
-      <div className={`${styles.item} ${styles.knobContainer}`}>
-        <div className={styles.contentArea}>
-          <div className={styles.iconArea}>
-	          <Fire height="70px" />
-          </div>
-          <this.IsEmpty />
-        </div>
-      </div>
-    )
-  }
+	render (){
+		return (
+			<div className={`${styles.item} ${styles.knobContainer}`}>
+				<div className={styles.contentArea}>
+					<div className={styles.iconArea}>
+						<Fire height="80px" />
+					</div>
+					<div className={styles.itemContentArea}>
+						<this.IsEmpty />
+					</div>
+				</div>
+			</div>
+		)
+	}
 }
 
 function matchDispatchToProps(dispatch){

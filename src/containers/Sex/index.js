@@ -36,6 +36,9 @@ class Sex extends React.Component {
     super(props);
     this.saveButton = this.saveButton.bind(this);
 
+    //Participants
+    this.openParticipants = this.openParticipants.bind(this);
+    this.setParticipants = this.setParticipants.bind(this);
     //Occurrences
     this.openOccurrences = this.openOccurrences.bind(this);
     this.setOccurrences = this.setOccurrences.bind(this);
@@ -107,7 +110,17 @@ class Sex extends React.Component {
     this.props.DispatchChangeDate(event);
   }
 
+	openParticipants (){
+		this.refs.participantsSex.instance.show();
+  }
+
+	setParticipants (event){
+    this.setChanged();
+    this.props.setParticipants(event.valueText);
+  }
+
 	openOccurrences (){
+			console.info(this.refs);
 		this.refs.occurrencesSex.instance.show();
   }
 
@@ -127,8 +140,17 @@ class Sex extends React.Component {
         <RequireLogin />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div className={`${formStyles.bottom} ${formStyles.dataItem}`}>
+          <div onClick={this.openParticipants} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="Participants">
             <RightArrow label="Total Participants" rightText={this.props.sex.participants}/>
+	          <mobiscroll.Number
+		          onSet={this.setParticipants}
+		          value={this.props.sex.participants}
+		          ref="participantsSex"
+		          scale={0}
+		          step={1}
+		          min={0}
+		          max={99}
+	          />
           </div>
           <DataBreak />
 	        <div onClick={this.openOccurrences} className={`${formStyles.dataItem}`}  ref="Occurrences">
@@ -202,6 +224,7 @@ function matchDispatchToProps(dispatch){
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
 	  DispatchChangeOccurrences : bindActionCreators(currentSexAction.DispatchChangeOccurrences, dispatch),
     pushToSex : bindActionCreators(pushToSex, dispatch),
+	  setParticipants : bindActionCreators(currentSexAction.setParticipants, dispatch),
     DispatchOrgasmQuantity: bindActionCreators(currentSexAction.setOrgasmQuantity, dispatch),
 	  DispatchOrgasmQuality: bindActionCreators(currentSexAction.setOrgasmQuality, dispatch),
     DispatchSetEnjoyment: bindActionCreators(currentSexAction.setEnjoyment, dispatch),
