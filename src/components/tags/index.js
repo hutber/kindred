@@ -19,7 +19,8 @@ class Tags extends React.Component {
     this.selectTag = this.selectTag.bind(this);
 
     this.state = {
-      tagsSearch: ''
+      tagsSearch: '',
+	    currentTags: this.props.masturbationTags
     };
   }
 
@@ -27,8 +28,21 @@ class Tags extends React.Component {
     this.props.setTagSelection(event.target.textContent, !this.props.masturbationTags[event.target.textContent]);
   }
 
+  matchTags (searchTerm){
+  	const newTags = {};
+  	const returnedValues = Object.keys(this.props.masturbationTags).forEach( (tag, index) => {
+		  if(tag.toLowerCase().includes(searchTerm.toLowerCase())){
+			  newTags[tag] = index;
+		  }
+	  });
+  	console.info(newTags);
+  	return newTags;
+  }
+
   searchTags (event){
-    this.setState({tagsSearch: event.target.value});
+  	const searchTerm = event.target.value
+    this.setState({tagsSearch: searchTerm});
+    this.setState({currentTags:this.matchTags(searchTerm)})
   }
 
   render (){
@@ -49,8 +63,8 @@ class Tags extends React.Component {
         </div>
         <div className={styles.tags}>
           {
-            Object.keys(this.props.masturbationTags).map((tag, key) => {
-              const val = this.props.masturbationTags[tag];
+            Object.keys(this.state.currentTags).splice(0,10).map((tag, key) => {
+              const val = this.state.currentTags[tag];
               return <div className={val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onClick={this.selectTag}>{tag}</div>
             })
           }

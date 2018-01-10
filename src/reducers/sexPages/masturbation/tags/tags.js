@@ -4,5 +4,14 @@ export const masturbationTagsObject = {
   'S&M': false,
   'Role Play': false,
   Celebrity: false,
-  Spanking: false
+  Spanking: false,
+	test1: false,
+	test2: false,
+	test3: false,
+	test4: false,
+	test5: false,
+	test6: false,
+	test7: false,
+	test8: false,
+	test9: false,
 };
