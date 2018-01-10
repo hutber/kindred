@@ -145,7 +145,7 @@ class Masturbation extends React.Component {
             />
           </div>
           <DataBreak />
-          <Tags />
+          <Tags setChanged={this.setChanged}/>
         </div>
         <Menu />
       </div>

@@ -30,19 +30,19 @@ class Tags extends React.Component {
 
   matchTags (searchTerm){
   	const newTags = {};
-  	const returnedValues = Object.keys(this.props.masturbationTags).forEach( (tag, index) => {
+  	Object.keys(this.props.masturbationTags).forEach( (tag, index) => {
 		  if(tag.toLowerCase().includes(searchTerm.toLowerCase())){
 			  newTags[tag] = index;
 		  }
 	  });
-  	console.info(newTags);
   	return newTags;
   }
 
   searchTags (event){
-  	const searchTerm = event.target.value
+  	const searchTerm = event.target.value;
     this.setState({tagsSearch: searchTerm});
-    this.setState({currentTags:this.matchTags(searchTerm)})
+    this.setState({currentTags:this.matchTags(searchTerm)});
+	  this.props.setChanged();
   }
 
   render (){

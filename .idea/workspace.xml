@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1e625087-a220-4e26-b7a5-aaa888537481" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/SexSummary/AllSummary.js" afterPath="$PROJECT_DIR$/src/components/SexSummary/AllSummary.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tags/index.js" afterPath="$PROJECT_DIR$/src/components/tags/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tags.js" afterPath="$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tags.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Masturbation/index.js" afterPath="$PROJECT_DIR$/src/containers/Masturbation/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/app/platforms/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,14 +83,14 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="8_Sex_Selection_v2.psd" pinned="false" current-in-tab="false">
+            <file leaf-file-name="8_Sex_Selection_v2.psd" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/designs/Finals/8_Sex_Selection_v2.psd">
                 <provider selected="true" editor-type-id="images">
                   <state />
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="9_My_Data_2.psd" pinned="false" current-in-tab="true">
+            <file leaf-file-name="9_My_Data_2.psd" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/designs/Finals/9_My_Data_2.psd">
                 <provider selected="true" editor-type-id="images">
                   <state />
@@ -163,7 +163,7 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="tags.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="tags.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tags.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="240">
@@ -193,7 +193,7 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="desireReducer.js" pinned="false" current-in-tab="false">
+            <file leaf-file-name="desireReducer.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/desire/desireReducer.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="352">
@@ -265,8 +265,18 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1664">
-                  <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+                <state relative-caret-position="890">
+                  <caret line="130" column="27" lean-forward="false" selection-start-line="130" selection-start-column="27" selection-end-line="130" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="desireReducer.test.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/desire/desireReducer.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -432,11 +442,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/tags/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="688">
-                  <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+                <state relative-caret-position="362">
+                  <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Splash.test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/Splash/Splash.test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -446,7 +466,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AllSummary.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AllSummary.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/SexSummary/AllSummary.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="432">
@@ -496,11 +516,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Masturbation/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="760">
-                  <caret line="147" column="12" lean-forward="true" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
+                <state relative-caret-position="1818">
+                  <caret line="147" column="33" lean-forward="false" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="currentMasturbationAction.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/actions/sexPages/masturbation/currentMasturbationAction.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -594,8 +624,9 @@
     <findStrings>
       <find>SET_OCCURRENCES</find>
       <find>SexOverviewSummary</find>
-      <find>setState</find>
       <find>DesireSureallmmary</find>
+      <find>setState</find>
+      <find>testPathIgnorePatterns</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -608,7 +639,9 @@
         <option value="$PROJECT_DIR$/app/config.xml" />
         <option value="$PROJECT_DIR$/src/components/SexSummary/AllSummary.js" />
         <option value="$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tags.js" />
+        <option value="$PROJECT_DIR$/src/containers/Masturbation/index.js" />
         <option value="$PROJECT_DIR$/src/components/tags/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -660,108 +693,7 @@
             <path>
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="res" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sex" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="positions" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="SexSummary" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="SexTypeSelection" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="shared" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Sex" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
@@ -783,40 +715,6 @@
               <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="desire" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tags" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sex" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sex" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="current" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -859,12 +757,12 @@
       <updated>1515192956888</updated>
       <workItem from="1515192964030" duration="614000" />
       <workItem from="1515457309821" duration="545000" />
-      <workItem from="1515588060585" duration="3197000" />
+      <workItem from="1515588060585" duration="4065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4435000" />
+    <option name="totallyTimeSpent" value="5303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="-1" width="2560" height="1413" extended-state="6" />
@@ -905,30 +803,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/sex/current/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/positions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="74" column="66" lean-forward="false" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/sex/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -964,14 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="35" column="7" lean-forward="false" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1664">
-          <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,14 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/desire/desireReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1182,21 +1040,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/designs/Finals/7_Masturabation_Selection.psd">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/designs/Finals/6_Desire.psd">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/designs/Finals/8_Sex_Selection_v2.psd">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/designs/Finals/11_Info.psd">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1241,14 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Masturbation/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="147" column="12" lean-forward="true" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SexSummary/AllSummary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1257,10 +1092,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/sexPages/masturbation/currentMasturbationAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Masturbation/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1818">
+          <caret line="147" column="33" lean-forward="false" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/designs/Finals/6_Desire.psd">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/designs/Finals/7_Masturabation_Selection.psd">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/designs/Finals/8_Sex_Selection_v2.psd">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/tags/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+        <state relative-caret-position="362">
+          <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Splash/Splash.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="890">
+          <caret line="130" column="27" lean-forward="false" selection-start-line="130" selection-start-column="27" selection-end-line="130" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/desire/desireReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/desire/desireReducer.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

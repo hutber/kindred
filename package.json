@@ -128,8 +128,8 @@
     "moduleDirectories": [
       "node_modules"
     ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
       "<rootDir>/app/"
     ],
     "moduleNameMapper": {
