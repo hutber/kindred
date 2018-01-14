@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import shallowToJson from 'enzyme-to-json';
 import Splash from './Splash';
 
 it('Splash page is rendered', () => {
@@ -7,5 +7,5 @@ it('Splash page is rendered', () => {
 		<Splash />,
 	);
 
-	expect(toJson(result)).toMatchSnapshot();
+	expect(shallowToJson(result)).toMatchSnapshot();
 });
