@@ -11,6 +11,7 @@ import Settings from './components/Settings';
 
 //User Pages
 import SignIn from './components/Signin';
+import SignUp from './components/Signup';
 import Logout from './components/shared/Logout';
 
 //Sex Selection Pages
@@ -29,6 +30,7 @@ export default class Routes extends Component {
         <Route exact path="/" component={Splash}/>
 
         <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
         <Route path="/logout" component={Logout} />
 
         <Route path="/home" component={Home}  />

@@ -1,9 +1,16 @@
 @import "../vars.css";
 .home {
-  padding: 30px 35px;
+  padding: 10px 35px 30px;
   height: 100vh;
   overflow: hidden;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  .container {
+    width: 100%;
+  }
 
   p {
     font-family: $textLight;

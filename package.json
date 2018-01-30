@@ -43,6 +43,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "react-test-renderer": "^15.5.4",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.1",
     "stylelint": "^7.9.0",
     "webpack": "^2.2.1"
@@ -96,7 +97,7 @@
     "react-hot-loader": "^3.0.0-beta.7",
     "redux-actions": "^2.2.1",
     "redux-devtools-extension": "^2.13.2",
-    "redux-form": "^6.7.0",
+    "redux-form": "^7.2.1",
     "redux-logger": "^3.0.0",
     "redux-persist": "^4.8.0",
     "regenerator-runtime": "^0.11.0",

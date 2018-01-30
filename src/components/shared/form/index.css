@@ -31,3 +31,11 @@ input {
   padding: 15px 0;
   border-radius: 30px;
 }
+
+.error {
+  border-color: #ff9494;
+
+  &::-webkit-input-placeholder {
+    color: #ff9494;
+  }
+}

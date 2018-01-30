@@ -11,15 +11,17 @@ class SignIn extends React.Component {
   render(){
     return (
       <div className={userStyles.home}>
-        <BlockForLoggedInUsers />
-        <Logo />
-        <h1>Welcome to <br /> Kindred</h1>
-        <p>Please sign in to your account</p>
-        <SignInForm onSubmit={ShowResults} />
-        <div className={userStyles.extraDetails}>
-          <NavLink to="/signup">Don't have an account yet?</NavLink>
-          <NavLink to="/skip" className={userStyles.extraDetailsRight}>Skip</NavLink>
-        </div>
+	      <div className={userStyles.container}>
+		      <BlockForLoggedInUsers />
+		      <Logo />
+		      <h1>Welcome to <br /> Kindred</h1>
+		      <p>Please sign in to your account</p>
+		      <SignInForm onSubmit={ShowResults} />
+	      </div>
+	      <div className={userStyles.extraDetails}>
+		      <NavLink to="/signup">Don't have an account yet?</NavLink>
+		      <NavLink to="/skip" className={userStyles.extraDetailsRight}>Skip</NavLink>
+	      </div>
       </div>
     );
   }
