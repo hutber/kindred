@@ -57,9 +57,9 @@ export function doLogout () {
 //
 // }
 
-export function submitLogin(data) {
+export function submitLogin(url) {
 	return (dispatch) => {
-		dispatch(loading.turnOnLoading());
+		dispatch(loading.startLoading());
 
 		fetch(url)
 			.then((response) => {
@@ -67,12 +67,15 @@ export function submitLogin(data) {
 					throw Error(response.statusText);
 				}
 
-				dispatch(itemsIsLoading(false));
-
+				console.info(response);
+				dispatch(loading.turnOffLoading());
 				return response;
 			})
-			.then((response) => response.json())
-			.then((items) => dispatch(itemsFetchDataSuccess(items)))
-			.catch(() => dispatch(itemsHasErrored(true)));
+		// 	.then((response) => response.json())
+		// 	.then((items) => dispatch(itemsFetchDataSuccess(items)))
+			.catch(() => {
+				dispatch(loading.turnOffLoading());
+				// dispatch(itemsHasErrored(true))
+			});
 	};
 }

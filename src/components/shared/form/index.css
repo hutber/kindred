@@ -36,6 +36,5 @@ input {
   border-color: #ff9494;
 
   &::-webkit-input-placeholder {
-    color: #ff9494;
   }
 }

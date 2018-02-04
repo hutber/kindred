@@ -78,7 +78,8 @@ class SignIn extends React.Component {
 	}
 
 	submitForm(){
-		this.props.submitLogin()
+		const loginUrl = `${this.props.loginUrl.endpoint}/${this.props.loginUrl.login}`;
+		this.props.submitLogin(loginUrl)
 	}
 
   render(){
@@ -111,7 +112,10 @@ class SignIn extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { user: state.user };
+  return {
+  	user: state.user,
+	  loginUrl: state.api.live
+  };
 }
 
 function matchDispatchToProps(dispatch){
