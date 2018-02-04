@@ -19,12 +19,14 @@ class Logout extends React.Component {
   render(){
     return (
       <div className={userStyles.home}>
-        <Logo />
-        <BlockForLoggedInUsers />
-        <h1>You have been logged out</h1>
-        <p>Please track with us again</p>
-        <NavLink to="/signin">Sign In</NavLink>
-        <p>x</p>
+	      <div>
+		      <Logo />
+		      <BlockForLoggedInUsers />
+		      <h1>You have been logged out</h1>
+		      <p>Please track with us again</p>
+		      <NavLink to="/signin">Sign In</NavLink>
+		      <p>x</p>
+	      </div>
       </div>
     );
   }

@@ -1,0 +1,35 @@
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 57000;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.50);
+  z-index: 4;
+  path {
+    stroke-dasharray: 7000;
+    stroke-dashoffset: 7000;
+    animation: dash 10s linear forwards infinite;
+    &.large {
+      animation: dash 2s linear forwards infinite;
+    }
+  }
+}
+
+.hideLoading {
+  display: none;
+}
+
+.logo {
+  width: 80vw;
+  height: 100vh;
+}

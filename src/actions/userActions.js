@@ -1,11 +1,13 @@
+import * as loading from './loadingAction';
+
 // There are three possible states for our login
 // process and we need actions for each of them
-export const LOGIN_CHECK = 'LOGIN_CHECK'
-export const LOGIN_REQUEST = 'LOGIN_REQUEST'
-export const LOGGED_IN = 'LOGGED_IN'
-export const LOGGED_IN_FAILED = 'LOGGED_IN_FAILED'
-export const UN_AUTHED = 'UN_AUTHED'
-export const LOGOUT = 'LOGOUT'
+export const LOGIN_CHECK = 'LOGIN_CHECK';
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGGED_IN = 'LOGGED_IN';
+export const LOGGED_IN_FAILED = 'LOGGED_IN_FAILED';
+export const UN_AUTHED = 'UN_AUTHED';
+export const LOGOUT = 'LOGOUT';
 
 export function requestLogin() {
 	return {
@@ -45,12 +47,32 @@ export function doLogout () {
 	}
 }
 
-export function submitLogin (creds) {
-	if(creds.email !== "" && creds.pw !== ""){
-		localStorage.setItem('LOGGED_IN', 1);
-		return receiveLogin();
-	}else{
-		return loginError();
-	}
-	
+// export function submitLogin (creds) {
+// 	if(creds.email !== "" && creds.pw !== ""){
+// 		localStorage.setItem('LOGGED_IN', 1);
+// 		return receiveLogin();
+// 	}else{
+// 		return loginError();
+// 	}
+//
+// }
+
+export function submitLogin(data) {
+	return (dispatch) => {
+		dispatch(loading.turnOnLoading());
+
+		fetch(url)
+			.then((response) => {
+				if (!response.ok) {
+					throw Error(response.statusText);
+				}
+
+				dispatch(itemsIsLoading(false));
+
+				return response;
+			})
+			.then((response) => response.json())
+			.then((items) => dispatch(itemsFetchDataSuccess(items)))
+			.catch(() => dispatch(itemsHasErrored(true)));
+	};
 }

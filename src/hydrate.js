@@ -2,10 +2,13 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux'
 import { persistStore } from 'redux-persist'
-import configureStore from './configureStore';
 import createHashHistory from 'history/createHashHistory'
 const history = createHashHistory();
+
+//Store and Routes
+import configureStore from './configureStore';
 import Routes from './routes';
+
 
 export default class AppProvider extends React.Component {
 

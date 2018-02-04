@@ -10,13 +10,7 @@ class SignInForm extends React.Component {
   render() {
     const { handleSubmit, submitting } = this.props;
     return (
-      <div>
-        <form role="form" onSubmit={handleSubmit}>
-          <Field type="text" component="input" name="email" placeholder="Enter email address"/>
-          <Field type="password" component="input" name="pw" placeholder="Password"/>
-          <button type="submit" disabled={submitting}>Sign In</button>
-        </form>
-      </div>
+
     );
   }
 }
