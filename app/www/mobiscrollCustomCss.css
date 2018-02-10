@@ -1,27 +1,33 @@
-input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
+input.mbsc-comp, .mbsc-mobiscroll .mbsc-cal-day-m {
   display: none;
 }
+
 .mbsc-mobiscroll .mbsc-fr-popup.mbsc-cal-tabbed .mbsc-fr-w {
   background: transparent;
 }
+
 .mbsc-fr-w, .mbsc-cal-tabs {
   padding: 0 !important;
 }
+
 .mbsc-cal table {
-  //height: auto;
+//height: auto;
 }
+
 .mbsc-mobiscroll .mbsc-cal th {
-  //height: 30px;
+//height: 30px;
 }
+
 .mbsc-mobiscroll.mbsc-no-touch .mbsc-fr-btn-e:not(.mbsc-fr-btn-d):hover, .mbsc-mobiscroll .mbsc-fr-btn-a {
   background: transparent;
 }
+
 .mbsc-mobiscroll .mbsc-fr-w, .mbsc-mobiscroll .mbsc-fr-btn, .mbsc-mobiscroll .mbsc-sc-itm, .mbsc-mobiscroll .mbsc-range-btn, .mbsc-mobiscroll .mbsc-cal-tabs .mbsc-cal-tab-i, .mbsc-mobiscroll .mbsc-cal-btn-txt, .mbsc-mobiscroll .mbsc-cal th {
   color: #FFF;
   border-radius: 20px;
 }
 
-.mbsc-mobiscroll  .mbsc-cal-day {
+.mbsc-mobiscroll .mbsc-cal-day {
   border: none;
 }
 
@@ -38,7 +44,6 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   background: transparent;
 }
 
-
 .mbsc-kindred .mbsc-mobiscroll .mbsc-fr-scroll[role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
   background: #f7f7f7;
 }
@@ -47,7 +52,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 * Switch
  */
 
-.mbsc-switch input:checked+.mbsc-switch-track {
+.mbsc-switch input:checked + .mbsc-switch-track {
   background: #02E9FB;
 }
 
@@ -110,7 +115,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   width: 1.1em;
 }
 
-.mbsc-mobiscroll  .mbsc-switch-track .mbsc-switch-handle {
+.mbsc-mobiscroll .mbsc-switch-track .mbsc-switch-handle {
   height: 1.5em;
   width: 1.5em;
 }
@@ -118,7 +123,6 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 /*
 * Popup
  */
-
 
 .mbsc-mobiscroll [role="dialog"] .mbsc-fr-popup .mbsc-fr-w {
   background: #f7f7f7;
@@ -133,28 +137,33 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 .mbsc-ios.mbsc-fr-bubble .mbsc-fr-w, .mbsc-ios.mbsc-fr-center .mbsc-fr-w {
   border-radius: 8px;
 }
+
 .mbsc-kindred.mbsc-fr-nobtn .mbsc-fr-w, .mbsc-ios.mbsc-fr-center .mbsc-fr-w {
   min-width: 16.666667em;
 }
+
 .mbsc-ios .mbsc-fr-w {
   position: relative;
   padding-top: 3.666667em;
   background: #f7f7f7;
   color: #000;
   font-size: 12px;
-  font-family: -apple-system,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
 .mbsc-fr .mbsc-fr-w {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+
 .mbsc-fr-w {
   min-width: 200px;
   overflow: hidden;
   text-align: center;
-  font-family: arial,verdana,sans-serif;
+  font-family: arial, verdana, sans-serif;
 }
+
 .mbsc-fr-w, .mbsc-fr-overlay {
   -webkit-transform: translateZ(0);
 }
@@ -199,6 +208,30 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 
+
+.kindred-dialog .mbsc-fr-popup .mbsc-fr-w {
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.kindred-dialog .mbsc-fr-popup .mbsc-fr-btn-cont {
+  border-radius: 0;
+}
+
+.kindred-dialog .mbsc-fr-overlay, .kindred-dialog .mbsc-fr-btn-cont {
+  display: none;
+}
+
+.kindred-dialog.good .md-dialog {
+  color: #57be69;
+}
+
+.kindred-dialog.bad .md-dialog {
+  color: #cf2c10;
+}
+
+
 .mbsc-fr-hdn {
   width: 0;
   height: 0;
@@ -207,25 +240,27 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   border: 0;
   overflow: hidden;
 }
+
 .mbsc-wdg .mbsc-ltr .mbsc-wdg-c {
   text-align: left;
 }
 
+.md-dialog {
+  text-align: center;
+}
 
 .md-dialog {
   text-align: center;
 }
-.md-dialog {
-  text-align: center;
-}
+
 .md-dialog {
   min-width: 250px;
 }
+
 .md-dialog-cont .md-dialog {
   width: 260px;
   margin: 0 auto;
 }
-
 
 .mbsc-fr-btn-cont {
   display: table;
@@ -240,6 +275,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   width: 100%;
   border-bottom: 1px solid #ccc;
 }
+
 .mbsc-kindred.mbsc-fr-center .mbsc-fr-btn-cont {
   display: table;
   top: auto;
@@ -247,6 +283,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   border: 0;
   table-layout: fixed;
 }
+
 .mbsc-fr-btn-w {
   vertical-align: top;
   display: table-cell;
@@ -279,14 +316,15 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   text-overflow: ellipsis;
   vertical-align: top;
 }
+
 .mbsc-kindred .mbsc-fr-btn-cont {
   padding: 0;
 }
 
-
 .mbsc-fr-btn-e {
   cursor: pointer;
 }
+
 .mbsc-kindred .mbsc-fr-btn {
   height: 2.75em;
   line-height: 2.75em;
@@ -295,9 +333,11 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   color: #007aff;
   font-size: 1em;
 }
+
 .mbsc-ios .mbsc-fr-btn-s .mbsc-fr-btn {
   font-weight: bold;
 }
+
 .mbsc-ios.mbsc-fr-center .mbsc-fr-btn {
   display: block;
   font-weight: normal;
@@ -312,8 +352,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
  */
 
 .mbsc-cal-day-diff .mbsc-cal-day-i {
-  //opacity: 1;
-  color: #93b4b5;
+//opacity: 1; color: #93b4b5;
 }
 
 .mbsc-mobiscroll .mbsc-cal-c {
@@ -353,7 +392,7 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
   top: 50%;
   display: block;
   transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%,0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
   line-height: 2.6125em;
 }
 
@@ -381,13 +420,14 @@ input.mbsc-comp, .mbsc-mobiscroll  .mbsc-cal-day-m {
 }
 
 .mbsc-cal-day-inv.mbsc-cal-day .mbsc-cal-day-fg {
-  //opacity: .8
+//opacity: .8
 }
 
 .mbsc-cal-sc-m-cell {
   background-color: #2253eb;
   color: #FFF;
 }
+
 .mbsc-cal .mbsc-cal-sc-row .mbsc-fr-btn-d {
   background-color: #00b3ec;
   opacity: 1;
