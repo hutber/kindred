@@ -14,6 +14,7 @@ export function turnOnLoading () {
 }
 
 export function turnOffLoading () {
+	clearTimeout(loadingTimeout);
 	return {
 		type: LOADING_OFF,
 		loading: false
@@ -22,11 +23,11 @@ export function turnOffLoading () {
 
 export function startLoading () {
 	return (dispatch) => {
-		clearTimeout(loadingTimeout);
+		// clearTimeout(loadingTimeout);
 		dispatch(turnOnLoading());
 
-		loadingTimeout = setTimeout(() => {
-			dispatch(turnOffLoading());
-		}, loadingTimer)
+		// loadingTimeout = setTimeout(() => {
+		// 	dispatch(turnOffLoading());
+		// }, loadingTimer)
 	};
 }

@@ -1,5 +1,5 @@
 const initialState = {
-	endpoint: 'http://88.208.249.95:8888',
+	endpoint: 'http://api.wekindred.com',
 	login: 'auth/login'
 };
 

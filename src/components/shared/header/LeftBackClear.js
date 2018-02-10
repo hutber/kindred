@@ -36,7 +36,6 @@ class Left extends React.Component {
 
   resetData (event) {
     if (event.button === "set" && this.props[this.props.type].changed) {
-      console.info('reset' + this.props.type);
       this.props['reset' + this.props.type]();
       this.props.history.push('sextypeselection');
     }

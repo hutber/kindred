@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 //Actions
 import * as userActions from '../../actions/userActions'
+import * as notificationActions from '../../actions/notificationActions'
 
 //Signed In Logic
 import BlockForLoggedInUsers from '../shared/auth/BlockForLoggedInUsers'
@@ -79,7 +80,13 @@ class SignIn extends React.Component {
 
 	submitForm(){
 		const loginUrl = `${this.props.loginUrl.endpoint}/${this.props.loginUrl.login}`;
-		this.props.submitLogin(loginUrl)
+		this.props.submitLogin({
+			url: loginUrl,
+			body: {
+				username: this.refs.email.value,
+				password: this.refs.pw.value,
+			}
+		})
 	}
 
   render(){
@@ -96,8 +103,8 @@ class SignIn extends React.Component {
 		      )}
 		      <div>
 			      <form role="form" ref="signInForm"  onSubmit={this.signInUser}>
-				      <input type="text" name="email" value="jamie@hutber.com" placeholder="Enter email address"/>
-				      <input type="password" name="pw" placeholder="Password" value="test"/>
+				      <input type="text" name="email" ref="email" placeholder="Enter email address" value="jamie@hutber.com"/>
+				      <input type="password" name="pw" ref="pw" placeholder="Password" value="taest"/>
 				      <button type="submit">Sign In</button>
 			      </form>
 		      </div>
@@ -121,6 +128,7 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch){
 	return {
 		submitLogin: bindActionCreators(userActions.submitLogin, dispatch),
+		notification: bindActionCreators(notificationActions.showNotification, dispatch),
 	}
 }
 

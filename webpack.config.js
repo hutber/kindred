@@ -35,7 +35,7 @@ module.exports = new Config().extend('./webpack.base.config.js').merge({
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/'
   },
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

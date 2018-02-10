@@ -5,6 +5,9 @@ import {Route} from 'react-router';
 //Loading
 import Loading from './components/shared/loading';
 
+//Notfications
+import Notification from './components/shared/notification';
+
 //Core Pages
 import Splash from './components/Splash/Splash';
 
@@ -31,6 +34,7 @@ export default class Routes extends Component {
     return (
       <div>
 	      <Loading />
+	      <Notification />
         <Route exact path="/" component={Splash}/>
 
         <Route path="/signin" component={SignIn} />

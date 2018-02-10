@@ -6,6 +6,8 @@ import { reducer as formReducer } from 'redux-form'
 
 //# Reducers
   import hydrate from './hydrate';
+		// Notifications
+			import notification from './notification';
 		// Loading
 			import loading from './loading';
 		// Api
@@ -26,6 +28,7 @@ const reducers = combineReducers({
   , form: formReducer
   , user
   , api
+  , notification
   , loading
   , desire
   , masturbation
