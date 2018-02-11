@@ -21,6 +21,7 @@ export function doLogout() {
 
 function handleErrors(response) {
 	if (!response.ok) {
+		console.error(response);
 		throw Error(response.statusText);
 	}
 	return response;
@@ -30,10 +31,6 @@ function handleErrors(response) {
 export function submitLogin(options) {
 	return (dispatch) => {
 		dispatch(loading.startLoading());
-		const headers = new Headers({
-			"Content-Type": "application/json"
-		});
-
 
 		fetch(options.url, {
 			method: 'post',
@@ -62,7 +59,8 @@ export function submitLogin(options) {
 				dispatch(loading.turnOffLoading());
 				dispatch(receiveLogin(items));
 			})
-			.catch(() => {
+			.catch((response) => {
+				handleErrors(response);
 				dispatch(loading.turnOffLoading())
 			});
 	};

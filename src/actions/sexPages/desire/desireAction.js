@@ -1,3 +1,7 @@
+import desireLang from '../../../lang/desire';
+import * as loading from '../../loadingAction';
+import * as notification from '../../notificationActions';
+
 export const SET_DESIRE_DATA = 'SET_DESIRE_DATA';
 export const SET_DESIRE = 'SET_DESIRE';
 export const SET_DATE = 'SET_DATE';
@@ -22,3 +26,60 @@ export function pushToDesire(data) {
     data
   }
 }
+
+function handleErrors(response) {
+	if (!response.ok) {
+		console.error(response);
+		throw Error(response.statusText);
+	}
+	return response;
+}
+
+export function saveDesire(options) {
+	return (dispatch) => {
+		return new Promise((resolve, reject) => {
+			dispatch(loading.startLoading());
+
+			fetch(options.url, {
+				method: 'post',
+				headers: {
+					"Content-Type": "application/json",
+					"Authorization": options.token
+				},
+				body: JSON.stringify(options.body)
+			})
+				.then((response) => {
+					if (!response.ok) {
+
+						//save local data
+						pushToDesire({
+							desire: options.desire,
+							currentDate: options.currentDate
+						});
+
+						const errorMessage =  desireLang[response.status] ? desireLang[response.status] : desireLang[response.statusText];
+
+						const errorOptions = {
+							message: errorMessage,
+							good: false,
+							bad: true
+						};
+						dispatch(notification.showNotification(errorOptions));
+						throw Error(response.statusText);
+					}
+					return response;
+				})
+				.then((response) => response.json())
+				.then((items) => {
+					dispatch(loading.turnOffLoading());
+					resolve(items)
+				})
+				.catch((response) => {
+					handleErrors(response);
+					reject(response);
+					dispatch(loading.turnOffLoading())
+				});
+		})
+	};
+}
+

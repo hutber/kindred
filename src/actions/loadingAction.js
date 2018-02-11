@@ -26,8 +26,8 @@ export function startLoading () {
 		// clearTimeout(loadingTimeout);
 		dispatch(turnOnLoading());
 
-		// loadingTimeout = setTimeout(() => {
-		// 	dispatch(turnOffLoading());
-		// }, loadingTimer)
+		loadingTimeout = setTimeout(() => {
+			dispatch(turnOffLoading());
+		}, loadingTimer)
 	};
 }

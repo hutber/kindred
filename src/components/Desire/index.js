@@ -28,14 +28,24 @@ class Desire extends React.Component {
     this.saveButton = this.saveButton.bind(this);
   }
 
-  saveButton (){
-    this.props.pushToDates(this.props.currentDate);
-    this.props.pushToDesire({
-	    desire: this.props.current.desire,
-	    currentDate: this.props.currentDate
-    });
-    this.props.resetdesire();
-    this.props.history.push('sexsummary');
+  async saveButton (){
+  	const options = {
+		  token: this.props.token,
+  		url: `${this.props.api.endpoint}/${this.props.api.desireSubmit}`,
+		  currentData: this.props.currentDate,
+		  desire: this.props.current.desire,
+		  body:{
+			  dateDate: this.props.currentDate,
+			  location: '',
+			  value: this.props.current.desire
+		  }
+	  };
+  	this.props.saveDesire(options)
+	  .then(() => {
+		  this.props.pushToDates(this.props.currentDate);
+		  this.props.resetdesire();
+		  this.props.history.push('sexsummary');
+	  });
   }
 
   render (){
@@ -75,8 +85,10 @@ class Desire extends React.Component {
 
 function mapStateToProps(state){
   return {
+	  token: state.user.token,
     current: state.desire.current,
-	  currentDate: state.dates.currentDate
+	  currentDate: state.dates.currentDate,
+	  api: state.api.live
   };
 }
 
@@ -84,6 +96,7 @@ function matchDispatchToProps(dispatch){
   return {
     pushToDates : bindActionCreators(datesAction.pushToDates, dispatch),
     pushToDesire : bindActionCreators(desireAction.pushToDesire, dispatch),
+	  saveDesire : bindActionCreators(desireAction.saveDesire, dispatch),
     resetdesire: bindActionCreators(desireCurrentAction.reset, dispatch),
     setChanged: bindActionCreators(desireCurrentAction.setChanged, dispatch)
   }

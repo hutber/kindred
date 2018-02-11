@@ -51,6 +51,7 @@ class SignIn extends React.Component {
 		];
 
 		//check all forms are empty
+		console.info(this.refs.signInForm);
 		Array.from(this.refs.signInForm).forEach(item => {
 			if(errorArray.includes(item.type) && item.value === "") {
 				this.addError(item);
@@ -102,8 +103,8 @@ class SignIn extends React.Component {
 			      <p>Please sign in to your account</p>
 		      )}
 		      <div>
-			      <form role="form" ref="signInForm"  onSubmit={this.signInUser}>
-				      <input type="text" name="email" ref="email" placeholder="Enter email address"/>
+			      <form role="form" ref="signInForm" onSubmit={this.signInUser}>
+				      <input type="email" name="email" ref="email" placeholder="Enter email address"/>
 				      <input type="password" name="pw" ref="pw" placeholder="Password" />
 				      <button type="submit">Sign In</button>
 			      </form>

@@ -9,6 +9,8 @@ environment.set('cssIdent', '[path]___[name]__[local]___[hash:base64:5]');
 
 module.exports = new Config().extend('./webpack.base.config.js').merge({
   entry: [
+	  'babel-polyfill',
+
     'react-hot-loader/patch',
     // activate HMR for React
 
