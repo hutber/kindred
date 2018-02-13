@@ -94,6 +94,18 @@ p {
   transform: translate(-50%, -50%);
 }
 
+.middle {
+  margin-top: 10vh;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  .container {
+    width: 100%;
+  }
+}
+
 .verticalAlignFlexParent {
   display: flex;
   flex-direction: column;
@@ -127,5 +139,3 @@ p {
   align-items: center;
 }
 
-
-//Sex Positions

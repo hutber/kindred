@@ -429,3 +429,17 @@ input.mbsc-comp, .mbsc-mobiscroll .mbsc-cal-day-m {
   background-color: #00b3ec;
   opacity: 1;
 }
+
+//Pin Number
+.pincode-input-container {
+}
+.pincode-input-container .pincode-input-text
+{
+  align-content: stretch;
+  display: inline;
+}
+.pincode-input-container .pincode-input-text:focus
+{
+  outline:none;
+  box-shadow:none;
+}

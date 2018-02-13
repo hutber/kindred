@@ -9,6 +9,7 @@ environment.set('cssIdent', '[local]_[hash:base64:5]');
 
 module.exports = new Config().extend('./webpack.base.config.js').merge({
   entry: [
+	  'babel-polyfill',
     './src/index.js'
   ],
   devtool: 'eval',

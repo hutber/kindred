@@ -21,6 +21,7 @@ export default class AppProvider extends React.Component {
   componentWillMount(){
     persistStore(configureStore, {}, () => {
       this.setState({ rehydrated: true })
+	    window.localStorage.setItem('firstReload', true);
     })
   }
 
@@ -31,7 +32,7 @@ export default class AppProvider extends React.Component {
     return (
       <Provider store={configureStore}>
         <ConnectedRouter history={history}>
-          <Routes/>
+          <Routes history={history}/>
         </ConnectedRouter>
       </Provider>
     )

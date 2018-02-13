@@ -1,5 +1,6 @@
 //Core App things
 import React, {Component} from 'react'
+import {connect} from 'react-redux';
 import {Route} from 'react-router';
 
 //Loading
@@ -18,6 +19,7 @@ import Settings from './components/Settings';
 //User Pages
 import SignIn from './components/Signin';
 import SignUp from './components/Signup';
+import Pin from './components/Pin';
 import Logout from './components/shared/Logout';
 
 //Sex Selection Pages
@@ -30,6 +32,14 @@ import Sex from './containers/Sex';
 import SexSummary from './components/SexSummary/AllSummary';
 
 export default class Routes extends Component {
+	componentDidMount(){
+		const firstReload = window.localStorage.getItem('firstReload');
+		if(firstReload){
+			window.localStorage.removeItem('firstReload');
+			this.props.history.push('/pin')
+		}
+	}
+
   render() {
     return (
       <div>
@@ -40,6 +50,8 @@ export default class Routes extends Component {
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
         <Route path="/logout" component={Logout} />
+        <Route path="/pin" component={Pin} />
+        <Route path="/confirmpin" component={Pin} />
 
         <Route path="/home" component={Home}  />
         <Route path="/settings" component={Settings} />
@@ -54,3 +66,9 @@ export default class Routes extends Component {
     )
   }
 };
+
+function mapStateToProps(state){
+	return {
+		user: state.user
+	};
+}

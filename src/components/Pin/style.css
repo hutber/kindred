@@ -1,0 +1,73 @@
+.index {
+  div {
+    color: #FFF;
+    //font-size: 8rem;
+  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%,0);
+  -moz-transform: translate3d(-50%, -50%,0);
+  -ms-transform: translate3d(-50%, -50%,0);
+}
+
+.indexAppContent {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.pinContainer {
+  align-items: center;
+}
+
+.pinItem {
+  height: 70px;
+  width: 60px;
+  border: 1px solid #FFF;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.pinItem:last-child {
+  margin-right: 0;
+}
+
+.p {
+  width: 100%;
+  max-width: 315px;
+  margin: 10px auto 20px;
+}
+
+.digitContainer {
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //flex-wrap: wrap;
+  width: 100%;
+  max-width: 375px;
+  border: 1px solid;
+  position: fixed;
+  bottom: 0;
+  transform: translate(-50%);
+  left: 50%;
+}
+
+.digit {
+  line-height: 50px;
+  width: 33.3%;
+  border-bottom: 1px solid;
+  display: inline-block;
+  
+  &:nth-child(3n+2) {
+    border-left: 1px solid;
+    border-right: 1px solid;
+  }
+
+  &:nth-child(10),&:nth-child(11), &:nth-child(12) {
+    border-bottom: 0px;
+  }
+
+}
