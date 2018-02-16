@@ -1,6 +1,6 @@
-import signInLang from '../lang/signIn';
-import * as loading from './loadingAction';
-import * as notification from './notificationActions';
+import signInLang from '../../lang/signIn';
+import * as loading from '../loadingAction';
+import * as notification from '../notificationActions';
 
 export const LOGGED_IN = 'LOGGED_IN';
 export const LOGOUT = 'LOGOUT';

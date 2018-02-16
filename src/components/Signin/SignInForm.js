@@ -20,7 +20,7 @@ SignInForm = reduxForm({
 })(SignInForm);
 
 function mapStateToProps(state) {
-  return { initialValues: state.user };
+  return { initialValues: state.user.auth };
 }
 
 export default SignInForm = connect(mapStateToProps)(SignInForm);

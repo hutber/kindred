@@ -85,7 +85,7 @@ class Desire extends React.Component {
 
 function mapStateToProps(state){
   return {
-	  token: state.user.token,
+	  token: state.user.auth.token,
     current: state.desire.current,
 	  currentDate: state.dates.currentDate,
 	  api: state.api.live

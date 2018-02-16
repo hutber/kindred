@@ -5,7 +5,7 @@ import Logo from '../../shared/logo';
 import { NavLink } from 'react-router-dom'
 import userStyles from '../../shared/userPages/userPages.css';
 import BlockForLoggedInUsers from '../../shared/auth/BlockForLoggedInUsers'
-import * as authCreators from '../../../actions/userActions'
+import * as authCreators from '../../../actions/user/authActions'
 
 class Logout extends React.Component {
   constructor(props){

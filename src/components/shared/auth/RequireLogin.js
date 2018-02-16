@@ -10,7 +10,11 @@ class RequireLogin extends React.Component {
 
   render(){
     const loggedIn = this.props.user.loggedIn;
-    if (loggedIn) {
+    const needsPin = window.localStorage.getItem('firstReload') === "true" && loggedIn;
+
+    if(needsPin){
+	    return (<Redirect push to="/pin"/>);
+    } else if (loggedIn) {
       return (
         <div></div>
       )
@@ -24,7 +28,7 @@ class RequireLogin extends React.Component {
 
 function mapStateToProps(state){
   return {
-    user: state.user
+    user: state.user.auth
   };
 }
 

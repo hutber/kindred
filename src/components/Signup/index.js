@@ -116,7 +116,7 @@ class SignUp extends React.Component {
 }
 
 function mapStateToProps(state) {
-	return { initialValues: state.user };
+	return { initialValues: state.user.auth };
 }
 
 export default connect(mapStateToProps)(SignUp);

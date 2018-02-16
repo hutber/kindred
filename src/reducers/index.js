@@ -20,7 +20,7 @@ import { reducer as formReducer } from 'redux-form'
 
 //### Not Logged in
   //### Login
-  import user from './userReducer';
+  import user from './user/';
 
 const reducers = combineReducers({
   router: routerReducer

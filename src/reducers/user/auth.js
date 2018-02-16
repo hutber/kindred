@@ -1,7 +1,8 @@
 import {
   LOGGED_IN,
   LOGOUT
-} from '../actions/userActions';
+} from '../../actions/user/authActions';
+
 const initialState = {
 	loggedIn: 0,
 	token: null,

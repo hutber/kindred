@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { NavLink } from 'react-router-dom'
 
 //Actions
-import * as userActions from '../../actions/userActions'
+import * as userActions from '../../actions/user/authActions'
 import * as notificationActions from '../../actions/notificationActions'
 
 //Signed In Logic
@@ -121,7 +121,7 @@ class SignIn extends React.Component {
 
 function mapStateToProps(state) {
   return {
-  	user: state.user,
+  	user: state.user.auth,
 	  loginUrl: state.api.live
   };
 }

@@ -1,12 +1,12 @@
 /* eslint-disable import/max-dependencies */
 import {combineReducers} from 'redux';
 
-import desireReducer from './desireReducer';
-import current from './desireCurrentlReducer';
+import pin from './pin';
+import auth from './auth';
 
 const desire = combineReducers({
-    data: desireReducer,
-    current
+    pin,
+    auth
 });
 
 export default desire;
