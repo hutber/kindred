@@ -21,7 +21,6 @@ export default class AppProvider extends React.Component {
   componentWillMount(){
     persistStore(configureStore, {}, () => {
       this.setState({ rehydrated: true })
-	    window.localStorage.setItem('firstReload', true);
     })
   }
 

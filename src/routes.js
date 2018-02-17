@@ -24,6 +24,7 @@ import Logout from './components/shared/Logout';
 //Pin
 import Pin from './components/Pin';
 import Confirm from './components/Pin/Confirm';
+import Safetypin from './components/Pin/Safetypin';
 
 //Sex Selection Pages
 import SexTypeSelection from './components/SexTypeSelection';
@@ -35,13 +36,6 @@ import Sex from './containers/Sex';
 import SexSummary from './components/SexSummary/AllSummary';
 
 export default class Routes extends Component {
-	componentDidMount(){
-		const firstReload = window.localStorage.getItem('firstReload');
-		if(firstReload){
-			window.localStorage.removeItem('firstReload');
-		}
-	}
-
   render() {
     return (
       <div>
@@ -55,6 +49,7 @@ export default class Routes extends Component {
 
 	      <Route path="/pin" component={Pin} />
 	      <Route path="/pinconfirm" component={Confirm} />
+	      <Route path="/safetypin" component={Safetypin} />
 
         <Route path="/home" component={Home}  />
         <Route path="/settings" component={Settings} />

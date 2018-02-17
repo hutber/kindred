@@ -9,12 +9,18 @@ class RequireLogin extends React.Component {
   }
 
   render(){
+
+  	//Pin Number logic redirects
     const loggedIn = this.props.user.loggedIn;
     const needsPin = window.localStorage.getItem('firstReload') === "true" && loggedIn;
+    const safetyPin = this.props.pin.pinsMatch && loggedIn && needsPin;
 
-    if(needsPin){
+    if(safetyPin){
+	    return (<Redirect push to="/safetypin"/>);
+    } else if(needsPin && !this.props.pin.pinFilledIn && this.props.pinPage !== "/pinconfirm"){
 	    return (<Redirect push to="/pin"/>);
-    } else if (loggedIn) {
+    } else
+    	if (loggedIn) {
       return (
         <div></div>
       )
@@ -28,7 +34,9 @@ class RequireLogin extends React.Component {
 
 function mapStateToProps(state){
   return {
-    user: state.user.auth
+    user: state.user.auth,
+    pin: state.user.pin,
+    pinPage: state.router.location.pathname
   };
 }
 

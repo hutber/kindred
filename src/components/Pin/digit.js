@@ -17,13 +17,32 @@ class PinDigit extends React.Component {
 
 	populatePin(){
   	const dig = Number.parseInt(this.props.digit);
-		if(Number.isInteger(dig)) {
+
+
+  	//Enter Pin, after confirmation
+		if(Number.isInteger(dig) && this.props.type === "safety") {
+			this.props.addSafetyDigit(this.props.digit);
+		}else if(this.props.digit === "clear" && this.props.type === "safety"){
+			this.props.deleteSafetyDigit(this.props.digit);
+		}
+  	//Confirm Digit
+		else if(Number.isInteger(dig) && this.props.type === "confirm") {
+			this.props.addConfirmDigit(this.props.digit);
+		}else if(this.props.digit === "clear" && this.props.type === "confirm"){
+			this.props.deleteConfirmDigit(this.props.digit);
+		}
+		//Initial Digit
+		else if(Number.isInteger(dig)) {
 			this.props.addDigit(this.props.digit);
 		}else if(this.props.digit === "clear"){
 			this.props.removeDigit(this.props.digit);
-		} else {
+		}
+		//Forgotten Digit
+		else {
 			return (<Redirect push to="/pinForgotten"/>);
 		}
+
+
 	}
 
   render(){
@@ -45,6 +64,10 @@ function matchDispatchToProps(dispatch){
 	return {
 		addDigit : bindActionCreators(pinAction.addDigit, dispatch),
 		removeDigit : bindActionCreators(pinAction.deleteDigit, dispatch),
+		addConfirmDigit : bindActionCreators(pinAction.addConfirmDigit, dispatch),
+		deleteConfirmDigit : bindActionCreators(pinAction.deleteConfirmDigit, dispatch),
+		addSafetyDigit : bindActionCreators(pinAction.addSafetyDigit, dispatch),
+		deleteSafetyDigit : bindActionCreators(pinAction.deleteSafetyDigit, dispatch),
 	}
 }
 
