@@ -40,9 +40,9 @@ export default function (state = initialState, action, data = {}) {
 			const indexDigitAdd = state[pinType].filter( (item,index)=>Number.isInteger(item)).length;
 
 			let addPin = state[pinType];
-			if(indexDigitAdd === 0){
+			if(indexDigitAdd === 0 && addPin.length === 4){
 				addPin[0] = action.digit;
-			}else{
+			}else if(indexDigitAdd < 4){
 				addPin[indexDigitAdd] = action.digit;
 			}
 
