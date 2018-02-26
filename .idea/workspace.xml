@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1e625087-a220-4e26-b7a5-aaa888537481" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Splash/__snapshots__/Splash.test.js.snap" afterPath="$PROJECT_DIR$/src/components/Splash/__snapshots__/Splash.test.js.snap" />
     </list>
     <ignored path="$PROJECT_DIR$/app/platforms/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -362,7 +360,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/shared/logo/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="256">
@@ -442,6 +440,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.eslintrc">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -480,7 +488,7 @@
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="403">
-                  <caret line="97" column="16" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="16" />
+                  <caret line="92" column="44" lean-forward="false" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -529,8 +537,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clear</find>
-      <find>userReducer</find>
       <find>desireReducer</find>
       <find>state.user</find>
       <find>null</find>
@@ -559,6 +565,8 @@
       <find>css-loader</find>
       <find>styleName</find>
       <find>check_url</find>
+      <find>lint-stage</find>
+      <find>hutber</find>
     </findStrings>
     <replaceStrings>
       <replace>state.user.auth</replace>
@@ -643,8 +651,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2468" />
-    <option name="y" value="-71" />
+    <option name="x" value="2560" />
+    <option name="y" value="-1" />
     <option name="width" value="2560" />
     <option name="height" value="1413" />
   </component>
@@ -694,7 +702,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tdd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hutber-conventional-changelog" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules/stylelint" />
@@ -777,7 +785,7 @@
       <workItem from="1518974567085" duration="2403000" />
       <workItem from="1519252746176" duration="3816000" />
       <workItem from="1519598352036" duration="6229000" />
-      <workItem from="1519642282905" duration="2345000" />
+      <workItem from="1519642282905" duration="3090000" />
     </task>
     <servers />
   </component>
@@ -787,7 +795,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152999000" />
+    <option name="totallyTimeSpent" value="153744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="-1" width="2560" height="1413" extended-state="6" />
@@ -846,14 +854,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/reducers/loading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/loadingAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -1195,10 +1195,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
-          <caret line="97" column="16" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="16" />
+          <caret line="92" column="44" lean-forward="false" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
           <folding />
         </state>
       </provider>

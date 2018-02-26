@@ -15,18 +15,20 @@
     "lint": "npm run lint-scripts && npm run lint-styles",
     "postversion": "git push && git push --tags && npm publish",
     "preversion": "npm run lint && npm run test && npm run build",
-    "precommit": "npm run lint",
+    "precommit": "lint-staged",
     "prepush": "npm run test"
   },
   "lint-staged": {
     "*.js": [
       "prettier --write",
       "eslint",
-      "git add"
+      "git add",
+      "git cz"
     ],
     "*.css": [
       "stylelint --fix",
-      "git add"
+      "git add",
+      "git cz"
     ]
   },
   "repository": {
@@ -88,7 +90,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
-    "hutber-conventional-changelog": "^2.0.0",
+    "hutber-conventional-changelog": "^2.0.1",
     "identity-obj-proxy": "^3.0.0",
     "ignore-styles": "^5.0.1",
     "immutable": "^3.8.1",
