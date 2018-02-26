@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Splash page is rendered 1`] = `
-<div>
+exports[`</Splash> We see the Splash Page with logo 1`] = `
+<div
+  className={undefined}
+>
   <NavLink
-    activeClassName="active"
+    activeclassName="active"
     ariaCurrent="true"
+    className={undefined}
     to="/home"
   >
     <Logo />

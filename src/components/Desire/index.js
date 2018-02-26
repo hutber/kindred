@@ -28,7 +28,7 @@ class Desire extends React.Component {
     this.saveButton = this.saveButton.bind(this);
   }
 
-  async saveButton (){
+  saveButton (){
   	const options = {
 		  token: this.props.token,
   		url: `${this.props.api.endpoint}/${this.props.api.desireSubmit}`,

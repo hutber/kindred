@@ -1,4 +1,5 @@
 import desireLang from '../../../lang/desire';
+import handleErrors from '../../handleErrors';
 import * as loading from '../../loadingAction';
 import * as notification from '../../notificationActions';
 
@@ -25,14 +26,6 @@ export function pushToDesire(data) {
     type: SET_DESIRE_DATA,
     data
   }
-}
-
-function handleErrors(response) {
-	if (!response.ok) {
-		console.error(response);
-		throw Error(response.statusText);
-	}
-	return response;
 }
 
 export function saveDesire(options) {

@@ -63,6 +63,26 @@ class Sex extends React.Component {
     this.resetSex = this.resetSex.bind(this);
   }
 
+	saveButton (){
+		const options = {
+			token: this.props.token,
+			url: `${this.props.api.endpoint}/${this.props.api.desireSubmit}`,
+			currentData: this.props.currentDate,
+			desire: this.props.current.desire,
+			body:{
+				dateDate: this.props.currentDate,
+				location: '',
+				value: this.props.current.desire
+			}
+		};
+		this.props.saveDesire(options)
+			.then(() => {
+				this.props.pushToDates(this.props.currentDate);
+				this.props.resetdesire();
+				this.props.history.push('sexsummary');
+			});
+	}
+
   saveButton (){
     this.props.pushToSex({
 	    data: this.props.sex,
@@ -72,7 +92,6 @@ class Sex extends React.Component {
     this.resetSex();
     this.props.history.push('sexsummary');
   }
-
 
   //Quantity
   openQuantity (){

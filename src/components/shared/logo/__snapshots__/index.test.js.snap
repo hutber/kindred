@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`</Splash> Render the logo 1`] = `
+<div
+  className="logo undefined"
+/>
+`;

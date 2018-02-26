@@ -8,7 +8,7 @@ import * as font from '../font/fontello.css';
 class Logo extends React.Component {
     render() {
         return (
-            <div className={logo.logo +' '+font['icon-logo']}></div>
+            <div className={`${logo.logo} ${font['icon-logo']}`}></div>
         );
     }
 };

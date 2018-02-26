@@ -6,6 +6,7 @@ import {Redirect} from 'react-router'
 //Auth
 import RequireLogin from '../shared/auth/RequireLogin'
 import * as pinAction from '../../actions/user/pinActions'
+import * as authAction from '../../actions/user/authActions'
 
 //Components
 import Logo from '../shared/logo';
@@ -27,10 +28,18 @@ class Pin extends React.Component {
 
 	render(){
 	  if(this.props.pin.pinSafetyFilledIn && this.props.pin.pinsSafetyMatch) {
-		  const firstReload = window.localStorage.getItem('firstReload');
-		  if(firstReload){window.localStorage.removeItem('firstReload');}
+	  	console.info(this.props);
 		  this.props.deleteSafetyDigit();
-		  return (<Redirect push to="/home"/> );
+		  this.props.refreshAuth({
+			  url: `${this.props.api.endpoint}/${this.props.api.refreshauth}`
+		  })
+		  .then((refreshed) => {
+		  	if(refreshed) {
+				  const firstReload = window.localStorage.getItem('firstReload');
+				  if(firstReload){window.localStorage.removeItem('firstReload');}
+				  return (<Redirect push to="/home"/> );
+			  }
+		  });
 	  }
 
 	  return (
@@ -57,13 +66,15 @@ class Pin extends React.Component {
 
 function matchStateToProps(state){
   return {
-  	pin: state.user.pin
+  	pin: state.user.pin,
+	  api: state.api.live
   }
 }
 
 function matchDispatchToProps(dispatch){
 	return {
-		deleteSafetyDigit : bindActionCreators(pinAction.deleteSafetyDigit, dispatch)
+		deleteSafetyDigit : bindActionCreators(pinAction.deleteSafetyDigit, dispatch),
+		refreshAuth : bindActionCreators(authAction.refreshAuth, dispatch)
 	}
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import Splash from './Splash';
+import Logo from './index';
 import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('</Splash>', () => {
-	it('We see the Splash Page with logo', () => {
+	it('Render the logo', () => {
 		const renderer = new ShallowRenderer();
-		const result = renderer.render(<Splash />);
+		const result = renderer.render(<Logo />);
 		expect(result).toMatchSnapshot();
 	});
 });
