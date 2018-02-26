@@ -18,6 +18,17 @@
     "precommit": "npm run lint",
     "prepush": "npm run test"
   },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "ssh://root@88.208.249.95/var/www/kindred.com"
@@ -27,7 +38,6 @@
   "dependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^3.17.1",
     "file-loader": "^0.11.2",
     "history": "^4.5.1",
     "jest-enzyme": "^4.2.0",
@@ -45,13 +55,13 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.1",
-    "stylelint": "^7.9.0",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
+    "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.0",
     "babel-loader": "^6.4.0",
     "babel-plugin-dynamic-import-node": "^1.1.0",
@@ -72,7 +82,13 @@
     "enzyme": "^3.3.0",
     "enzyme-matchers": "^4.2.0",
     "enzyme-to-json": "^3.3.1",
-    "hutber-conventional-changelog": "^1.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "hutber-conventional-changelog": "^2.0.0",
     "identity-obj-proxy": "^3.0.0",
     "ignore-styles": "^5.0.1",
     "immutable": "^3.8.1",
@@ -80,6 +96,7 @@
     "jest-cli": "^22.4.0",
     "jquery": "^3.3.1",
     "jquery-knob": "^1.2.11",
+    "lint-staged": "^7.0.0",
     "moment": "^2.18.1",
     "node-sass": "^4.5.2",
     "nprogress": "^0.2.0",
@@ -93,6 +110,7 @@
     "postcss-simple-vars": "^3.0.0",
     "postcss-strip-inline-comments": "^0.1.5",
     "precss": "^1.4.0",
+    "prettier": "^1.10.2",
     "querystring": "^0.2.0",
     "react-hot-loader": "^3.0.0-beta.7",
     "react-router-redux": "next",
@@ -106,6 +124,10 @@
     "require-hacker": "^3.0.0",
     "resolve-url-loader": "^2.0.2",
     "style-loader": "^0.16.0",
+    "stylelint": "^7.13.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-standard": "^18.1.0",
+    "stylelint-scss": "^2.4.0",
     "svg-react-loader": "^0.4.5",
     "url-loader": "^0.5.8",
     "webpack-config": "^7.0.0",

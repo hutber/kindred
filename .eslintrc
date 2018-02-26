@@ -1,17 +1,38 @@
 {
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
   "extends": [
-    "canonical"
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "prettier",
+    "react"
   ],
   "rules": {
-    "arrow-body-style": [
+    "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "import/no-extraneous-dependencies": [
       "error",
-      "as-needed"
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/src/**"
+        ]
+      }
     ],
-    "filenames/match-regex": [
-      2,
-      "^[A-Z]?[a-z]+(?:[A-Z][a-z]+)*(\\.[a-z]+)*$",
-      false
-    ],
-    "no-restricted-syntax": "off"
+    "import/unambiguous": "off",
+    "import/prefer-default-export": "off",
+    "linebreak-style": "off",
+    "prettier/prettier": "error",
+    "import/no-unresolved": "off"
   }
 }
