@@ -57,8 +57,7 @@ class Masturbation extends React.Component {
     const options = {
       token: this.props.token,
       url: `${this.props.api.endpoint}/${this.props.api.masturbationSubmit}`,
-      currentData: this.props.currentDate,
-      desire: this.props.current.desire,
+      currentDate: this.props.currentDate,
       body: {
         dateDate: this.props.currentDate,
         location: '',
@@ -76,8 +75,8 @@ class Masturbation extends React.Component {
       data: this.props.current,
       currentDate: this.props.currentDate
     });
-    this.props.history.push('sexsummary');
     this.resetMasturbation();
+    this.props.history.push('sexsummary');
   }
 
   //Quantity

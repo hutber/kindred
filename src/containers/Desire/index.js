@@ -32,7 +32,7 @@ class Desire extends React.Component {
     const options = {
       token: this.props.token,
       url: `${this.props.api.endpoint}/${this.props.api.desireSubmit}`,
-      currentData: this.props.currentDate,
+      currentDate: this.props.currentDate,
       desire: this.props.current.desire,
       body: {
         dateDate: this.props.currentDate,
@@ -41,7 +41,7 @@ class Desire extends React.Component {
       }
     };
     await this.props.saveDesire(options);
-    this.pushToDesire({
+    this.props.pushToDesire({
       desire: options.desire,
       currentDate: options.currentDate
     });
