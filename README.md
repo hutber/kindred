@@ -18,9 +18,11 @@ Init commitizen configuration
 
 ## Useage
 
-When making changes, add files then
+When making changes, we use `pre-commit` and `husky` to use a `lint-staged` process. So we use the `npm run commit` hook added into package.json.
 
-`git cz`
+I've added `alias nc="npm run commit"` to my `.bashrc` file so i can just do `nc` when committing
+
+``
 
 ## Phonegap Plugins Used
 phonegap plugin add cordova-plugin-crosswalk-webview
