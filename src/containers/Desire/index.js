@@ -28,7 +28,7 @@ class Desire extends React.Component {
     this.saveButton = this.saveButton.bind(this);
   }
 
-  saveButton() {
+  async saveButton() {
     const options = {
       token: this.props.token,
       url: `${this.props.api.endpoint}/${this.props.api.desireSubmit}`,
@@ -40,11 +40,14 @@ class Desire extends React.Component {
         value: this.props.current.desire
       }
     };
-    this.props.saveDesire(options).then(() => {
-      this.props.pushToDates(this.props.currentDate);
-      this.props.resetdesire();
-      this.props.history.push('sexsummary');
+    await this.props.saveDesire(options);
+    this.pushToDesire({
+      desire: options.desire,
+      currentDate: options.currentDate
     });
+    this.props.pushToDates(this.props.currentDate);
+    this.props.resetdesire();
+    this.props.history.push('sexsummary');
   }
 
   render() {

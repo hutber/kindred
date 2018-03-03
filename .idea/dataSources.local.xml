@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="db_kindred@localhost" uuid="0724fb80-4f05-48b3-a5a4-d3a80ed68ad6">
+      <database-info product="PostgreSQL" version="9.5.10" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>user_kindred</user-name>
+      <introspection-schemas>db_kindred:public</introspection-schemas>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>88.208.249.95</proxy-host>
+        <proxy-port>22</proxy-port>
+        <user>root</user>
+        <use-password>false</use-password>
+        <private-key-path>$USER_HOME$/.ssh/id_rsa_ubuntu</private-key-path>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>

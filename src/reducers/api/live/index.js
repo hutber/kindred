@@ -1,10 +1,11 @@
 const initialState = {
-	endpoint: 'http://api.wekindred.com',
-	login: 'auth/login',
-	refreshauth: 'auth/refresh',
-	desireSubmit: 'event/desire',
+  endpoint: 'http://api.wekindred.com',
+  login: 'auth/login',
+  refreshauth: 'auth/refresh',
+  desireSubmit: 'event/desire',
+  masturbationSubmit: 'event/masturbation'
 };
 
-export default function (state = initialState, action, data = {}) {
-	return state
+export default function(state = initialState) {
+  return state;
 }
