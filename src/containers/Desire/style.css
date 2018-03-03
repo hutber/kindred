@@ -1,9 +1,12 @@
-@import "../shared/vars.css";
+@import '../../components/shared/vars.css';
+
 .content {
   width: calc(100% - 40px);
+
   input {
     display: none;
   }
+
   p {
     font-family: $textLight;
   }
