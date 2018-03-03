@@ -16,19 +16,18 @@
     "postversion": "git push && git push --tags && npm publish",
     "preversion": "npm run lint && npm run test && npm run build",
     "precommit": "lint-staged",
+    "commit": "git-cz",
     "prepush": "npm run test"
   },
   "lint-staged": {
     "*.js": [
       "prettier --write",
       "eslint",
-      "git add",
-      "git cz"
+      "git add"
     ],
     "*.css": [
       "stylelint --fix",
-      "git add",
-      "git cz"
+      "git add"
     ]
   },
   "repository": {
@@ -126,9 +125,9 @@
     "require-hacker": "^3.0.0",
     "resolve-url-loader": "^2.0.2",
     "style-loader": "^0.16.0",
-    "stylelint": "^7.13.0",
+    "stylelint": "^9.1.1",
     "stylelint-config-recommended": "^2.1.0",
-    "stylelint-config-standard": "^18.1.0",
+    "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^2.4.0",
     "svg-react-loader": "^0.4.5",
     "url-loader": "^0.5.8",
