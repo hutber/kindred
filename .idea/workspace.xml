@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e625087-a220-4e26-b7a5-aaa888537481" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lang/sex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/sexPages/sex/dataSexAction.js" afterPath="$PROJECT_DIR$/src/actions/sexPages/sex/dataSexAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Desire/index.js" afterPath="$PROJECT_DIR$/src/containers/Desire/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Masturbation/index.js" afterPath="$PROJECT_DIR$/src/containers/Masturbation/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Sex/index.js" afterPath="$PROJECT_DIR$/src/containers/Sex/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/api/live/index.js" afterPath="$PROJECT_DIR$/src/reducers/api/live/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/sexPages/sex/currentSex.js" afterPath="$PROJECT_DIR$/src/reducers/sexPages/sex/currentSex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/main.js" afterPath="$PROJECT_DIR$/app/www/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/app/platforms/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -384,11 +377,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Sex/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="403">
-                  <caret line="138" column="28" lean-forward="false" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
+                <state relative-caret-position="835">
+                  <caret line="165" column="42" lean-forward="false" selection-start-line="165" selection-start-column="42" selection-end-line="165" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -466,6 +459,26 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.eslintrc">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="608">
+                  <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".eslintignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.eslintignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -502,11 +515,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dataSexAction.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="464">
+                  <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dataSexAction.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/actions/sexPages/sex/dataSexAction.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+                <state relative-caret-position="800">
+                  <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -525,7 +548,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>babel-jest</find>
       <find>enzyme</find>
       <find>enzy</find>
       <find>identity-obj-proxy</find>
@@ -555,6 +577,7 @@
       <find>quantity</find>
       <find>resetdesire</find>
       <find>sex</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>state.user.auth</replace>
@@ -575,7 +598,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Signin/index.js" />
         <option value="$PROJECT_DIR$/src/actions/userActions.js" />
         <option value="$PROJECT_DIR$/src/actions/loadingAction.js" />
         <option value="$PROJECT_DIR$/demo/mobiscrollCustomCss.css" />
@@ -626,6 +648,7 @@
         <option value="$PROJECT_DIR$/src/containers/Desire/index.js" />
         <option value="$PROJECT_DIR$/src/containers/Masturbation/index.js" />
         <option value="$PROJECT_DIR$/src/containers/Sex/index.js" />
+        <option value="$PROJECT_DIR$/.eslintignore" />
       </list>
     </option>
   </component>
@@ -829,7 +852,7 @@
       <workItem from="1519252746176" duration="3816000" />
       <workItem from="1519598352036" duration="6229000" />
       <workItem from="1519642282905" duration="4513000" />
-      <workItem from="1520073519133" duration="7654000" />
+      <workItem from="1520073519133" duration="7769000" />
     </task>
     <servers />
   </component>
@@ -839,7 +862,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162821000" />
+    <option name="totallyTimeSpent" value="162936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="-1" width="2560" height="1413" extended-state="7" />
@@ -898,11 +921,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/designs/Finals/9_My_Data_2.psd">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/designs/Finals/10_date.psd">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -966,14 +984,6 @@
     <entry file="file://$PROJECT_DIR$/designs/Finals/3_Pincode.psd">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes.js">
@@ -1056,14 +1066,6 @@
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,14 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/sexPages/sex/dataSexAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/desire/desireReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1322,10 +1316,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/sexPages/sex/dataSexAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Sex/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="138" column="28" lean-forward="false" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
+        <state relative-caret-position="835">
+          <caret line="165" column="42" lean-forward="false" selection-start-line="165" selection-start-column="42" selection-end-line="165" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding />
         </state>
       </provider>
