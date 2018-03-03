@@ -3,4 +3,4 @@ npm-debug.log
 .nyc_output
 app/platforms
 app/plugins
-
+package-lock.json
