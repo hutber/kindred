@@ -1,5 +1,5 @@
 //Core App things
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 
 //Loading
@@ -27,7 +27,7 @@ import Safetypin from './components/Pin/Safetypin';
 
 //Sex Selection Pages
 import SexTypeSelection from './components/SexTypeSelection';
-import Desire from './components/Desire';
+import Desire from './containers/Desire';
 import Masturbation from './containers/Masturbation';
 import Sex from './containers/Sex';
 
@@ -37,31 +37,31 @@ import SexSummary from './components/SexSummary/AllSummary';
 export default class Routes extends Component {
   render() {
     return (
-    	<HashRouter>
-	      <div>
-		      <Loading />
-		      <Notification />
-	        <Route exact path="/" component={Splash}/>
+      <HashRouter>
+        <div>
+          <Loading />
+          <Notification />
+          <Route exact path="/" component={Splash} />
 
-	        <Route path="/signin" component={SignIn} />
-	        <Route path="/signup" component={SignUp} />
-	        <Route path="/logout" component={Logout} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/logout" component={Logout} />
 
-		      <Route path="/pin" component={Pin} />
-		      <Route path="/pinconfirm" component={Confirm} />
-		      <Route path="/safetypin" component={Safetypin} />
+          <Route path="/pin" component={Pin} />
+          <Route path="/pinconfirm" component={Confirm} />
+          <Route path="/safetypin" component={Safetypin} />
 
-	        <Route path="/home" component={Home}  />
-	        <Route path="/settings" component={Settings} />
+          <Route path="/home" component={Home} />
+          <Route path="/settings" component={Settings} />
 
-	        <Route path="/sextypeselection" component={SexTypeSelection} />
-	        <Route path="/desire" component={Desire} />
-	        <Route path="/Masturbation" component={Masturbation} />
-	        <Route path="/Sex" component={Sex} />
+          <Route path="/sextypeselection" component={SexTypeSelection} />
+          <Route path="/desire" component={Desire} />
+          <Route path="/Masturbation" component={Masturbation} />
+          <Route path="/Sex" component={Sex} />
 
-	        <Route path="/sexsummary" component={SexSummary} />
-	      </div>
-	    </HashRouter>
-    )
+          <Route path="/sexsummary" component={SexSummary} />
+        </div>
+      </HashRouter>
+    );
   }
-};
+}
