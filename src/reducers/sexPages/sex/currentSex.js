@@ -14,11 +14,11 @@ import { positionsObject } from './positions/positions';
 
 const initialState = {
   participants: 1,
-  occurrences: 2,
+  occurrences: 1,
   protection: false,
-  enjoyment: 4,
-  orgasmQuantity: 3,
-  orgasmQuality: 2,
+  enjoyment: 3,
+  orgasmQuantity: 1,
+  orgasmQuality: 1,
   changed: false,
   positions: positionsObject
 };

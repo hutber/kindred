@@ -11,55 +11,55 @@ export const SET_POSITION_SELECTION = 'SET_POSITION_SELECTION';
 export function reset() {
   return {
     type: RESET
-  }
+  };
 }
 export function setPositionSelection(tagName, tagVal) {
-	return {
-		type: SET_POSITION_SELECTION,
-		tagName,
-		tagVal
-	}
+  return {
+    type: SET_POSITION_SELECTION,
+    tagName,
+    tagVal
+  };
 }
 export function setProtection(value) {
   return {
     type: SET_PROTECTION,
     value: value
-  }
+  };
 }
 export function DispatchChangeOccurrences(value) {
   return {
     type: SET_OCCURRENCES,
     value: value
-  }
+  };
 }
 export function setParticipants(value) {
   return {
     type: SET_PARTICIPANTS,
     value: value
-  }
+  };
 }
 export function setChanged(value) {
   return {
     type: SET_CHANGED,
     changed: value
-  }
+  };
 }
 export function setOrgasmQuantity(amount) {
   return {
     type: SET_ORGASM_QUANTITY,
-    quantity: amount
-  }
+    orgasmQuantity: amount
+  };
 }
 export function setOrgasmQuality(amount) {
   return {
     type: SET_ORGASM_QUALITY,
-	  quality: amount
-  }
+    orgasmQuality: amount
+  };
 }
 
 export function setEnjoyment(amount) {
   return {
     type: SET_ENJOYMENT,
     enjoyment: amount
-  }
+  };
 }

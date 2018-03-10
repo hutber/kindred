@@ -8,36 +8,36 @@ export const RESET = 'RESET';
 export function reset() {
   return {
     type: RESET
-  }
+  };
 }
 export function setToys(value) {
   return {
     type: SET_TOY_BOOLEAN,
     value: value
-  }
+  };
 }
 export function setPorn(value) {
   return {
     type: SET_PORN_BOOLEAN,
     value: value
-  }
+  };
 }
 export function setChanged(value) {
   return {
     type: SET_CHANGED,
     changed: value
-  }
+  };
 }
 export function setOrgasmQuantity(amount) {
   return {
     type: SET_ORGASM_QUANTITY,
-    quantity: amount
-  }
+    orgasmQuantity: amount
+  };
 }
 
 export function setOrgasmQuality(amount) {
   return {
     type: SET_ORGASM_QUALITY,
-    quality: amount
-  }
+    orgasmQuality: amount
+  };
 }

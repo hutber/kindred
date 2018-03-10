@@ -1,6 +1,7 @@
-@import "../vars.css";
+@import '../vars.css';
+
 .itemContainer {
-  background: #FFF;
+  background: #ffffff;
   padding-top: 20px;
 }
 
@@ -16,9 +17,12 @@
   color: $copyGray;
 }
 
-.dataBreak, .inLineTitle, .sliderTitle, .tagsTitle {
+.dataBreak,
+.inLineTitle,
+.sliderTitle,
+.tagsTitle {
   height: 20px;
-  color: #000;
+  color: #000000;
   font-family: $textMedium;
   text-align: left;
   padding-left: 10px;
@@ -43,24 +47,33 @@
 }
 
 .dataItem {
-  color: #000;
-  background: #FFF;
-  border-top: 1px solid #DDD;
+  color: #000000;
+  background: #ffffff;
+  border-top: 1px solid #dddddd;
   border-left: none;
   border-right: none;
   padding: 15px 10px;
   text-transform: capitalize;
 
   &.bottom {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #dddddd;
   }
 
+  a,
   label {
     float: left;
     display: block;
     font-family: $textMedium;
   }
-  &:before, &:after {
+
+  a& {
+    display: block;
+    color: $headerBgColour;
+    text-align: left;
+  }
+
+  &::before,
+  &::after {
     content: '';
     clear: both;
     display: table;

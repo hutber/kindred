@@ -14,11 +14,15 @@ import Splash from './components/Splash/Splash';
 //Root Pages
 import Home from './components/Home';
 import Settings from './components/Settings';
+import More from './containers/More';
 
 //User Pages
 import SignIn from './components/Signin';
 import SignUp from './components/Signup';
 import Logout from './components/shared/Logout';
+
+//Data
+import Data from './containers/Data';
 
 //Pin
 import Pin from './components/Pin';
@@ -53,6 +57,7 @@ export default class Routes extends Component {
 
           <Route path="/home" component={Home} />
           <Route path="/settings" component={Settings} />
+          <Route path="/more" component={More} />
 
           <Route path="/sextypeselection" component={SexTypeSelection} />
           <Route path="/desire" component={Desire} />
@@ -60,6 +65,8 @@ export default class Routes extends Component {
           <Route path="/Sex" component={Sex} />
 
           <Route path="/sexsummary" component={SexSummary} />
+
+          <Route path="/data" component={Data} />
         </div>
       </HashRouter>
     );

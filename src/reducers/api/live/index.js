@@ -4,7 +4,8 @@ const initialState = {
   refreshauth: 'auth/refresh',
   desireSubmit: 'event/desire',
   masturbationSubmit: 'event/masturbation',
-  sexSubmit: 'event/sex'
+  sexSubmit: 'event/sex',
+  utillist: '/utillist'
 };
 
 export default function(state = initialState) {
