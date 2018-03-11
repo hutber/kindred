@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import nprogress from 'nprogress';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import { AppProvider } from './hydrate';
 import './components/shared/main.css';
 
 //Remove on screen tap delay
-injectTapEventPlugin({
-  shouldRejectClick: function(lastTouchEventTimestamp, clickEventTimestamp) {
-    return true;
-  }
-});
+injectTapEventPlugin();
 
 // window.onerror = function(msg, url, linenumber) {
 //   alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);

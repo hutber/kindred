@@ -160,7 +160,7 @@ class Sex extends React.Component {
         <RequireLogin />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.openParticipants} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="Participants">
+          <div onTouchTap={this.openParticipants} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="Participants">
             <RightArrow label="Total Participants" rightText={this.props.current.participants} />
             <mobiscroll.Number
               onSet={this.setParticipants}
@@ -173,7 +173,7 @@ class Sex extends React.Component {
             />
           </div>
           <DataBreak />
-          <div onClick={this.openOccurrences} className={`${formStyles.dataItem}`} ref="Occurrences">
+          <div onTouchTap={this.openOccurrences} className={`${formStyles.dataItem}`} ref="Occurrences">
             <RightArrow label="Occurrences on this date" rightText={this.props.current.occurrences} />
             <mobiscroll.Number
               onSet={this.setOccurrences}
@@ -209,7 +209,7 @@ class Sex extends React.Component {
               data-step-labels="[1, 2, 3, 4, 5]"
             />
           </div>
-          <div onClick={this.openQuantity} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="sexQuantity">
+          <div onTouchTap={this.openQuantity} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="sexQuantity">
             <RightArrow label="Quantity" rightText={this.props.current.orgasmQuantity} />
             <mobiscroll.Number
               onSet={this.setQuantity}

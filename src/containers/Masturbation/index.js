@@ -134,7 +134,7 @@ class Masturbation extends React.Component {
         />
         <div className={`${mainStyles.contentAreaBG}`}>
           <DataBreak />
-          <div onClick={this.openDate} className={`${formStyles.bottom} ${formStyles.dataItem}`}>
+          <div onTouchTap={this.openDate} className={`${formStyles.bottom} ${formStyles.dataItem}`}>
             <RightArrow label="Date" rightText={Moment(this.props.currentDate).format('D MMMM YYYY')} />
           </div>
           <DataBreak />
@@ -152,7 +152,7 @@ class Masturbation extends React.Component {
               data-step-labels="[1, 2, 3, 4, 5]"
             />
           </div>
-          <div onClick={this.openQuantity} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="masturbationTag">
+          <div onTouchTap={this.openQuantity} className={`${formStyles.bottom} ${formStyles.dataItem}`} ref="masturbationTag">
             <RightArrow label="Quantity" rightText={this.props.current.orgasmQuantity} />
             <mobiscroll.Number
               onSet={this.setQuantity}

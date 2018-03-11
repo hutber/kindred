@@ -93,6 +93,11 @@ export function retrieveUsersData(options) {
     })
       .then(response => {
         if (!response.ok) {
+          if (response.status === 401) {
+            dispatch(doLogout());
+            dispatch(loading.turnOffLoading());
+            return;
+          }
           const errorMessage = signInLang[response.status] ? signInLang[response.status] : signInLang[response.statusText];
 
           const errorOptions = {

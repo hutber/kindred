@@ -60,7 +60,7 @@ class Tags extends React.Component {
             .map((tag, key) => {
               const val = this.props.masturbationTags[tag];
               return (
-                <div className={val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onClick={this.selectTag}>
+                <div className={val ? `${styles.tag} ${styles.selected}` : styles.tag} key={key} onTouchTap={this.selectTag}>
                   {tag}
                 </div>
               );

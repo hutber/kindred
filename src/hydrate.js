@@ -8,7 +8,6 @@ export const history = createHashHistory();
 //Store and Routes
 import configureStore from './configureStore';
 import Routes from './routes';
-
 export class AppProvider extends React.Component {
   constructor() {
     super();

@@ -41,7 +41,7 @@ class PinDigit extends React.Component {
 
   render() {
     return (
-      <div className={style.digit} onClick={this.populatePin}>
+      <div className={style.digit} onTouchTap={this.populatePin}>
         {this.props.digit}
       </div>
     );
