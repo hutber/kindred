@@ -1,3 +1,10 @@
+//History
+import { history } from '../../hydrate';
+
+//Transforms
+import * as transforms from '../../transforms';
+
+//Actions
 import signInLang from '../../lang/signIn';
 import * as loading from '../loadingAction';
 import * as notification from '../notificationActions';
@@ -8,21 +15,23 @@ export const LOGOUT = 'LOGOUT';
 function receiveLogin(accessToken) {
   return {
     type: LOGGED_IN,
-    token: accessToken.token
+    token: accessToken.token,
+    tokenTime: new Date()
   };
+}
+
+function handleErrors(response) {
+  console.info(response);
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
 }
 
 export function doLogout() {
   return {
     type: LOGOUT
   };
-}
-
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
 }
 
 export function refreshAuth(options) {
@@ -67,8 +76,9 @@ export function refreshAuth(options) {
   };
 }
 
-export function recrieveUsersData(options) {
+export function retrieveUsersData(options) {
   return dispatch => {
+    console.info(options);
     dispatch(loading.startLoading());
 
     fetch(options.url, {
@@ -78,6 +88,7 @@ export function recrieveUsersData(options) {
       }
     })
       .then(response => {
+        console.info(response);
         if (!response.ok) {
           const errorMessage = signInLang[response.status] ? signInLang[response.status] : signInLang[response.statusText];
 
@@ -93,8 +104,11 @@ export function recrieveUsersData(options) {
       })
       .then(response => response.json())
       .then(items => {
+        //Handle Desire
+        console.info(transforms);
+        if (items.userDesireEvents) transforms.desire(items.userDesireEvents);
+        console.info(Object.keys(items));
         dispatch(loading.turnOffLoading());
-        dispatch(receiveLogin(items));
       })
       .catch(response => {
         handleErrors(response);
@@ -130,7 +144,12 @@ export function submitLogin(options) {
       })
       .then(response => response.json())
       .then(items => {
-        dispatch(loading.turnOffLoading());
+        dispatch(
+          retrieveUsersData({
+            url: options.successObject.url,
+            token: items.token
+          })
+        );
         dispatch(receiveLogin(items));
       })
       .catch(response => {

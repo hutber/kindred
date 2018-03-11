@@ -18,13 +18,20 @@ class RequireLogin extends React.Component {
     const needsPin = window.localStorage.getItem('firstReload') === 'true' && loggedIn;
     const safetyPin = this.props.pin.pinsMatch && loggedIn && needsPin;
 
-    if (safetyPin) {
+    //1 hour timeout login
+    const timeAgo = 60 * 60 * 1000;
+    const anHourAgo = Date.now() - timeAgo;
+    const tokenTime = this.props.user.tokenTime;
+    const refreshAuthTime = tokenTime < anHourAgo;
+
+    //Check if we are more than hour old to get a new token
+    if (safetyPin || (refreshAuthTime && needsPin)) {
       return <Redirect push to="/safetypin" />;
     } else if (needsPin && !this.props.pin.pinFilledIn && this.props.pinPage !== '/pinconfirm') {
       return <Redirect push to="/pin" />;
     } else if (loggedIn) {
-      if (loggedIn && this.props.user.token) {
-        this.props.recrieveUsersData({
+      if (loggedIn && this.props.user.token && refreshAuthTime) {
+        this.props.retrieveUsersData({
           url: `${this.props.apiLive.endpoint}/${this.props.apiLive.utillist}`,
           token: this.props.user.token
         });
@@ -47,7 +54,7 @@ function mapStateToProps(state) {
 
 function matchDispatchToProps(dispatch) {
   return {
-    recrieveUsersData: bindActionCreators(userActions.recrieveUsersData, dispatch)
+    retrieveUsersData: bindActionCreators(userActions.retrieveUsersData, dispatch)
   };
 }
 

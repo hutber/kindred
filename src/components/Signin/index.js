@@ -81,6 +81,9 @@ class SignIn extends React.Component {
       body: {
         username: this.refs.email.value,
         password: this.refs.pw.value
+      },
+      successObject: {
+        url: `${this.props.loginUrl.endpoint}/${this.props.loginUrl.utillist}`
       }
     });
   }

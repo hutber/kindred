@@ -1,4 +1,5 @@
-@import "../vars.css";
+@import '../vars.css';
+
 .home {
   padding: 10px 35px 30px;
   height: 100vh;
@@ -21,14 +22,19 @@
   position: absolute;
   bottom: 35px;
   width: calc(100% - 70px);
+
   a {
-      color: #fff;
-      font-family: $text;
-      text-decoration: underline;
-      float: left;
-    }
+    color: #ffffff;
+    font-family: $text;
+    text-decoration: underline;
+    float: left;
+  }
 }
 
 a.extraDetailsRight {
   float: right;
+}
+
+.loginButton a {
+  color: #ffffff;
 }
