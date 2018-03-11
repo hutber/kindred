@@ -1,13 +1,13 @@
 function transformItem(item) {
-  const newDesire = {
+  const newData = {
     ...item,
     desire: item.value,
     currentDate: new Date(item.dateDate)
   };
-  delete newDesire.value;
-  return newDesire;
+  delete newData.value;
+  return newData;
 }
 
-export function userDesireEvents(data) {
+export function userMasturbationEvents(data) {
   return data.map(item => transformItem(item));
 }

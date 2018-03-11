@@ -1,13 +1,13 @@
-//History
-import { history } from '../../hydrate';
-
 //Transforms
-import * as transforms from '../../transforms';
+import transforms from '../../transforms';
 
 //Actions
 import signInLang from '../../lang/signIn';
 import * as loading from '../loadingAction';
 import * as notification from '../notificationActions';
+import * as desireAction from '../sexPages/desire/desireAction';
+import * as dataMasturbationAction from '../sexPages/masturbation/dataMasturbationAction';
+import * as dataSexAction from '../sexPages/sex/dataSexAction';
 
 export const LOGGED_IN = 'LOGGED_IN';
 export const LOGOUT = 'LOGOUT';
@@ -21,9 +21,8 @@ function receiveLogin(accessToken) {
 }
 
 function handleErrors(response) {
-  console.info(response);
   if (!response.ok) {
-    throw Error(response.statusText);
+    throw Error(response);
   }
   return response;
 }
@@ -78,7 +77,6 @@ export function refreshAuth(options) {
 
 export function retrieveUsersData(options) {
   return dispatch => {
-    console.info(options);
     dispatch(loading.startLoading());
 
     fetch(options.url, {
@@ -88,7 +86,6 @@ export function retrieveUsersData(options) {
       }
     })
       .then(response => {
-        console.info(response);
         if (!response.ok) {
           const errorMessage = signInLang[response.status] ? signInLang[response.status] : signInLang[response.statusText];
 
@@ -104,10 +101,21 @@ export function retrieveUsersData(options) {
       })
       .then(response => response.json())
       .then(items => {
-        //Handle Desire
-        console.info(transforms);
-        if (items.userDesireEvents) transforms.desire(items.userDesireEvents);
-        console.info(Object.keys(items));
+        //Grab all user data and populate store
+        Object.keys(items).forEach(dataType => {
+          if (transforms[dataType]) {
+            const transformData = transforms[dataType](items[dataType]);
+            let dispatchToUse;
+            if (dataType.includes('Desire')) {
+              dispatchToUse = desireAction.pushToDesire;
+            } else if (dataType.includes('Masturbation')) {
+              dispatchToUse = dataMasturbationAction.pushToMasturbation;
+            } else if (dataType.includes('Sex')) {
+              dispatchToUse = dataSexAction.pushToSex;
+            }
+            transformData.forEach(data => dispatch(dispatchToUse(data)));
+          }
+        });
         dispatch(loading.turnOffLoading());
       })
       .catch(response => {

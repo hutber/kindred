@@ -7,6 +7,8 @@ export const SET_DESIRE_DATA = 'SET_DESIRE_DATA';
 export const SET_DESIRE = 'SET_DESIRE';
 export const SET_DATE = 'SET_DATE';
 
+export const RESTORE_DATA = 'RESTORE_DATA';
+
 export function changeDesireLevel(desireLevel) {
   return {
     type: SET_DESIRE,

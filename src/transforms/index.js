@@ -1,3 +1,5 @@
-import { desire } from './desireTransform';
+import { userDesireEvents } from './desireTransform';
+import { userMasturbationEvents } from './masturbationTransform';
+import { userSexEvents } from './sexTransform';
 
-export { desire };
+export default { userDesireEvents, userMasturbationEvents, userSexEvents };
