@@ -28,8 +28,11 @@ function handleErrors(response) {
 }
 
 export function doLogout() {
-  return {
-    type: LOGOUT
+  return dispatch => {
+    localStorage.clear();
+    dispatch({
+      type: LOGOUT
+    });
   };
 }
 
