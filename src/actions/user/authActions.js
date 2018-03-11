@@ -5,6 +5,9 @@ import transforms from '../../transforms';
 import signInLang from '../../lang/signIn';
 import * as loading from '../loadingAction';
 import * as notification from '../notificationActions';
+import * as datesAction from '../../actions/datesSexAction';
+
+//Sex Actions
 import * as desireAction from '../sexPages/desire/desireAction';
 import * as dataMasturbationAction from '../sexPages/masturbation/dataMasturbationAction';
 import * as dataSexAction from '../sexPages/sex/dataSexAction';
@@ -116,9 +119,14 @@ export function retrieveUsersData(options) {
             } else if (dataType.includes('Sex')) {
               dispatchToUse = dataSexAction.pushToSex;
             }
-            transformData.forEach(data => dispatch(dispatchToUse(data)));
+            transformData.forEach(data => {
+              dispatch(datesAction.pushToDates(data.currentDate));
+              dispatch(dispatchToUse(data));
+            });
           }
         });
+
+        dispatch(receiveLogin(options.items));
         dispatch(loading.turnOffLoading());
       })
       .catch(response => {
@@ -158,10 +166,10 @@ export function submitLogin(options) {
         dispatch(
           retrieveUsersData({
             url: options.successObject.url,
-            token: items.token
+            token: items.token,
+            items
           })
         );
-        dispatch(receiveLogin(items));
       })
       .catch(response => {
         handleErrors(response);
