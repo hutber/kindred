@@ -1,21 +1,24 @@
-@import "../vars.css";
+@import '../vars.css';
+
 .menu {
-  background: #FFF;
+  background: #ffffff;
   height: $menuHeight;
   color: $bgTop;
   position: fixed;
   bottom: 0;
+  margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+  margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
   i {
-    //margin-bottom: 5px;
     display: block;
   }
 }
+
 .link {
-  font-family: Lato;
+  font-family: $text;
   margin-top: 1.6vh;
   float: left;
   width: 25vw;
-  color: #1D4BCF;
+  color: #1d4bcf;
 }
 
 .iconContainer {
@@ -27,8 +30,9 @@
   height: 31px;
 }
 
-.menuItem g path, .menuItem path {
+.menuItem path,
+.menuItem g path {
   height: 100%;
   width: 100%;
-  fill: #1D4BCF;
+  fill: #1d4bcf;
 }

@@ -1,33 +1,39 @@
 // Immutable items
 @import "_phonegapReset.css";
-//@import "fixed/Mixins";
 
 //Fonts
 @import './font/latofonts.css';
 
 // Imports
 @import "vars.css";
-@import "./form/index.css";
-@import "./scaleText.css";
+@import './form/index.css'            ;
+@import './scaleText.css';
 
-//Body/Html
-html, body, body > div, body > div > div {
+/* Body/Html */
+html,
+body,
+body > div,
+body > div > div {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  color: #FFF;
+  color: #ffffff;
   text-align: center;
   font-family: $textThin;
   font-size: 18px;
   padding: 0;
   margin: 0;
+  padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+  padding-top: env(safe-area-inset-top); /* iOS 11.2 */
 }
 
-html, body {
+html,
+body {
   background: linear-gradient(to bottom, $bgTop 0%, $bgBottom 100%);
 }
 
-#app, #app, .app-shell {
+#app,
+.app-shell {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -64,13 +70,14 @@ header {
   display: block;
 }
 
-//Elements
+/* Elements */
 a {
   text-decoration: none;
   font-size: 18px;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
   font-weight: normal;
   font-family: $textLight;
@@ -80,7 +87,7 @@ p {
   margin: 10px 0;
 }
 
-//Align
+/* Align */
 .verticalAlignParent {
   position: fixed;
   top: $menuHeight;
@@ -101,6 +108,7 @@ p {
   align-items: center;
   justify-content: center;
   display: flex;
+
   .container {
     width: 100%;
   }
