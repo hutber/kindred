@@ -40,7 +40,8 @@ class Desire extends React.Component {
         value: this.props.current.desire
       }
     };
-    await this.props.saveDesire(options);
+    const newDesireData = await this.props.saveDesire(options);
+    console.info(newDesireData);
     this.props.pushToDesire({
       desire: options.desire,
       currentDate: options.currentDate

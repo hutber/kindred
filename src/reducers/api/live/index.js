@@ -5,7 +5,13 @@ const initialState = {
   desireSubmit: 'event/desire',
   masturbationSubmit: 'event/masturbation',
   sexSubmit: 'event/sex',
-  utillist: '/utillist'
+  utillist: '/utillist',
+  user: {
+    register: {
+      type: 'post',
+      url: '/user/register'
+    }
+  }
 };
 
 export default function(state = initialState) {

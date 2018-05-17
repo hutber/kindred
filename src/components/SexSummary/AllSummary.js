@@ -72,7 +72,7 @@ class SexOverviewSummary extends React.Component {
   }
 
   render() {
-    const summaryStyles = this.state.totalEntries >= 2 ? '' : mainStyles.flexWithChildren;
+    const summaryStyles = this.state.totalEntries >= 4 ? '' : mainStyles.flexWithChildren;
     return (
       <div>
         <Header left={<HeaderLeft link={this.goHome} />} right={<RightPlus link="sextypeselection" />} />

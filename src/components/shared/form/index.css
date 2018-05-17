@@ -13,7 +13,7 @@ button {
   cursor: pointer;
 }
 
-input {
+input, select {
 
   &::-webkit-input-placeholder {
     color: #FFF;
@@ -30,6 +30,27 @@ input {
   margin-bottom: 1.2rem;
   padding: 15px 0;
   border-radius: 30px;
+}
+
+select, option {
+  text-align: center;
+  text-align-last: center;
+  -webkit-appearance: none;
+}
+
+
+.select {
+  position: relative;
+  &::after {
+    font-family: "fontello";
+    content: '\e808';
+    position: absolute;
+    right: 20px;
+    top: 0;
+    margin-top: 17px;
+    height: 20px;
+    width: 20px;
+  }
 }
 
 .error {

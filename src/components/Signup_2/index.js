@@ -6,12 +6,13 @@ import { NavLink } from 'react-router-dom';
 import Logo from '../shared/logo';
 import userStyles from '../shared/userPages/userPages.css';
 import formStyles from '../shared/form/index.css';
+import * as fontello from '../shared/font/fontello.css';
 
 //Signed In Logic
 import BlockForLoggedInUsers from '../shared/auth/BlockForLoggedInUsers';
 
 //Actions
-import * as signUpAction from '../../actions/user/signUpAction';
+import * as userActions from '../../actions/user/authActions';
 import * as notificationActions from '../../actions/notificationActions';
 
 class SignUp extends React.Component {
@@ -24,6 +25,7 @@ class SignUp extends React.Component {
     };
 
     this.registerUser = this.registerUser.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   removeError(selector) {
@@ -46,17 +48,11 @@ class SignUp extends React.Component {
     });
     const emailValid = /\S+@\S+\.\S+/;
     const errorArray = ['text', 'password', 'email'];
-    const signUpFormInputs = Array.from(this.refs.signUpForm);
-
-    //Form Inputs
-    const email = signUpFormInputs[0].value;
-    const pw1 = signUpFormInputs[1].value;
-    const pw2 = signUpFormInputs[2].value;
 
     const passwordsMatch = this.checkPasswordsMatch();
 
     //check all forms are empty
-    signUpFormInputs.forEach(item => {
+    Array.from(this.refs.signUpForm).forEach(item => {
       if (errorArray.includes(item.type) && item.value === '') {
         this.addError(item);
         this.setState({
@@ -82,18 +78,25 @@ class SignUp extends React.Component {
     });
 
     setTimeout(() => {
-      if (!this.state.hasError) {
-        this.props.finishStep1({
-          email,
-          pw1,
-          pw2,
-        });
-        this.props.history.push('signup_2');
-      }
+      if (!this.state.hasError) this.submitForm();
     }, 0);
 
     el.stopPropagation();
     el.preventDefault();
+  }
+
+  submitForm() {
+    const apiUrl = `${this.props.api.endpoint}/${this.props.api.user.register.url}`;
+    this.props.submitLogin({
+      url: apiUrl,
+      body: {
+        username: this.refs.email.value,
+        password: this.refs.password.value
+      },
+      successObject: {
+        url: `${this.props.api.endpoint}/${this.props.api.utillist}`
+      }
+    });
   }
 
   render() {
@@ -108,13 +111,30 @@ class SignUp extends React.Component {
           {this.state.errorMessage !== '' ? (
             <p className={formStyles.error}>{this.state.errorMessage}</p>
           ) : (
-            <p>Please sign up to be able to save your data</p>
+            <p>Please enter some personal information fo ryour profile.</p>
           )}
           <form action="" ref="signUpForm" onSubmit={this.registerUser}>
-            <input type="email" placeholder="Enter email address" defaultValue={this.props.signup.email} />
-            <input type="password" name="password" placeholder="Password" defaultValue={this.props.signup.pw1}  />
-            <input type="password" name="password_confirm" placeholder="Re-enter Password" defaultValue={this.props.signup.pw2}  />
-            <button type="submit">Save</button>
+            <div className={formStyles.select}>
+              <select name="age">
+                <option>Age</option>
+                <option value="10-13">10-13</option>
+              </select>
+            </div>
+            <div className={formStyles.select}>
+              <select name="gender">
+                <option>Gender</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+              </select>
+            </div>
+            <div className={formStyles.select}>
+              <select name="SexualPref">
+                <option>Sexual preference</option>
+                <option value="0">Straight</option>
+                <option value="1">Gay</option>
+              </select>
+            </div>
+            <button type="submit">Get Started!</button>
           </form>
         </div>
         <div className={userStyles.extraDetails}>
@@ -131,14 +151,13 @@ class SignUp extends React.Component {
 function mapStateToProps(state) {
   return {
     initialValues: state.user.auth,
-    api: state.api.live,
-    signup: state.user.signup,
+    api: state.api.live
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return {
-    finishStep1: bindActionCreators(signUpAction.finishStep1, dispatch),
+    submitLogin: bindActionCreators(userActions.submitLogin, dispatch),
     notification: bindActionCreators(notificationActions.showNotification, dispatch)
   };
 }
