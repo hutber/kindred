@@ -104,8 +104,8 @@ class SignIn extends React.Component {
           )}
           <div>
             <form role="form" ref="signInForm" onSubmit={this.signInUser}>
-              <input type="email" name="email" ref="email" placeholder="Enter email address" />
-              <input type="password" name="pw" ref="pw" placeholder="Password" />
+              <input type="email" name="email" ref="email" placeholder="Enter email address" defaultValue="jamie@hutber.com" />
+              <input type="password" name="pw" ref="pw" placeholder="Password" defaultValue="test" />
               <button type="submit">Sign In</button>
             </form>
           </div>

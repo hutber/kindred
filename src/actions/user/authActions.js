@@ -1,3 +1,6 @@
+//Moment
+import moment from 'moment';
+
 //Transforms
 import transforms from '../../transforms';
 
@@ -127,10 +130,18 @@ export function retrieveUsersData(options) {
             } else if (dataType.includes('Sex')) {
               dispatchToUse = dataSexAction.pushToSex;
             }
-            transformData.forEach(data => {
-              dispatch(datesAction.pushToDates(data.currentDate));
-              dispatch(dispatchToUse(data));
-            });
+            if (dispatchToUse) {
+              transformData.forEach(data => {
+                const dbDate = data.dateDate;
+                const validDate = moment(`${dbDate.year}-${dbDate.monthValue}-${dbDate.dayOfMonth}`).format();
+                data.date = validDate;
+                delete data.dataDate;
+                delete data.currentDate;
+
+                dispatch(datesAction.pushToDates(validDate));
+                dispatch(dispatchToUse(data));
+              });
+            }
           }
         });
 
