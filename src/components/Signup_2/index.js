@@ -6,13 +6,13 @@ import { NavLink } from 'react-router-dom';
 import Logo from '../shared/logo';
 import userStyles from '../shared/userPages/userPages.css';
 import formStyles from '../shared/form/index.css';
-import * as fontello from '../shared/font/fontello.css';
 
 //Signed In Logic
 import BlockForLoggedInUsers from '../shared/auth/BlockForLoggedInUsers';
 
 //Actions
-import * as userActions from '../../actions/user/authActions';
+import * as authActions from '../../actions/user/authActions';
+import * as signUpAction from '../../actions/user/signUpAction';
 import * as notificationActions from '../../actions/notificationActions';
 
 class SignUp extends React.Component {
@@ -24,6 +24,7 @@ class SignUp extends React.Component {
       errorMessage: ''
     };
 
+    this.changeField = this.changeField.bind(this);
     this.registerUser = this.registerUser.bind(this);
     this.submitForm = this.submitForm.bind(this);
   }
@@ -36,44 +37,20 @@ class SignUp extends React.Component {
     selector.classList.add(formStyles.error);
   }
 
-  checkPasswordsMatch() {
-    const passwords = Array.from(this.refs.signUpForm).filter(item => item.name.includes('password'));
-    return passwords[0].value === passwords[1].value;
-  }
-
   registerUser(el) {
     this.setState({
       hasError: false,
       errorMessage: ''
     });
-    const emailValid = /\S+@\S+\.\S+/;
-    const errorArray = ['text', 'password', 'email'];
-
-    const passwordsMatch = this.checkPasswordsMatch();
-
     //check all forms are empty
-    Array.from(this.refs.signUpForm).forEach(item => {
-      if (errorArray.includes(item.type) && item.value === '') {
+    Array.from(this.refs.signUpForm2).forEach(item => {
+      if (item.type === 'select-one' && item.value === '') {
         this.addError(item);
         this.setState({
           hasError: true
         });
       } else {
         this.removeError(item);
-      }
-
-      if (item.type === 'email' && !emailValid.test(item.value)) {
-        this.setState({
-          hasError: true,
-          errorMessage: 'Please enter a valid Email Address'
-        });
-      } else if (!passwordsMatch) {
-        this.addError(this.refs.signUpForm[1]);
-        this.addError(this.refs.signUpForm[2]);
-        this.setState({
-          hasError: true,
-          errorMessage: 'Please make sure your passwords match'
-        });
       }
     });
 
@@ -86,16 +63,22 @@ class SignUp extends React.Component {
   }
 
   submitForm() {
-    const apiUrl = `${this.props.api.endpoint}/${this.props.api.user.register.url}`;
-    this.props.submitLogin({
+    const apiUrl = `${this.props.api.endpoint}${this.props.api.user.register.url}`;
+    this.props.submitRegistration({
       url: apiUrl,
-      body: {
-        username: this.refs.email.value,
-        password: this.refs.password.value
-      },
+      body: this.props.signupData,
       successObject: {
         url: `${this.props.api.endpoint}/${this.props.api.utillist}`
       }
+    });
+  }
+
+  changeField(el) {
+    const name = el.target.name;
+    const value = el.target.value;
+
+    this.props.changeFieldVal({
+      [name]: value
     });
   }
 
@@ -111,36 +94,49 @@ class SignUp extends React.Component {
           {this.state.errorMessage !== '' ? (
             <p className={formStyles.error}>{this.state.errorMessage}</p>
           ) : (
-            <p>Please enter some personal information fo ryour profile.</p>
+            <p>Please enter some personal information for your profile.</p>
           )}
-          <form action="" ref="signUpForm" onSubmit={this.registerUser}>
+          <form action="" ref="signUpForm2" onSubmit={this.registerUser}>
             <div className={formStyles.select}>
-              <select name="age">
-                <option>Age</option>
-                <option value="10-13">10-13</option>
+              <select name="age" onChange={this.changeField}>
+                <option value="">Age</option>
+                <option value="13-17">13-17</option>
+                <option value="18-23">18-23</option>
+                <option value="24-27">24-27</option>
+                <option value="28-32">28-32</option>
+                <option value="33-36">33-36</option>
+                <option value="37-42">37-42</option>
+                <option value="43-51">43-51</option>
+                <option value="52-60">52-60</option>
+                <option value="70-80">70-80</option>
+                <option value="81">81+</option>
               </select>
             </div>
             <div className={formStyles.select}>
-              <select name="gender">
-                <option>Gender</option>
+              <select name="sex" onChange={this.changeField}>
+                <option value="">Gender</option>
                 <option value="0">Male</option>
                 <option value="1">Female</option>
+                <option value="2">Both</option>
               </select>
             </div>
             <div className={formStyles.select}>
-              <select name="SexualPref">
-                <option>Sexual preference</option>
+              <select name="sexualPreference" onChange={this.changeField}>
+                <option value="">Sexual preference</option>
                 <option value="0">Straight</option>
                 <option value="1">Gay</option>
+                <option value="2">Bi</option>
               </select>
             </div>
-            <button type="submit">Get Started!</button>
+            <button type="submit" onClick={this.registerUser}>
+              Get Started!
+            </button>
           </form>
         </div>
         <div className={userStyles.extraDetails}>
-          <NavLink to="/signup">Don't have an account yet?</NavLink>
-          <NavLink to="/skip" className={userStyles.extraDetailsRight}>
-            Skip
+          <NavLink to="/signin">Back to login</NavLink>
+          <NavLink to="/forgotten" className={userStyles.extraDetailsRight}>
+            Forgotten Details?
           </NavLink>
         </div>
       </div>
@@ -150,14 +146,15 @@ class SignUp extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    initialValues: state.user.auth,
+    signupData: state.user.signup,
     api: state.api.live
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return {
-    submitLogin: bindActionCreators(userActions.submitLogin, dispatch),
+    submitRegistration: bindActionCreators(authActions.submitRegistration, dispatch),
+    changeFieldVal: bindActionCreators(signUpAction.changeFieldVal, dispatch),
     notification: bindActionCreators(notificationActions.showNotification, dispatch)
   };
 }

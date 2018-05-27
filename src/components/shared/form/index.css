@@ -1,8 +1,9 @@
-@import "../vars.css";
+@import '../vars.css';
+
 button {
   width: 100%;
   color: $bgTop;
-  background: #FFF;
+  background: #ffffff;
   border: none;
   display: block;
   text-align: center;
@@ -13,36 +14,41 @@ button {
   cursor: pointer;
 }
 
-input, select {
-
-  &::-webkit-input-placeholder {
-    color: #FFF;
-    font-family: LatoLight;
-  }
-
-  width: 100%;
-  color: #fff;
-  display: block;
-  text-align: center;
-  background: transparent;
-  border: 1px solid #FFF;
-  font-size: 18px;
-  margin-bottom: 1.2rem;
-  padding: 15px 0;
-  border-radius: 30px;
-}
-
-select, option {
+select,
+option {
   text-align: center;
   text-align-last: center;
   -webkit-appearance: none;
 }
 
+input,
+select {
+  width: 100%;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  background: transparent;
+  border: 1px solid #ffffff;
+  font-size: 18px;
+  margin-bottom: 1.2rem;
+  padding: 15px 0;
+  border-radius: 30px;
+
+  &::-webkit-input-placeholder {
+    color: #ffffff;
+    font-family: $textLight;
+  }
+
+  &:active {
+    color: #000000;
+  }
+}
 
 .select {
   position: relative;
+
   &::after {
-    font-family: "fontello";
+    font-family: $textFontello;
     content: '\e808';
     position: absolute;
     right: 20px;
@@ -55,7 +61,4 @@ select, option {
 
 .error {
   border-color: #ff9494;
-
-  &::-webkit-input-placeholder {
-  }
 }

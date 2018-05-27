@@ -1,31 +1,32 @@
 // Core Colours
-$textColour:      #000;
-$wtext:           #FFF;
-$bgTop:           #073ED9;
-$headerBgColour:  #0CACFE;
-$bgBottom:        #02E9FB;
-$textBg:          #EFEFF4;
-$desire:          #00A2FF;
-$masturbation:    #0072FF;
-$sex:             #1D4BCF;
-$borderGray:      #DDD;
-$copyGray:        #666;
-$bordeDarkGrey:   #333;
+$textColour:      #000000;
+$wtext:           #ffffff;
+$bgTop:           #073ed9;
+$headerBgColour:  #0cacfe;
+$bgBottom:        #02e9fb;
+$textBg:          #efeff4;
+$desire:          #00a2ff;
+$masturbation:    #0072ff;
+$sex:             #1d4bcf;
+$borderGray:      #dddddd;
+$copyGray:        #666666;
+$bordeDarkGrey:   #333333;
 
-//Fonts
+// Fonts
 $textBold: LatoBold;
 $textMedium: LatoMedium;
 $text: Lato;
 $textLight: LatoLight;
 $textThin: LatoThin;
 $textHair: LatoHairline;
+$textFontello: fontello;
 
-//Header
+// Header
 $headerHeight: 70px;
 
-//Menu
+// Menu
 $menuHeight: 70px;
 
-//contentArea
+// contentArea
 $contentAreaMarginTop: 30px;
 $contentAreaMarginLeft: 20px;

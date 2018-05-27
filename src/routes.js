@@ -20,6 +20,7 @@ import More from './containers/More';
 import SignIn from './components/Signin';
 import SignUp from './components/Signup';
 import SignUp_2 from './components/Signup_2';
+import Forgotten from './components/Forgotten';
 import Logout from './components/shared/Logout';
 
 //Data
@@ -50,6 +51,7 @@ export default class Routes extends Component {
 
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/forgotten" component={Forgotten} />
           <Route path="/signup_2" component={SignUp_2} />
           <Route path="/logout" component={Logout} />
 

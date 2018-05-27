@@ -1,8 +1,11 @@
 //Transforms
 import transforms from '../../transforms';
 
-//Actions
+//Translations
+import registrationLang from '../../lang/registration';
 import signInLang from '../../lang/signIn';
+
+//Actions
 import * as loading from '../loadingAction';
 import * as notification from '../notificationActions';
 import * as datesAction from '../../actions/datesSexAction';
@@ -175,6 +178,69 @@ export function submitLogin(options) {
             items
           })
         );
+      })
+      .catch(response => {
+        handleErrors(response);
+        dispatch(loading.turnOffLoading());
+      });
+  };
+}
+
+export function submitRegistration(options) {
+  return dispatch => {
+    dispatch(loading.startLoading());
+
+    const sendData = {
+      birthdate: '10-11-1985',
+      emailaddress: options.body.emailaddress,
+      location: 'string',
+      name: 'string',
+      password: options.body.pw1,
+      sex: options.body.sex,
+      sexualPreference: options.body.sexualPreference
+    };
+
+    fetch(options.url, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(sendData)
+    })
+      .then(response => {
+        if (!response.ok) {
+          const errorMessage = registrationLang[response.status]
+            ? registrationLang[response.status]
+            : registrationLang[response.statusText];
+
+          const errorOptions = {
+            message: errorMessage,
+            good: false,
+            bad: true
+          };
+          dispatch(notification.showNotification(errorOptions));
+          throw Error(response.statusText);
+        }
+        return response;
+      })
+      .then(response => response.json())
+      .then(items => {
+        if (items.success === false) {
+          const errorOptions = {
+            message: registrationLang['500'],
+            good: false,
+            bad: true
+          };
+          dispatch(notification.showNotification(errorOptions));
+        } else {
+          const errorOptions = {
+            message: registrationLang['201'],
+            good: true,
+            bad: false
+          };
+          dispatch(notification.showNotification(errorOptions));
+          this.props.history.push('/signin');
+        }
       })
       .catch(response => {
         handleErrors(response);

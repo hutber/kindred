@@ -1,22 +1,27 @@
-import {
-  FINISH_STEP_1
-} from '../../actions/user/signUpAction';
+import { FINISH_STEP_1, CHANGE_FIELD_VAL } from '../../actions/user/signUpAction';
 
 const initialState = {
-  email: 'jamie@hutber.com',
+  emailaddress: 'jamie@hutber.com',
   pw1: 'test',
   pw2: 'test',
-  pw: null,
+  birthdate: '',
+  sexualPreference: '',
+  sex: '',
+  password: null,
   step_1: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case FINISH_STEP_1:
-
       return {
-        ...action.data,
         ...state,
+        ...action.data
+      };
+    case CHANGE_FIELD_VAL:
+      return {
+        ...state,
+        ...action.data
       };
   }
   return state;

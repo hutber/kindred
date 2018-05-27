@@ -100,20 +100,21 @@ class SignIn extends React.Component {
           {this.state.errorMessage !== '' ? (
             <p className={formStyles.error}>{this.state.errorMessage}</p>
           ) : (
-            <p>Please sign in to your account</p>
+            <p>Please give us your email address. If we have you on record you will receive a link to reset your password.</p>
           )}
           <div>
             <form role="form" ref="signInForm" onSubmit={this.signInUser}>
               <input type="email" name="email" ref="email" placeholder="Enter email address" />
-              <input type="password" name="pw" ref="pw" placeholder="Password" />
-              <button type="submit">Sign In</button>
+              <button type="submit" onClick={this.registerUser}>
+                Reset Password
+              </button>
             </form>
           </div>
         </div>
         <div className={userStyles.extraDetails}>
-          <NavLink to="/signup">Sign on up</NavLink>
-          <NavLink to="/forgotten" className={userStyles.extraDetailsRight}>
-            Forgotten Details
+          <NavLink to="/signin">Back to login</NavLink>
+          <NavLink to="/signup" className={userStyles.extraDetailsRight}>
+            Registration Page
           </NavLink>
         </div>
       </div>

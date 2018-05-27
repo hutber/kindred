@@ -84,9 +84,9 @@ class SignUp extends React.Component {
     setTimeout(() => {
       if (!this.state.hasError) {
         this.props.finishStep1({
-          email,
+          emailaddress: email,
           pw1,
-          pw2,
+          pw2
         });
         this.props.history.push('signup_2');
       }
@@ -111,16 +111,16 @@ class SignUp extends React.Component {
             <p>Please sign up to be able to save your data</p>
           )}
           <form action="" ref="signUpForm" onSubmit={this.registerUser}>
-            <input type="email" placeholder="Enter email address" defaultValue={this.props.signup.email} />
-            <input type="password" name="password" placeholder="Password" defaultValue={this.props.signup.pw1}  />
-            <input type="password" name="password_confirm" placeholder="Re-enter Password" defaultValue={this.props.signup.pw2}  />
+            <input type="email" name="emailaddress" placeholder="Enter email address" defaultValue={this.props.signup.emailaddress} />
+            <input type="password" name="password" placeholder="Password" defaultValue={this.props.signup.pw1} />
+            <input type="password" name="password_confirm" placeholder="Re-enter Password" defaultValue={this.props.signup.pw2} />
             <button type="submit">Save</button>
           </form>
         </div>
         <div className={userStyles.extraDetails}>
-          <NavLink to="/signup">Don't have an account yet?</NavLink>
-          <NavLink to="/skip" className={userStyles.extraDetailsRight}>
-            Skip
+          <NavLink to="/signin">Back to login</NavLink>
+          <NavLink to="/forgotten" className={userStyles.extraDetailsRight}>
+            Forgotten Details?
           </NavLink>
         </div>
       </div>
@@ -132,7 +132,7 @@ function mapStateToProps(state) {
   return {
     initialValues: state.user.auth,
     api: state.api.live,
-    signup: state.user.signup,
+    signup: state.user.signup
   };
 }
 
