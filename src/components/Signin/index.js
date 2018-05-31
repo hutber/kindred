@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { NavLink } from 'react-router-dom';
 
+//Translations
+import registrationLang from '../../lang/registration';
+
 //Actions
 import * as userActions from '../../actions/user/authActions';
 import * as notificationActions from '../../actions/notificationActions';
@@ -28,6 +31,14 @@ class SignIn extends React.Component {
 
     this.signInUser = this.signInUser.bind(this);
     this.submitForm = this.submitForm.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.signupDetails.complete) {
+      this.props.notification({
+        message: registrationLang['201']
+      });
+    }
   }
 
   removeError(selector) {
@@ -104,8 +115,14 @@ class SignIn extends React.Component {
           )}
           <div>
             <form role="form" ref="signInForm" onSubmit={this.signInUser}>
-              <input type="email" name="email" ref="email" placeholder="Enter email address" defaultValue="jamie@hutber.com" />
-              <input type="password" name="pw" ref="pw" placeholder="Password" defaultValue="test" />
+              <input
+                type="email"
+                name="email"
+                ref="email"
+                placeholder="Enter email address"
+                defaultValue={this.props.signupDetails.emailaddress}
+              />
+              <input type="password" name="pw" ref="pw" placeholder="Password" />
               <button type="submit">Sign In</button>
             </form>
           </div>
@@ -124,7 +141,8 @@ class SignIn extends React.Component {
 function mapStateToProps(state) {
   return {
     user: state.user.auth,
-    loginUrl: state.api.live
+    loginUrl: state.api.live,
+    signupDetails: state.user.signup
   };
 }
 

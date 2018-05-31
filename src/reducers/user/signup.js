@@ -1,14 +1,15 @@
-import { FINISH_STEP_1, CHANGE_FIELD_VAL } from '../../actions/user/signUpAction';
+import { REGISTER_COMPLETE, FINISH_STEP_1, CHANGE_FIELD_VAL } from '../../actions/user/signUpAction';
 
 const initialState = {
-  emailaddress: 'jamie@hutber.com',
-  pw1: 'test',
-  pw2: 'test',
+  emailaddress: '',
+  pw1: '',
+  pw2: '',
   birthdate: '',
   sexualPreference: '',
   sex: '',
   password: null,
-  step_1: false
+  step_1: false,
+  complete: false
 };
 
 export default function(state = initialState, action) {
@@ -17,6 +18,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         ...action.data
+      };
+    case REGISTER_COMPLETE:
+      return {
+        ...initialState,
+        emailaddress: action.email,
+        complete: action.successfulRegistration
       };
     case CHANGE_FIELD_VAL:
       return {

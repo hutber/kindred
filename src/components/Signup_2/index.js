@@ -11,7 +11,6 @@ import formStyles from '../shared/form/index.css';
 import BlockForLoggedInUsers from '../shared/auth/BlockForLoggedInUsers';
 
 //Actions
-import * as authActions from '../../actions/user/authActions';
 import * as signUpAction from '../../actions/user/signUpAction';
 import * as notificationActions from '../../actions/notificationActions';
 
@@ -27,6 +26,12 @@ class SignUp extends React.Component {
     this.changeField = this.changeField.bind(this);
     this.registerUser = this.registerUser.bind(this);
     this.submitForm = this.submitForm.bind(this);
+  }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.signupData.complete) {
+      this.props.history.push('/signin');
+    }
   }
 
   removeError(selector) {
@@ -115,17 +120,17 @@ class SignUp extends React.Component {
             <div className={formStyles.select}>
               <select name="sex" onChange={this.changeField}>
                 <option value="">Gender</option>
-                <option value="0">Male</option>
-                <option value="1">Female</option>
-                <option value="2">Both</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Both">Both</option>
               </select>
             </div>
             <div className={formStyles.select}>
               <select name="sexualPreference" onChange={this.changeField}>
                 <option value="">Sexual preference</option>
-                <option value="0">Straight</option>
-                <option value="1">Gay</option>
-                <option value="2">Bi</option>
+                <option value="Straight">Straight</option>
+                <option value="Gay">Gay</option>
+                <option value="Bi">Bi</option>
               </select>
             </div>
             <button type="submit" onClick={this.registerUser}>
@@ -153,7 +158,7 @@ function mapStateToProps(state) {
 
 function matchDispatchToProps(dispatch) {
   return {
-    submitRegistration: bindActionCreators(authActions.submitRegistration, dispatch),
+    submitRegistration: bindActionCreators(signUpAction.submitRegistration, dispatch),
     changeFieldVal: bindActionCreators(signUpAction.changeFieldVal, dispatch),
     notification: bindActionCreators(notificationActions.showNotification, dispatch)
   };
