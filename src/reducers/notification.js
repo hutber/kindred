@@ -11,11 +11,13 @@ export default function(state = initialState, action) {
     case NOTIFICATION_ON:
       return {
         ...state,
+        displayNotification: true,
         style: action.style,
         message: action.message
       };
     case NOTIFICATION_OFF:
       return {
+        displayNotification: false,
         ...state,
         message: ''
       };

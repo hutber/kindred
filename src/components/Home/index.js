@@ -49,7 +49,7 @@ class Home extends React.Component {
   }
 
   onShow() {
-    document.querySelector('.loadingHome').remove();
+    if (document.querySelector('.loadingHome')) document.querySelector('.loadingHome').remove();
   }
 
   onPosition(ev) {

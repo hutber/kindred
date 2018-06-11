@@ -23,9 +23,17 @@ class Notification extends React.Component {
   }
 
   render() {
-    if (this.refs.notification && this.props.notification && this.props.notification.message !== '') {
+    if (
+      this.refs.notification &&
+      this.props.notification &&
+      this.props.notification.message !== '' &&
+      this.props.notification.displayNotification
+    ) {
       this.showNotification();
-    } else if (this.refs.notification && this.refs.notification && this.props.notification.message === '') {
+    } else if (
+      !this.props.notification.displayNotification ||
+      (this.refs.notification && this.refs.notification && this.props.notification.message === '')
+    ) {
       this.removeNotification();
     }
 
@@ -37,7 +45,7 @@ class Notification extends React.Component {
             theme="kindred"
             lang="en-UK"
             display="bottom"
-            cssClass={`md-dialog-cont kindred-dialog ${this.props.notification.style}`}
+            cssClass={`md-dialog-cont kindred-dialog ${this.props.notification.style} ${this.props.notification.displayNotification}`}
           >
             <div className="md-dialog mbsc-align-center">
               <p>{this.props.notification.message}</p>
