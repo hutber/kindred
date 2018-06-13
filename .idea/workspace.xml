@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1e625087-a220-4e26-b7a5-aaa888537481" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.xml" afterPath="$PROJECT_DIR$/app/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/index.html" afterPath="$PROJECT_DIR$/app/www/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/app/platforms/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -425,8 +424,8 @@
           <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="67" />
+                <state relative-caret-position="1008">
+                  <caret line="63" column="39" lean-forward="false" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -510,8 +509,8 @@
           <file leaf-file-name="registration.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/lang/registration.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="64">
-                  <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
+                <state relative-caret-position="128">
+                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -530,7 +529,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>consol</find>
       <find>sexDates</find>
       <find>act-tap-event-plu</find>
       <find>onClick</find>
@@ -560,6 +558,7 @@
       <find>saveDesire</find>
       <find>kindred-dialog</find>
       <find>displayNotification</find>
+      <find>compileSdkVersion</find>
     </findStrings>
     <replaceStrings>
       <replace>state.user.auth</replace>
@@ -651,8 +650,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="2560" />
-    <option name="width" value="1279" />
-    <option name="height" value="1412" />
+    <option name="y" value="-1" />
+    <option name="width" value="2560" />
+    <option name="height" value="1413" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -913,7 +913,7 @@
       <workItem from="1528362026300" duration="1206000" />
       <workItem from="1528375904598" duration="16000" />
       <workItem from="1528719700085" duration="1198000" />
-      <workItem from="1528751054815" duration="7418000" />
+      <workItem from="1528751054815" duration="8078000" />
     </task>
     <servers />
   </component>
@@ -923,7 +923,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255275000" />
+    <option name="totallyTimeSpent" value="255935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="-1" width="2560" height="1413" extended-state="6" />
@@ -1341,14 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lang/registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared/loading/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1389,10 +1381,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lang/registration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="67" />
+        <state relative-caret-position="1008">
+          <caret line="63" column="39" lean-forward="false" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
           <folding />
         </state>
       </provider>
