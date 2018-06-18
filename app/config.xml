@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml `='1.0' encoding='utf-8'?>
 <widget id="com.wekindred" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Kindred</name>
     <description>Kindred Collective Applications</description>
@@ -6,6 +6,7 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="23" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
     <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
