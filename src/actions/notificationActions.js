@@ -6,29 +6,29 @@ export const NOTIFICATION_OFF = 'NOTIFICATION_OFF';
 let Timeout = null;
 const Timer = 52000;
 
-export function hideNotification () {
-	return {
-		type: NOTIFICATION_OFF,
-		message: ''
-	}
+export function hideNotification() {
+  return {
+    type: NOTIFICATION_OFF,
+    message: ''
+  };
 }
 
-export function displayNotification (message, good = true, bad = false) {
-	clearTimeout(Timeout);
-	return {
-		type: NOTIFICATION_ON,
-		message,
-		good,
-		bad
-	}
+export function displayNotification(message, good = true) {
+  clearTimeout(Timeout);
+  const style = good ? 'good' : 'bad';
+  return {
+    type: NOTIFICATION_ON,
+    message,
+    style
+  };
 }
 
-export function showNotification (options) {
-	return (dispatch) => {
-		dispatch(displayNotification(options.message, options.good, options.bad));
+export function showNotification(options) {
+  return dispatch => {
+    dispatch(displayNotification(options.message, options.good));
 
-		Timeout = setTimeout(() => {
-			dispatch(hideNotification());
-		}, Timer)
-	};
+    Timeout = setTimeout(() => {
+      dispatch(hideNotification());
+    }, Timer);
+  };
 }

@@ -44,9 +44,8 @@ export function saveDesire(options) {
         body: JSON.stringify(options.body)
       })
         .then(response => {
-          if (!response.ok) {
+          if (response.ok === false) {
             const errorMessage = desireLang[response.status] ? desireLang[response.status] : desireLang[response.statusText];
-
             const errorOptions = {
               message: errorMessage,
               good: false,

@@ -3,31 +3,40 @@
 export const LOADING_ON = 'LOADING_ON';
 export const LOADING_OFF = 'LOADING_OFF';
 
+import * as notification from '../actions/notificationActions';
+
 let loadingTimeout = null;
 const loadingTimer = 5000;
 
-export function turnOnLoading () {
-	return {
-		type: LOADING_ON,
-		loading: true
-	}
+export function turnOnLoading() {
+  return {
+    type: LOADING_ON,
+    loading: true
+  };
 }
 
-export function turnOffLoading () {
-	clearTimeout(loadingTimeout);
-	return {
-		type: LOADING_OFF,
-		loading: false
-	}
+function turnOffLoadingAction() {
+  return {
+    type: LOADING_OFF,
+    loading: false
+  };
 }
 
-export function startLoading () {
-	return (dispatch) => {
-		// clearTimeout(loadingTimeout);
-		dispatch(turnOnLoading());
+export function turnOffLoading() {
+  return dispatch => {
+    dispatch(notification.hideNotification());
+    clearTimeout(loadingTimeout);
+    dispatch(turnOffLoadingAction());
+  };
+}
 
-		loadingTimeout = setTimeout(() => {
-			dispatch(turnOffLoading());
-		}, loadingTimer)
-	};
+export function startLoading() {
+  return dispatch => {
+    // clearTimeout(loadingTimeout);
+    dispatch(turnOnLoading());
+
+    loadingTimeout = setTimeout(() => {
+      dispatch(turnOffLoading());
+    }, loadingTimer);
+  };
 }
