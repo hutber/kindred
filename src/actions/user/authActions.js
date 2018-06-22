@@ -1,12 +1,13 @@
 //Moment
 import moment from 'moment';
-import handleErrors from '../handleErrors';
+import { handleErrors, handleNetworkStatusError } from '../handleErrors';
 
 //Transforms
 import transforms from '../../transforms';
 
 //Translations
 import signInLang from '../../lang/signIn';
+import forgotten from '../../lang/forgotten';
 
 //Actions
 import * as loading from '../loadingAction';
@@ -51,20 +52,7 @@ export function refreshAuth(options) {
           },
           body: JSON.stringify(options.body)
         })
-          .then(response => {
-            if (!response.ok) {
-              const errorMessage = signInLang[response.status] ? signInLang[response.status] : signInLang[response.statusText];
-
-              const errorOptions = {
-                message: errorMessage,
-                good: false,
-                bad: true
-              };
-              dispatch(notification.showNotification(errorOptions));
-              throw Error(response.statusText);
-            }
-            return response;
-          })
+          .then(response => handleNetworkStatusError(response, signInLang, dispatch))
           .then(response => response.json())
           .then(items => {
             dispatch(loading.turnOffLoading());
@@ -72,8 +60,7 @@ export function refreshAuth(options) {
             resolve(true);
           })
           .catch(response => {
-            handleErrors(response);
-            dispatch(loading.turnOffLoading());
+            handleErrors(response, dispatch);
           });
       }
     });
@@ -142,8 +129,7 @@ export function retrieveUsersData(options) {
         dispatch(loading.turnOffLoading());
       })
       .catch(response => {
-        handleErrors(response);
-        dispatch(loading.turnOffLoading());
+        handleErrors(response, dispatch);
       });
   };
 }
@@ -159,20 +145,7 @@ export function submitLogin(options) {
       },
       body: JSON.stringify(options.body)
     })
-      .then(response => {
-        if (!response.ok) {
-          const errorMessage = signInLang[response.status] ? signInLang[response.status] : signInLang[response.statusText];
-
-          const errorOptions = {
-            message: errorMessage,
-            good: false,
-            bad: true
-          };
-          dispatch(notification.showNotification(errorOptions));
-          throw Error(response.statusText);
-        }
-        return response;
-      })
+      .then(response => handleNetworkStatusError(response, signInLang, dispatch))
       .then(response => response.json())
       .then(items => {
         dispatch(
@@ -184,8 +157,35 @@ export function submitLogin(options) {
         );
       })
       .catch(response => {
-        handleErrors(response);
-        dispatch(loading.turnOffLoading());
+        handleErrors(response, dispatch);
+      });
+  };
+}
+
+export function forgottenDetails(options) {
+  return dispatch => {
+    dispatch(loading.startLoading());
+
+    fetch(options.url, {
+      method: options.type,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(options.body)
+    })
+      .then(response => handleNetworkStatusError(response, forgotten, dispatch))
+      .then(response => response.json())
+      .then(items => {
+        dispatch(
+          retrieveUsersData({
+            url: options.successObject.url,
+            token: items.token,
+            items
+          })
+        );
+      })
+      .catch(response => {
+        handleErrors(response, dispatch);
       });
   };
 }

@@ -1,5 +1,5 @@
 import Lang from '../../../lang/masturbation';
-import handleErrors from '../../handleErrors';
+import { handleErrors } from '../../handleErrors';
 import * as loading from '../../loadingAction';
 import * as notification from '../../notificationActions';
 
@@ -45,7 +45,7 @@ export function saveMasturbation(options) {
           resolve(items);
         })
         .catch(response => {
-          handleErrors(response);
+          handleErrors(response, dispatch);
           reject(response);
           dispatch(loading.turnOffLoading());
         });

@@ -75,15 +75,15 @@ class SignIn extends React.Component {
   }
 
   submitForm() {
-    const loginUrl = `${this.props.loginUrl.endpoint}/${this.props.loginUrl.login}`;
-    this.props.submitLogin({
-      url: loginUrl,
+    const url = `${this.props.api.endpoint}/${this.props.api.user.forgottenGenerate.url}`;
+    this.props.forgottenDetails({
+      url: url,
+      type: this.props.api.user.forgottenGenerate.type,
       body: {
-        username: this.refs.email.value,
-        password: this.refs.pw.value
+        email: this.refs.email.value
       },
       successObject: {
-        url: `${this.props.loginUrl.endpoint}/${this.props.loginUrl.utillist}`
+        url: `${this.props.api.endpoint}/${this.props.api.utillist}`
       }
     });
   }
@@ -125,13 +125,13 @@ class SignIn extends React.Component {
 function mapStateToProps(state) {
   return {
     user: state.user.auth,
-    loginUrl: state.api.live
+    api: state.api.live
   };
 }
 
 function matchDispatchToProps(dispatch) {
   return {
-    submitLogin: bindActionCreators(userActions.submitLogin, dispatch),
+    forgottenDetails: bindActionCreators(userActions.forgottenDetails, dispatch),
     notification: bindActionCreators(notificationActions.showNotification, dispatch)
   };
 }

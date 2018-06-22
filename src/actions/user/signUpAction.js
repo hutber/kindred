@@ -2,7 +2,7 @@ export const CHANGE_FIELD_VAL = 'CHANGE_FIELD_VAL';
 export const FINISH_STEP_1 = 'FINISH_STEP_1';
 export const REGISTER_COMPLETE = 'REGISTER_COMPLETE';
 
-import handleErrors from '../handleErrors';
+import { handleErrors } from '../handleErrors';
 
 //Translations
 import registrationLang from '../../lang/registration';
@@ -87,10 +87,14 @@ export function submitRegistration(options) {
         } else {
           dispatch(successfullRegistration(options.body.emailaddress));
           dispatch(loading.turnOffLoading());
+          notification.showNotification({
+            message: registrationLang['201'],
+            good: true
+          });
         }
       })
       .catch(response => {
-        handleErrors(response);
+        handleErrors(response, dispatch);
         dispatch(loading.turnOffLoading());
       });
   };
