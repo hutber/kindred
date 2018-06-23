@@ -1,16 +1,16 @@
 .index {
   div {
-    color: #FFF;
-    //font-size: 8rem;
+    color: #ffffff;
   }
+
   position: absolute;
   left: 50%;
   top: 50%;
   display: block;
   transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%,0);
-  -moz-transform: translate3d(-50%, -50%,0);
-  -ms-transform: translate3d(-50%, -50%,0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
 }
 
 .indexAppContent {
@@ -25,14 +25,15 @@
 
 .pinItem {
   height: 70px;
-  width: 60px;
-  border: 1px solid #FFF;
+  max-width: 60px;
+  width: 19vw;
+  border: 1px solid #ffffff;
   display: inline-block;
   margin-right: 20px;
   position: relative;
 }
 
-.full:before {
+.full::before {
   position: absolute;
   content: '*';
   top: 50%;
@@ -51,10 +52,6 @@
 }
 
 .digitContainer {
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
-  //flex-wrap: wrap;
   width: 100%;
   max-width: 375px;
   border: 1px solid;
@@ -70,14 +67,15 @@
   border-bottom: 1px solid;
   display: inline-block;
   font-weight: bold;
-  
+
   &:nth-child(3n+2) {
     border-left: 1px solid;
     border-right: 1px solid;
   }
 
-  &:nth-child(10),&:nth-child(11), &:nth-child(12) {
-    border-bottom: 0px;
+  &:nth-child(10),
+  &:nth-child(11),
+  &:nth-child(12) {
+    border-bottom: 0;
   }
-
 }

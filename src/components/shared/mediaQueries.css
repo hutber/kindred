@@ -1,0 +1,11 @@
+$mobile:       568px;
+$tablet:       768px;
+$desktop:      1024px;
+$extra-large:  1280px;
+$super-large:  1540px;
+
+@define-mixin mobile {
+  @media (max-height: $mobile) {
+    @mixin-content;
+  }
+}

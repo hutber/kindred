@@ -1,3 +1,9 @@
+@import '../mediaQueries.css';
+
 .logo {
   font-size: 5rem;
+
+  @mixin mobile {
+    display: none;
+  }
 }
