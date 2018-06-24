@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e625087-a220-4e26-b7a5-aaa888537481" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Signin/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Signup_2/style.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Signup_2/index.js" afterPath="$PROJECT_DIR$/src/components/Signup_2/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/shared/logo/_Logo.css" afterPath="$PROJECT_DIR$/src/components/shared/logo/_Logo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/shared/mediaQueries.css" afterPath="$PROJECT_DIR$/src/components/shared/mediaQueries.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/shared/userPages/userPages.css" afterPath="$PROJECT_DIR$/src/components/shared/userPages/userPages.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/index.html" afterPath="$PROJECT_DIR$/demo/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tags/index.js" afterPath="$PROJECT_DIR$/src/components/tags/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/app/platforms/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,58 +72,38 @@
           <file leaf-file-name="signUpAction.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/actions/user/signUpAction.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+                <state relative-caret-position="472">
+                  <caret line="59" column="6" lean-forward="true" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tags.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tags.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Pin/index.js">
+            <entry file="file://$PROJECT_DIR$/src/containers/Masturbation/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+                <state relative-caret-position="632">
+                  <caret line="167" column="13" lean-forward="true" selection-start-line="167" selection-start-column="13" selection-end-line="167" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="postcss.config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/postcss.config.js">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/tags/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="64">
-                  <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="723">
-                  <caret line="127" column="26" lean-forward="true" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Signin/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Signup_2/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="320">
-                  <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+                <state relative-caret-position="1064">
+                  <caret line="82" column="77" lean-forward="true" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
                   <folding />
                 </state>
               </provider>
@@ -167,11 +142,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="userPages.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="userPages.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/shared/userPages/userPages.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="464">
                   <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tagsAction.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/actions/sexPages/masturbation/tagsAction.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="128">
+                  <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -190,8 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>icon-down-open-bigicon-down-open-big</find>
-      <find>submitLogin</find>
       <find>LatoLight</find>
       <find>consle</find>
       <find>submit.js</find>
@@ -220,6 +203,8 @@
       <find>handleErrors(response);</find>
       <find>import handleErrors from</find>
       <find>post</find>
+      <find>postcss-mixins</find>
+      <find>currentTags</find>
     </findStrings>
     <replaceStrings>
       <replace>state.user.auth</replace>
@@ -244,9 +229,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/reducers/user/pin.js" />
-        <option value="$PROJECT_DIR$/src/reducers/user/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Signup/index.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/components/Forgotten/showResults.js" />
         <option value="$PROJECT_DIR$/src/components/shared/vars.css" />
@@ -283,7 +265,6 @@
         <option value="$PROJECT_DIR$/src/actions/sexPages/masturbation/dataMasturbationAction.js" />
         <option value="$PROJECT_DIR$/src/actions/sexPages/desire/desireAction.js" />
         <option value="$PROJECT_DIR$/src/actions/handleErrors.js" />
-        <option value="$PROJECT_DIR$/demo/index.html" />
         <option value="$PROJECT_DIR$/src/components/shared/logo/index.js" />
         <option value="$PROJECT_DIR$/postcss.config.js" />
         <option value="$PROJECT_DIR$/app/www/index.html" />
@@ -295,6 +276,10 @@
         <option value="$PROJECT_DIR$/src/components/shared/mediaQueries.css" />
         <option value="$PROJECT_DIR$/src/components/shared/logo/_Logo.css" />
         <option value="$PROJECT_DIR$/src/components/shared/userPages/userPages.css" />
+        <option value="$PROJECT_DIR$/demo/index.html" />
+        <option value="$PROJECT_DIR$/src/actions/sexPages/masturbation/tagsAction.js" />
+        <option value="$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tagsReducer.js" />
+        <option value="$PROJECT_DIR$/src/components/tags/index.js" />
       </list>
     </option>
   </component>
@@ -351,41 +336,14 @@
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Forgotten" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Pin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Signin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Signup_2" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
@@ -398,22 +356,24 @@
               <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="live" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="kindred.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="kindred.com" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sexPages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="masturbation" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tags" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -553,7 +513,7 @@
       <workItem from="1529655979844" duration="2690000" />
       <workItem from="1529706697274" duration="3987000" />
       <workItem from="1529764868510" duration="5283000" />
-      <workItem from="1529836949229" duration="1519000" />
+      <workItem from="1529836949229" duration="7609000" />
     </task>
     <servers />
   </component>
@@ -563,7 +523,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277583000" />
+    <option name="totallyTimeSpent" value="283673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="0" width="2560" height="1413" extended-state="6" />
@@ -630,51 +590,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/shared/font/fontello.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="73" column="45" lean-forward="false" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/shared/menu/menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/mobiscrollCustomCss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7216">
-          <caret line="445" column="0" lean-forward="false" selection-start-line="445" selection-start-column="0" selection-end-line="445" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Forgotten/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lang/signIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="76" lean-forward="false" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lang/registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lang/forgotten.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -904,14 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared/logo/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -924,22 +831,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Pin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/user/signUpAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,30 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Signin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/postcss.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="127" column="26" lean-forward="true" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared/mediaQueries.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1011,6 +878,102 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Signin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="93" column="30" lean-forward="false" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postcss.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Pin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="237" column="16" lean-forward="false" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/user/signUpAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="59" column="6" lean-forward="true" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Masturbation/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="167" column="13" lean-forward="true" selection-start-line="167" selection-start-column="13" selection-end-line="167" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/sexPages/masturbation/tags/tagsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/sexPages/masturbation/tagsAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/tags/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="82" column="77" lean-forward="true" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
           <folding />
         </state>
       </provider>

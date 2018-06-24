@@ -19,7 +19,8 @@ class Tags extends React.Component {
     this.selectTag = this.selectTag.bind(this);
 
     this.state = {
-      tagsSearch: ''
+      tagsSearch: '',
+      currentTags: this.props.masturbationTags
     };
   }
 
@@ -55,7 +56,7 @@ class Tags extends React.Component {
           <input type="text" value={this.state.tagsSearch} className={styles.tagInput} onChange={this.searchTags} placeholder="Search" />
         </div>
         <div className={styles.tags}>
-          {Object.keys(this.props.masturbationTags)
+          {Object.keys(this.state.currentTags)
             .splice(0, 10)
             .map((tag, key) => {
               const val = this.props.masturbationTags[tag];
