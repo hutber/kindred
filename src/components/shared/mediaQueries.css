@@ -9,3 +9,12 @@ $super-large:  1540px;
     @mixin-content;
   }
 }
+
+
+@define-mixin hideMobile {
+  @media (max-height: $mobile) {
+    display: none;
+
+    @mixin-content;
+  }
+}

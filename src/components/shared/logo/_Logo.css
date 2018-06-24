@@ -3,7 +3,7 @@
 .logo {
   font-size: 5rem;
 
-  @mixin mobile {
+  @mixin hideMobile {
     display: none;
   }
 }

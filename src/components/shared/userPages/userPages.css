@@ -1,4 +1,5 @@
 @import '../vars.css';
+@import '../mediaQueries.css';
 
 .home {
   padding: 10px 35px 30px;
@@ -22,6 +23,10 @@
   position: absolute;
   bottom: 35px;
   width: calc(100% - 70px);
+
+  @mixin hideMobile {
+    display: none;
+  }
 
   a {
     color: #ffffff;

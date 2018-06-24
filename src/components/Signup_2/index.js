@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { NavLink } from 'react-router-dom';
 
+//Logo
 import Logo from '../shared/logo';
+
+//Styles
 import userStyles from '../shared/userPages/userPages.css';
 import formStyles from '../shared/form/index.css';
 
@@ -164,7 +167,4 @@ function matchDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  matchDispatchToProps
-)(SignUp);
+export default connect(mapStateToProps, matchDispatchToProps)(SignUp);
