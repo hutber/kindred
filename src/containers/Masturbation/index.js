@@ -68,6 +68,7 @@ class Masturbation extends React.Component {
         tags: JSON.stringify(this.props.tags)
       }
     };
+
     await this.props.saveMasturbation(options);
 
     this.props.pushToDates(this.props.currentDate);

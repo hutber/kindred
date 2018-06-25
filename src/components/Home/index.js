@@ -20,15 +20,15 @@ class Home extends React.Component {
     super(props);
     this.state = {
       loading: true,
+      marked: Object.keys(this.props.dates).map(date => {
+        const newDate = date.split('_');
+        newDate[1] = newDate[1].split('-').join(':');
+        return new Date(newDate.join(' '));
+      }),
       settings: {
         display: 'inline',
         controls: ['calendar', 'time'],
         yearChange: false,
-        marked: Object.keys(this.props.dates).map(date => {
-          const newDate = date.split('_');
-          newDate[1] = newDate[1].split('-').join(':');
-          return new Date(newDate.join(' '));
-        }),
         max: new Date()
       }
     };
@@ -38,6 +38,7 @@ class Home extends React.Component {
 
   selectData(event) {
     const selectedDate = TrimDateReturnTodaysDate(this.props.dates, event.date);
+
     if (event.control) {
       this.props.DispatchChangeCurrentSexInfo(event.date);
       if (selectedDate === null) {
@@ -83,6 +84,7 @@ class Home extends React.Component {
               onPosition={this.onPosition}
               onSetDate={this.selectData}
               options={this.state.settings}
+              marked={this.state.marked}
               {...this.props}
             />
           </div>
@@ -106,7 +108,4 @@ function matchDispatchToProps(dispatch) {
   return { DispatchChangeCurrentSexInfo: bindActionCreators(datesSexAction.changeCurrentSexDate, dispatch) };
 }
 
-export default connect(
-  matchStateToProps,
-  matchDispatchToProps
-)(Home);
+export default connect(matchStateToProps, matchDispatchToProps)(Home);

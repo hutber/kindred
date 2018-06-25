@@ -8,9 +8,6 @@ import Loading from './components/shared/loading';
 //Notfications
 import Notification from './components/shared/notification';
 
-//Core Pages
-import Splash from './components/Splash/Splash';
-
 //Root Pages
 import Home from './components/Home';
 import Settings from './components/Settings';
@@ -47,7 +44,7 @@ export default class Routes extends Component {
         <div>
           <Loading />
           <Notification />
-          <Route exact path="/" component={Splash} />
+          <Route exact path="/" component={Home} />
 
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />

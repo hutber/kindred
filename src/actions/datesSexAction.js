@@ -6,12 +6,12 @@ export function changeCurrentSexDate(date) {
   return {
     type: SET_DATE,
     currentDate: date
-  }
+  };
 }
 
 export function pushToDates(date) {
-	return {
-		type: ADD_DATES,
-    currentDate: date
-	}
+  return {
+    type: ADD_DATES,
+    date: date
+  };
 }
