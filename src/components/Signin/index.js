@@ -100,6 +100,12 @@ class SignIn extends React.Component {
   }
 
   render() {
+    let username;
+    let password;
+    if (document.location.href.includes('http')) {
+      username = 'a@b.com';
+      password = 'test';
+    }
     return (
       <div className={userStyles.home}>
         <div className={userStyles.container}>
@@ -120,9 +126,9 @@ class SignIn extends React.Component {
                 name="email"
                 ref="email"
                 placeholder="Enter email address"
-                defaultValue={this.props.signupDetails.emailaddress}
+                defaultValue={username || this.props.signupDetails.emailaddress}
               />
-              <input type="password" name="pw" ref="pw" placeholder="Password" />
+              <input type="password" name="pw" ref="pw" placeholder="Password" defaultValue={password} />
               <button type="submit">Sign In</button>
             </form>
           </div>
@@ -153,7 +159,4 @@ function matchDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  matchDispatchToProps
-)(SignIn);
+export default connect(mapStateToProps, matchDispatchToProps)(SignIn);

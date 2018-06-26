@@ -113,7 +113,7 @@ export function retrieveUsersData(options) {
             if (dispatchToUse) {
               transformData.forEach(data => {
                 const dbDate = data.dateDate;
-                const validDate = moment(`${dbDate.year}-${dbDate.monthValue}-${dbDate.dayOfMonth}`).format();
+                const validDate = moment(`${dbDate[0]}-${dbDate[1]}-${dbDate[2]}`).format();
                 data.date = validDate;
                 delete data.dateDate;
                 delete data.currentDate;
